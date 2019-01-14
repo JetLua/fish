@@ -9,6 +9,7 @@
 git clone git@github.com:labbee/fish.git
 
 # clone 子项目
+git submodule init
 git submodule update
 
 # 安装依赖
