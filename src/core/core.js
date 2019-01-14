@@ -47,8 +47,8 @@ app.align = function(node, option={}) {
   } else {
     delta.x = (app.screen.width - (rect.left + rect.right)) / 2
   }
-  node.x += delta.x * (node.parent === app.stage ? node.worldTransform.a : 1)
-  node.y += delta.y * (node.parent === app.stage ? node.worldTransform.a : 1)
+  node.x += delta.x / node.parent.scale.x
+  node.y += delta.y / node.parent.scale.y
 }
 
 export default app
