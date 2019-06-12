@@ -3,7 +3,7 @@
 > 将[pixi-filters](https://github.com/pixijs/pixi-filters)搬运到微信小游戏。
 > 仅作`pixi.js`开发微信小游戏展示之用。
 
-[示例](https://upload-images.jianshu.io/upload_images/56079-6af8ae8db840f211.gif)
+[示例](https://static.lufei.so/c06638f149ce76f6ab8631d954f4a838.mp4)
 
 ## 开发
 ```bash
