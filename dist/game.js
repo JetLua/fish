@@ -86,660 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./libs/adapter/ajax.js":
-/*!******************************!*\
-  !*** ./libs/adapter/ajax.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
-/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.promise */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.match */ "./node_modules/core-js/modules/es.string.match.js");
-/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/define-property */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs3/regenerator */ "./node_modules/@babel/runtime-corejs3/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
-/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/promise */ "./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/for-each */ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./util */ "./libs/adapter/util.js");
-
-
-
-
-
-
-
-
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7___default.a.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7___default.a(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_4___default()(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_4___default()(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-var _default =
-/*#__PURE__*/
-function () {
-  function _default() {
-    _classCallCheck(this, _default);
-
-    _defineProperty(this, "method", 'GET');
-
-    _defineProperty(this, "responseType", 'text');
-
-    _defineProperty(this, "onreadystatechange", _util__WEBPACK_IMPORTED_MODULE_9__["noop"]);
-
-    _defineProperty(this, "abort", _util__WEBPACK_IMPORTED_MODULE_9__["noop"]);
-
-    _defineProperty(this, "event", {});
-
-    _defineProperty(this, "header", {
-      Accept: '*/*'
-    });
-  }
-
-  _createClass(_default, [{
-    key: "open",
-    value: function open(method, url) {
-      this.method = method;
-      this.url = url;
-    }
-  }, {
-    key: "setRequestHeader",
-    value: function setRequestHeader(key, value) {
-      this.header[key] = value;
-    }
-  }, {
-    key: "addEventListener",
-    value: function addEventListener(type, handle) {
-      this.event[type] = this.event[type] || [];
-      this.event[type].push(handle);
-    }
-  }, {
-    key: "emit",
-    value: function emit(type) {
-      var _this = this;
-
-      var handles = this.event[type];
-      handles && _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_8___default()(handles).call(handles, function (handle) {
-        handle.call(_this, {
-          target: _this
-        });
-      });
-    }
-  }, {
-    key: "readFile",
-    value: function readFile(path, encoding) {
-      return new _babel_runtime_corejs3_core_js_stable_promise__WEBPACK_IMPORTED_MODULE_7___default.a(function (resolve, reject) {
-        var fs = wx.getFileSystemManager();
-        fs.readFile({
-          encoding: encoding,
-          filePath: path,
-          success: function success(info) {
-            return resolve(info.data);
-          },
-          fail: reject
-        });
-      });
-    }
-  }, {
-    key: "send",
-    value: function () {
-      var _send = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5___default.a.mark(function _callee(data) {
-        var _this2 = this;
-
-        return _babel_runtime_corejs3_regenerator__WEBPACK_IMPORTED_MODULE_5___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                if (this.url.match(/^https?/)) {
-                  _context.next = 10;
-                  break;
-                }
-
-                this.readyState = 4;
-                this.status = 200;
-                _context.next = 5;
-                return this.readFile(this.url, this.responseType === 'arraybuffer' ? this.responseType : 'utf-8');
-
-              case 5:
-                this.responseText = this.response = _context.sent;
-                this.emit('readystatechange');
-                this.emit('load');
-                _context.next = 11;
-                break;
-
-              case 10:
-                wx.request({
-                  data: data,
-                  url: this.url,
-                  header: this.header,
-                  method: this.method,
-                  dataType: 'raw',
-                  responseType: this.responseType,
-                  success: function success(info) {
-                    _this2.readyState = 4;
-                    _this2.status = info.statusCode;
-                    _this2.responseText = _this2.response = info.data;
-
-                    _this2.emit('load');
-
-                    _this2.emit('readystatechange');
-                  },
-                  fail: function fail(info) {
-                    _this2.readyState = 4;
-                    _this2.status = info.statusCode;
-
-                    _this2.emit('error');
-
-                    _this2.emit('readystatechange');
-                  }
-                });
-
-              case 11:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function send(_x) {
-        return _send.apply(this, arguments);
-      }
-
-      return send;
-    }()
-  }]);
-
-  return _default;
-}();
-
-
-
-/***/ }),
-
-/***/ "./libs/adapter/canvas.js":
-/*!********************************!*\
-  !*** ./libs/adapter/canvas.js ***!
-  \********************************/
-/*! exports provided: canvas, Canvas */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canvas", function() { return canvas; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Canvas", function() { return Canvas; });
-function Canvas() {
-  var canvas = wx.createCanvas();
-  canvas.style = {
-    cursor: null
-  };
-  return canvas;
-}
-
-var canvas = new Canvas();
-
-
-/***/ }),
-
-/***/ "./libs/adapter/document.js":
-/*!**********************************!*\
-  !*** ./libs/adapter/document.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/for-each */ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_splice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/splice */ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_splice__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_instance_splice__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_index_of__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/instance/index-of */ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_instance_index_of__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_instance_index_of__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./canvas */ "./libs/adapter/canvas.js");
-/* harmony import */ var _image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./image */ "./libs/adapter/image.js");
-/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./element */ "./libs/adapter/element.js");
-
-
-
-
-
-
-var stack = {};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  body: new _element__WEBPACK_IMPORTED_MODULE_5__["Element"]('body'),
-  addEventListener: function addEventListener(type, handle) {
-    stack[type] = stack[type] || [];
-    stack[type].push(handle);
-  },
-  removeEventListener: function removeEventListener(type, handle) {
-    if (stack[type] && stack[type].length) {
-      var _context, _context2;
-
-      var i = _babel_runtime_corejs3_core_js_stable_instance_index_of__WEBPACK_IMPORTED_MODULE_2___default()(_context = stack[type]).call(_context, handle);
-
-      i !== -1 && _babel_runtime_corejs3_core_js_stable_instance_splice__WEBPACK_IMPORTED_MODULE_1___default()(_context2 = stack[type]).call(_context2, i);
-    }
-  },
-  dispatch: function dispatch(ev) {
-    var queue = stack[ev.type];
-    queue && _babel_runtime_corejs3_core_js_stable_instance_for_each__WEBPACK_IMPORTED_MODULE_0___default()(queue).call(queue, function (handle) {
-      return handle(ev);
-    });
-  },
-  createElement: function createElement(tag) {
-    switch (tag) {
-      case 'canvas':
-        {
-          return new _canvas__WEBPACK_IMPORTED_MODULE_3__["Canvas"]();
-        }
-
-      case 'img':
-        {
-          return new _image__WEBPACK_IMPORTED_MODULE_4__["default"]();
-        }
-
-      default:
-        {
-          return new _element__WEBPACK_IMPORTED_MODULE_5__["Element"]();
-        }
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./libs/adapter/element.js":
-/*!*********************************!*\
-  !*** ./libs/adapter/element.js ***!
-  \*********************************/
-/*! exports provided: Element, HTMLCanvasElement, HTMLImageElement, HTMLVideoElement */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Element", function() { return Element; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLCanvasElement", function() { return HTMLCanvasElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLImageElement", function() { return HTMLImageElement; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HTMLVideoElement", function() { return HTMLVideoElement; });
-/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
-/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
-/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol_iterator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/symbol/iterator */ "./node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol_iterator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_symbol_iterator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/symbol */ "./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_create__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/create */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_create__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_create__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/define-property */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./canvas */ "./libs/adapter/canvas.js");
-
-
-
-
-
-
-
-
-
-
-function _typeof(obj) { if (typeof _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4___default.a === "function" && typeof _babel_runtime_corejs3_core_js_stable_symbol_iterator__WEBPACK_IMPORTED_MODULE_3___default.a === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4___default.a === "function" && obj.constructor === _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4___default.a && obj !== _babel_runtime_corejs3_core_js_stable_symbol__WEBPACK_IMPORTED_MODULE_4___default.a.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = _babel_runtime_corejs3_core_js_stable_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_7___default.a ? _babel_runtime_corejs3_core_js_stable_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_5___default.a : function _getPrototypeOf(o) { return o.__proto__ || _babel_runtime_corejs3_core_js_stable_object_get_prototype_of__WEBPACK_IMPORTED_MODULE_5___default()(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = _babel_runtime_corejs3_core_js_stable_object_create__WEBPACK_IMPORTED_MODULE_6___default()(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = _babel_runtime_corejs3_core_js_stable_object_set_prototype_of__WEBPACK_IMPORTED_MODULE_7___default.a || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_8___default()(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_8___default()(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-var Element =
-/*#__PURE__*/
-function () {
-  function Element() {
-    _classCallCheck(this, Element);
-
-    _defineProperty(this, "style", {
-      cursor: null
-    });
-  }
-
-  _createClass(Element, [{
-    key: "appendChild",
-    value: function appendChild() {}
-  }, {
-    key: "addEventListener",
-    value: function addEventListener() {}
-  }, {
-    key: "removeEventListener",
-    value: function removeEventListener() {}
-  }]);
-
-  return Element;
-}();
-var HTMLCanvasElement = _canvas__WEBPACK_IMPORTED_MODULE_9__["canvas"].constructor;
-var HTMLImageElement = wx.createImage().constructor;
-var HTMLVideoElement =
-/*#__PURE__*/
-function (_Element) {
-  _inherits(HTMLVideoElement, _Element);
-
-  function HTMLVideoElement() {
-    _classCallCheck(this, HTMLVideoElement);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(HTMLVideoElement).apply(this, arguments));
-  }
-
-  return HTMLVideoElement;
-}(Element);
-
-/***/ }),
-
-/***/ "./libs/adapter/image.js":
-/*!*******************************!*\
-  !*** ./libs/adapter/image.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./element */ "./libs/adapter/element.js");
-
-/* harmony default export */ __webpack_exports__["default"] = (function (cb) {
-  var image = wx.createImage(); // image.onload = cb
-  // image.__proto__.__proto__ = new HTMLImageElement()
-
-  return image;
-});
-
-/***/ }),
-
-/***/ "./libs/adapter/index.js":
-/*!*******************************!*\
-  !*** ./libs/adapter/index.js ***!
-  \*******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/define-property */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_properties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/define-properties */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_properties__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_define_properties__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./canvas */ "./libs/adapter/canvas.js");
-/* harmony import */ var _image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./image */ "./libs/adapter/image.js");
-/* harmony import */ var _ajax__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ajax */ "./libs/adapter/ajax.js");
-/* harmony import */ var _document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./document */ "./libs/adapter/document.js");
-/* harmony import */ var _navigator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./navigator */ "./libs/adapter/navigator.js");
-/* harmony import */ var _touch_event__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./touch-event */ "./libs/adapter/touch-event.js");
-/* harmony import */ var _element__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./element */ "./libs/adapter/element.js");
-/* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./location */ "./libs/adapter/location.js");
-/* harmony import */ var _localStorage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./localStorage */ "./libs/adapter/localStorage.js");
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./util */ "./libs/adapter/util.js");
-
-
-
-
-function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-
-
-
-
-
-var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
-    platform = _wx$getSystemInfoSync.platform;
-
-GameGlobal.canvas = _canvas__WEBPACK_IMPORTED_MODULE_3__["canvas"];
-_canvas__WEBPACK_IMPORTED_MODULE_3__["canvas"].addEventListener = _document__WEBPACK_IMPORTED_MODULE_6__["default"].addEventListener;
-_canvas__WEBPACK_IMPORTED_MODULE_3__["canvas"].removeEventListener = _document__WEBPACK_IMPORTED_MODULE_6__["default"].removeEventListener;
-
-if (platform === 'devtools') {
-  var _Object$definePropert;
-
-  _babel_runtime_corejs3_core_js_stable_object_define_properties__WEBPACK_IMPORTED_MODULE_2___default()(window, (_Object$definePropert = {
-    TouchEvent: {
-      value: _touch_event__WEBPACK_IMPORTED_MODULE_8__["default"]
-    },
-    Image: {
-      value: _image__WEBPACK_IMPORTED_MODULE_4__["default"]
-    },
-    ontouchstart: {
-      value: _util__WEBPACK_IMPORTED_MODULE_12__["noop"]
-    },
-    addEventListener: {
-      value: _util__WEBPACK_IMPORTED_MODULE_12__["noop"]
-    },
-    localStorage: {
-      value: _localStorage__WEBPACK_IMPORTED_MODULE_11__["default"]
-    },
-    HTMLImageElement: {
-      value: _element__WEBPACK_IMPORTED_MODULE_9__["HTMLImageElement"]
-    },
-    HTMLCanvasElement: {
-      value: _element__WEBPACK_IMPORTED_MODULE_9__["HTMLCanvasElement"]
-    },
-    HTMLVideoElement: {
-      value: _element__WEBPACK_IMPORTED_MODULE_9__["HTMLVideoElement"]
-    },
-    Element: {
-      value: _element__WEBPACK_IMPORTED_MODULE_9__["Element"]
-    }
-  }, _defineProperty(_Object$definePropert, "Image", {
-    value: _image__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), _defineProperty(_Object$definePropert, "XMLHttpRequest", {
-    value: _ajax__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), _Object$definePropert));
-
-  for (var key in _document__WEBPACK_IMPORTED_MODULE_6__["default"]) {
-    var desc = _babel_runtime_corejs3_core_js_stable_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_1___default()(window.document, key);
-
-    if (!desc || desc.configurable) {
-      _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(window.document, key, {
-        value: _document__WEBPACK_IMPORTED_MODULE_6__["default"][key]
-      });
-    }
-  }
-} else {
-  GameGlobal.TouchEvent = _touch_event__WEBPACK_IMPORTED_MODULE_8__["default"];
-  GameGlobal.Image = _image__WEBPACK_IMPORTED_MODULE_4__["default"];
-  GameGlobal.ontouchstart = _util__WEBPACK_IMPORTED_MODULE_12__["noop"];
-  GameGlobal.navigator = _navigator__WEBPACK_IMPORTED_MODULE_7__["default"];
-  GameGlobal.document = _document__WEBPACK_IMPORTED_MODULE_6__["default"];
-  GameGlobal.addEventListener = _util__WEBPACK_IMPORTED_MODULE_12__["noop"];
-  GameGlobal.location = _location__WEBPACK_IMPORTED_MODULE_10__["default"];
-  GameGlobal.localStorage = _localStorage__WEBPACK_IMPORTED_MODULE_11__["default"];
-  GameGlobal.HTMLImageElement = _element__WEBPACK_IMPORTED_MODULE_9__["HTMLImageElement"];
-  GameGlobal.HTMLCanvasElement = _element__WEBPACK_IMPORTED_MODULE_9__["HTMLCanvasElement"];
-  GameGlobal.HTMLVideoElement = _element__WEBPACK_IMPORTED_MODULE_9__["HTMLVideoElement"];
-  GameGlobal.XMLHttpRequest = _ajax__WEBPACK_IMPORTED_MODULE_5__["default"];
-  GameGlobal.window = GameGlobal;
-}
-
-/***/ }),
-
-/***/ "./libs/adapter/localStorage.js":
-/*!**************************************!*\
-  !*** ./libs/adapter/localStorage.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  getItem: function getItem(key) {
-    return wx.getStorageSync(key);
-  },
-  setItem: function setItem(key, val) {
-    return wx.setStorageSync(key, val);
-  },
-  clear: function clear() {
-    wx.clearStorageSync();
-  }
-});
-
-/***/ }),
-
-/***/ "./libs/adapter/location.js":
-/*!**********************************!*\
-  !*** ./libs/adapter/location.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  origin: '',
-  href: ''
-});
-
-/***/ }),
-
-/***/ "./libs/adapter/navigator.js":
-/*!***********************************!*\
-  !*** ./libs/adapter/navigator.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  language: 'zh-cn',
-  appVersion: '5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36',
-  userAgent: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36',
-  onLine: true
-});
-
-/***/ }),
-
-/***/ "./libs/adapter/touch-event.js":
-/*!*************************************!*\
-  !*** ./libs/adapter/touch-event.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs3/core-js-stable/object/define-property */ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js");
-/* harmony import */ var _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./document */ "./libs/adapter/document.js");
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util */ "./libs/adapter/util.js");
-/* harmony import */ var _canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./canvas */ "./libs/adapter/canvas.js");
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_corejs3_core_js_stable_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var TouchEvent = function TouchEvent(type) {
-  _classCallCheck(this, TouchEvent);
-
-  _defineProperty(this, "preventDefault", _util__WEBPACK_IMPORTED_MODULE_2__["noop"]);
-
-  _defineProperty(this, "stopPropagation", _util__WEBPACK_IMPORTED_MODULE_2__["noop"]);
-
-  _defineProperty(this, "target", _canvas__WEBPACK_IMPORTED_MODULE_3__["canvas"]);
-
-  _defineProperty(this, "currentTarget", _canvas__WEBPACK_IMPORTED_MODULE_3__["canvas"]);
-
-  this.type = type;
-};
-
-function factory(type) {
-  return function (ev) {
-    var touchEvent = new TouchEvent(type);
-    touchEvent.touches = touchEvent.targetTouches = ev.touches;
-    touchEvent.changedTouches = ev.changedTouches;
-    touchEvent.timeStamp = ev.timeStamp;
-    _document__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch(touchEvent);
-  };
-}
-
-wx.onTouchStart(factory('touchstart'));
-wx.onTouchMove(factory('touchmove'));
-wx.onTouchEnd(factory('touchend'));
-wx.onTouchCancel(factory('touchcancel'));
-/* harmony default export */ __webpack_exports__["default"] = (TouchEvent);
-
-/***/ }),
-
-/***/ "./libs/adapter/util.js":
-/*!******************************!*\
-  !*** ./libs/adapter/util.js ***!
-  \******************************/
-/*! exports provided: noop */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noop", function() { return noop; });
-function noop() {}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js ***!
@@ -762,105 +108,6 @@ module.exports = __webpack_require__(/*! core-js-pure/stable/array/is-array */ "
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/instance/for-each */ "./node_modules/core-js-pure/stable/instance/for-each.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/instance/index-of */ "./node_modules/core-js-pure/stable/instance/index-of.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/instance/splice */ "./node_modules/core-js-pure/stable/instance/splice.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/create */ "./node_modules/core-js-pure/stable/object/create.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/define-properties */ "./node_modules/core-js-pure/stable/object/define-properties.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/define-property */ "./node_modules/core-js-pure/stable/object/define-property.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js":
-/*!**************************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/get-own-property-descriptor */ "./node_modules/core-js-pure/stable/object/get-own-property-descriptor.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/get-prototype-of */ "./node_modules/core-js-pure/stable/object/get-prototype-of.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/object/set-prototype-of */ "./node_modules/core-js-pure/stable/object/set-prototype-of.js");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/promise.js ***!
@@ -869,28 +116,6 @@ module.exports = __webpack_require__(/*! core-js-pure/stable/object/set-prototyp
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js-pure/stable/promise */ "./node_modules/core-js-pure/stable/promise/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/symbol */ "./node_modules/core-js-pure/stable/symbol/index.js");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js-pure/stable/symbol/iterator */ "./node_modules/core-js-pure/stable/symbol/iterator.js");
 
 /***/ }),
 
@@ -916,15 +141,17 @@ module.exports = __webpack_require__(/*! core-js-pure/features/is-iterable */ ".
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs3/regenerator/index.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs3/regenerator/index.js ***!
-  \******************************************************************/
+/***/ "./node_modules/@iro/wechat-adapter/dist/wechat-adapter.es.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@iro/wechat-adapter/dist/wechat-adapter.es.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+/* WEBPACK VAR INJECTION */(function(global) {var commonjsGlobal="undefined"==typeof globalThis?"undefined"==typeof window?"undefined"==typeof global?"undefined"==typeof self?{}:self:global:window:globalThis;function createCommonjsModule(e,t){return t={exports:{}},e(t,t.exports),t.exports}var O="object",check=function(e){return e&&e.Math==Math&&e},global_1=check(typeof globalThis=="object"&&globalThis)||check(typeof window=="object"&&window)||check(typeof self=="object"&&self)||check(typeof commonjsGlobal=="object"&&commonjsGlobal)||Function("return this")(),fails=function(e){try{return!!e()}catch(e){return!0}},descriptors=!fails(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a}),nativePropertyIsEnumerable={}.propertyIsEnumerable,getOwnPropertyDescriptor=Object.getOwnPropertyDescriptor,NASHORN_BUG=getOwnPropertyDescriptor&&!nativePropertyIsEnumerable.call({1:2},1),f=NASHORN_BUG?function(e){var t=getOwnPropertyDescriptor(this,e);return!!t&&t.enumerable}:nativePropertyIsEnumerable,objectPropertyIsEnumerable={f:f},createPropertyDescriptor=function(e,t){return{enumerable:!(1&e),configurable:!(2&e),writable:!(4&e),value:t}},toString={}.toString,classofRaw=function(e){return toString.call(e).slice(8,-1)},split="".split,indexedObject=fails(function(){return!Object("z").propertyIsEnumerable(0)})?function(e){return"String"==classofRaw(e)?split.call(e,""):Object(e)}:Object,requireObjectCoercible=function(e){if(e==null)throw TypeError("Can't call method on "+e);return e},toIndexedObject=function(e){return indexedObject(requireObjectCoercible(e))},isObject=function(e){return"object"==typeof e?null!==e:"function"==typeof e},toPrimitive=function(e,t){if(!isObject(e))return e;var r,o;if(t&&"function"==typeof(r=e.toString)&&!isObject(o=r.call(e)))return o;if("function"==typeof(r=e.valueOf)&&!isObject(o=r.call(e)))return o;if(!t&&"function"==typeof(r=e.toString)&&!isObject(o=r.call(e)))return o;throw TypeError("Can't convert object to primitive value")},hasOwnProperty={}.hasOwnProperty,has=function(e,t){return hasOwnProperty.call(e,t)},document$1=global_1.document,EXISTS=isObject(document$1)&&isObject(document$1.createElement),documentCreateElement=function(e){return EXISTS?document$1.createElement(e):{}},ie8DomDefine=!descriptors&&!fails(function(){return 7!=Object.defineProperty(documentCreateElement("div"),"a",{get:function(){return 7}}).a}),nativeGetOwnPropertyDescriptor=Object.getOwnPropertyDescriptor,f$1=descriptors?nativeGetOwnPropertyDescriptor:function(e,t){if(e=toIndexedObject(e),t=toPrimitive(t,!0),ie8DomDefine)try{return nativeGetOwnPropertyDescriptor(e,t)}catch(e){}return has(e,t)?createPropertyDescriptor(!objectPropertyIsEnumerable.f.call(e,t),e[t]):void 0},objectGetOwnPropertyDescriptor={f:f$1},replacement=/#|\.prototype\./,isForced=function(e,t){var r=data[normalize(e)];return!(r!=POLYFILL)||r!=NATIVE&&("function"==typeof t?fails(t):!!t)},normalize=isForced.normalize=function(e){return(e+"").replace(replacement,".").toLowerCase()},data=isForced.data={},NATIVE=isForced.NATIVE="N",POLYFILL=isForced.POLYFILL="P",isForced_1=isForced,path={},aFunction=function(e){if("function"!=typeof e)throw TypeError(e+" is not a function");return e},bindContext=function(e,t,r){return(aFunction(e),void 0===t)?e:0===r?function(){return e.call(t)}:1===r?function(r){return e.call(t,r)}:2===r?function(r,o){return e.call(t,r,o)}:3===r?function(r,o,n){return e.call(t,r,o,n)}:function(){return e.apply(t,arguments)}},anObject=function(e){if(!isObject(e))throw TypeError(e+" is not an object");return e},nativeDefineProperty=Object.defineProperty,f$2=descriptors?nativeDefineProperty:function(e,t,r){if(anObject(e),t=toPrimitive(t,!0),anObject(r),ie8DomDefine)try{return nativeDefineProperty(e,t,r)}catch(e){}if("get"in r||"set"in r)throw TypeError("Accessors not supported");return"value"in r&&(e[t]=r.value),e},objectDefineProperty={f:f$2},hide=descriptors?function(e,t,r){return objectDefineProperty.f(e,t,createPropertyDescriptor(1,r))}:function(e,t,r){return e[t]=r,e},getOwnPropertyDescriptor$1=objectGetOwnPropertyDescriptor.f,wrapConstructor=function(e){var t=function(t,r,o){if(this instanceof e){switch(arguments.length){case 0:return new e;case 1:return new e(t);case 2:return new e(t,r);}return new e(t,r,o)}return e.apply(this,arguments)};return t.prototype=e.prototype,t},_export=function(e,t){var r,o,n,a,i,l,c,s,p,d=e.target,u=e.global,y=e.stat,h=e.proto,m=u?global_1:y?global_1[d]:(global_1[d]||{}).prototype,g=u?path:path[d]||(path[d]={}),f=g.prototype;for(a in t)r=isForced_1(u?a:d+(y?".":"#")+a,e.forced),o=!r&&m&&has(m,a),l=g[a],o&&(e.noTargetGet?(p=getOwnPropertyDescriptor$1(m,a),c=p&&p.value):c=m[a]),i=o&&c?c:t[a],o&&typeof l==typeof i||(s=e.bind&&o?bindContext(i,global_1):e.wrap&&o?wrapConstructor(i):h&&"function"==typeof i?bindContext(Function.call,i):i,(e.sham||i&&i.sham||l&&l.sham)&&hide(s,"sham",!0),g[a]=s,h&&(n=d+"Prototype",!has(path,n)&&hide(path,n,{}),path[n][a]=i,e.real&&f&&!f[a]&&hide(f,a,i)))};_export({target:"Object",stat:!0,forced:!descriptors,sham:!descriptors},{defineProperty:objectDefineProperty.f});var defineProperty_1=createCommonjsModule(function(e){var t=path.Object,r=e.exports=function(e,r,o){return t.defineProperty(e,r,o)};t.defineProperty.sham&&(r.sham=!0)}),defineProperty=defineProperty_1,defineProperty$1=defineProperty,nativeGetOwnPropertyDescriptor$1=objectGetOwnPropertyDescriptor.f,FAILS_ON_PRIMITIVES=fails(function(){nativeGetOwnPropertyDescriptor$1(1)}),FORCED=!descriptors||FAILS_ON_PRIMITIVES;_export({target:"Object",stat:!0,forced:FORCED,sham:!descriptors},{getOwnPropertyDescriptor:function(e,t){return nativeGetOwnPropertyDescriptor$1(toIndexedObject(e),t)}});var getOwnPropertyDescriptor_1=createCommonjsModule(function(e){var t=path.Object,r=e.exports=function(e,r){return t.getOwnPropertyDescriptor(e,r)};t.getOwnPropertyDescriptor.sham&&(r.sham=!0)}),getOwnPropertyDescriptor$2=getOwnPropertyDescriptor_1,getOwnPropertyDescriptor$3=getOwnPropertyDescriptor$2;function asyncGeneratorStep(e,t,r,o,n,a,i){try{var l=e[a](i),c=l.value}catch(e){return void r(e)}l.done?t(c):Promise.resolve(c).then(o,n)}function _asyncToGenerator(e){return function(){var t=this,r=arguments;return new Promise(function(o,n){function a(e){asyncGeneratorStep(l,o,n,a,i,"next",e)}function i(e){asyncGeneratorStep(l,o,n,a,i,"throw",e)}var l=e.apply(t,r);a(void 0)})}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var r,o=0;o<t.length;o++)r=t[o],r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}function _createClass(e,t,r){return t&&_defineProperties(e.prototype,t),r&&_defineProperties(e,r),e}function _defineProperty(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&_setPrototypeOf(e,t)}function _getPrototypeOf(e){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)},_getPrototypeOf(e)}function _setPrototypeOf(e,t){return _setPrototypeOf=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},_setPrototypeOf(e,t)}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function _possibleConstructorReturn(e,t){return t&&("object"==typeof t||"function"==typeof t)?t:_assertThisInitialized(e)}var ceil=Math.ceil,floor=Math.floor,toInteger=function(e){return isNaN(e=+e)?0:(0<e?floor:ceil)(e)},min=Math.min,toLength=function(e){return 0<e?min(toInteger(e),9007199254740991):0},max=Math.max,min$1=Math.min,toAbsoluteIndex=function(e,t){var r=toInteger(e);return 0>r?max(r+t,0):min$1(r,t)},createMethod=function(e){return function(t,r,o){var n,a=toIndexedObject(t),i=toLength(a.length),l=toAbsoluteIndex(o,i);if(e&&r!=r){for(;i>l;)if(n=a[l++],n!=n)return!0;}else for(;i>l;l++)if((e||l in a)&&a[l]===r)return e||l||0;return!e&&-1}},arrayIncludes={includes:createMethod(!0),indexOf:createMethod(!1)},hiddenKeys={},indexOf=arrayIncludes.indexOf,objectKeysInternal=function(e,t){var r,o=toIndexedObject(e),n=0,a=[];for(r in o)!has(hiddenKeys,r)&&has(o,r)&&a.push(r);for(;t.length>n;)has(o,r=t[n++])&&(~indexOf(a,r)||a.push(r));return a},enumBugKeys=["constructor","hasOwnProperty","isPrototypeOf","propertyIsEnumerable","toLocaleString","toString","valueOf"],objectKeys=Object.keys||function(e){return objectKeysInternal(e,enumBugKeys)},objectDefineProperties=descriptors?Object.defineProperties:function(e,t){anObject(e);for(var r,o=objectKeys(t),n=o.length,a=0;n>a;)objectDefineProperty.f(e,r=o[a++],t[r]);return e};_export({target:"Object",stat:!0,forced:!descriptors,sham:!descriptors},{defineProperties:objectDefineProperties});var defineProperties_1=createCommonjsModule(function(e){var t=path.Object,r=e.exports=function(e,r){return t.defineProperties(e,r)};t.defineProperties.sham&&(r.sham=!0)}),defineProperties=defineProperties_1,defineProperties$1=defineProperties;function Canvas(){var e=wx.createCanvas();return e.style={cursor:null},e}var canvas=new Canvas,Element=function(){function e(){_classCallCheck(this,e),_defineProperty(this,"style",{cursor:null})}return _createClass(e,[{key:"appendChild",value:function(){}},{key:"removeChild",value:function(){}},{key:"addEventListener",value:function(){}},{key:"removeEventListener",value:function(){}}]),e}(),HTMLCanvasElement=canvas.constructor,HTMLImageElement=wx.createImage().constructor,HTMLVideoElement=function(e){function t(){return _classCallCheck(this,t),_possibleConstructorReturn(this,_getPrototypeOf(t).apply(this,arguments))}return _inherits(t,e),t}(Element);function Image(){var e=wx.createImage();return e}var set,get,has$1,runtime_1=createCommonjsModule(function(e){var t=function(e){function t(e,t,r,n){var a=t&&t.prototype instanceof o?t:o,i=Object.create(a.prototype),l=new u(n||[]);return i._invoke=c(e,r,l),i}function r(e,t,r){try{return{type:"normal",arg:e.call(t,r)}}catch(e){return{type:"throw",arg:e}}}function o(){}function n(){}function a(){}function i(e){["next","throw","return"].forEach(function(t){e[t]=function(e){return this._invoke(t,e)}})}function l(e){function t(o,n,a,i){var l=r(e[o],e,n);if("throw"===l.type)i(l.arg);else{var c=l.arg,s=c.value;return s&&"object"==typeof s&&f.call(s,"__await")?Promise.resolve(s.__await).then(function(e){t("next",e,a,i)},function(e){t("throw",e,a,i)}):Promise.resolve(s).then(function(e){c.value=e,a(c)},function(e){return t("throw",e,a,i)})}}function o(e,r){function o(){return new Promise(function(o,n){t(e,r,o,n)})}return n=n?n.then(o,o):o()}var n;this._invoke=o}function c(e,t,o){var n="suspendedStart";return function(a,i){if("executing"===n)throw new Error("Generator is already running");if("completed"===n){if("throw"===a)throw i;return h()}for(o.method=a,o.arg=i;;){var l=o.delegate;if(l){var c=s(l,o);if(c){if(c===x)continue;return c}}if("next"===o.method)o.sent=o._sent=o.arg;else if("throw"===o.method){if("suspendedStart"===n)throw n="completed",o.arg;o.dispatchException(o.arg)}else"return"===o.method&&o.abrupt("return",o.arg);n="executing";var p=r(e,t,o);if("normal"===p.type){if(n=o.done?"completed":"suspendedYield",p.arg===x)continue;return{value:p.arg,done:o.done}}"throw"===p.type&&(n="completed",o.method="throw",o.arg=p.arg)}}}function s(e,t){var o=e.iterator[t.method];if(o===m){if(t.delegate=null,"throw"===t.method){if(e.iterator["return"]&&(t.method="return",t.arg=m,s(e,t),"throw"===t.method))return x;t.method="throw",t.arg=new TypeError("The iterator does not provide a 'throw' method")}return x}var n=r(o,e.iterator,t.arg);if("throw"===n.type)return t.method="throw",t.arg=n.arg,t.delegate=null,x;var a=n.arg;if(!a)return t.method="throw",t.arg=new TypeError("iterator result is not an object"),t.delegate=null,x;if(a.done)t[e.resultName]=a.value,t.next=e.nextLoc,"return"!==t.method&&(t.method="next",t.arg=m);else return a;return t.delegate=null,x}function p(e){var t={tryLoc:e[0]};1 in e&&(t.catchLoc=e[1]),2 in e&&(t.finallyLoc=e[2],t.afterLoc=e[3]),this.tryEntries.push(t)}function d(e){var t=e.completion||{};t.type="normal",delete t.arg,e.completion=t}function u(e){this.tryEntries=[{tryLoc:"root"}],e.forEach(p,this),this.reset(!0)}function y(e){if(e){var t=e[T];if(t)return t.call(e);if("function"==typeof e.next)return e;if(!isNaN(e.length)){var r=-1,o=function t(){for(;++r<e.length;)if(f.call(e,r))return t.value=e[r],t.done=!1,t;return t.value=m,t.done=!0,t};return o.next=o}}return{next:h}}function h(){return{value:m,done:!0}}var m,g=Object.prototype,f=g.hasOwnProperty,v="function"==typeof Symbol?Symbol:{},T=v.iterator||"@@iterator",E=v.asyncIterator||"@@asyncIterator",S=v.toStringTag||"@@toStringTag";e.wrap=t;var x={},L={};L[T]=function(){return this};var O=Object.getPrototypeOf,P=O&&O(O(y([])));P&&P!==g&&f.call(P,T)&&(L=P);var b=a.prototype=o.prototype=Object.create(L);return n.prototype=b.constructor=a,a.constructor=n,a[S]=n.displayName="GeneratorFunction",e.isGeneratorFunction=function(e){var t="function"==typeof e&&e.constructor;return!!t&&(t===n||"GeneratorFunction"===(t.displayName||t.name))},e.mark=function(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,a):(e.__proto__=a,!(S in e)&&(e[S]="GeneratorFunction")),e.prototype=Object.create(b),e},e.awrap=function(e){return{__await:e}},i(l.prototype),l.prototype[E]=function(){return this},e.AsyncIterator=l,e.async=function(r,o,n,a){var i=new l(t(r,o,n,a));return e.isGeneratorFunction(o)?i:i.next().then(function(e){return e.done?e.value:i.next()})},i(b),b[S]="Generator",b[T]=function(){return this},b.toString=function(){return"[object Generator]"},e.keys=function(e){var t=[];for(var r in e)t.push(r);return t.reverse(),function r(){for(;t.length;){var o=t.pop();if(o in e)return r.value=o,r.done=!1,r}return r.done=!0,r}},e.values=y,u.prototype={constructor:u,reset:function(e){if(this.prev=0,this.next=0,this.sent=this._sent=m,this.done=!1,this.delegate=null,this.method="next",this.arg=m,this.tryEntries.forEach(d),!e)for(var t in this)"t"===t.charAt(0)&&f.call(this,t)&&!isNaN(+t.slice(1))&&(this[t]=m)},stop:function(){this.done=!0;var e=this.tryEntries[0],t=e.completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(e){function t(t,o){return a.type="throw",a.arg=e,r.next=t,o&&(r.method="next",r.arg=m),!!o}if(this.done)throw e;for(var r=this,o=this.tryEntries.length-1;0<=o;--o){var n=this.tryEntries[o],a=n.completion;if("root"===n.tryLoc)return t("end");if(n.tryLoc<=this.prev){var l=f.call(n,"catchLoc"),c=f.call(n,"finallyLoc");if(l&&c){if(this.prev<n.catchLoc)return t(n.catchLoc,!0);if(this.prev<n.finallyLoc)return t(n.finallyLoc)}else if(l){if(this.prev<n.catchLoc)return t(n.catchLoc,!0);}else if(!c)throw new Error("try statement without catch or finally");else if(this.prev<n.finallyLoc)return t(n.finallyLoc)}}},abrupt:function(e,t){for(var r,o=this.tryEntries.length-1;0<=o;--o)if(r=this.tryEntries[o],r.tryLoc<=this.prev&&f.call(r,"finallyLoc")&&this.prev<r.finallyLoc){var n=r;break}n&&("break"===e||"continue"===e)&&n.tryLoc<=t&&t<=n.finallyLoc&&(n=null);var a=n?n.completion:{};return a.type=e,a.arg=t,n?(this.method="next",this.next=n.finallyLoc,x):this.complete(a)},complete:function(e,t){if("throw"===e.type)throw e.arg;return"break"===e.type||"continue"===e.type?this.next=e.arg:"return"===e.type?(this.rval=this.arg=e.arg,this.method="return",this.next="end"):"normal"===e.type&&t&&(this.next=t),x},finish:function(e){for(var t,r=this.tryEntries.length-1;0<=r;--r)if(t=this.tryEntries[r],t.finallyLoc===e)return this.complete(t.completion,t.afterLoc),d(t),x},catch:function(e){for(var t,r=this.tryEntries.length-1;0<=r;--r)if(t=this.tryEntries[r],t.tryLoc===e){var o=t.completion;if("throw"===o.type){var n=o.arg;d(t)}return n}throw new Error("illegal catch attempt")},delegateYield:function(e,t,r){return this.delegate={iterator:y(e),resultName:t,nextLoc:r},"next"===this.method&&(this.arg=m),x}},e}(e.exports);try{regeneratorRuntime=t}catch(e){Function("r","regeneratorRuntime = r")(t)}}),regenerator=runtime_1,createMethod$1=function(e){return function(t,r){var o,n,a=requireObjectCoercible(t)+"",i=toInteger(r),l=a.length;return 0>i||i>=l?e?"":void 0:(o=a.charCodeAt(i),55296>o||56319<o||i+1===l||56320>(n=a.charCodeAt(i+1))||57343<n?e?a.charAt(i):o:e?a.slice(i,i+2):(o-55296<<10)+(n-56320)+65536)}},stringMultibyte={codeAt:createMethod$1(!1),charAt:createMethod$1(!0)},setGlobal=function(e,t){try{hide(global_1,e,t)}catch(r){global_1[e]=t}return t},isPure=!0,shared=createCommonjsModule(function(e){var t=global_1["__core-js_shared__"]||setGlobal("__core-js_shared__",{});(e.exports=function(e,r){return t[e]||(t[e]=r===void 0?{}:r)})("versions",[]).push({version:"3.1.3",mode:"pure",copyright:"\xA9 2019 Denis Pushkarev (zloirock.ru)"})}),functionToString=shared("native-function-to-string",Function.toString),WeakMap=global_1.WeakMap,nativeWeakMap="function"==typeof WeakMap&&/native code/.test(functionToString.call(WeakMap)),id=0,postfix=Math.random(),uid=function(e){return"Symbol("+((e===void 0?"":e)+"")+")_"+(++id+postfix).toString(36)},keys=shared("keys"),sharedKey=function(e){return keys[e]||(keys[e]=uid(e))},WeakMap$1=global_1.WeakMap,enforce=function(e){return has$1(e)?get(e):set(e,{})},getterFor=function(e){return function(t){var r;if(!isObject(t)||(r=get(t)).type!==e)throw TypeError("Incompatible receiver, "+e+" required");return r}};if(nativeWeakMap){var store=new WeakMap$1,wmget=store.get,wmhas=store.has,wmset=store.set;set=function(e,t){return wmset.call(store,e,t),t},get=function(e){return wmget.call(store,e)||{}},has$1=function(e){return wmhas.call(store,e)}}else{var STATE=sharedKey("state");hiddenKeys[STATE]=!0,set=function(e,t){return hide(e,STATE,t),t},get=function(e){return has(e,STATE)?e[STATE]:{}},has$1=function(e){return has(e,STATE)}}var IteratorPrototype,PrototypeOfArrayIteratorPrototype,arrayIterator,internalState={set:set,get:get,has:has$1,enforce:enforce,getterFor:getterFor},toObject=function(e){return Object(requireObjectCoercible(e))},correctPrototypeGetter=!fails(function(){function e(){}return e.prototype.constructor=null,Object.getPrototypeOf(new e)!==e.prototype}),IE_PROTO=sharedKey("IE_PROTO"),ObjectPrototype=Object.prototype,objectGetPrototypeOf=correctPrototypeGetter?Object.getPrototypeOf:function(e){return e=toObject(e),has(e,IE_PROTO)?e[IE_PROTO]:"function"==typeof e.constructor&&e instanceof e.constructor?e.constructor.prototype:e instanceof Object?ObjectPrototype:null},nativeSymbol=!!Object.getOwnPropertySymbols&&!fails(function(){return!(Symbol()+"")}),Symbol$1=global_1.Symbol,store$1=shared("wks"),wellKnownSymbol=function(e){return store$1[e]||(store$1[e]=nativeSymbol&&Symbol$1[e]||(nativeSymbol?Symbol$1:uid)("Symbol."+e))},ITERATOR=wellKnownSymbol("iterator"),BUGGY_SAFARI_ITERATORS=!1;[].keys&&(arrayIterator=[].keys(),"next"in arrayIterator?(PrototypeOfArrayIteratorPrototype=objectGetPrototypeOf(objectGetPrototypeOf(arrayIterator)),PrototypeOfArrayIteratorPrototype!==Object.prototype&&(IteratorPrototype=PrototypeOfArrayIteratorPrototype)):BUGGY_SAFARI_ITERATORS=!0),IteratorPrototype==null&&(IteratorPrototype={});var iteratorsCore={IteratorPrototype:IteratorPrototype,BUGGY_SAFARI_ITERATORS:BUGGY_SAFARI_ITERATORS},aFunction$1=function(e){return"function"==typeof e?e:void 0},getBuiltIn=function(e,t){return 2>arguments.length?aFunction$1(path[e])||aFunction$1(global_1[e]):path[e]&&path[e][t]||global_1[e]&&global_1[e][t]},html=getBuiltIn("document","documentElement"),IE_PROTO$1=sharedKey("IE_PROTO"),PROTOTYPE="prototype",Empty=function(){},createDict=function(){var e,t=documentCreateElement("iframe"),r=enumBugKeys.length,o="<",n="script",a=">";for(t.style.display="none",html.appendChild(t),t.src="java"+n+":"+"",e=t.contentWindow.document,e.open(),e.write(o+n+a+"document.F=Object"+o+"/"+n+a),e.close(),createDict=e.F;r--;)delete createDict[PROTOTYPE][enumBugKeys[r]];return createDict()},objectCreate=Object.create||function(e,t){var r;return null===e?r=createDict():(Empty[PROTOTYPE]=anObject(e),r=new Empty,Empty[PROTOTYPE]=null,r[IE_PROTO$1]=e),void 0===t?r:objectDefineProperties(r,t)};hiddenKeys[IE_PROTO$1]=!0;var TO_STRING_TAG=wellKnownSymbol("toStringTag"),CORRECT_ARGUMENTS="Arguments"==classofRaw(function(){return arguments}()),tryGet=function(e,t){try{return e[t]}catch(e){}},classof=function(e){var t,r,o;return e===void 0?"Undefined":null===e?"Null":"string"==typeof(r=tryGet(t=Object(e),TO_STRING_TAG))?r:CORRECT_ARGUMENTS?classofRaw(t):"Object"==(o=classofRaw(t))&&"function"==typeof t.callee?"Arguments":o},TO_STRING_TAG$1=wellKnownSymbol("toStringTag"),test={};test[TO_STRING_TAG$1]="z";var objectToString=function(){return"[object "+classof(this)+"]"},defineProperty$2=objectDefineProperty.f,TO_STRING_TAG$2=wellKnownSymbol("toStringTag"),METHOD_REQUIRED=objectToString!=={}.toString,setToStringTag=function(e,t,r,o){if(e){var n=r?e:e.prototype;has(n,TO_STRING_TAG$2)||defineProperty$2(n,TO_STRING_TAG$2,{configurable:!0,value:t}),o&&METHOD_REQUIRED&&hide(n,"toString",objectToString)}},iterators={},IteratorPrototype$1=iteratorsCore.IteratorPrototype,returnThis=function(){return this},createIteratorConstructor=function(e,t,r){var o=t+" Iterator";return e.prototype=objectCreate(IteratorPrototype$1,{next:createPropertyDescriptor(1,r)}),setToStringTag(e,o,!1,!0),iterators[o]=returnThis,e},aPossiblePrototype=function(e){if(!isObject(e)&&null!==e)throw TypeError("Can't set "+(e+" as a prototype"));return e},objectSetPrototypeOf=Object.setPrototypeOf||("__proto__"in{}?function(){var e,t=!1,r={};try{e=Object.getOwnPropertyDescriptor(Object.prototype,"__proto__").set,e.call(r,[]),t=r instanceof Array}catch(e){}return function(r,o){return anObject(r),aPossiblePrototype(o),t?e.call(r,o):r.__proto__=o,r}}():void 0),redefine=function(e,t,r,o){o&&o.enumerable?e[t]=r:hide(e,t,r)},IteratorPrototype$2=iteratorsCore.IteratorPrototype,BUGGY_SAFARI_ITERATORS$1=iteratorsCore.BUGGY_SAFARI_ITERATORS,ITERATOR$1=wellKnownSymbol("iterator"),KEYS="keys",VALUES="values",ENTRIES="entries",returnThis$1=function(){return this},defineIterator=function(e,t,r,o,n,a,i){createIteratorConstructor(r,t,o);var l,c,s,p=function(e){return e===n&&m?m:!BUGGY_SAFARI_ITERATORS$1&&e in y?y[e]:e===KEYS?function(){return new r(this,e)}:e===VALUES?function(){return new r(this,e)}:e===ENTRIES?function(){return new r(this,e)}:function(){return new r(this)}},d=t+" Iterator",u=!1,y=e.prototype,h=y[ITERATOR$1]||y["@@iterator"]||n&&y[n],m=!BUGGY_SAFARI_ITERATORS$1&&h||p(n),g="Array"==t?y.entries||h:h;if(g&&(l=objectGetPrototypeOf(g.call(new e)),IteratorPrototype$2!==Object.prototype&&l.next&&(setToStringTag(l,d,!0,!0),iterators[d]=returnThis$1)),n==VALUES&&h&&h.name!==VALUES&&(u=!0,m=function(){return h.call(this)}),i&&y[ITERATOR$1]!==m&&hide(y,ITERATOR$1,m),iterators[t]=m,n)if(c={values:p(VALUES),keys:a?m:p(KEYS),entries:p(ENTRIES)},i)for(s in c)(BUGGY_SAFARI_ITERATORS$1||u||!(s in y))&&redefine(y,s,c[s]);else _export({target:t,proto:!0,forced:BUGGY_SAFARI_ITERATORS$1||u},c);return c},charAt=stringMultibyte.charAt,STRING_ITERATOR="String Iterator",setInternalState=internalState.set,getInternalState=internalState.getterFor(STRING_ITERATOR);defineIterator(String,"String",function(e){setInternalState(this,{type:STRING_ITERATOR,string:e+"",index:0})},function(){var e,t=getInternalState(this),r=t.string,o=t.index;return o>=r.length?{value:void 0,done:!0}:(e=charAt(r,o),t.index+=e.length,{value:e,done:!1})});var ARRAY_ITERATOR="Array Iterator",setInternalState$1=internalState.set,getInternalState$1=internalState.getterFor("Array Iterator"),es_array_iterator=defineIterator(Array,"Array",function(e,t){setInternalState$1(this,{type:ARRAY_ITERATOR,target:toIndexedObject(e),index:0,kind:t})},function(){var e=getInternalState$1(this),t=e.target,r=e.kind,o=e.index++;return!t||o>=t.length?(e.target=void 0,{value:void 0,done:!0}):"keys"==r?{value:o,done:!1}:"values"==r?{value:t[o],done:!1}:{value:[o,t[o]],done:!1}},"values");iterators.Arguments=iterators.Array;var domIterables={CSSRuleList:0,CSSStyleDeclaration:0,CSSValueList:0,ClientRectList:0,DOMRectList:0,DOMStringList:0,DOMTokenList:1,DataTransferItemList:0,FileList:0,HTMLAllCollection:0,HTMLCollection:0,HTMLFormElement:0,HTMLSelectElement:0,MediaList:0,MimeTypeArray:0,NamedNodeMap:0,NodeList:1,PaintRequestList:0,Plugin:0,PluginArray:0,SVGLengthList:0,SVGNumberList:0,SVGPathSegList:0,SVGPointList:0,SVGStringList:0,SVGTransformList:0,SourceBufferList:0,StyleSheetList:0,TextTrackCueList:0,TextTrackList:0,TouchList:0},TO_STRING_TAG$3=wellKnownSymbol("toStringTag");for(var COLLECTION_NAME in domIterables){var Collection=global_1[COLLECTION_NAME],CollectionPrototype=Collection&&Collection.prototype;CollectionPrototype&&!CollectionPrototype[TO_STRING_TAG$3]&&hide(CollectionPrototype,TO_STRING_TAG$3,COLLECTION_NAME),iterators[COLLECTION_NAME]=iterators.Array}var redefineAll=function(e,t,r){for(var o in t)r&&r.unsafe&&e[o]?e[o]=t[o]:redefine(e,o,t[o],r);return e},SPECIES=wellKnownSymbol("species"),setSpecies=function(e){var t=getBuiltIn(e),r=objectDefineProperty.f;descriptors&&t&&!t[SPECIES]&&r(t,SPECIES,{configurable:!0,get:function(){return this}})},anInstance=function(e,t,r){if(!(e instanceof t))throw TypeError("Incorrect "+(r?r+" ":"")+"invocation");return e},ITERATOR$2=wellKnownSymbol("iterator"),ArrayPrototype=Array.prototype,isArrayIteratorMethod=function(e){return e!==void 0&&(iterators.Array===e||ArrayPrototype[ITERATOR$2]===e)},ITERATOR$3=wellKnownSymbol("iterator"),getIteratorMethod=function(e){if(e!=null)return e[ITERATOR$3]||e["@@iterator"]||iterators[classof(e)]},callWithSafeIterationClosing=function(e,t,r,o){try{return o?t(anObject(r)[0],r[1]):t(r)}catch(t){var n=e["return"];throw void 0!==n&&anObject(n.call(e)),t}},iterate_1=createCommonjsModule(function(e){var t=function(e,t){this.stopped=e,this.result=t},r=e.exports=function(e,r,o,n,a){var i,l,c,s,p,d,u=bindContext(r,o,n?2:1);if(a)i=e;else{if(l=getIteratorMethod(e),"function"!=typeof l)throw TypeError("Target is not iterable");if(isArrayIteratorMethod(l)){for(c=0,s=toLength(e.length);s>c;c++)if(p=n?u(anObject(d=e[c])[0],d[1]):u(e[c]),p&&p instanceof t)return p;return new t(!1)}i=l.call(e)}for(;!(d=i.next()).done;)if(p=callWithSafeIterationClosing(i,u,d.value,n),p&&p instanceof t)return p;return new t(!1)};r.stop=function(e){return new t(!0,e)}}),ITERATOR$4=wellKnownSymbol("iterator"),SAFE_CLOSING=!1;try{var called=0,iteratorWithReturn={next:function(){return{done:!!called++}},return:function(){SAFE_CLOSING=!0}};iteratorWithReturn[ITERATOR$4]=function(){return this},Array.from(iteratorWithReturn,function(){throw 2})}catch(e){}var defer,channel,port,checkCorrectnessOfIteration=function(e,t){if(!t&&!SAFE_CLOSING)return!1;var r=!1;try{var o={};o[ITERATOR$4]=function(){return{next:function(){return{done:r=!0}}}},e(o)}catch(e){}return r},SPECIES$1=wellKnownSymbol("species"),speciesConstructor=function(e,t){var r,o=anObject(e).constructor;return o===void 0||(r=anObject(o)[SPECIES$1])==null?t:aFunction(r)},location=global_1.location,set$1=global_1.setImmediate,clear=global_1.clearImmediate,process=global_1.process,MessageChannel=global_1.MessageChannel,Dispatch=global_1.Dispatch,counter=0,queue={},ONREADYSTATECHANGE="onreadystatechange",run=function(e){if(queue.hasOwnProperty(e)){var t=queue[e];delete queue[e],t()}},runner=function(e){return function(){run(e)}},listener=function(e){run(e.data)},post=function(e){global_1.postMessage(e+"",location.protocol+"//"+location.host)};set$1&&clear||(set$1=function(e){for(var t=[],r=1;arguments.length>r;)t.push(arguments[r++]);return queue[++counter]=function(){("function"==typeof e?e:Function(e)).apply(void 0,t)},defer(counter),counter},clear=function(e){delete queue[e]},"process"==classofRaw(process)?defer=function(e){process.nextTick(runner(e))}:Dispatch&&Dispatch.now?defer=function(e){Dispatch.now(runner(e))}:MessageChannel?(channel=new MessageChannel,port=channel.port2,channel.port1.onmessage=listener,defer=bindContext(port.postMessage,port,1)):!global_1.addEventListener||"function"!=typeof postMessage||global_1.importScripts||fails(post)?ONREADYSTATECHANGE in documentCreateElement("script")?defer=function(e){html.appendChild(documentCreateElement("script"))[ONREADYSTATECHANGE]=function(){html.removeChild(this),run(e)}}:defer=function(e){setTimeout(runner(e),0)}:(defer=post,global_1.addEventListener("message",listener,!1)));var flush,head,last,notify,toggle,node,promise,task={set:set$1,clear:clear},userAgent=getBuiltIn("navigator","userAgent")||"",getOwnPropertyDescriptor$4=objectGetOwnPropertyDescriptor.f,macrotask=task.set,MutationObserver=global_1.MutationObserver||global_1.WebKitMutationObserver,process$1=global_1.process,Promise$1=global_1.Promise,IS_NODE="process"==classofRaw(process$1),queueMicrotaskDescriptor=getOwnPropertyDescriptor$4(global_1,"queueMicrotask"),queueMicrotask=queueMicrotaskDescriptor&&queueMicrotaskDescriptor.value;queueMicrotask||(flush=function(){var e,t;for(IS_NODE&&(e=process$1.domain)&&e.exit();head;){t=head.fn,head=head.next;try{t()}catch(e){throw head?notify():last=void 0,e}}last=void 0,e&&e.enter()},IS_NODE?notify=function(){process$1.nextTick(flush)}:MutationObserver&&!/(iphone|ipod|ipad).*applewebkit/i.test(userAgent)?(toggle=!0,node=document.createTextNode(""),new MutationObserver(flush).observe(node,{characterData:!0}),notify=function(){node.data=toggle=!toggle}):Promise$1&&Promise$1.resolve?(promise=Promise$1.resolve(void 0),notify=function(){promise.then(flush)}):notify=function(){macrotask.call(global_1,flush)});var Internal,OwnPromiseCapability,PromiseWrapper,microtask=queueMicrotask||function(e){var t={fn:e,next:void 0};last&&(last.next=t),head||(head=t,notify()),last=t},PromiseCapability=function(e){var t,r;this.promise=new e(function(e,o){if(t!==void 0||r!==void 0)throw TypeError("Bad Promise constructor");t=e,r=o}),this.resolve=aFunction(t),this.reject=aFunction(r)},f$3=function(e){return new PromiseCapability(e)},newPromiseCapability={f:f$3},promiseResolve=function(e,t){if(anObject(e),isObject(t)&&t.constructor===e)return t;var r=newPromiseCapability.f(e),o=r.resolve;return o(t),r.promise},hostReportErrors=function(e,t){var r=global_1.console;r&&r.error&&(1===arguments.length?r.error(e):r.error(e,t))},perform=function(e){try{return{error:!1,value:e()}}catch(e){return{error:!0,value:e}}},task$1=task.set,SPECIES$2=wellKnownSymbol("species"),PROMISE="Promise",getInternalState$2=internalState.get,setInternalState$2=internalState.set,getInternalPromiseState=internalState.getterFor(PROMISE),PromiseConstructor=global_1[PROMISE],TypeError$1=global_1.TypeError,document$2=global_1.document,process$2=global_1.process,$fetch=global_1.fetch,versions=process$2&&process$2.versions,v8=versions&&versions.v8||"",newPromiseCapability$1=newPromiseCapability.f,newGenericPromiseCapability=newPromiseCapability$1,IS_NODE$1="process"==classofRaw(process$2),DISPATCH_EVENT=!!(document$2&&document$2.createEvent&&global_1.dispatchEvent),UNHANDLED_REJECTION="unhandledrejection",REJECTION_HANDLED="rejectionhandled",PENDING=0,FULFILLED=1,REJECTED=2,HANDLED=1,UNHANDLED=2,FORCED$1=isForced_1(PROMISE,function(){var e=PromiseConstructor.resolve(1),t=function(){},r=(e.constructor={})[SPECIES$2]=function(e){e(t,t)};return!((IS_NODE$1||"function"==typeof PromiseRejectionEvent)&&e["finally"]&&e.then(t)instanceof r&&0!==v8.indexOf("6.6")&&-1===userAgent.indexOf("Chrome/66"))}),INCORRECT_ITERATION=FORCED$1||!checkCorrectnessOfIteration(function(e){PromiseConstructor.all(e)["catch"](function(){})}),isThenable=function(e){var t;return!!(isObject(e)&&"function"==typeof(t=e.then))&&t},notify$1=function(e,t,r){if(!t.notified){t.notified=!0;var o=t.reactions;microtask(function(){for(var n=t.value,a=t.state==FULFILLED,i=0;o.length>i;){var l,c,s,p=o[i++],d=a?p.ok:p.fail,u=p.resolve,y=p.reject,h=p.domain;try{d?(!a&&(t.rejection===UNHANDLED&&onHandleUnhandled(e,t),t.rejection=HANDLED),!0===d?l=n:(h&&h.enter(),l=d(n),h&&(h.exit(),s=!0)),l===p.promise?y(TypeError$1("Promise-chain cycle")):(c=isThenable(l))?c.call(l,u,y):u(l)):y(n)}catch(e){h&&!s&&h.exit(),y(e)}}t.reactions=[],t.notified=!1,r&&!t.rejection&&onUnhandled(e,t)})}},dispatchEvent=function(e,t,r){var o,n;DISPATCH_EVENT?(o=document$2.createEvent("Event"),o.promise=t,o.reason=r,o.initEvent(e,!1,!0),global_1.dispatchEvent(o)):o={promise:t,reason:r},(n=global_1["on"+e])?n(o):e===UNHANDLED_REJECTION&&hostReportErrors("Unhandled promise rejection",r)},onUnhandled=function(e,t){task$1.call(global_1,function(){var r,o=t.value,n=isUnhandled(t);if(n&&(r=perform(function(){IS_NODE$1?process$2.emit("unhandledRejection",o,e):dispatchEvent(UNHANDLED_REJECTION,e,o)}),t.rejection=IS_NODE$1||isUnhandled(t)?UNHANDLED:HANDLED,r.error))throw r.value})},isUnhandled=function(e){return e.rejection!==HANDLED&&!e.parent},onHandleUnhandled=function(e,t){task$1.call(global_1,function(){IS_NODE$1?process$2.emit("rejectionHandled",e):dispatchEvent(REJECTION_HANDLED,e,t.value)})},bind=function(e,t,r,o){return function(n){e(t,r,n,o)}},internalReject=function(e,t,r,o){t.done||(t.done=!0,o&&(t=o),t.value=r,t.state=REJECTED,notify$1(e,t,!0))},internalResolve=function(e,t,r,o){if(!t.done){t.done=!0,o&&(t=o);try{if(e===r)throw TypeError$1("Promise can't be resolved itself");var n=isThenable(r);n?microtask(function(){var o={done:!1};try{n.call(r,bind(internalResolve,e,o,t),bind(internalReject,e,o,t))}catch(r){internalReject(e,o,r,t)}}):(t.value=r,t.state=FULFILLED,notify$1(e,t,!1))}catch(r){internalReject(e,{done:!1},r,t)}}};FORCED$1&&(PromiseConstructor=function(e){anInstance(this,PromiseConstructor,PROMISE),aFunction(e),Internal.call(this);var t=getInternalState$2(this);try{e(bind(internalResolve,this,t),bind(internalReject,this,t))}catch(e){internalReject(this,t,e)}},Internal=function(){setInternalState$2(this,{type:PROMISE,done:!1,notified:!1,parent:!1,reactions:[],rejection:!1,state:PENDING,value:void 0})},Internal.prototype=redefineAll(PromiseConstructor.prototype,{then:function(e,t){var r=getInternalPromiseState(this),o=newPromiseCapability$1(speciesConstructor(this,PromiseConstructor));return o.ok="function"!=typeof e||e,o.fail="function"==typeof t&&t,o.domain=IS_NODE$1?process$2.domain:void 0,r.parent=!0,r.reactions.push(o),r.state!=PENDING&&notify$1(this,r,!1),o.promise},catch:function(e){return this.then(void 0,e)}}),OwnPromiseCapability=function(){var e=new Internal,t=getInternalState$2(e);this.promise=e,this.resolve=bind(internalResolve,e,t),this.reject=bind(internalReject,e,t)},newPromiseCapability.f=newPromiseCapability$1=function(e){return e===PromiseConstructor||e===PromiseWrapper?new OwnPromiseCapability(e):newGenericPromiseCapability(e)}),_export({global:!0,wrap:!0,forced:FORCED$1},{Promise:PromiseConstructor}),setToStringTag(PromiseConstructor,PROMISE,!1,!0),setSpecies(PROMISE),PromiseWrapper=path[PROMISE],_export({target:PROMISE,stat:!0,forced:FORCED$1},{reject:function(e){var t=newPromiseCapability$1(this);return t.reject.call(void 0,e),t.promise}}),_export({target:PROMISE,stat:!0,forced:isPure},{resolve:function(e){return promiseResolve(this===PromiseWrapper?PromiseConstructor:this,e)}}),_export({target:PROMISE,stat:!0,forced:INCORRECT_ITERATION},{all:function(e){var t=this,r=newPromiseCapability$1(t),o=r.resolve,n=r.reject,a=perform(function(){var r=aFunction(t.resolve),a=[],i=0,l=1;iterate_1(e,function(e){var c=i++,s=!1;a.push(void 0),l++,r.call(t,e).then(function(e){s||(s=!0,a[c]=e,--l||o(a))},n)}),--l||o(a)});return a.error&&n(a.value),r.promise},race:function(e){var t=this,r=newPromiseCapability$1(t),o=r.reject,n=perform(function(){var n=aFunction(t.resolve);iterate_1(e,function(e){n.call(t,e).then(r.resolve,o)})});return n.error&&o(n.value),r.promise}}),_export({target:"Promise",proto:!0,real:!0},{finally:function(t){var r=speciesConstructor(this,getBuiltIn("Promise")),e="function"==typeof t;return this.then(e?function(e){return promiseResolve(r,t()).then(function(){return e})}:t,e?function(o){return promiseResolve(r,t()).then(function(){throw o})}:t)}});var promise$1=path.Promise,promise$2=promise$1,promise$3=promise$2,isArray=Array.isArray||function(e){return"Array"==classofRaw(e)},SPECIES$3=wellKnownSymbol("species"),arraySpeciesCreate=function(e,t){var r;return isArray(e)&&(r=e.constructor,"function"==typeof r&&(r===Array||isArray(r.prototype))?r=void 0:isObject(r)&&(r=r[SPECIES$3],null===r&&(r=void 0))),new(void 0===r?Array:r)(0===t?0:t)},push=[].push,createMethod$2=function(e){var t=1==e,r=4==e,o=6==e;return function(n,a,i,l){for(var c,s,p=toObject(n),d=indexedObject(p),u=bindContext(a,i,3),y=toLength(d.length),h=0,m=l||arraySpeciesCreate,g=t?m(n,y):2==e?m(n,0):void 0;y>h;h++)if((5==e||o||h in d)&&(c=d[h],s=u(c,h,p),e))if(t)g[h]=s;else if(s)switch(e){case 3:return!0;case 5:return c;case 6:return h;case 2:push.call(g,c);}else if(r)return!1;return o?-1:3==e||r?r:g}},arrayIteration={forEach:createMethod$2(0),map:createMethod$2(1),filter:createMethod$2(2),some:createMethod$2(3),every:createMethod$2(4),find:createMethod$2(5),findIndex:createMethod$2(6)},sloppyArrayMethod=function(e,t){var r=[][e];return!r||!fails(function(){r.call(null,t||function(){throw 1},1)})},$forEach=arrayIteration.forEach,arrayForEach=sloppyArrayMethod("forEach")?function(e){return $forEach(this,e,1<arguments.length?arguments[1]:void 0)}:[].forEach;_export({target:"Array",proto:!0,forced:[].forEach!=arrayForEach},{forEach:arrayForEach});var entryVirtual=function(e){return path[e+"Prototype"]},forEach=entryVirtual("Array").forEach,forEach$1=forEach,ArrayPrototype$1=Array.prototype,DOMIterables={DOMTokenList:!0,NodeList:!0},forEach_1=function(e){var t=e.forEach;return e===ArrayPrototype$1||e instanceof Array&&t===ArrayPrototype$1.forEach||DOMIterables.hasOwnProperty(classof(e))?forEach$1:t},forEach$2=forEach_1;function noop(){}var _default=function(){function e(){_classCallCheck(this,e),_defineProperty(this,"method","GET"),_defineProperty(this,"responseType","text"),_defineProperty(this,"onreadystatechange",noop),_defineProperty(this,"abort",noop),_defineProperty(this,"event",{}),_defineProperty(this,"header",{Accept:"*/*"})}return _createClass(e,[{key:"open",value:function(e,t){this.method=e,this.url=t}},{key:"setRequestHeader",value:function(e,t){this.header[e]=t}},{key:"addEventListener",value:function(e,t){this.event[e]=this.event[e]||[],this.event[e].push(t)}},{key:"emit",value:function(e){var t=this,r=this.event[e];r&&forEach$2(r).call(r,function(e){e.call(t,{target:t})})}},{key:"readFile",value:function(e,t){return new promise$3(function(r,o){var n=wx.getFileSystemManager();n.readFile({encoding:t,filePath:e,success:function(e){return r(e.data)},fail:o})})}},{key:"send",value:function(){var e=_asyncToGenerator(regenerator.mark(function e(t){var r=this;return regenerator.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(this.url.match(/^https?/)){e.next=10;break}return this.readyState=4,this.status=200,e.next=5,this.readFile(this.url,"arraybuffer"===this.responseType?this.responseType:"utf-8");case 5:this.responseText=this.response=e.sent,this.emit("readystatechange"),this.emit("load"),e.next=11;break;case 10:wx.request({data:t,url:this.url,header:this.header,method:this.method,dataType:"raw",responseType:this.responseType,success:function(e){r.readyState=4,r.status=e.statusCode,r.responseText=r.response=e.data,r.emit("load"),r.emit("readystatechange")},fail:function(e){r.readyState=4,r.status=e.statusCode,r.emit("error"),r.emit("readystatechange")}});case 11:case"end":return e.stop();}},e,this)}));return function(){return e.apply(this,arguments)}}()}]),e}(),createProperty=function(e,t,r){var o=toPrimitive(t);o in e?objectDefineProperty.f(e,o,createPropertyDescriptor(0,r)):e[o]=r},SPECIES$4=wellKnownSymbol("species"),arrayMethodHasSpeciesSupport=function(e){return!fails(function(){var t=[],r=t.constructor={};return r[SPECIES$4]=function(){return{foo:1}},1!==t[e](Boolean).foo})},max$1=Math.max,min$2=Math.min,MAX_SAFE_INTEGER=9007199254740991,MAXIMUM_ALLOWED_LENGTH_EXCEEDED="Maximum allowed length exceeded";_export({target:"Array",proto:!0,forced:!arrayMethodHasSpeciesSupport("splice")},{splice:function(e,t){var r,o,n,a,i,l,c=toObject(this),s=toLength(c.length),p=toAbsoluteIndex(e,s),d=arguments.length;if(0===d?r=o=0:1===d?(r=0,o=s-p):(r=d-2,o=min$2(max$1(toInteger(t),0),s-p)),s+r-o>MAX_SAFE_INTEGER)throw TypeError(MAXIMUM_ALLOWED_LENGTH_EXCEEDED);for(n=arraySpeciesCreate(c,o),a=0;a<o;a++)i=p+a,i in c&&createProperty(n,a,c[i]);if(n.length=o,r<o){for(a=p;a<s-o;a++)i=a+o,l=a+r,i in c?c[l]=c[i]:delete c[l];for(a=s;a>s-o+r;a--)delete c[a-1]}else if(r>o)for(a=s-o;a>p;a--)i=a+o-1,l=a+r-1,i in c?c[l]=c[i]:delete c[l];for(a=0;a<r;a++)c[a+p]=arguments[a+2];return c.length=s-o+r,n}});var splice=entryVirtual("Array").splice,ArrayPrototype$2=Array.prototype,splice_1=function(e){var t=e.splice;return e===ArrayPrototype$2||e instanceof Array&&t===ArrayPrototype$2.splice?splice:t},splice$1=splice_1,splice$2=splice$1,$indexOf=arrayIncludes.indexOf,nativeIndexOf=[].indexOf,NEGATIVE_ZERO=!!nativeIndexOf&&0>1/[1].indexOf(1,-0),SLOPPY_METHOD=sloppyArrayMethod("indexOf");_export({target:"Array",proto:!0,forced:NEGATIVE_ZERO||SLOPPY_METHOD},{indexOf:function(e){return NEGATIVE_ZERO?nativeIndexOf.apply(this,arguments)||0:$indexOf(this,e,1<arguments.length?arguments[1]:void 0)}});var indexOf$1=entryVirtual("Array").indexOf,ArrayPrototype$3=Array.prototype,indexOf_1=function(e){var t=e.indexOf;return e===ArrayPrototype$3||e instanceof Array&&t===ArrayPrototype$3.indexOf?indexOf$1:t},indexOf$2=indexOf_1,indexOf$3=indexOf$2,stack={},document$3={body:new Element("body"),addEventListener:function(e,t){stack[e]=stack[e]||[],stack[e].push(t)},removeEventListener:function(e,t){if(stack[e]&&stack[e].length){var r,o,n=indexOf$3(r=stack[e]).call(r,t);-1!==n&&splice$2(o=stack[e]).call(o,n)}},dispatch:function(e){var t=stack[e.type];t&&forEach$2(t).call(t,function(t){return t(e)})},createElement:function(e){return"canvas"===e?new Canvas:"img"===e?new Image:new Element}},navigator={language:"zh-cn",appVersion:"5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36",userAgent:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36",onLine:!0},TouchEvent=function e(t){_classCallCheck(this,e),_defineProperty(this,"preventDefault",noop),_defineProperty(this,"stopPropagation",noop),_defineProperty(this,"target",canvas),_defineProperty(this,"currentTarget",canvas),this.type=t};function factory(e){return function(t){var r=new TouchEvent(e);r.touches=r.targetTouches=t.touches,r.changedTouches=t.changedTouches,r.timeStamp=t.timeStamp,document$3.dispatch(r)}}wx.onTouchStart(factory("touchstart")),wx.onTouchMove(factory("touchmove")),wx.onTouchEnd(factory("touchend")),wx.onTouchCancel(factory("touchcancel"));var location$1={origin:"",href:""},localStorage={getItem:function(e){return wx.getStorageSync(e)},setItem:function(e,t){return wx.setStorageSync(e,t)},clear:function(){wx.clearStorageSync()}},_wx$getSystemInfoSync=wx.getSystemInfoSync(),platform=_wx$getSystemInfoSync.platform;if(GameGlobal.canvas=canvas,canvas.addEventListener=document$3.addEventListener,canvas.removeEventListener=document$3.removeEventListener,"devtools"===platform){var _Object$definePropert;for(var key in defineProperties$1(window,(_Object$definePropert={TouchEvent:{value:TouchEvent},Image:{value:Image},ontouchstart:{value:noop},addEventListener:{value:noop},localStorage:{value:localStorage},HTMLImageElement:{value:HTMLImageElement},HTMLCanvasElement:{value:HTMLCanvasElement},HTMLVideoElement:{value:HTMLVideoElement},Element:{value:Element}},_defineProperty(_Object$definePropert,"Image",{value:Image}),_defineProperty(_Object$definePropert,"XMLHttpRequest",{value:_default}),_Object$definePropert)),document$3){var desc=getOwnPropertyDescriptor$3(window.document,key);(!desc||desc.configurable)&&defineProperty$1(window.document,key,{value:document$3[key]})}}else GameGlobal.TouchEvent=TouchEvent,GameGlobal.Image=Image,GameGlobal.ontouchstart=noop,GameGlobal.navigator=navigator,GameGlobal.document=document$3,GameGlobal.addEventListener=noop,GameGlobal.removeEventListener=noop,GameGlobal.location=location$1,GameGlobal.localStorage=localStorage,GameGlobal.HTMLImageElement=HTMLImageElement,GameGlobal.HTMLCanvasElement=HTMLCanvasElement,GameGlobal.HTMLVideoElement=HTMLVideoElement,GameGlobal.XMLHttpRequest=_default,GameGlobal.window=GameGlobal;
+//# sourceMappingURL=wechat-adapter.es.js.map
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -942,8 +169,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /*!
- * @pixi/accessibility - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/accessibility - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/accessibility is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -1483,6 +710,8 @@ AccessibilityManager.prototype._onClick = function _onClick (e)
     var interactionManager = this.renderer.plugins.interaction;
 
     interactionManager.dispatchEvent(e.target.displayObject, 'click', interactionManager.eventData);
+    interactionManager.dispatchEvent(e.target.displayObject, 'pointertap', interactionManager.eventData);
+    interactionManager.dispatchEvent(e.target.displayObject, 'tap', interactionManager.eventData);
 };
 
 /**
@@ -1600,8 +829,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/app - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/app - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/app is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -1854,8 +1083,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TYPES", function() { return TYPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAP_MODES", function() { return WRAP_MODES; });
 /*!
- * @pixi/constants - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/constants - v5.1.0
+ * Compiled Fri, 19 Jul 2019 21:54:36 UTC
  *
  * @pixi/constants is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -2194,18 +1423,21 @@ var PRECISION = {
 /*!************************************************!*\
   !*** ./node_modules/@pixi/core/lib/core.es.js ***!
   \************************************************/
-/*! exports provided: AbstractRenderer, Attribute, BaseRenderTexture, BaseTexture, BatchDrawCall, BatchGeometry, BatchRenderer, Buffer, CubeTexture, Filter, Framebuffer, GLProgram, GLTexture, Geometry, ObjectRenderer, Program, Quad, QuadUv, RenderTexture, Renderer, Shader, SpriteMaskFilter, State, System, Texture, TextureMatrix, TextureUvs, UniformGroup, autoDetectRenderer, checkMaxIfStatementsInShader, defaultFilterVertex, defaultVertex, generateMultiTextureShader, resources, systems */
+/*! exports provided: AbstractBatchRenderer, AbstractRenderer, Attribute, BaseRenderTexture, BaseTexture, BatchDrawCall, BatchGeometry, BatchPluginFactory, BatchRenderer, BatchShaderGenerator, Buffer, CubeTexture, Filter, Framebuffer, GLProgram, GLTexture, Geometry, ObjectRenderer, Program, Quad, QuadUv, RenderTexture, RenderTexturePool, Renderer, Shader, SpriteMaskFilter, State, System, Texture, TextureMatrix, TextureUvs, UniformGroup, ViewableBuffer, autoDetectRenderer, checkMaxIfStatementsInShader, defaultFilterVertex, defaultVertex, resources, systems */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbstractBatchRenderer", function() { return AbstractBatchRenderer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbstractRenderer", function() { return AbstractRenderer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Attribute", function() { return Attribute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseRenderTexture", function() { return BaseRenderTexture; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseTexture", function() { return BaseTexture; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchDrawCall", function() { return BatchDrawCall; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchGeometry", function() { return BatchGeometry; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchPluginFactory", function() { return BatchPluginFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchRenderer", function() { return BatchRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchShaderGenerator", function() { return BatchShaderGenerator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Buffer", function() { return Buffer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CubeTexture", function() { return CubeTexture; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Filter", function() { return Filter; });
@@ -2218,6 +1450,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Quad", function() { return Quad; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuadUv", function() { return QuadUv; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderTexture", function() { return RenderTexture; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderTexturePool", function() { return RenderTexturePool; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Renderer", function() { return Renderer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Shader", function() { return Shader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpriteMaskFilter", function() { return SpriteMaskFilter; });
@@ -2227,11 +1460,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextureMatrix", function() { return TextureMatrix; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextureUvs", function() { return TextureUvs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UniformGroup", function() { return UniformGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewableBuffer", function() { return ViewableBuffer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "autoDetectRenderer", function() { return autoDetectRenderer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkMaxIfStatementsInShader", function() { return checkMaxIfStatementsInShader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultFilterVertex", function() { return defaultFilter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultVertex", function() { return _default; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateMultiTextureShader", function() { return generateMultiTextureShader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resources", function() { return index; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "systems", function() { return systems; });
 /* harmony import */ var _pixi_runner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/runner */ "./node_modules/@pixi/runner/lib/runner.es.js");
@@ -2242,8 +1475,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /*!
- * @pixi/core - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/core - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/core is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -2890,10 +2123,10 @@ var INSTALLED = [];
  *        or any other resource that can be auto-detected. If not resource is
  *        detected, it's assumed to be an ImageResource.
  * @param {object} [options] - Pass-through options to use for Resource
- * @param {number} [options.width] - BufferResource's width
- * @param {number} [options.height] - BufferResource's height
+ * @param {number} [options.width] - Width of BufferResource or SVG rasterization
+ * @param {number} [options.height] - Height of BufferResource or SVG rasterization
  * @param {boolean} [options.autoLoad=true] - Image, SVG and Video flag to start loading
- * @param {number} [options.scale=1] - SVG source scale
+ * @param {number} [options.scale=1] - SVG source scale. Overridden by width, height
  * @param {boolean} [options.createBitmap=PIXI.settings.CREATE_IMAGE_BITMAP] - Image option to create Bitmap object
  * @param {boolean} [options.crossorigin=true] - Image and Video option to set crossOrigin
  * @param {boolean} [options.autoPlay=true] - Video option to start playing video immediately
@@ -3005,26 +2238,15 @@ var BufferResource = /*@__PURE__*/(function (Resource) {
             glTexture.width = baseTexture.width;
             glTexture.height = baseTexture.height;
 
-            var internalFormat = baseTexture.format;
-
-            // guess sized format by type and format
-            // https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D
-            if (renderer.context.webGLVersion === 2
-                && baseTexture.type === renderer.gl.FLOAT
-                && baseTexture.format === renderer.gl.RGBA)
-            {
-                internalFormat = renderer.gl.RGBA32F;
-            }
-
             gl.texImage2D(
                 baseTexture.target,
                 0,
-                internalFormat,
+                glTexture.internalFormat,
                 baseTexture.width,
                 baseTexture.height,
                 0,
                 baseTexture.format,
-                baseTexture.type,
+                glTexture.type,
                 this.data
             );
         }
@@ -3077,6 +2299,7 @@ var defaultBufferOptions = {
  *        into a Resource.
  * @param {Object} [options] - Collection of options
  * @param {PIXI.MIPMAP_MODES} [options.mipmap=PIXI.settings.MIPMAP_TEXTURES] - If mipmapping is enabled for texture
+ * @param {number} [options.anisotropicLevel=PIXI.settings.ANISOTROPIC_LEVEL] - Anisotropic filtering level of texture
  * @param {PIXI.WRAP_MODES} [options.wrapMode=PIXI.settings.WRAP_MODE] - Wrap mode for textures
  * @param {PIXI.SCALE_MODES} [options.scaleMode=PIXI.settings.SCALE_MODE] - Default scale mode, linear, nearest
  * @param {PIXI.FORMATS} [options.format=PIXI.FORMATS.RGBA] - GL format type
@@ -3085,6 +2308,7 @@ var defaultBufferOptions = {
  * @param {boolean} [options.premultiplyAlpha=true] - Pre multiply the image alpha
  * @param {number} [options.width=0] - Width of the texture
  * @param {number} [options.height=0] - Height of the texture
+ * @param {number} [options.resolution] - Resolution of the base texture
  * @param {object} [options.resourceOptions] - Optional resource options,
  *        see {@link PIXI.resources.autoDetectResource autoDetectResource}
  */
@@ -3100,6 +2324,7 @@ var BaseTexture = /*@__PURE__*/(function (EventEmitter) {
 
         var premultiplyAlpha = options.premultiplyAlpha;
         var mipmap = options.mipmap;
+        var anisotropicLevel = options.anisotropicLevel;
         var scaleMode = options.scaleMode;
         var width = options.width;
         var height = options.height;
@@ -3148,6 +2373,14 @@ var BaseTexture = /*@__PURE__*/(function (EventEmitter) {
          * @default PIXI.settings.MIPMAP_TEXTURES
          */
         this.mipmap = mipmap !== undefined ? mipmap : _pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].MIPMAP_TEXTURES;
+
+        /**
+         * Anisotropic filtering level of texture
+         *
+         * @member {number}
+         * @default PIXI.settings.ANISOTROPIC_LEVEL
+         */
+        this.anisotropicLevel = anisotropicLevel !== undefined ? anisotropicLevel : _pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].ANISOTROPIC_LEVEL;
 
         /**
          * How the texture wraps
@@ -3232,8 +2465,9 @@ var BaseTexture = /*@__PURE__*/(function (EventEmitter) {
 
         /**
          * Used by TextureSystem to only update texture to the GPU when needed.
+         * Please call `update()` to increment it.
          *
-         * @protected
+         * @readonly
          * @member {number}
          */
         this.dirtyId = 0;
@@ -3360,7 +2594,7 @@ var BaseTexture = /*@__PURE__*/(function (EventEmitter) {
      */
     prototypeAccessors.realWidth.get = function ()
     {
-        return this.width * this.resolution;
+        return Math.ceil((this.width * this.resolution) - 1e-4);
     };
 
     /**
@@ -3371,7 +2605,7 @@ var BaseTexture = /*@__PURE__*/(function (EventEmitter) {
      */
     prototypeAccessors.realHeight.get = function ()
     {
-        return this.height * this.resolution;
+        return Math.ceil((this.height * this.resolution) - 1e-4);
     };
 
     /**
@@ -3972,6 +3206,10 @@ var ArrayResource = /*@__PURE__*/(function (Resource) {
 }(Resource));
 
 /**
+ * @interface OffscreenCanvas
+ */
+
+/**
  * Resource type for HTMLCanvasElement.
  * @class
  * @extends PIXI.resources.BaseImageResource
@@ -3989,7 +3227,15 @@ var CanvasResource = /*@__PURE__*/(function (BaseImageResource) {
 
     CanvasResource.test = function test (source)
     {
-        return (source instanceof HTMLCanvasElement);
+        var OffscreenCanvas = window.OffscreenCanvas;
+
+        // Check for browsers that don't yet support OffscreenCanvas
+        if (OffscreenCanvas && source instanceof OffscreenCanvas)
+        {
+            return true;
+        }
+
+        return source instanceof HTMLCanvasElement;
     };
 
     return CanvasResource;
@@ -4093,7 +3339,9 @@ CubeResource.SIDES = 6;
  * @memberof PIXI.resources
  * @param {string} source - Base64 encoded SVG element or URL for SVG file.
  * @param {object} [options] - Options to use
- * @param {number} [options.scale=1] Scale to apply to SVG.
+ * @param {number} [options.scale=1] Scale to apply to SVG. Overridden by...
+ * @param {number} [options.width] Rasterize SVG this wide. Aspect ratio preserved if height not specified.
+ * @param {number} [options.height] Rasterize SVG this high. Aspect ratio preserved if width not specified.
  * @param {boolean} [options.autoLoad=true] Start loading right away.
  */
 var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
@@ -4102,6 +3350,8 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
         options = options || {};
 
         BaseImageResource.call(this, document.createElement('canvas'));
+        this._width = 0;
+        this._height = 0;
 
         /**
          * Base64 encoded SVG element or URL for SVG file
@@ -4111,11 +3361,25 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
         this.svg = source;
 
         /**
-         * The source scale to apply to render
+         * The source scale to apply when rasterizing on load
          * @readonly
          * @member {number}
          */
         this.scale = options.scale || 1;
+
+        /**
+         * A width override for rasterization on load
+         * @readonly
+         * @member {number}
+         */
+        this._overrideWidth = options.width;
+
+        /**
+         * A height override for rasterization on load
+         * @readonly
+         * @member {number}
+         */
+        this._overrideHeight = options.height;
 
         /**
          * Call when completely loaded
@@ -4123,6 +3387,13 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
          * @member {function}
          */
         this._resolve = null;
+
+        /**
+         * Cross origin value to use
+         * @private
+         * @member {boolean|string}
+         */
+        this._crossorigin = options.crossorigin;
 
         /**
          * Promise when loading
@@ -4161,122 +3432,53 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
             // Convert SVG inline string to data-uri
             if ((/^\<svg/).test(this$1.svg.trim()))
             {
-                this$1.svg = "data:image/svg+xml;utf8," + (this$1.svg);
+                if (!btoa)
+                {
+                    throw new Error('Your browser doesn\'t support base64 conversions.');
+                }
+                this$1.svg = "data:image/svg+xml;base64," + (btoa(unescape(encodeURIComponent(this$1.svg))));
             }
 
-            // Checks if `source` is an SVG image and whether it's
-            // loaded via a URL or a data URI. Then calls
-            // `_loadDataUri` or `_loadXhr`.
-            var dataUri = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["decomposeDataUri"])(this$1.svg);
-
-            if (dataUri)
-            {
-                this$1._loadDataUri(dataUri);
-            }
-            else
-            {
-                // We got an URL, so we need to do an XHR to check the svg size
-                this$1._loadXhr();
-            }
+            this$1._loadSvg();
         });
 
         return this._load;
     };
 
     /**
-     * Reads an SVG string from data URI and then calls `_loadString`.
-     *
-     * @param {string} dataUri - The data uri to load from.
-     */
-    SVGResource.prototype._loadDataUri = function _loadDataUri (dataUri)
-    {
-        var svgString;
-
-        if (dataUri.encoding === 'base64')
-        {
-            if (!atob)
-            {
-                throw new Error('Your browser doesn\'t support base64 conversions.');
-            }
-            svgString = atob(dataUri.data);
-        }
-        else
-        {
-            svgString = dataUri.data;
-        }
-
-        this._loadString(svgString);
-    };
-
-    /**
-     * Loads an SVG string from `imageUrl` using XHR and then calls `_loadString`.
+     * Loads an SVG image from `imageUrl` or `data URL`.
      *
      * @private
      */
-    SVGResource.prototype._loadXhr = function _loadXhr ()
+    SVGResource.prototype._loadSvg = function _loadSvg ()
     {
         var this$1 = this;
-
-        var svgXhr = new XMLHttpRequest();
-
-        // This throws error on IE, so SVG Document can't be used
-        // svgXhr.responseType = 'document';
-
-        // This is not needed since we load the svg as string (breaks IE too)
-        // but overrideMimeType() can be used to force the response to be parsed as XML
-        // svgXhr.overrideMimeType('image/svg+xml');
-
-        svgXhr.onload = function () {
-            if (svgXhr.readyState !== svgXhr.DONE || svgXhr.status !== 200)
-            {
-                throw new Error('Failed to load SVG using XHR.');
-            }
-
-            this$1._loadString(svgXhr.response);
-        };
-
-        // svgXhr.onerror = () => this.emit('error', this);
-
-        svgXhr.open('GET', this.svg, true);
-        svgXhr.send();
-    };
-
-    /**
-     * Loads texture using an SVG string. The original SVG Image is stored as `origSource` and the
-     * created canvas is the new `source`. The SVG is scaled using `sourceScale`. Called by
-     * `_loadXhr` or `_loadDataUri`.
-     *
-     * @private
-     * @param  {string} svgString SVG source as string
-     *
-     * @fires loaded
-     */
-    SVGResource.prototype._loadString = function _loadString (svgString)
-    {
-        var this$1 = this;
-
-        var svgSize = SVGResource.getSize(svgString);
 
         var tempImage = new Image();
 
-        tempImage.src = "data:image/svg+xml," + svgString;
-
-        tempImage.onerror = function () {
-            throw new Error(("Unable to load image from: " + (tempImage.src)));
-        };
+        BaseImageResource.crossOrigin(tempImage, this.svg, this._crossorigin);
+        tempImage.src = this.svg;
 
         tempImage.onload = function () {
-            var svgWidth = svgSize.width;
-            var svgHeight = svgSize.height;
+            var svgWidth = tempImage.width;
+            var svgHeight = tempImage.height;
 
             if (!svgWidth || !svgHeight)
             {
                 throw new Error('The SVG image must have width and height defined (in pixels), canvas API needs them.');
             }
 
-            // Scale realWidth and realHeight
-            var width = Math.round(svgWidth * this$1.scale);
-            var height = Math.round(svgHeight * this$1.scale);
+            // Set render size
+            var width = svgWidth * this$1.scale;
+            var height = svgHeight * this$1.scale;
+
+            if (this$1._overrideWidth || this$1._overrideHeight)
+            {
+                width = this$1._overrideWidth || this$1._overrideHeight / svgHeight * svgWidth;
+                height = this$1._overrideHeight || this$1._overrideWidth / svgWidth * svgHeight;
+            }
+            width = Math.round(width);
+            height = Math.round(height);
 
             // Create a canvas element
             var canvas = this$1.source;
@@ -4296,20 +3498,11 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
     };
 
     /**
-     * Typedef for Size object.
-     *
-     * @memberof PIXI.resources.SVGResource
-     * @typedef {object} Size
-     * @property {number} width - Width component
-     * @property {number} height - Height component
-     */
-
-    /**
      * Get size from an svg string using regexp.
      *
      * @method
      * @param {string} svgString - a serialized svg element
-     * @return {PIXI.resources.SVGResource.Size} image extension
+     * @return {PIXI.ISize} image extension
      */
     SVGResource.getSize = function getSize (svgString)
     {
@@ -4333,6 +3526,7 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
     {
         BaseImageResource.prototype.dispose.call(this);
         this._resolve = null;
+        this._crossorigin = null;
     };
 
     /**
@@ -4347,7 +3541,9 @@ var SVGResource = /*@__PURE__*/(function (BaseImageResource) {
         // url file extension is SVG
         return extension === 'svg'
             // source is SVG data-uri
-            || (typeof source === 'string' && source.indexOf('data:image/svg+xml') === 0);
+            || (typeof source === 'string' && source.indexOf('data:image/svg+xml;base64') === 0)
+            // source is SVG inline
+            || (typeof source === 'string' && source.indexOf('<svg') === 0);
     };
 
     return SVGResource;
@@ -4730,8 +3926,33 @@ var VideoResource = /*@__PURE__*/(function (BaseImageResource) {
  */
 VideoResource.TYPES = ['mp4', 'm4v', 'webm', 'ogg', 'ogv', 'h264', 'avi', 'mov'];
 
+/**
+ * Resource type for ImageBitmap.
+ * @class
+ * @extends PIXI.resources.BaseImageResource
+ * @memberof PIXI.resources
+ * @param {ImageBitmap} source - Image element to use
+ */
+var ImageBitmapResource = /*@__PURE__*/(function (BaseImageResource) {
+    function ImageBitmapResource () {
+        BaseImageResource.apply(this, arguments);
+    }
+
+    if ( BaseImageResource ) ImageBitmapResource.__proto__ = BaseImageResource;
+    ImageBitmapResource.prototype = Object.create( BaseImageResource && BaseImageResource.prototype );
+    ImageBitmapResource.prototype.constructor = ImageBitmapResource;
+
+    ImageBitmapResource.test = function test (source)
+    {
+        return !!window.createImageBitmap && source instanceof ImageBitmap;
+    };
+
+    return ImageBitmapResource;
+}(BaseImageResource));
+
 INSTALLED.push(
     ImageResource,
+    ImageBitmapResource,
     CanvasResource,
     VideoResource,
     SVGResource,
@@ -4748,6 +3969,7 @@ var index = ({
     CanvasResource: CanvasResource,
     CubeResource: CubeResource,
     ImageResource: ImageResource,
+    ImageBitmapResource: ImageBitmapResource,
     SVGResource: SVGResource,
     VideoResource: VideoResource,
     Resource: Resource,
@@ -4769,18 +3991,6 @@ var System = function System(renderer)
      * @member {PIXI.Renderer}
      */
     this.renderer = renderer;
-
-    this.renderer.runners.contextChange.add(this);
-};
-
-/**
- * Generic method called when there is a WebGL context change.
- *
- * @param {WebGLRenderingContext} gl new webgl context
- */
-System.prototype.contextChange = function contextChange (gl) // eslint-disable-line no-unused-vars
-{
-    // do some codes init!
 };
 
 /**
@@ -4788,7 +3998,6 @@ System.prototype.contextChange = function contextChange (gl) // eslint-disable-l
  */
 System.prototype.destroy = function destroy ()
 {
-    this.renderer.runners.contextChange.remove(this);
     this.renderer = null;
 };
 
@@ -5146,15 +4355,22 @@ var BaseRenderTexture = /*@__PURE__*/(function (BaseTexture) {
         BaseTexture.prototype.destroy.call(this, true);
 
         this.framebuffer = null;
-
-        this.renderer = null;
     };
 
     return BaseRenderTexture;
 }(BaseTexture));
 
 /**
- * A standard object to store the Uvs of a texture
+ * Stores a texture's frame in UV coordinates, in
+ * which everything lies in the rectangle `[(0,0), (1,0),
+ * (1,1), (0,1)]`.
+ *
+ * | Corner       | Coordinates |
+ * |--------------|-------------|
+ * | Top-Left     | `(x0,y0)`   |
+ * | Top-Right    | `(x1,y1)`   |
+ * | Bottom-Right | `(x2,y2)`   |
+ * | Bottom-Left  | `(x3,y3)`   |
  *
  * @class
  * @protected
@@ -5162,16 +4378,60 @@ var BaseRenderTexture = /*@__PURE__*/(function (BaseTexture) {
  */
 var TextureUvs = function TextureUvs()
 {
+    /**
+     * X-component of top-left corner `(x0,y0)`.
+     *
+     * @member {number}
+     */
     this.x0 = 0;
+
+    /**
+     * Y-component of top-left corner `(x0,y0)`.
+     *
+     * @member {number}
+     */
     this.y0 = 0;
 
+    /**
+     * X-component of top-right corner `(x1,y1)`.
+     *
+     * @member {number}
+     */
     this.x1 = 1;
+
+    /**
+     * Y-component of top-right corner `(x1,y1)`.
+     *
+     * @member {number}
+     */
     this.y1 = 0;
 
+    /**
+     * X-component of bottom-right corner `(x2,y2)`.
+     *
+     * @member {number}
+     */
     this.x2 = 1;
+
+    /**
+     * Y-component of bottom-right corner `(x2,y2)`.
+     *
+     * @member {number}
+     */
     this.y2 = 1;
 
+    /**
+     * X-component of bottom-left corner `(x3,y3)`.
+     *
+     * @member {number}
+     */
     this.x3 = 0;
+
+    /**
+     * Y-component of bottom-right corner `(x3,y3)`.
+     *
+     * @member {number}
+     */
     this.y3 = 1;
 
     this.uvsFloat32 = new Float32Array(8);
@@ -5435,7 +4695,7 @@ var Texture = /*@__PURE__*/(function (EventEmitter) {
     Texture.prototype = Object.create( EventEmitter && EventEmitter.prototype );
     Texture.prototype.constructor = Texture;
 
-    var prototypeAccessors = { frame: { configurable: true },rotate: { configurable: true },width: { configurable: true },height: { configurable: true } };
+    var prototypeAccessors = { resolution: { configurable: true },frame: { configurable: true },rotate: { configurable: true },width: { configurable: true },height: { configurable: true } };
 
     /**
      * Updates this texture on the gpu.
@@ -5731,6 +4991,17 @@ var Texture = /*@__PURE__*/(function (EventEmitter) {
     };
 
     /**
+     * Returns resolution of baseTexture
+     *
+     * @member {number}
+     * @readonly
+     */
+    prototypeAccessors.resolution.get = function ()
+    {
+        return this.baseTexture.resolution;
+    };
+
+    /**
      * The frame specifies the region of the base texture that this texture uses.
      * Please call `updateUvs()` after you change coordinates of `frame` manually.
      *
@@ -5861,7 +5132,7 @@ removeAllHandlers(Texture.EMPTY);
 removeAllHandlers(Texture.EMPTY.baseTexture);
 
 /**
- * A white texture of 10x10 size, used for graphics and other things
+ * A white texture of 16x16 size, used for graphics and other things
  * Can not be destroyed.
  *
  * @static
@@ -5877,6 +5148,9 @@ removeAllHandlers(Texture.WHITE.baseTexture);
  *
  * __Hint__: All DisplayObjects (i.e. Sprites) that render to a RenderTexture should be preloaded
  * otherwise black rectangles will be drawn instead.
+ *
+ * __Hint-2__: The actual memory allocation will happen on first render.
+ * You shouldn't create renderTextures each frame just to delete them after, try to reuse them.
  *
  * A RenderTexture takes a snapshot of any Display Object given to its render method. For example:
  *
@@ -5954,8 +5228,10 @@ var RenderTexture = /*@__PURE__*/(function (Texture) {
         this.valid = true;
 
         /**
-         * FilterSystem temporary storage
-         * @protected
+         * Stores `sourceFrame` when this texture is inside current filter stack.
+         * You can read it inside filters.
+         *
+         * @readonly
          * @member {PIXI.Rectangle}
          */
         this.filterFrame = null;
@@ -6051,6 +5327,206 @@ var RenderTexture = /*@__PURE__*/(function (Texture) {
 
     return RenderTexture;
 }(Texture));
+
+/**
+ * Experimental!
+ *
+ * Texture pool, used by FilterSystem and plugins
+ * Stores collection of temporary pow2 or screen-sized renderTextures
+ *
+ * If you use custom RenderTexturePool for your filters, you can use methods
+ * `getFilterTexture` and `returnFilterTexture` same as in
+ *
+ * @class
+ * @memberof PIXI
+ */
+var RenderTexturePool = function RenderTexturePool(textureOptions)
+{
+    this.texturePool = {};
+    this.textureOptions = textureOptions || {};
+    /**
+     * Allow renderTextures of the same size as screen, not just pow2
+     *
+     * Automatically sets to true after `setScreenSize`
+     *
+     * @member {boolean}
+     * @default false
+     */
+    this.enableFullScreen = false;
+
+    this._pixelsWidth = 0;
+    this._pixelsHeight = 0;
+};
+
+/**
+ * creates of texture with params that were specified in pool constructor
+ *
+ * @param {number} realWidth width of texture in pixels
+ * @param {number} realHeight height of texture in pixels
+ * @returns {RenderTexture}
+ */
+RenderTexturePool.prototype.createTexture = function createTexture (realWidth, realHeight)
+{
+    var baseRenderTexture = new BaseRenderTexture(Object.assign({
+        width: realWidth,
+        height: realHeight,
+        resolution: 1,
+    }, this.textureOptions));
+
+    return new RenderTexture(baseRenderTexture);
+};
+
+/**
+ * Gets a Power-of-Two render texture or fullScreen texture
+ *
+ * @protected
+ * @param {number} minWidth - The minimum width of the render texture in real pixels.
+ * @param {number} minHeight - The minimum height of the render texture in real pixels.
+ * @param {number} [resolution=1] - The resolution of the render texture.
+ * @return {PIXI.RenderTexture} The new render texture.
+ */
+RenderTexturePool.prototype.getOptimalTexture = function getOptimalTexture (minWidth, minHeight, resolution)
+{
+        if ( resolution === void 0 ) resolution = 1;
+
+    var key = RenderTexturePool.SCREEN_KEY;
+
+    minWidth *= resolution;
+    minHeight *= resolution;
+
+    if (!this.enableFullScreen || minWidth !== this._pixelsWidth || minHeight !== this._pixelsHeight)
+    {
+        minWidth = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(minWidth);
+        minHeight = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(minHeight);
+        key = ((minWidth & 0xFFFF) << 16) | (minHeight & 0xFFFF);
+    }
+
+    if (!this.texturePool[key])
+    {
+        this.texturePool[key] = [];
+    }
+
+    var renderTexture = this.texturePool[key].pop();
+
+    if (!renderTexture)
+    {
+        renderTexture = this.createTexture(minWidth, minHeight);
+    }
+
+    renderTexture.filterPoolKey = key;
+    renderTexture.setResolution(resolution);
+
+    return renderTexture;
+};
+
+/**
+ * Gets extra texture of the same size as input renderTexture
+ *
+ * `getFilterTexture(input, 0.5)` or `getFilterTexture(0.5, input)`
+ *
+ * @param {PIXI.RenderTexture} input renderTexture from which size and resolution will be copied
+ * @param {number} [resolution] override resolution of the renderTexture
+ *  It overrides, it does not multiply
+ * @returns {PIXI.RenderTexture}
+ */
+RenderTexturePool.prototype.getFilterTexture = function getFilterTexture (input, resolution)
+{
+    var filterTexture = this.getOptimalTexture(input.width, input.height, resolution || input.resolution);
+
+    filterTexture.filterFrame = input.filterFrame;
+
+    return filterTexture;
+};
+
+/**
+ * Place a render texture back into the pool.
+ * @param {PIXI.RenderTexture} renderTexture - The renderTexture to free
+ */
+RenderTexturePool.prototype.returnTexture = function returnTexture (renderTexture)
+{
+    var key = renderTexture.filterPoolKey;
+
+    renderTexture.filterFrame = null;
+    this.texturePool[key].push(renderTexture);
+};
+
+/**
+ * Alias for returnTexture, to be compliant with FilterSystem interface
+ * @param {PIXI.RenderTexture} renderTexture - The renderTexture to free
+ */
+RenderTexturePool.prototype.returnFilterTexture = function returnFilterTexture (renderTexture)
+{
+    this.returnTexture(renderTexture);
+};
+
+/**
+ * Clears the pool
+ *
+ * @param {boolean} [destroyTextures=true] destroy all stored textures
+ */
+RenderTexturePool.prototype.clear = function clear (destroyTextures)
+{
+    destroyTextures = destroyTextures !== false;
+    if (destroyTextures)
+    {
+        for (var i in this.texturePool)
+        {
+            var textures = this.texturePool[i];
+
+            if (textures)
+            {
+                for (var j = 0; j < textures.length; j++)
+                {
+                    textures[j].destroy(true);
+                }
+            }
+        }
+    }
+
+    this.texturePool = {};
+};
+
+/**
+ * If screen size was changed, drops all screen-sized textures,
+ * sets new screen size, sets `enableFullScreen` to true
+ *
+ * Size is measured in pixels, `renderer.view` can be passed here, not `renderer.screen`
+ *
+ * @param {PIXI.ISize} size - Initial size of screen
+ */
+RenderTexturePool.prototype.setScreenSize = function setScreenSize (size)
+{
+    if (size.width === this._pixelsWidth
+        && size.height === this._pixelsHeight)
+    {
+        return;
+    }
+
+    var screenKey = RenderTexturePool.SCREEN_KEY;
+    var textures = this.texturePool[screenKey];
+
+    this.enableFullScreen = size.width > 0 && size.height > 0;
+
+    if (textures)
+    {
+        for (var j = 0; j < textures.length; j++)
+        {
+            textures[j].destroy(true);
+        }
+    }
+    this.texturePool[screenKey] = [];
+
+    this._pixelsWidth = size.width;
+    this._pixelsHeight = size.height;
+};
+
+/**
+ * Key that is used to store fullscreen renderTextures in a pool
+ *
+ * @static
+ * @const {string}
+ */
+RenderTexturePool.SCREEN_KEY = 'screen';
 
 /* eslint-disable max-len */
 
@@ -6331,15 +5807,18 @@ var Geometry = function Geometry(buffers, attributes)
 
     this.instanced = false;
 
+    /**
+     * Number of instances in this geometry, pass it to `GeometrySystem.draw()`
+     * @member {number}
+     * @default 1
+     */
     this.instanceCount = 1;
-
-    this._size = null;
 
     this.disposeRunner = new _pixi_runner__WEBPACK_IMPORTED_MODULE_0__["Runner"]('disposeGeometry', 2);
 
     /**
      * Count of existing (not destroyed) meshes that reference this geometry
-     * @member {boolean}
+     * @member {number}
      */
     this.refCount = 0;
 };
@@ -6729,6 +6208,7 @@ var Quad = /*@__PURE__*/(function (Geometry) {
  *
  * @class
  * @memberof PIXI
+ * @extends PIXI.Geometry
  */
 var QuadUv = /*@__PURE__*/(function (Geometry) {
     function QuadUv()
@@ -6962,8 +6442,6 @@ FilterState.prototype.clear = function clear ()
     this.renderTexture = null;
 };
 
-var screenKey = 'screen';
-
 /**
  * System plugin to the renderer to manage the filters.
  *
@@ -6987,7 +6465,9 @@ var FilterSystem = /*@__PURE__*/(function (System) {
          * stores a bunch of PO2 textures used for filtering
          * @member {Object}
          */
-        this.texturePool = {};
+        this.texturePool = new RenderTexturePool();
+
+        this.texturePool.setScreenSize(renderer.view);
 
         /**
          * a pool for storing filter states, save us creating new ones each tick
@@ -7238,7 +6718,7 @@ var FilterSystem = /*@__PURE__*/(function (System) {
         // because it does at the moment cos of global uniforms.
         // they need to get resynced
 
-        renderer.state.setState(filter.state);
+        renderer.state.set(filter.state);
         renderer.shader.bind(filter);
 
         if (filter.legacy)
@@ -7285,28 +6765,15 @@ var FilterSystem = /*@__PURE__*/(function (System) {
 
     /**
      * Destroys this Filter System.
-     *
-     * @param {boolean} [contextLost=false] context was lost, do not free shaders
-     *
      */
-    FilterSystem.prototype.destroy = function destroy (contextLost)
+    FilterSystem.prototype.destroy = function destroy ()
     {
-        if ( contextLost === void 0 ) contextLost = false;
-
-        if (!contextLost)
-        {
-            this.emptyPool();
-        }
-        else
-        {
-            this.texturePool = {};
-        }
+        // Those textures has to be destroyed by RenderTextureSystem or FramebufferSystem
+        this.texturePool.clear(false);
     };
 
     /**
      * Gets a Power-of-Two render texture or fullScreen texture
-     *
-     * TODO move to a separate class could be on renderer?
      *
      * @protected
      * @param {number} minWidth - The minimum width of the render texture in real pixels.
@@ -7318,55 +6785,32 @@ var FilterSystem = /*@__PURE__*/(function (System) {
     {
         if ( resolution === void 0 ) resolution = 1;
 
-        var key = screenKey;
-
-        minWidth *= resolution;
-        minHeight *= resolution;
-
-        if (minWidth !== this._pixelsWidth || minHeight !== this._pixelsHeight)
-        {
-            minWidth = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(minWidth);
-            minHeight = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(minHeight);
-            key = ((minWidth & 0xFFFF) << 16) | (minHeight & 0xFFFF);
-        }
-
-        if (!this.texturePool[key])
-        {
-            this.texturePool[key] = [];
-        }
-
-        var renderTexture = this.texturePool[key].pop();
-
-        if (!renderTexture)
-        {
-            // temporary bypass cache..
-            // internally - this will cause a texture to be bound..
-            renderTexture = RenderTexture.create({
-                width: minWidth / resolution,
-                height: minHeight / resolution,
-                resolution: resolution,
-            });
-        }
-
-        renderTexture.filterPoolKey = key;
-        renderTexture.setResolution(resolution);
-
-        return renderTexture;
+        return this.texturePool.getOptimalTexture(minWidth, minHeight, resolution);
     };
 
     /**
      * Gets extra render texture to use inside current filter
+     * To be compliant with older filters, you can use params in any order
      *
-     * @param {number} resolution resolution of the renderTexture
+     * @param {PIXI.RenderTexture} [input] renderTexture from which size and resolution will be copied
+     * @param {number} [resolution] override resolution of the renderTexture
      * @returns {PIXI.RenderTexture}
      */
-    FilterSystem.prototype.getFilterTexture = function getFilterTexture (resolution)
+    FilterSystem.prototype.getFilterTexture = function getFilterTexture (input, resolution)
     {
-        var rt = this.activeState.renderTexture;
+        if (typeof input === 'number')
+        {
+            var swap = input;
 
-        var filterTexture = this.getOptimalFilterTexture(rt.width, rt.height, resolution || rt.baseTexture.resolution);
+            input = resolution;
+            resolution = swap;
+        }
 
-        filterTexture.filterFrame = rt.filterFrame;
+        input = input || this.activeState.renderTexture;
+
+        var filterTexture = this.texturePool.getOptimalTexture(input.width, input.height, resolution || input.resolution);
+
+        filterTexture.filterFrame = input.filterFrame;
 
         return filterTexture;
     };
@@ -7378,105 +6822,94 @@ var FilterSystem = /*@__PURE__*/(function (System) {
      */
     FilterSystem.prototype.returnFilterTexture = function returnFilterTexture (renderTexture)
     {
-        var key = renderTexture.filterPoolKey;
-
-        renderTexture.filterFrame = null;
-        this.texturePool[key].push(renderTexture);
+        this.texturePool.returnTexture(renderTexture);
     };
 
     /**
      * Empties the texture pool.
-     *
      */
     FilterSystem.prototype.emptyPool = function emptyPool ()
     {
-        for (var i in this.texturePool)
-        {
-            var textures = this.texturePool[i];
-
-            if (textures)
-            {
-                for (var j = 0; j < textures.length; j++)
-                {
-                    textures[j].destroy(true);
-                }
-            }
-        }
-
-        this.texturePool = {};
+        this.texturePool.clear(true);
     };
 
+    /**
+     * calls `texturePool.resize()`, affects fullScreen renderTextures
+     */
     FilterSystem.prototype.resize = function resize ()
     {
-        var textures = this.texturePool[screenKey];
-
-        if (textures)
-        {
-            for (var j = 0; j < textures.length; j++)
-            {
-                textures[j].destroy(true);
-            }
-        }
-        this.texturePool[screenKey] = [];
-
-        this._pixelsWidth = this.renderer.view.width;
-        this._pixelsHeight = this.renderer.view.height;
+        this.texturePool.setScreenSize(this.renderer.view);
     };
 
     return FilterSystem;
 }(System));
 
 /**
- * Base for a common object renderer that can be used as a system renderer plugin.
+ * Base for a common object renderer that can be used as a
+ * system renderer plugin.
  *
  * @class
  * @extends PIXI.System
  * @memberof PIXI
  */
-var ObjectRenderer = /*@__PURE__*/(function (System) {
-    function ObjectRenderer () {
-        System.apply(this, arguments);
-    }
-
-    if ( System ) ObjectRenderer.__proto__ = System;
-    ObjectRenderer.prototype = Object.create( System && System.prototype );
-    ObjectRenderer.prototype.constructor = ObjectRenderer;
-
-    ObjectRenderer.prototype.start = function start ()
-    {
-        // set the shader..
-    };
-
+var ObjectRenderer = function ObjectRenderer(renderer)
+{
     /**
-     * Stops the renderer
+     * The renderer this manager works for.
      *
+     * @member {PIXI.Renderer}
      */
-    ObjectRenderer.prototype.stop = function stop ()
-    {
-        this.flush();
-    };
+    this.renderer = renderer;
+};
 
-    /**
-     * Stub method for rendering content and emptying the current batch.
-     *
-     */
-    ObjectRenderer.prototype.flush = function flush ()
-    {
-        // flush!
-    };
+/**
+ * Stub method that should be used to empty the current
+ * batch by rendering objects now.
+ */
+ObjectRenderer.prototype.flush = function flush ()
+{
+    // flush!
+};
 
-    /**
-     * Renders an object
-     *
-     * @param {PIXI.DisplayObject} object - The object to render.
-     */
-    ObjectRenderer.prototype.render = function render (object) // eslint-disable-line no-unused-vars
-    {
-        // render the object
-    };
+/**
+ * Generic destruction method that frees all resources. This
+ * should be called by subclasses.
+ */
+ObjectRenderer.prototype.destroy = function destroy ()
+{
+    this.renderer = null;
+};
 
-    return ObjectRenderer;
-}(System));
+/**
+ * Stub method that initializes any state required before
+ * rendering starts. It is different from the `prerender`
+ * signal, which occurs every frame, in that it is called
+ * whenever an object requests _this_ renderer specifically.
+ */
+ObjectRenderer.prototype.start = function start ()
+{
+    // set the shader..
+};
+
+/**
+ * Stops the renderer. It should free up any state and
+ * become dormant.
+ */
+ObjectRenderer.prototype.stop = function stop ()
+{
+    this.flush();
+};
+
+/**
+ * Keeps the object to render. It doesn't have to be
+ * rendered immediately.
+ *
+ * @param {PIXI.DisplayObject} object - The object to render.
+ */
+ObjectRenderer.prototype.render = function render (object) // eslint-disable-line no-unused-vars
+{
+    // render the object
+};
 
 /**
  * System plugin to the renderer to manage batching.
@@ -7595,6 +7028,7 @@ var ContextSystem = /*@__PURE__*/(function (System) {
          * @property {OES_texture_float} floatTexture - WebGL v1 extension
          * @property {WEBGL_lose_context} loseContext - WebGL v1 extension
          * @property {OES_vertex_array_object} vertexArrayObject - WebGL v1 extension
+         * @property {EXT_texture_filter_anisotropic} anisotropicFiltering - WebGL v1 and v2 extension
          */
         this.extensions = {};
 
@@ -7629,6 +7063,8 @@ var ContextSystem = /*@__PURE__*/(function (System) {
     ContextSystem.prototype.contextChange = function contextChange (gl)
     {
         this.gl = gl;
+        this.renderer.gl = gl;
+        this.renderer.CONTEXT_UID = CONTEXT_UID++;
 
         // restore a context if it was previously lost
         if (gl.isContextLost() && gl.getExtension('WEBGL_lose_context'))
@@ -7724,15 +7160,28 @@ var ContextSystem = /*@__PURE__*/(function (System) {
             Object.assign(this.extensions, {
                 drawBuffers: gl.getExtension('WEBGL_draw_buffers'),
                 depthTexture: gl.getExtension('WEBKIT_WEBGL_depth_texture'),
-                floatTexture: gl.getExtension('OES_texture_float'),
                 loseContext: gl.getExtension('WEBGL_lose_context'),
                 vertexArrayObject: gl.getExtension('OES_vertex_array_object')
                     || gl.getExtension('MOZ_OES_vertex_array_object')
                     || gl.getExtension('WEBKIT_OES_vertex_array_object'),
+                anisotropicFiltering: gl.getExtension('EXT_texture_filter_anisotropic'),
+                uint32ElementIndex: gl.getExtension('OES_element_index_uint'),
+                // Floats and half-floats
+                floatTexture: gl.getExtension('OES_texture_float'),
+                floatTextureLinear: gl.getExtension('OES_texture_float_linear'),
+                textureHalfFloat: gl.getExtension('OES_texture_half_float'),
+                textureHalfFloatLinear: gl.getExtension('OES_texture_half_float_linear'),
             });
         }
-
-        // we don't use any specific WebGL 2 ones yet!
+        else if (this.webGLVersion === 2)
+        {
+            Object.assign(this.extensions, {
+                anisotropicFiltering: gl.getExtension('EXT_texture_filter_anisotropic'),
+                // Floats and half-floats
+                colorBufferFloat: gl.getExtension('EXT_color_buffer_float'),
+                floatTextureLinear: gl.getExtension('OES_texture_float_linear'),
+            });
+        }
     };
 
     /**
@@ -8232,7 +7681,7 @@ var FramebufferSystem = /*@__PURE__*/(function (System) {
 
         this.managedFramebuffers = [];
 
-        for (var i = 0; i < list.count; i++)
+        for (var i = 0; i < list.length; i++)
         {
             this.disposeFramebuffer(list[i], contextLost);
         }
@@ -8294,6 +7743,13 @@ var GeometrySystem = /*@__PURE__*/(function (System) {
         this.hasInstance = true;
 
         /**
+         * `true` if support `gl.UNSIGNED_INT` in `gl.drawElements` or `gl.drawElementsInstanced`
+         * @member {boolean}
+         * @readonly
+         */
+        this.canUseUInt32ElementIndex = false;
+
+        /**
          * A cache of currently bound buffer,
          * contains only two members with keys ARRAY_BUFFER and ELEMENT_ARRAY_BUFFER
          * @member {Object.<number, PIXI.Buffer>}
@@ -8328,6 +7784,7 @@ var GeometrySystem = /*@__PURE__*/(function (System) {
         this.disposeAll(true);
 
         var gl = this.gl = this.renderer.gl;
+        var context = this.renderer.context;
 
         this.CONTEXT_UID = this.renderer.CONTEXT_UID;
 
@@ -8384,13 +7841,15 @@ var GeometrySystem = /*@__PURE__*/(function (System) {
                 this.hasInstance = false;
             }
         }
+
+        this.canUseUInt32ElementIndex = context.webGLVersion === 2 || !!context.extensions.uint32ElementIndex;
     };
 
     /**
      * Binds geometry so that is can be drawn. Creating a Vao if required
-     * @protected
+     *
      * @param {PIXI.Geometry} geometry instance of geometry to bind
-     * @param {PIXI.Shader} shader instance of shader to bind
+     * @param {PIXI.Shader} [shader] instance of shader to use vao for
      */
     GeometrySystem.prototype.bind = function bind (geometry, shader)
     {
@@ -8846,15 +8305,27 @@ var GeometrySystem = /*@__PURE__*/(function (System) {
 
         if (geometry.indexBuffer)
         {
-            if (geometry.instanced)
+            var byteSize = geometry.indexBuffer.data.BYTES_PER_ELEMENT;
+            var glType = byteSize === 2 ? gl.UNSIGNED_SHORT : gl.UNSIGNED_INT;
+
+            if (byteSize === 2 || (byteSize === 4 && this.canUseUInt32ElementIndex))
             {
-                /* eslint-disable max-len */
-                gl.drawElementsInstanced(type, size || geometry.indexBuffer.data.length, gl.UNSIGNED_SHORT, (start || 0) * 2, instanceCount || 1);
-                /* eslint-enable max-len */
+                if (geometry.instanced)
+                {
+                    /* eslint-disable max-len */
+                    gl.drawElementsInstanced(type, size || geometry.indexBuffer.data.length, glType, (start || 0) * byteSize, instanceCount || 1);
+                    /* eslint-enable max-len */
+                }
+                else
+                {
+                    /* eslint-disable max-len */
+                    gl.drawElements(type, size || geometry.indexBuffer.data.length, glType, (start || 0) * byteSize);
+                    /* eslint-enable max-len */
+                }
             }
             else
             {
-                gl.drawElements(type, size || geometry.indexBuffer.data.length, gl.UNSIGNED_SHORT, (start || 0) * 2);
+                console.warn('unsupported index buffer type: uint32');
             }
         }
         else if (geometry.instanced)
@@ -9045,7 +8516,8 @@ function booleanArray(size)
     return array;
 }
 
-var context = null;
+var unknownContext = {};
+var context = unknownContext;
 
 /**
  * returns a little WebGL context to use for program inspection.
@@ -9056,7 +8528,7 @@ var context = null;
  */
 function getTestContext()
 {
-    if (!context)
+    if (context === unknownContext)
     {
         var canvas = document.createElement('canvas');
 
@@ -9075,7 +8547,7 @@ function getTestContext()
             if (!gl)
             {
                 // fail, not able to get a context
-                throw new Error('This browser does not support WebGL. Try using the canvas renderer');
+                gl = null;
             }
             else
             {
@@ -9085,8 +8557,6 @@ function getTestContext()
         }
 
         context = gl;
-
-        return gl;
     }
 
     return context;
@@ -9707,6 +9177,11 @@ Object.defineProperties( Program, staticAccessors );
  */
 var Shader = function Shader(program, uniforms)
 {
+    /**
+     * Program that the shader uses
+     *
+     * @member {PIXI.Program}
+     */
     this.program = program;
 
     // lets see whats been passed in
@@ -9927,7 +9402,7 @@ prototypeAccessors$3.clockwiseFrontFace.set = function (value) // eslint-disable
  * The blend mode to be applied when this state is set. Apply a value of `PIXI.BLEND_MODES.NORMAL` to reset the blend mode.
  * Setting this mode to anything other than NO_BLEND will automatically switch blending on.
  *
- * @member {boolean}
+ * @member {number}
  * @default PIXI.BLEND_MODES.NORMAL
  * @see PIXI.BLEND_MODES
  */
@@ -10274,10 +9749,27 @@ var TextureMatrix = function TextureMatrix(texture, clampMargin)
 {
     this._texture = texture;
 
+    /**
+     * Matrix operation that converts texture region coords to texture coords
+     * @member {PIXI.Matrix}
+     * @readonly
+     */
     this.mapCoord = new _pixi_math__WEBPACK_IMPORTED_MODULE_5__["Matrix"]();
 
+    /**
+     * Clamp region for normalized coords, left-top pixel center in xy , bottom-right in zw.
+     * Calculated based on clampOffset.
+     * @member {Float32Array}
+     * @readonly
+     */
     this.uClampFrame = new Float32Array(4);
 
+    /**
+     * Normalized clamp offset.
+     * Calculated based on clampOffset.
+     * @member {Float32Array}
+     * @readonly
+     */
     this.uClampOffset = new Float32Array(2);
 
     /**
@@ -10759,8 +10251,10 @@ var StencilSystem = /*@__PURE__*/(function (System) {
     StencilSystem.prototype.setMaskStack = function setMaskStack (stencilMaskStack)
     {
         var gl = this.renderer.gl;
+        var curStackLen = this.stencilMaskStack.length;
 
-        if (stencilMaskStack.length !== this.stencilMaskStack.length)
+        this.stencilMaskStack = stencilMaskStack;
+        if (stencilMaskStack.length !== curStackLen)
         {
             if (stencilMaskStack.length === 0)
             {
@@ -10769,10 +10263,9 @@ var StencilSystem = /*@__PURE__*/(function (System) {
             else
             {
                 gl.enable(gl.STENCIL_TEST);
+                this._useCurrent();
             }
         }
-
-        this.stencilMaskStack = stencilMaskStack;
     };
 
     /**
@@ -11064,9 +10557,9 @@ var RenderTextureSystem = /*@__PURE__*/(function (System) {
 
     /**
      * Bind the current render texture
-     * @param {PIXI.RenderTexture} renderTexture
-     * @param {PIXI.Rectangle} sourceFrame
-     * @param {PIXI.Rectangle} destinationFrame
+     * @param {PIXI.RenderTexture} [renderTexture] - RenderTexture to bind, by default its `null`, the screen
+     * @param {PIXI.Rectangle} [sourceFrame] - part of screen that is mapped to the renderTexture
+     * @param {PIXI.Rectangle} [destinationFrame] - part of renderTexture, by default it has the same size as sourceFrame
      */
     RenderTextureSystem.prototype.bind = function bind (renderTexture, sourceFrame, destinationFrame)
     {
@@ -11278,6 +10771,7 @@ var ShaderSystem = /*@__PURE__*/(function (System) {
     ShaderSystem.prototype.contextChange = function contextChange (gl)
     {
         this.gl = gl;
+        this.reset();
     };
 
     /**
@@ -11484,7 +10978,7 @@ function mapWebGLBlendModesToPixi(gl, array)
     // TODO - premultiply alpha would be different.
     // add a boolean for that!
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].NORMAL] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
-    array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].ADD] = [gl.ONE, gl.DST_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
+    array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].ADD] = [gl.ONE, gl.ONE];
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].MULTIPLY] = [gl.DST_COLOR, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].SCREEN] = [gl.ONE, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].OVERLAY] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
@@ -11504,7 +10998,7 @@ function mapWebGLBlendModesToPixi(gl, array)
 
     // not-premultiplied blend modes
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].NORMAL_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
-    array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].ADD_NPM] = [gl.SRC_ALPHA, gl.DST_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
+    array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].ADD_NPM] = [gl.SRC_ALPHA, gl.ONE, gl.ONE, gl.ONE];
     array[_pixi_constants__WEBPACK_IMPORTED_MODULE_3__["BLEND_MODES"].SCREEN_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA];
 
     // composite operations
@@ -11617,7 +11111,7 @@ var StateSystem = /*@__PURE__*/(function (System) {
 
         this.blendModes = mapWebGLBlendModesToPixi(gl);
 
-        this.setState(this.defaultState);
+        this.set(this.defaultState);
 
         this.reset();
     };
@@ -11627,7 +11121,7 @@ var StateSystem = /*@__PURE__*/(function (System) {
      *
      * @param {*} state - The state to set.
      */
-    StateSystem.prototype.setState = function setState (state)
+    StateSystem.prototype.set = function set (state)
     {
         state = state || this.defaultState;
 
@@ -11701,6 +11195,8 @@ var StateSystem = /*@__PURE__*/(function (System) {
      */
     StateSystem.prototype.setOffset = function setOffset (value)
     {
+        this.updateCheck(StateSystem.checkPolygonOffset, value);
+
         this.gl[value ? 'enable' : 'disable'](this.gl.POLYGON_OFFSET_FILL);
     };
 
@@ -11833,6 +11329,19 @@ var StateSystem = /*@__PURE__*/(function (System) {
         system.setBlendMode(state.blendMode);
     };
 
+    /**
+     * A private little wrapper function that we call to check the polygon offset.
+     *
+     * @static
+     * @private
+     * @param {PIXI.StateSystem} System  the System to perform the state check on
+     * @param {PIXI.State} state  the state that the blendMode will pulled from
+     */
+    StateSystem.checkPolygonOffset = function checkPolygonOffset (system, state)
+    {
+        system.setPolygonOffset(state.polygonOffset, 0);
+    };
+
     return StateSystem;
 }(System));
 
@@ -11871,7 +11380,7 @@ var TextureGCSystem = /*@__PURE__*/(function (System) {
         this.maxIdle = _pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].GC_MAX_IDLE;
 
         /**
-         * Maximum number of itesm to check
+         * Maximum number of item to check
          * @member {number}
          * @see PIXI.settings.GC_MAX_CHECK_COUNT
          */
@@ -11988,7 +11497,16 @@ var GLTexture = function GLTexture(texture)
      */
     this.texture = texture;
 
+    /**
+     * Width of texture that was used in texImage2D
+     * @member {number}
+     */
     this.width = -1;
+
+    /**
+     * Height of texture that was used in texImage2D
+     * @member {number}
+     */
     this.height = -1;
 
     /**
@@ -12014,6 +11532,18 @@ var GLTexture = function GLTexture(texture)
      * @member {number}
      */
     this.wrapMode = 33071;
+
+    /**
+     * Type copied from baseTexture
+     * @member {number}
+     */
+    this.type = 6408;
+
+    /**
+     * Type copied from baseTexture
+     * @member {number}
+     */
+    this.internalFormat = 5121;
 };
 
 /**
@@ -12249,6 +11779,34 @@ var TextureSystem = /*@__PURE__*/(function (System) {
         return glTexture;
     };
 
+    TextureSystem.prototype.initTextureType = function initTextureType (texture, glTexture)
+    {
+        glTexture.internalFormat = texture.format;
+        glTexture.type = texture.type;
+        if (this.webGLVersion !== 2)
+        {
+            return;
+        }
+        var gl = this.renderer.gl;
+
+        if (texture.type === gl.FLOAT
+            && texture.format === gl.RGBA)
+        {
+            glTexture.internalFormat = gl.RGBA32F;
+        }
+        // that's WebGL1 HALF_FLOAT_OES
+        // we have to convert it to WebGL HALF_FLOAT
+        if (texture.type === _pixi_constants__WEBPACK_IMPORTED_MODULE_3__["TYPES"].HALF_FLOAT)
+        {
+            glTexture.type = gl.HALF_FLOAT;
+        }
+        if (glTexture.type === gl.HALF_FLOAT
+            && texture.format === gl.RGBA)
+        {
+            glTexture.internalFormat = gl.RGBA16F;
+        }
+    };
+
     /**
      * Update a texture
      *
@@ -12258,7 +11816,15 @@ var TextureSystem = /*@__PURE__*/(function (System) {
     TextureSystem.prototype.updateTexture = function updateTexture (texture)
     {
         var glTexture = texture._glTextures[this.CONTEXT_UID];
+
+        if (!glTexture)
+        {
+            return;
+        }
+
         var renderer = this.renderer;
+
+        this.initTextureType(texture, glTexture);
 
         if (texture.resource && texture.resource.upload(renderer, texture, glTexture))
         ;
@@ -12277,12 +11843,12 @@ var TextureSystem = /*@__PURE__*/(function (System) {
                 glTexture.height = height;
 
                 gl.texImage2D(texture.target, 0,
-                    texture.format,
+                    glTexture.internalFormat,
                     width,
                     height,
                     0,
                     texture.format,
-                    texture.type,
+                    glTexture.type,
                     null);
             }
         }
@@ -12390,6 +11956,15 @@ var TextureSystem = /*@__PURE__*/(function (System) {
             /* eslint-disable max-len */
             gl.texParameteri(texture.target, gl.TEXTURE_MIN_FILTER, texture.scaleMode ? gl.LINEAR_MIPMAP_LINEAR : gl.NEAREST_MIPMAP_NEAREST);
             /* eslint-disable max-len */
+
+            var anisotropicExt = this.renderer.context.extensions.anisotropicFiltering;
+
+            if (anisotropicExt && texture.anisotropicLevel > 0 && texture.scaleMode === _pixi_constants__WEBPACK_IMPORTED_MODULE_3__["SCALE_MODES"].LINEAR)
+            {
+                var level = Math.min(texture.anisotropicLevel, gl.getParameter(anisotropicExt.MAX_TEXTURE_MAX_ANISOTROPY_EXT));
+
+                gl.texParameterf(texture.target, anisotropicExt.TEXTURE_MAX_ANISOTROPY_EXT, level);
+            }
         }
         else
         {
@@ -12650,7 +12225,7 @@ var AbstractRenderer = /*@__PURE__*/(function (EventEmitter) {
      * @param {number} resolution - The resolution / device pixel ratio of the texture being generated.
      * @param {PIXI.Rectangle} [region] - The region of the displayObject, that shall be rendered,
      *        if no region is specified, defaults to the local bounds of the displayObject.
-     * @return {PIXI.Texture} A texture of the graphics object.
+     * @return {PIXI.RenderTexture} A texture of the graphics object.
      */
     AbstractRenderer.prototype.generateTexture = function generateTexture (displayObject, scaleMode, resolution, region)
     {
@@ -13114,6 +12689,11 @@ var Renderer = /*@__PURE__*/(function (AbstractRenderer) {
     {
         this.runners.destroy.run();
 
+        for (var r in this.runners)
+        {
+            this.runners[r].destroy();
+        }
+
         // call base destroy
         AbstractRenderer.prototype.destroy.call(this, removeView);
 
@@ -13215,6 +12795,895 @@ var CubeTexture = /*@__PURE__*/(function (BaseTexture) {
 }(BaseTexture));
 
 /**
+ * Used by the batcher to draw batches.
+ * Each one of these contains all information required to draw a bound geometry.
+ *
+ * @class
+ * @memberof PIXI
+ */
+var BatchDrawCall = function BatchDrawCall()
+{
+    this.textures = [];
+    this.ids = [];
+    this.blend = 0;
+    this.textureCount = 0;
+    this.start = 0;
+    this.size = 0;
+    this.type = 4;
+};
+
+/**
+ * Flexible wrapper around `ArrayBuffer` that also provides
+ * typed array views on demand.
+ *
+ * @class
+ * @memberof PIXI
+ */
+var ViewableBuffer = function ViewableBuffer(size)
+{
+    /**
+     * Underlying `ArrayBuffer` that holds all the data
+     * and is of capacity `size`.
+     *
+     * @member {ArrayBuffer}
+     */
+    this.rawBinaryData = new ArrayBuffer(size);
+
+    /**
+     * View on the raw binary data as a `Uint32Array`.
+     *
+     * @member {Uint32Array}
+     */
+    this.uint32View = new Uint32Array(this.rawBinaryData);
+
+    /**
+     * View on the raw binary data as a `Float32Array`.
+     *
+     * @member {Float32Array}
+     */
+    this.float32View = new Float32Array(this.rawBinaryData);
+};
+
+var prototypeAccessors$5 = { int8View: { configurable: true },uint8View: { configurable: true },int16View: { configurable: true },uint16View: { configurable: true },int32View: { configurable: true } };
+
+/**
+ * View on the raw binary data as a `Int8Array`.
+ *
+ * @member {Int8Array}
+ */
+prototypeAccessors$5.int8View.get = function ()
+{
+    if (!this._int8View)
+    {
+        this._int8View = new Int8Array(this.rawBinaryData);
+    }
+
+    return this._int8View;
+};
+
+/**
+ * View on the raw binary data as a `Uint8Array`.
+ *
+ * @member {Uint8Array}
+ */
+prototypeAccessors$5.uint8View.get = function ()
+{
+    if (!this._uint8View)
+    {
+        this._uint8View = new Uint8Array(this.rawBinaryData);
+    }
+
+    return this._uint8View;
+};
+
+/**
+ * View on the raw binary data as a `Int16Array`.
+ *
+ * @member {Int16Array}
+ */
+prototypeAccessors$5.int16View.get = function ()
+{
+    if (!this._int16View)
+    {
+        this._int16View = new Int16Array(this.rawBinaryData);
+    }
+
+    return this._int16View;
+};
+
+/**
+ * View on the raw binary data as a `Uint16Array`.
+ *
+ * @member {Uint16Array}
+ */
+prototypeAccessors$5.uint16View.get = function ()
+{
+    if (!this._uint16View)
+    {
+        this._uint16View = new Uint16Array(this.rawBinaryData);
+    }
+
+    return this._uint16View;
+};
+
+/**
+ * View on the raw binary data as a `Int32Array`.
+ *
+ * @member {Int32Array}
+ */
+prototypeAccessors$5.int32View.get = function ()
+{
+    if (!this._int32View)
+    {
+        this._int32View = new Int32Array(this.rawBinaryData);
+    }
+
+    return this._int32View;
+};
+
+/**
+ * Returns the view of the given type.
+ *
+ * @param {string} type - One of `int8`, `uint8`, `int16`,
+ *`uint16`, `int32`, `uint32`, and `float32`.
+ * @return {object} typed array of given type
+ */
+ViewableBuffer.prototype.view = function view (type)
+{
+    return this[(type + "View")];
+};
+
+/**
+ * Destroys all buffer references. Do not use after calling
+ * this.
+ */
+ViewableBuffer.prototype.destroy = function destroy ()
+{
+    this.rawBinaryData = null;
+    this._int8View = null;
+    this._uint8View = null;
+    this._int16View = null;
+    this._uint16View = null;
+    this._int32View = null;
+    this.uint32View = null;
+    this.float32View = null;
+};
+
+ViewableBuffer.sizeOf = function sizeOf (type)
+{
+    switch (type)
+    {
+        case 'int8':
+        case 'uint8':
+            return 1;
+        case 'int16':
+        case 'uint16':
+            return 2;
+        case 'int32':
+        case 'uint32':
+        case 'float32':
+            return 4;
+        default:
+            throw new Error((type + " isn't a valid view type"));
+    }
+};
+
+Object.defineProperties( ViewableBuffer.prototype, prototypeAccessors$5 );
+
+/**
+ * Renderer dedicated to drawing and batching sprites.
+ *
+ * This is the default batch renderer. It buffers objects
+ * with texture-based geometries and renders them in
+ * batches. It uploads multiple textures to the GPU to
+ * reduce to the number of draw calls.
+ *
+ * @class
+ * @protected
+ * @memberof PIXI
+ * @extends PIXI.ObjectRenderer
+ */
+var AbstractBatchRenderer = /*@__PURE__*/(function (ObjectRenderer) {
+    function AbstractBatchRenderer(renderer)
+    {
+        ObjectRenderer.call(this, renderer);
+
+        /**
+         * This is used to generate a shader that can
+         * color each vertex based on a `aTextureId`
+         * attribute that points to an texture in `uSampler`.
+         *
+         * This enables the objects with different textures
+         * to be drawn in the same draw call.
+         *
+         * You can customize your shader by creating your
+         * custom shader generator.
+         *
+         * @member {PIXI.BatchShaderGenerator}
+         * @protected
+         */
+        this.shaderGenerator = null;
+
+        /**
+         * The class that represents the geometry of objects
+         * that are going to be batched with this.
+         *
+         * @member {object}
+         * @default PIXI.BatchGeometry
+         * @protected
+         */
+        this.geometryClass = null;
+
+        /**
+         * Size of data being buffered per vertex in the
+         * attribute buffers (in floats). By default, the
+         * batch-renderer plugin uses 6:
+         *
+         * | aVertexPosition | 2 |
+         * |-----------------|---|
+         * | aTextureCoords  | 2 |
+         * | aColor          | 1 |
+         * | aTextureId      | 1 |
+         *
+         * @member {number}
+         * @readonly
+         */
+        this.vertexSize = null;
+
+        /**
+         * The WebGL state in which this renderer will work.
+         *
+         * @member {PIXI.State}
+         * @readonly
+         */
+        this.state = State.for2d();
+
+        /**
+         * The number of bufferable objects before a flush
+         * occurs automatically.
+         *
+         * @member {number}
+         * @default settings.SPRITE_MAX_TEXTURES
+         */
+        this.size = 2000 * 4;// settings.SPRITE_BATCH_SIZE, 2000 is a nice balance between mobile/desktop
+
+        /**
+         * Total count of all vertices used by the currently
+         * buffered objects.
+         *
+         * @member {number}
+         * @private
+         */
+        this._vertexCount = 0;
+
+        /**
+         * Total count of all indices used by the currently
+         * buffered objects.
+         *
+         * @member {number}
+         * @private
+         */
+        this._indexCount = 0;
+
+        /**
+         * Buffer of objects that are yet to be rendered.
+         *
+         * @member {PIXI.DisplayObject[]}
+         * @private
+         */
+        this._bufferedElements = [];
+
+        /**
+         * Number of elements that are buffered and are
+         * waiting to be flushed.
+         *
+         * @member {number}
+         * @private
+         */
+        this._bufferSize = 0;
+
+        /**
+         * This shader is generated by `this.shaderGenerator`.
+         *
+         * It is generated specifically to handle the required
+         * number of textures being batched together.
+         *
+         * @member {PIXI.Shader}
+         * @protected
+         */
+        this._shader = null;
+
+        /**
+         * Pool of `this.geometryClass` geometry objects
+         * that store buffers. They are used to pass data
+         * to the shader on each draw call.
+         *
+         * These are never re-allocated again, unless a
+         * context change occurs; however, the pool may
+         * be expanded if required.
+         *
+         * @member {PIXI.Geometry[]}
+         * @private
+         * @see PIXI.AbstractBatchRenderer.contextChange
+         */
+        this._packedGeometries = [];
+
+        /**
+         * Size of `this._packedGeometries`. It can be expanded
+         * if more than `this._packedGeometryPoolSize` flushes
+         * occur in a single frame.
+         *
+         * @member {number}
+         * @private
+         */
+        this._packedGeometryPoolSize = 2;
+
+        /**
+         * A flush may occur multiple times in a single
+         * frame. On iOS devices or when
+         * `settings.CAN_UPLOAD_SAME_BUFFER` is false, the
+         * batch renderer does not upload data to the same
+         * `WebGLBuffer` for performance reasons.
+         *
+         * This is the index into `packedGeometries` that points to
+         * geometry holding the most recent buffers.
+         *
+         * @member {number}
+         * @private
+         */
+        this._flushId = 0;
+
+        /**
+         * Pool of `BatchDrawCall` objects that `flush` used
+         * to create "batches" of the objects being rendered.
+         *
+         * These are never re-allocated again.
+         *
+         * @member BatchDrawCall[]
+         * @private
+         */
+        this._drawCalls = [];
+
+        for (var k = 0; k < this.size / 4; k++)
+        { // initialize the draw-calls pool to max size.
+            this._drawCalls[k] = new BatchDrawCall();
+        }
+
+        /**
+         * Pool of `ViewableBuffer` objects that are sorted in
+         * order of increasing size. The flush method uses
+         * the buffer with the least size above the amount
+         * it requires. These are used for passing attributes.
+         *
+         * The first buffer has a size of 8; each subsequent
+         * buffer has double capacity of its previous.
+         *
+         * @member {PIXI.ViewableBuffer}
+         * @private
+         * @see PIXI.AbstractBatchRenderer#getAttributeBuffer
+         */
+        this._aBuffers = {};
+
+        /**
+         * Pool of `Uint16Array` objects that are sorted in
+         * order of increasing size. The flush method uses
+         * the buffer with the least size above the amount
+         * it requires. These are used for passing indices.
+         *
+         * The first buffer has a size of 12; each subsequent
+         * buffer has double capacity of its previous.
+         *
+         * @member {Uint16Array[]}
+         * @private
+         * @see PIXI.AbstractBatchRenderer#getIndexBuffer
+         */
+        this._iBuffers = {};
+
+        /**
+         * Maximum number of textures that can be uploaded to
+         * the GPU under the current context. It is initialized
+         * properly in `this.contextChange`.
+         *
+         * @member {number}
+         * @see PIXI.AbstractBatchRenderer#contextChange
+         * @readonly
+         */
+        this.MAX_TEXTURES = 1;
+
+        this.renderer.on('prerender', this.onPrerender, this);
+        renderer.runners.contextChange.add(this);
+    }
+
+    if ( ObjectRenderer ) AbstractBatchRenderer.__proto__ = ObjectRenderer;
+    AbstractBatchRenderer.prototype = Object.create( ObjectRenderer && ObjectRenderer.prototype );
+    AbstractBatchRenderer.prototype.constructor = AbstractBatchRenderer;
+
+    /**
+     * Handles the `contextChange` signal.
+     *
+     * It calculates `this.MAX_TEXTURES` and allocating the
+     * packed-geometry object pool.
+     */
+    AbstractBatchRenderer.prototype.contextChange = function contextChange ()
+    {
+        var gl = this.renderer.gl;
+
+        if (_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].PREFER_ENV === _pixi_constants__WEBPACK_IMPORTED_MODULE_3__["ENV"].WEBGL_LEGACY)
+        {
+            this.MAX_TEXTURES = 1;
+        }
+        else
+        {
+            // step 1: first check max textures the GPU can handle.
+            this.MAX_TEXTURES = Math.min(
+                gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS),
+                _pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].SPRITE_MAX_TEXTURES);
+
+            // step 2: check the maximum number of if statements the shader can have too..
+            this.MAX_TEXTURES = checkMaxIfStatementsInShader(
+                this.MAX_TEXTURES, gl);
+        }
+
+        this._shader = this.shaderGenerator.generateShader(this.MAX_TEXTURES);
+
+        // we use the second shader as the first one depending on your browser
+        // may omit aTextureId as it is not used by the shader so is optimized out.
+        for (var i = 0; i < this._packedGeometryPoolSize; i++)
+        {
+            /* eslint-disable max-len */
+            this._packedGeometries[i] = new (this.geometryClass)();
+        }
+    };
+
+    /**
+     * Handles the `prerender` signal.
+     *
+     * It ensures that flushes start from the first geometry
+     * object again.
+     */
+    AbstractBatchRenderer.prototype.onPrerender = function onPrerender ()
+    {
+        this._flushId = 0;
+    };
+
+    /**
+     * Buffers the "batchable" object. It need not be rendered
+     * immediately.
+     *
+     * @param {PIXI.Sprite} sprite - the sprite to render when
+     *    using this spritebatch
+     */
+    AbstractBatchRenderer.prototype.render = function render (element)
+    {
+        if (!element._texture.valid)
+        {
+            return;
+        }
+
+        if (this._vertexCount + (element.vertexData.length / 2) > this.size)
+        {
+            this.flush();
+        }
+
+        this._vertexCount += element.vertexData.length / 2;
+        this._indexCount += element.indices.length;
+        this._bufferedElements[this._bufferSize++] = element;
+    };
+
+    /**
+     * Renders the content _now_ and empties the current batch.
+     */
+    AbstractBatchRenderer.prototype.flush = function flush ()
+    {
+        if (this._vertexCount === 0)
+        {
+            return;
+        }
+
+        var attributeBuffer = this.getAttributeBuffer(this._vertexCount);
+        var indexBuffer = this.getIndexBuffer(this._indexCount);
+        var gl = this.renderer.gl;
+
+        var ref = this;
+        var elements = ref._bufferedElements;
+        var drawCalls = ref._drawCalls;
+        var MAX_TEXTURES = ref.MAX_TEXTURES;
+        var packedGeometries = ref._packedGeometries;
+        var vertexSize = ref.vertexSize;
+
+        var touch = this.renderer.textureGC.count;
+
+        var index = 0;
+        var _indexCount = 0;
+
+        var nextTexture;
+        var currentTexture;
+        var textureCount = 0;
+
+        var currentGroup = drawCalls[0];
+        var groupCount = 0;
+
+        var blendMode = -1;// blend-mode of previous element/sprite/object!
+
+        currentGroup.textureCount = 0;
+        currentGroup.start = 0;
+        currentGroup.blend = blendMode;
+
+        var TICK = ++BaseTexture._globalBatch;
+        var i;
+
+        for (i = 0; i < this._bufferSize; ++i)
+        {
+            var sprite = elements[i];
+
+            elements[i] = null;
+            nextTexture = sprite._texture.baseTexture;
+
+            var spriteBlendMode = _pixi_utils__WEBPACK_IMPORTED_MODULE_1__["premultiplyBlendMode"][
+                nextTexture.premultiplyAlpha ? 1 : 0][sprite.blendMode];
+
+            if (blendMode !== spriteBlendMode)
+            {
+                blendMode = spriteBlendMode;
+
+                // force the batch to break!
+                currentTexture = null;
+                textureCount = MAX_TEXTURES;
+                TICK++;
+            }
+
+            if (currentTexture !== nextTexture)
+            {
+                currentTexture = nextTexture;
+
+                if (nextTexture._batchEnabled !== TICK)
+                {
+                    if (textureCount === MAX_TEXTURES)
+                    {
+                        TICK++;
+
+                        textureCount = 0;
+
+                        currentGroup.size = _indexCount - currentGroup.start;
+
+                        currentGroup = drawCalls[groupCount++];
+                        currentGroup.textureCount = 0;
+                        currentGroup.blend = blendMode;
+                        currentGroup.start = _indexCount;
+                    }
+
+                    nextTexture.touched = touch;
+                    nextTexture._batchEnabled = TICK;
+                    nextTexture._id = textureCount;
+
+                    currentGroup.textures[currentGroup.textureCount++] = nextTexture;
+                    textureCount++;
+                }
+            }
+
+            this.packInterleavedGeometry(sprite, attributeBuffer,
+                indexBuffer, index, _indexCount);
+
+            // push a graphics..
+            index += (sprite.vertexData.length / 2) * vertexSize;
+            _indexCount += sprite.indices.length;
+        }
+
+        BaseTexture._globalBatch = TICK;
+        currentGroup.size = _indexCount - currentGroup.start;
+
+        if (!_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].CAN_UPLOAD_SAME_BUFFER)
+        { /* Usually on iOS devices, where the browser doesn't
+            like uploads to the same buffer in a single frame. */
+            if (this._packedGeometryPoolSize <= this._flushId)
+            {
+                this._packedGeometryPoolSize++;
+                packedGeometries[this._flushId] = new (this.geometryClass)();
+            }
+
+            packedGeometries[this._flushId]._buffer.update(attributeBuffer.rawBinaryData, 0);
+            packedGeometries[this._flushId]._indexBuffer.update(indexBuffer, 0);
+
+            this.renderer.geometry.bind(packedGeometries[this._flushId]);
+            this.renderer.geometry.updateBuffers();
+            this._flushId++;
+        }
+        else
+        {
+            // lets use the faster option, always use buffer number 0
+            packedGeometries[this._flushId]._buffer.update(attributeBuffer.rawBinaryData, 0);
+            packedGeometries[this._flushId]._indexBuffer.update(indexBuffer, 0);
+
+            this.renderer.geometry.updateBuffers();
+        }
+
+        var textureSystem = this.renderer.texture;
+        var stateSystem = this.renderer.state;
+
+        // Upload textures and do the draw calls
+        for (i = 0; i < groupCount; i++)
+        {
+            var group = drawCalls[i];
+            var groupTextureCount = group.textureCount;
+
+            for (var j = 0; j < groupTextureCount; j++)
+            {
+                textureSystem.bind(group.textures[j], j);
+                group.textures[j] = null;
+            }
+
+            stateSystem.setBlendMode(group.blend);
+            gl.drawElements(group.type, group.size, gl.UNSIGNED_SHORT, group.start * 2);
+        }
+
+        // reset elements for the next flush
+        this._bufferSize = 0;
+        this._vertexCount = 0;
+        this._indexCount = 0;
+    };
+
+    /**
+     * Starts a new sprite batch.
+     */
+    AbstractBatchRenderer.prototype.start = function start ()
+    {
+        this.renderer.state.set(this.state);
+
+        this.renderer.shader.bind(this._shader);
+
+        if (_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].CAN_UPLOAD_SAME_BUFFER)
+        {
+            // bind buffer #0, we don't need others
+            this.renderer.geometry.bind(this._packedGeometries[this._flushId]);
+        }
+    };
+
+    /**
+     * Stops and flushes the current batch.
+     */
+    AbstractBatchRenderer.prototype.stop = function stop ()
+    {
+        this.flush();
+    };
+
+    /**
+     * Destroys this `AbstractBatchRenderer`. It cannot be used again.
+     */
+    AbstractBatchRenderer.prototype.destroy = function destroy ()
+    {
+        for (var i = 0; i < this._packedGeometryPoolSize; i++)
+        {
+            if (this._packedGeometries[i])
+            {
+                this._packedGeometries[i].destroy();
+            }
+        }
+
+        this.renderer.off('prerender', this.onPrerender, this);
+
+        this._aBuffers = null;
+        this._iBuffers = null;
+        this._packedGeometries = null;
+        this._drawCalls = null;
+
+        if (this._shader)
+        {
+            this._shader.destroy();
+            this._shader = null;
+        }
+
+        ObjectRenderer.prototype.destroy.call(this);
+    };
+
+    /**
+     * Fetches an attribute buffer from `this._aBuffers` that
+     * can hold atleast `size` floats.
+     *
+     * @param {number} size - minimum capacity required
+     * @return {ViewableBuffer} - buffer than can hold atleast `size` floats
+     * @private
+     */
+    AbstractBatchRenderer.prototype.getAttributeBuffer = function getAttributeBuffer (size)
+    {
+        // 8 vertices is enough for 2 quads
+        var roundedP2 = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(Math.ceil(size / 8));
+        var roundedSizeIndex = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["log2"])(roundedP2);
+        var roundedSize = roundedP2 * 8;
+
+        if (this._aBuffers.length <= roundedSizeIndex)
+        {
+            this._iBuffers.length = roundedSizeIndex + 1;
+        }
+
+        var buffer = this._aBuffers[roundedSize];
+
+        if (!buffer)
+        {
+            this._aBuffers[roundedSize] = buffer = new ViewableBuffer(roundedSize * this.vertexSize * 4);
+        }
+
+        return buffer;
+    };
+
+    /**
+     * Fetches an index buffer from `this._iBuffers` that can
+     * has atleast `size` capacity.
+     *
+     * @param {number} size - minimum required capacity
+     * @return {Uint16Array} - buffer that can fit `size`
+     *    indices.
+     * @private
+     */
+    AbstractBatchRenderer.prototype.getIndexBuffer = function getIndexBuffer (size)
+    {
+        // 12 indices is enough for 2 quads
+        var roundedP2 = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(Math.ceil(size / 12));
+        var roundedSizeIndex = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["log2"])(roundedP2);
+        var roundedSize = roundedP2 * 12;
+
+        if (this._iBuffers.length <= roundedSizeIndex)
+        {
+            this._iBuffers.length = roundedSizeIndex + 1;
+        }
+
+        var buffer = this._iBuffers[roundedSizeIndex];
+
+        if (!buffer)
+        {
+            this._iBuffers[roundedSizeIndex] = buffer = new Uint16Array(roundedSize);
+        }
+
+        return buffer;
+    };
+
+    /**
+     * Takes the four batching parameters of `element`, interleaves
+     * and pushes them into the batching attribute/index buffers given.
+     *
+     * It uses these properties: `vertexData` `uvs`, `textureId` and
+     * `indicies`. It also uses the "tint" of the base-texture, if
+     * present.
+     *
+     * @param {PIXI.Sprite} element - element being rendered
+     * @param {PIXI.ViewableBuffer} attributeBuffer - attribute buffer.
+     * @param {Uint16Array} indexBuffer - index buffer
+     * @param {number} aIndex - number of floats already in the attribute buffer
+     * @param {number} iIndex - number of indices already in `indexBuffer`
+     */
+    AbstractBatchRenderer.prototype.packInterleavedGeometry = function packInterleavedGeometry (element, attributeBuffer, indexBuffer, aIndex, iIndex)
+    {
+        var uint32View = attributeBuffer.uint32View;
+        var float32View = attributeBuffer.float32View;
+
+        var packedVertices = aIndex / this.vertexSize;
+        var uvs = element.uvs;
+        var indicies = element.indices;
+        var vertexData = element.vertexData;
+        var textureId = element._texture.baseTexture._id;
+
+        var alpha = Math.min(element.worldAlpha, 1.0);
+        var argb = (alpha < 1.0
+          && element._texture.baseTexture.premultiplyAlpha)
+            ? Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["premultiplyTint"])(element._tintRGB, alpha)
+            : element._tintRGB + (alpha * 255 << 24);
+
+        // lets not worry about tint! for now..
+        for (var i = 0; i < vertexData.length; i += 2)
+        {
+            float32View[aIndex++] = vertexData[i];
+            float32View[aIndex++] = vertexData[i + 1];
+            float32View[aIndex++] = uvs[i];
+            float32View[aIndex++] = uvs[i + 1];
+            uint32View[aIndex++] = argb;
+            float32View[aIndex++] = textureId;
+        }
+
+        for (var i$1 = 0; i$1 < indicies.length; i$1++)
+        {
+            indexBuffer[iIndex++] = packedVertices + indicies[i$1];
+        }
+    };
+
+    return AbstractBatchRenderer;
+}(ObjectRenderer));
+
+/**
+ * Helper that generates batching multi-texture shader. Use it with your new BatchRenderer
+ *
+ * @class
+ * @memberof PIXI
+ */
+var BatchShaderGenerator = function BatchShaderGenerator(vertexSrc, fragTemplate)
+{
+    /**
+     * Reference to the vertex shader source.
+     *
+     * @member {string}
+     */
+    this.vertexSrc = vertexSrc;
+
+    /**
+     * Reference to the fragement shader template. Must contain "%count%" and "%forloop%".
+     *
+     * @member {string}
+     */
+    this.fragTemplate = fragTemplate;
+
+    this.programCache = {};
+    this.defaultGroupCache = {};
+
+    if (fragTemplate.indexOf('%count%') < 0)
+    {
+        throw new Error('Fragment template must contain "%count%".');
+    }
+
+    if (fragTemplate.indexOf('%forloop%') < 0)
+    {
+        throw new Error('Fragment template must contain "%forloop%".');
+    }
+};
+
+BatchShaderGenerator.prototype.generateShader = function generateShader (maxTextures)
+{
+    if (!this.programCache[maxTextures])
+    {
+        var sampleValues = new Int32Array(maxTextures);
+
+        for (var i = 0; i < maxTextures; i++)
+        {
+            sampleValues[i] = i;
+        }
+
+        this.defaultGroupCache[maxTextures] = UniformGroup.from({ uSamplers: sampleValues }, true);
+
+        var fragmentSrc = this.fragTemplate;
+
+        fragmentSrc = fragmentSrc.replace(/%count%/gi, ("" + maxTextures));
+        fragmentSrc = fragmentSrc.replace(/%forloop%/gi, this.generateSampleSrc(maxTextures));
+
+        this.programCache[maxTextures] = new Program(this.vertexSrc, fragmentSrc);
+    }
+
+    var uniforms = {
+        tint: new Float32Array([1, 1, 1, 1]),
+        translationMatrix: new _pixi_math__WEBPACK_IMPORTED_MODULE_5__["Matrix"](),
+        default: this.defaultGroupCache[maxTextures],
+    };
+
+    return new Shader(this.programCache[maxTextures], uniforms);
+};
+
+BatchShaderGenerator.prototype.generateSampleSrc = function generateSampleSrc (maxTextures)
+{
+    var src = '';
+
+    src += '\n';
+    src += '\n';
+
+    for (var i = 0; i < maxTextures; i++)
+    {
+        if (i > 0)
+        {
+            src += '\nelse ';
+        }
+
+        if (i < maxTextures - 1)
+        {
+            src += "if(vTextureId < " + i + ".5)";
+        }
+
+        src += '\n{';
+        src += "\n\tcolor = texture2D(uSamplers[" + i + "], vTextureCoord);";
+        src += '\n}';
+    }
+
+    src += '\n';
+    src += '\n';
+
+    return src;
+};
+
+/**
  * Geometry used to batch standard PIXI content (e.g. Mesh, Sprite, Graphics objects).
  *
  * @class
@@ -13257,657 +13726,79 @@ var BatchGeometry = /*@__PURE__*/(function (Geometry) {
     return BatchGeometry;
 }(Geometry));
 
+var defaultVertex$2 = "precision highp float;\nattribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\nattribute vec4 aColor;\nattribute float aTextureId;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform vec4 tint;\n\nvarying vec2 vTextureCoord;\nvarying vec4 vColor;\nvarying float vTextureId;\n\nvoid main(void){\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = aTextureCoord;\n    vTextureId = aTextureId;\n    vColor = aColor * tint;\n}\n";
+
+var defaultFragment$2 = "varying vec2 vTextureCoord;\nvarying vec4 vColor;\nvarying float vTextureId;\nuniform sampler2D uSamplers[%count%];\n\nvoid main(void){\n    vec4 color;\n    %forloop%\n    gl_FragColor = color * vColor;\n}\n";
+
 /**
- * Used by the batcher to draw batches.
- * Each one of these contains all information required to draw a bound geometry.
- *
  * @class
  * @memberof PIXI
+ * @hideconstructor
  */
-var BatchDrawCall = function BatchDrawCall()
+var BatchPluginFactory = function BatchPluginFactory () {};
+
+var staticAccessors$1 = { defaultVertexSrc: { configurable: true },defaultFragmentTemplate: { configurable: true } };
+
+BatchPluginFactory.create = function create (options)
 {
-    this.textures = [];
-    this.ids = [];
-    this.blend = 0;
-    this.textureCount = 0;
-    this.start = 0;
-    this.size = 0;
-    this.type = 4;
+    var ref = Object.assign({
+        vertex: defaultVertex$2,
+        fragment: defaultFragment$2,
+        geometryClass: BatchGeometry,
+        vertexSize: 6,
+    }, options);
+        var vertex = ref.vertex;
+        var fragment = ref.fragment;
+        var vertexSize = ref.vertexSize;
+        var geometryClass = ref.geometryClass;
+
+    return /*@__PURE__*/(function (AbstractBatchRenderer) {
+            function BatchPlugin(renderer)
+        {
+            AbstractBatchRenderer.call(this, renderer);
+
+            this.shaderGenerator = new BatchShaderGenerator(vertex, fragment);
+            this.geometryClass = geometryClass;
+            this.vertexSize = vertexSize;
+        }
+
+            if ( AbstractBatchRenderer ) BatchPlugin.__proto__ = AbstractBatchRenderer;
+            BatchPlugin.prototype = Object.create( AbstractBatchRenderer && AbstractBatchRenderer.prototype );
+            BatchPlugin.prototype.constructor = BatchPlugin;
+
+            return BatchPlugin;
+        }(AbstractBatchRenderer));
 };
 
 /**
- * Used by the BatchRenderer
+ * The default vertex shader source
  *
- * @class
- * @memberof PIXI
+ * @static
+ * @type {string}
+ * @constant
  */
-var BatchBuffer = function BatchBuffer(size)
+staticAccessors$1.defaultVertexSrc.get = function ()
 {
-    this.vertices = new ArrayBuffer(size);
-
-    /**
-     * View on the vertices as a Float32Array for positions
-     *
-     * @member {Float32Array}
-     */
-    this.float32View = new Float32Array(this.vertices);
-
-    /**
-     * View on the vertices as a Uint32Array for uvs
-     *
-     * @member {Float32Array}
-     */
-    this.uint32View = new Uint32Array(this.vertices);
+    return defaultVertex$2;
 };
 
 /**
- * Destroys the buffer.
+ * The default fragment shader source
  *
+ * @static
+ * @type {string}
+ * @constant
  */
-BatchBuffer.prototype.destroy = function destroy ()
+staticAccessors$1.defaultFragmentTemplate.get = function ()
 {
-    this.vertices = null;
-    this.float32View = null;
-    this.uint32View = null;
+    return defaultFragment$2;
 };
 
-var vertex$1 = "precision highp float;\nattribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\nattribute vec4 aColor;\nattribute float aTextureId;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform vec4 tint;\n\nvarying vec2 vTextureCoord;\nvarying vec4 vColor;\nvarying float vTextureId;\n\nvoid main(void){\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = aTextureCoord;\n    vTextureId = aTextureId;\n    vColor = aColor * tint;\n}\n";
-
-var fragTemplate$1 = [
-    'varying vec2 vTextureCoord;',
-    'varying vec4 vColor;',
-    'varying float vTextureId;',
-    'uniform sampler2D uSamplers[%count%];',
-
-    'void main(void){',
-    'vec4 color;',
-    '%forloop%',
-    'gl_FragColor = color * vColor;',
-    '}' ].join('\n');
-
-var defaultGroupCache = {};
-var programCache = {};
-
-function generateMultiTextureShader(gl, maxTextures)
-{
-    if (!programCache[maxTextures])
-    {
-        var sampleValues = new Int32Array(maxTextures);
-
-        for (var i = 0; i < maxTextures; i++)
-        {
-            sampleValues[i] = i;
-        }
-
-        defaultGroupCache[maxTextures] = UniformGroup.from({ uSamplers: sampleValues }, true);
-
-        var fragmentSrc = fragTemplate$1;
-
-        fragmentSrc = fragmentSrc.replace(/%count%/gi, maxTextures);
-        fragmentSrc = fragmentSrc.replace(/%forloop%/gi, generateSampleSrc(maxTextures));
-
-        programCache[maxTextures] = new Program(vertex$1, fragmentSrc);
-    }
-
-    var uniforms = {
-        tint: new Float32Array([1, 1, 1, 1]),
-        translationMatrix: new _pixi_math__WEBPACK_IMPORTED_MODULE_5__["Matrix"](),
-        default: defaultGroupCache[maxTextures],
-    };
-
-    var shader = new Shader(programCache[maxTextures], uniforms);
-
-    return shader;
-}
-
-function generateSampleSrc(maxTextures)
-{
-    var src = '';
-
-    src += '\n';
-    src += '\n';
-
-    for (var i = 0; i < maxTextures; i++)
-    {
-        if (i > 0)
-        {
-            src += '\nelse ';
-        }
-
-        if (i < maxTextures - 1)
-        {
-            src += "if(vTextureId < " + i + ".5)";
-        }
-
-        src += '\n{';
-        src += "\n\tcolor = texture2D(uSamplers[" + i + "], vTextureCoord);";
-        src += '\n}';
-    }
-
-    src += '\n';
-    src += '\n';
-
-    return src;
-}
-
-/**
- * Renderer dedicated to drawing and batching sprites.
- *
- * @class
- * @protected
- * @memberof PIXI
- * @extends PIXI.ObjectRenderer
- */
-var BatchRenderer = /*@__PURE__*/(function (ObjectRenderer) {
-    function BatchRenderer(renderer)
-    {
-        ObjectRenderer.call(this, renderer);
-
-        /**
-         * Number of values sent in the vertex buffer.
-         * aVertexPosition(2), aTextureCoord(1), aColor(1), aTextureId(1) = 5
-         *
-         * @member {number}
-         */
-        this.vertSize = 6;
-
-        /**
-         * The size of the vertex information in bytes.
-         *
-         * @member {number}
-         */
-        this.vertByteSize = this.vertSize * 4;
-
-        /**
-         * The number of images in the SpriteRenderer before it flushes.
-         *
-         * @member {number}
-         */
-        this.size = 2000 * 4;// settings.SPRITE_BATCH_SIZE; // 2000 is a nice balance between mobile / desktop
-
-        this.currentSize = 0;
-        this.currentIndexSize = 0;
-
-        // the total number of bytes in our batch
-        // let numVerts = this.size * 4 * this.vertByteSize;
-
-        this.attributeBuffers = {};
-        this.aBuffers = {};
-        this.iBuffers = {};
-
-        //     this.defualtSpriteIndexBuffer = new Buffer(createIndicesForQuads(this.size), true, true);
-
-        /**
-         * Holds the defualt indices of the geometry (quads) to draw
-         *
-         * @member {Uint16Array}
-         */
-        // const indicies = createIndicesForQuads(this.size);
-
-        //  this.defaultQuadIndexBuffer = new Buffer(indicies, true, true);
-
-        this.onlySprites = false;
-
-        /**
-         * The default shaders that is used if a sprite doesn't have a more specific one.
-         * there is a shader for each number of textures that can be rendered.
-         * These shaders will also be generated on the fly as required.
-         * @member {PIXI.Shader[]}
-         */
-        this.shader = null;
-
-        this.currentIndex = 0;
-        this.groups = [];
-
-        for (var k = 0; k < this.size / 4; k++)
-        {
-            this.groups[k] = new BatchDrawCall();
-        }
-
-        this.elements = [];
-
-        this.vaos = [];
-
-        this.vaoMax = 2;
-        this.vertexCount = 0;
-
-        this.renderer.on('prerender', this.onPrerender, this);
-        this.state = State.for2d();
-    }
-
-    if ( ObjectRenderer ) BatchRenderer.__proto__ = ObjectRenderer;
-    BatchRenderer.prototype = Object.create( ObjectRenderer && ObjectRenderer.prototype );
-    BatchRenderer.prototype.constructor = BatchRenderer;
-
-    /**
-     * Sets up the renderer context and necessary buffers.
-     */
-    BatchRenderer.prototype.contextChange = function contextChange ()
-    {
-        var gl = this.renderer.gl;
-
-        if (_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].PREFER_ENV === _pixi_constants__WEBPACK_IMPORTED_MODULE_3__["ENV"].WEBGL_LEGACY)
-        {
-            this.MAX_TEXTURES = 1;
-        }
-        else
-        {
-            // step 1: first check max textures the GPU can handle.
-            this.MAX_TEXTURES = Math.min(gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS), _pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].SPRITE_MAX_TEXTURES);
-
-            // step 2: check the maximum number of if statements the shader can have too..
-            this.MAX_TEXTURES = checkMaxIfStatementsInShader(this.MAX_TEXTURES, gl);
-        }
-
-        // generate generateMultiTextureProgram, may be a better move?
-        this.shader = generateMultiTextureShader(gl, this.MAX_TEXTURES);
-
-        // we use the second shader as the first one depending on your browser may omit aTextureId
-        // as it is not used by the shader so is optimized out.
-        for (var i = 0; i < this.vaoMax; i++)
-        {
-            /* eslint-disable max-len */
-            this.vaos[i] = new BatchGeometry();
-        }
-    };
-
-    /**
-     * Called before the renderer starts rendering.
-     *
-     */
-    BatchRenderer.prototype.onPrerender = function onPrerender ()
-    {
-        this.vertexCount = 0;
-    };
-
-    /**
-     * Renders the sprite object.
-     *
-     * @param {PIXI.Sprite} sprite - the sprite to render when using this spritebatch
-     */
-    BatchRenderer.prototype.render = function render (element)
-    {
-        if (!element._texture.valid)
-        {
-            return;
-        }
-
-        if (this.currentSize + (element.vertexData.length / 2) > this.size)
-        {
-            this.flush();
-        }
-
-        this.elements[this.currentIndex++] = element;
-
-        this.currentSize += element.vertexData.length / 2;
-        this.currentIndexSize += element.indices.length;
-    };
-
-    BatchRenderer.prototype.getIndexBuffer = function getIndexBuffer (size)
-    {
-        // 12 indices is enough for 2 quads
-        var roundedP2 = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(Math.ceil(size / 12));
-        var roundedSizeIndex = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["log2"])(roundedP2);
-        var roundedSize = roundedP2 * 12;
-
-        if (this.iBuffers.length <= roundedSizeIndex)
-        {
-            this.iBuffers.length = roundedSizeIndex + 1;
-        }
-
-        var buffer = this.iBuffers[roundedSizeIndex];
-
-        if (!buffer)
-        {
-            this.iBuffers[roundedSizeIndex] = buffer = new Uint16Array(roundedSize);
-        }
-
-        return buffer;
-    };
-
-    BatchRenderer.prototype.getAttributeBuffer = function getAttributeBuffer (size)
-    {
-        // 8 vertices is enough for 2 quads
-        var roundedP2 = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["nextPow2"])(Math.ceil(size / 8));
-        var roundedSizeIndex = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["log2"])(roundedP2);
-        var roundedSize = roundedP2 * 8;
-
-        if (this.aBuffers.length <= roundedSizeIndex)
-        {
-            this.iBuffers.length = roundedSizeIndex + 1;
-        }
-
-        var buffer = this.aBuffers[roundedSize];
-
-        if (!buffer)
-        {
-            this.aBuffers[roundedSize] = buffer = new BatchBuffer(roundedSize * this.vertByteSize);
-        }
-
-        return buffer;
-    };
-
-    /**
-     * Renders the content and empties the current batch.
-     *
-     */
-    BatchRenderer.prototype.flush = function flush ()
-    {
-        if (this.currentSize === 0)
-        {
-            return;
-        }
-
-        var gl = this.renderer.gl;
-        var MAX_TEXTURES = this.MAX_TEXTURES;
-
-        var buffer = this.getAttributeBuffer(this.currentSize);
-        var indexBuffer = this.getIndexBuffer(this.currentIndexSize);
-
-        var elements = this.elements;
-        var groups = this.groups;
-
-        var float32View = buffer.float32View;
-        var uint32View = buffer.uint32View;
-
-        var touch = this.renderer.textureGC.count;
-
-        var index = 0;
-        var indexCount = 0;
-        var nextTexture;
-        var currentTexture;
-        var groupCount = 0;
-
-        var textureCount = 0;
-        var currentGroup = groups[0];
-
-        var blendMode = -1;// premultiplyBlendMode[elements[0]._texture.baseTexture.premultiplyAlpha ? 0 : ][elements[0].blendMode];
-
-        currentGroup.textureCount = 0;
-        currentGroup.start = 0;
-        currentGroup.blend = blendMode;
-
-        var TICK = ++BaseTexture._globalBatch;
-
-        var i;
-
-        for (i = 0; i < this.currentIndex; ++i)
-        {
-            // upload the sprite elements...
-            // they have all ready been calculated so we just need to push them into the buffer.
-
-            var sprite = elements[i];
-
-            elements[i] = null;
-
-            nextTexture = sprite._texture.baseTexture;
-
-            var spriteBlendMode = _pixi_utils__WEBPACK_IMPORTED_MODULE_1__["premultiplyBlendMode"][nextTexture.premultiplyAlpha ? 1 : 0][sprite.blendMode];
-
-            if (blendMode !== spriteBlendMode)
-            {
-                blendMode = spriteBlendMode;
-
-                // force the batch to break!
-                currentTexture = null;
-                textureCount = MAX_TEXTURES;
-                TICK++;
-            }
-
-            if (currentTexture !== nextTexture)
-            {
-                currentTexture = nextTexture;
-
-                if (nextTexture._batchEnabled !== TICK)
-                {
-                    if (textureCount === MAX_TEXTURES)
-                    {
-                        TICK++;
-
-                        textureCount = 0;
-
-                        currentGroup.size = indexCount - currentGroup.start;
-
-                        currentGroup = groups[groupCount++];
-                        currentGroup.textureCount = 0;
-                        currentGroup.blend = blendMode;
-                        currentGroup.start = indexCount;
-                    }
-
-                    nextTexture.touched = touch;
-                    nextTexture._batchEnabled = TICK;
-                    nextTexture._id = textureCount;
-
-                    currentGroup.textures[currentGroup.textureCount++] = nextTexture;
-                    textureCount++;
-                }
-            }
-
-            this.packGeometry(sprite, float32View, uint32View, indexBuffer, index, indexCount);// argb, nextTexture._id, float32View, uint32View, indexBuffer, index, indexCount);
-
-            // push a graphics..
-            index += (sprite.vertexData.length / 2) * this.vertSize;
-            indexCount += sprite.indices.length;
-        }
-
-        BaseTexture._globalBatch = TICK;
-
-        currentGroup.size = indexCount - currentGroup.start;
-
-        //        this.indexBuffer.update();
-
-        if (!_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].CAN_UPLOAD_SAME_BUFFER)
-        {
-            // this is still needed for IOS performance..
-            // it really does not like uploading to the same buffer in a single frame!
-            if (this.vaoMax <= this.vertexCount)
-            {
-                this.vaoMax++;
-                /* eslint-disable max-len */
-                this.vaos[this.vertexCount] = new BatchGeometry();
-            }
-
-            this.vaos[this.vertexCount]._buffer.update(buffer.vertices, 0);
-            this.vaos[this.vertexCount]._indexBuffer.update(indexBuffer, 0);
-
-            //   this.vertexBuffers[this.vertexCount].update(buffer.vertices, 0);
-            this.renderer.geometry.bind(this.vaos[this.vertexCount]);
-
-            this.renderer.geometry.updateBuffers();
-
-            this.vertexCount++;
-        }
-        else
-        {
-            // lets use the faster option, always use buffer number 0
-            this.vaos[this.vertexCount]._buffer.update(buffer.vertices, 0);
-            this.vaos[this.vertexCount]._indexBuffer.update(indexBuffer, 0);
-
-            //   if (true)// this.spriteOnly)
-            // {
-            // this.vaos[this.vertexCount].indexBuffer = this.defualtSpriteIndexBuffer;
-            // this.vaos[this.vertexCount].buffers[1] = this.defualtSpriteIndexBuffer;
-            // }
-
-            this.renderer.geometry.updateBuffers();
-        }
-
-        //   this.renderer.state.set(this.state);
-
-        var textureSystem = this.renderer.texture;
-        var stateSystem = this.renderer.state;
-        // e.log(groupCount);
-        // / render the groups..
-
-        for (i = 0; i < groupCount; i++)
-        {
-            var group = groups[i];
-            var groupTextureCount = group.textureCount;
-
-            for (var j = 0; j < groupTextureCount; j++)
-            {
-                textureSystem.bind(group.textures[j], j);
-                group.textures[j] = null;
-            }
-
-            // this.state.blendMode = group.blend;
-            // this.state.blend = true;
-
-            // this.renderer.state.setState(this.state);
-            // set the blend mode..
-            stateSystem.setBlendMode(group.blend);
-
-            gl.drawElements(group.type, group.size, gl.UNSIGNED_SHORT, group.start * 2);
-        }
-
-        // reset elements for the next flush
-        this.currentIndex = 0;
-        this.currentSize = 0;
-        this.currentIndexSize = 0;
-    };
-
-    BatchRenderer.prototype.packGeometry = function packGeometry (element, float32View, uint32View, indexBuffer, index, indexCount)
-    {
-        var p = index / this.vertSize;// float32View.length / 6 / 2;
-        var uvs = element.uvs;
-        var indicies = element.indices;// geometry.getIndex().data;// indicies;
-        var vertexData = element.vertexData;
-        var textureId = element._texture.baseTexture._id;
-
-        var alpha = Math.min(element.worldAlpha, 1.0);
-
-        var argb = alpha < 1.0 && element._texture.baseTexture.premultiplyAlpha ? Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_1__["premultiplyTint"])(element._tintRGB, alpha)
-            : element._tintRGB + (alpha * 255 << 24);
-
-        // lets not worry about tint! for now..
-        for (var i = 0; i < vertexData.length; i += 2)
-        {
-            float32View[index++] = vertexData[i];
-            float32View[index++] = vertexData[i + 1];
-            float32View[index++] = uvs[i];
-            float32View[index++] = uvs[i + 1];
-            uint32View[index++] = argb;
-            float32View[index++] = textureId;
-        }
-
-        for (var i$1 = 0; i$1 < indicies.length; i$1++)
-        {
-            indexBuffer[indexCount++] = p + indicies[i$1];
-        }
-    };
-    /*
-    renderQuad(vertexData, uvs, argb, textureId, float32View, uint32View, indexBuffer, index, indexCount)
-    {
-        const p = index / 6;
-
-        float32View[index++] = vertexData[0];
-        float32View[index++] = vertexData[1];
-        float32View[index++] = uvs.x0;
-        float32View[index++] = uvs.y0;
-        uint32View[index++] = argb;
-        float32View[index++] = textureId;
-
-        float32View[index++] = vertexData[2];
-        float32View[index++] = vertexData[3];
-        float32View[index++] = uvs.x1;
-        float32View[index++] = uvs.y1;
-        uint32View[index++] = argb;
-        float32View[index++] = textureId;
-
-        float32View[index++] = vertexData[4];
-        float32View[index++] = vertexData[5];
-        float32View[index++] = uvs.x2;
-        float32View[index++] = uvs.y2;
-        uint32View[index++] = argb;
-        float32View[index++] = textureId;
-
-        float32View[index++] = vertexData[6];
-        float32View[index++] = vertexData[7];
-        float32View[index++] = uvs.x3;
-        float32View[index++] = uvs.y3;
-        uint32View[index++] = argb;
-        float32View[index++] = textureId;
-
-        indexBuffer[indexCount++] = p + 0;
-        indexBuffer[indexCount++] = p + 1;
-        indexBuffer[indexCount++] = p + 2;
-        indexBuffer[indexCount++] = p + 0;
-        indexBuffer[indexCount++] = p + 2;
-        indexBuffer[indexCount++] = p + 3;
-    }
-*/
-    /**
-     * Starts a new sprite batch.
-     */
-    BatchRenderer.prototype.start = function start ()
-    {
-        this.renderer.state.setState(this.state);
-
-        this.renderer.shader.bind(this.shader);
-
-        if (_pixi_settings__WEBPACK_IMPORTED_MODULE_2__["settings"].CAN_UPLOAD_SAME_BUFFER)
-        {
-            // bind buffer #0, we don't need others
-            this.renderer.geometry.bind(this.vaos[this.vertexCount]);
-        }
-    };
-
-    /**
-     * Stops and flushes the current batch.
-     *
-     */
-    BatchRenderer.prototype.stop = function stop ()
-    {
-        this.flush();
-    };
-
-    /**
-     * Destroys the SpriteRenderer.
-     *
-     */
-    BatchRenderer.prototype.destroy = function destroy ()
-    {
-        for (var i = 0; i < this.vaoMax; i++)
-        {
-            // if (this.vertexBuffers[i])
-            // {
-            //     this.vertexBuffers[i].destroy();
-            // }
-            if (this.vaos[i])
-            {
-                this.vaos[i].destroy();
-            }
-        }
-
-        if (this.indexBuffer)
-        {
-            this.indexBuffer.destroy();
-        }
-
-        this.renderer.off('prerender', this.onPrerender, this);
-
-        if (this.shader)
-        {
-            this.shader.destroy();
-            this.shader = null;
-        }
-
-        // this.vertexBuffers = null;
-        this.vaos = null;
-        this.indexBuffer = null;
-        this.indices = null;
-        this.sprites = null;
-
-        // for (let i = 0; i < this.buffers.length; ++i)
-        // {
-        //     this.buffers[i].destroy();
-        // }
-
-        ObjectRenderer.prototype.destroy.call(this);
-    };
-
-    return BatchRenderer;
-}(ObjectRenderer));
+Object.defineProperties( BatchPluginFactory, staticAccessors$1 );
+
+// Setup the default BatchRenderer plugin, this is what
+// we'll actually export at the root level
+var BatchRenderer = BatchPluginFactory.create();
 
 
 //# sourceMappingURL=core.es.js.map
@@ -13931,8 +13822,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /*!
- * @pixi/display - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/display - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/display is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -14435,7 +14326,7 @@ var DisplayObject = /*@__PURE__*/(function (EventEmitter) {
         /**
          * The original, cached mask of the object.
          *
-         * @member {PIXI.Graphics|PIXI.Sprite}
+         * @member {PIXI.Graphics|PIXI.Sprite|null}
          * @protected
          */
         this._mask = null;
@@ -14571,6 +14462,7 @@ var DisplayObject = /*@__PURE__*/(function (EventEmitter) {
         if (this._boundsID !== this._lastBoundsID)
         {
             this.calculateBounds();
+            this._lastBoundsID = this._boundsID;
         }
 
         if (!rect)
@@ -15003,7 +14895,7 @@ var DisplayObject = /*@__PURE__*/(function (EventEmitter) {
      * sprite.mask = graphics;
      * @todo At the moment, PIXI.CanvasRenderer doesn't support PIXI.Sprite as mask.
      *
-     * @member {PIXI.Graphics|PIXI.Sprite}
+     * @member {PIXI.Graphics|PIXI.Sprite|null}
      */
     prototypeAccessors.mask.get = function ()
     {
@@ -15032,7 +14924,13 @@ var DisplayObject = /*@__PURE__*/(function (EventEmitter) {
     return DisplayObject;
 }(_pixi_utils__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]));
 
-// performance increase to avoid using call.. (10x faster)
+/**
+ * DisplayObject default updateTransform, does not update children of container.
+ * Will crash if there's no parent element.
+ *
+ * @memberof PIXI.DisplayObject#
+ * @function displayObjectUpdateTransform
+ */
 DisplayObject.prototype.displayObjectUpdateTransform = DisplayObject.prototype.updateTransform;
 
 function sortChildren(a, b)
@@ -15538,7 +15436,7 @@ var Container = /*@__PURE__*/(function (DisplayObject) {
         }
 
         // do a quick check to see if this element has a mask or a filter.
-        if (this._mask || this.filters)
+        if (this._mask || (this.filters && this.filters.length))
         {
             this.renderAdvanced(renderer);
         }
@@ -15741,8 +15639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /*!
- * @pixi/extract - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/extract - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/extract is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -15857,8 +15755,8 @@ Extract.prototype.canvas = function canvas (target)
         renderer.renderTexture.bind(null);
     }
 
-    var width = frame.width * resolution;
-    var height = frame.height * resolution;
+    var width = Math.floor(frame.width * resolution);
+    var height = Math.floor(frame.height * resolution);
 
     var canvasBuffer = new _pixi_utils__WEBPACK_IMPORTED_MODULE_1__["CanvasRenderTarget"](width, height, 1);
 
@@ -15880,7 +15778,7 @@ Extract.prototype.canvas = function canvas (target)
     // add the pixels to the canvas
     var canvasData = canvasBuffer.context.getImageData(0, 0, width, height);
 
-    canvasData.data.set(webglPixels);
+    Extract.arrayPostDivide(webglPixels, canvasData.data);
 
     canvasBuffer.context.putImageData(canvasData, 0, 0);
 
@@ -15906,7 +15804,7 @@ Extract.prototype.canvas = function canvas (target)
  *
  * @param {PIXI.DisplayObject|PIXI.RenderTexture} target - A displayObject or renderTexture
  *  to convert. If left empty will use the main renderer
- * @return {Uint8ClampedArray} One-dimensional array containing the pixel data of the entire texture
+ * @return {Uint8Array} One-dimensional array containing the pixel data of the entire texture
  */
 Extract.prototype.pixels = function pixels (target)
 {
@@ -15971,6 +15869,8 @@ Extract.prototype.pixels = function pixels (target)
         renderTexture.destroy(true);
     }
 
+    Extract.arrayPostDivide(webglPixels, webglPixels);
+
     return webglPixels;
 };
 
@@ -15982,6 +15882,34 @@ Extract.prototype.destroy = function destroy ()
 {
     this.renderer.extract = null;
     this.renderer = null;
+};
+
+/**
+ * Takes premultiplied pixel data and produces regular pixel data
+ *
+ * @private
+ * @param pixels {number[] | Uint8Array | Uint8ClampedArray} array of pixel data
+ * @param out {number[] | Uint8Array | Uint8ClampedArray} output array
+ */
+Extract.arrayPostDivide = function arrayPostDivide (pixels, out)
+{
+    for (var i = 0; i < pixels.length; i += 4)
+    {
+        var alpha = out[i + 3] = pixels[i + 3];
+
+        if (alpha !== 0)
+        {
+            out[i] = Math.round(Math.min(pixels[i] * 255.0 / alpha, 255.0));
+            out[i + 1] = Math.round(Math.min(pixels[i + 1] * 255.0 / alpha, 255.0));
+            out[i + 2] = Math.round(Math.min(pixels[i + 2] * 255.0 / alpha, 255.0));
+        }
+        else
+        {
+            out[i] = pixels[i];
+            out[i + 1] = pixels[i + 1];
+            out[i + 2] = pixels[i + 2];
+        }
+    }
 };
 
 /**
@@ -16023,8 +15951,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlphaFilter", function() { return AlphaFilter; });
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/filter-alpha - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-alpha - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-alpha is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -16107,8 +16035,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /* harmony import */ var _pixi_settings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/settings */ "./node_modules/@pixi/settings/lib/settings.es.js");
 /*!
- * @pixi/filter-blur - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-blur - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-blur is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -16551,8 +16479,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColorMatrixFilter", function() { return ColorMatrixFilter; });
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/filter-color-matrix - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-color-matrix - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-color-matrix is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -17168,8 +17096,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /*!
- * @pixi/filter-displacement - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-displacement - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-displacement is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -17304,8 +17232,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FXAAFilter", function() { return FXAAFilter; });
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/filter-fxaa - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-fxaa - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-fxaa is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -17359,8 +17287,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoiseFilter", function() { return NoiseFilter; });
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/filter-noise - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/filter-noise - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/filter-noise is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -17465,8 +17393,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/constants */ "./node_modules/@pixi/constants/lib/constants.es.js");
 /*!
- * @pixi/graphics - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/graphics - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/graphics is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -17809,6 +17737,7 @@ function buildLine$1(graphicsData, graphicsGeometry)
 {
     var shape = graphicsData.shape;
     var points = graphicsData.points || shape.points.slice();
+    var eps = graphicsGeometry.closePointEps;
 
     if (points.length === 0)
     {
@@ -17830,7 +17759,8 @@ function buildLine$1(graphicsData, graphicsGeometry)
     var firstPoint = new _pixi_math__WEBPACK_IMPORTED_MODULE_1__["Point"](points[0], points[1]);
     var lastPoint = new _pixi_math__WEBPACK_IMPORTED_MODULE_1__["Point"](points[points.length - 2], points[points.length - 1]);
     var closedShape = shape.type !== _pixi_math__WEBPACK_IMPORTED_MODULE_1__["SHAPES"].POLY || shape.closeStroke;
-    var closedPath = firstPoint.x === lastPoint.x && firstPoint.y === lastPoint.y;
+    var closedPath = Math.abs(firstPoint.x - lastPoint.x) < eps
+        && Math.abs(firstPoint.y - lastPoint.y) < eps;
 
     // if the first point is the last point - gonna have issues :)
     if (closedShape)
@@ -18023,7 +17953,9 @@ function buildNativeLine(graphicsData, graphicsGeometry)
 {
     var i = 0;
 
-    var points = graphicsData.points || graphicsData.shape.points;
+    var shape = graphicsData.shape;
+    var points = graphicsData.points || shape.points;
+    var closedShape = shape.type !== _pixi_math__WEBPACK_IMPORTED_MODULE_1__["SHAPES"].POLY || shape.closeStroke;
 
     if (points.length === 0) { return; }
 
@@ -18031,22 +17963,22 @@ function buildNativeLine(graphicsData, graphicsGeometry)
     var indices = graphicsGeometry.indices;
     var length = points.length / 2;
 
-    var indexStart = verts.length / 2;
-    // sort color
+    var startIndex = verts.length / 2;
+    var currentIndex = startIndex;
+
+    verts.push(points[0], points[1]);
 
     for (i = 1; i < length; i++)
     {
-        var p1x = points[(i - 1) * 2];
-        var p1y = points[((i - 1) * 2) + 1];
+        verts.push(points[i * 2], points[(i * 2) + 1]);
+        indices.push(currentIndex, currentIndex + 1);
 
-        var p2x = points[i * 2];
-        var p2y = points[(i * 2) + 1];
+        currentIndex++;
+    }
 
-        verts.push(p1x, p1y);
-
-        verts.push(p2x, p2y);
-
-        indices.push(indexStart++, indexStart++);
+    if (closedShape)
+    {
+        indices.push(currentIndex, startIndex);
     }
 }
 
@@ -18311,6 +18243,7 @@ function quadraticBezierCurve(fromX, fromY, cpX, cpY, toX, toY, out)
 
 var BATCH_POOL = [];
 var DRAW_CALL_POOL = [];
+var tmpPoint = new _pixi_math__WEBPACK_IMPORTED_MODULE_1__["Point"]();
 
 /**
  * Map of fill commands for each shape type.
@@ -18357,9 +18290,9 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
         BatchGeometry.call(this);
 
         /**
-         * An array of points to draw
+         * An array of points to draw, 2 numbers per point
          *
-         * @member {PIXI.Point[]}
+         * @member {number[]}
          * @protected
          */
         this.points = [];
@@ -18405,8 +18338,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
         this.graphicsData = [];
 
         /**
-         * Used to detect if the graphics object has changed. If this is set to true then the graphics
-         * object will be recalculated.
+         * Used to detect if the graphics object has changed.
          *
          * @member {number}
          * @protected
@@ -18430,7 +18362,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
         this.cacheDirty = -1;
 
         /**
-         * Used to detect if we clear the graphics WebGL data.
+         * Used to detect if we cleared the graphicsData.
          *
          * @member {number}
          * @default 0
@@ -18456,7 +18388,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
         this.batches = [];
 
         /**
-         * Index of the current last shape in the stack of calls.
+         * Index of the last batched shape in the stack of calls.
          *
          * @member {number}
          * @protected
@@ -18492,6 +18424,14 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
         this.indicesUint16 = null;
 
         this.uvsFloat32 = null;
+
+        /**
+         * Minimal distance between points that are considered different.
+         * Affects line tesselation.
+         *
+         * @member {number}
+         */
+        this.closePointEps = 1e-4;
     }
 
     if ( BatchGeometry ) GraphicsGeometry.__proto__ = BatchGeometry;
@@ -18518,6 +18458,44 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
     };
 
     /**
+     * Call if you changed graphicsData manually.
+     * Empties all batch buffers.
+     */
+    GraphicsGeometry.prototype.invalidate = function invalidate ()
+    {
+        this.boundsDirty = -1;
+        this.dirty++;
+        this.batchDirty++;
+        this.shapeIndex = 0;
+
+        this.points.length = 0;
+        this.colors.length = 0;
+        this.uvs.length = 0;
+        this.indices.length = 0;
+        this.textureIds.length = 0;
+
+        for (var i = 0; i < this.drawCalls.length; i++)
+        {
+            this.drawCalls[i].textures.length = 0;
+            DRAW_CALL_POOL.push(this.drawCalls[i]);
+        }
+
+        this.drawCalls.length = 0;
+
+        for (var i$1 = 0; i$1 < this.batches.length; i$1++)
+        {
+            var batch =  this.batches[i$1];
+
+            batch.start = 0;
+            batch.attribStart = 0;
+            batch.style = null;
+            BATCH_POOL.push(batch);
+        }
+
+        this.batches.length = 0;
+    };
+
+    /**
      * Clears the graphics that were drawn to this Graphics object, and resets fill and line style settings.
      *
      * @return {PIXI.GraphicsGeometry} This GraphicsGeometry object. Good for chaining method calls
@@ -18526,38 +18504,9 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
     {
         if (this.graphicsData.length > 0)
         {
-            this.boundsDirty = -1;
-            this.dirty++;
+            this.invalidate();
             this.clearDirty++;
-            this.batchDirty++;
             this.graphicsData.length = 0;
-            this.shapeIndex = 0;
-
-            this.points.length = 0;
-            this.colors.length = 0;
-            this.uvs.length = 0;
-            this.indices.length = 0;
-            this.textureIds.length = 0;
-
-            for (var i = 0; i < this.drawCalls.length; i++)
-            {
-                this.drawCalls[i].textures.length = 0;
-                DRAW_CALL_POOL.push(this.drawCalls[i]);
-            }
-
-            this.drawCalls.length = 0;
-
-            for (var i$1 = 0; i$1 < this.batches.length; i$1++)
-            {
-                var batch =  this.batches[i$1];
-
-                batch.start = 0;
-                batch.attribStart = 0;
-                batch.style = null;
-                BATCH_POOL.push(batch);
-            }
-
-            this.batches.length = 0;
         }
 
         return this;
@@ -18606,7 +18555,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
 
         this.dirty++;
 
-        return data;
+        return this;
     };
 
     /**
@@ -18672,7 +18621,16 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
             // only deal with fills..
             if (data.shape)
             {
-                if (data.shape.contains(point.x, point.y))
+                if (data.matrix)
+                {
+                    data.matrix.applyInverse(point, tmpPoint);
+                }
+                else
+                {
+                    tmpPoint.copyFrom(point);
+                }
+
+                if (data.shape.contains(tmpPoint.x, tmpPoint.y))
                 {
                     if (data.holes)
                     {
@@ -18680,7 +18638,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
                         {
                             var hole = data.holes[i$1];
 
-                            if (hole.shape.contains(point.x, point.y))
+                            if (hole.shape.contains(tmpPoint.x, tmpPoint.y))
                             {
                                 return false;
                             }
@@ -18698,12 +18656,16 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
     /**
      * Generates intermediate batch data. Either gets converted to drawCalls
      * or used to convert to batch objects directly by the Graphics object.
-     * @protected
      */
     GraphicsGeometry.prototype.updateBatches = function updateBatches ()
     {
         if (this.dirty === this.cacheDirty) { return; }
-        if (this.graphicsData.length === 0) { return; }
+        if (this.graphicsData.length === 0)
+        {
+            this.batchable = true;
+
+            return;
+        }
 
         if (this.dirty !== this.cacheDirty)
         {
@@ -18720,20 +18682,22 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
 
         var uvs = this.uvs;
 
-        var batchPart = this.batches.pop()
-            || BATCH_POOL.pop()
-            || new BatchPart();
+        var batchPart = null;
+        var currentTexture = null;
+        var currentColor = 0;
+        var currentNative = false;
 
-        batchPart.style = batchPart.style
-            || this.graphicsData[0].fillStyle
-            || this.graphicsData[0].lineStyle;
+        if (this.batches.length > 0)
+        {
+            batchPart = this.batches[this.batches.length - 1];
 
-        var currentTexture = batchPart.style.texture.baseTexture;
-        var currentColor = batchPart.style.color + batchPart.style.alpha;
+            var style = batchPart.style;
 
-        this.batches.push(batchPart);
+            currentTexture = style.texture.baseTexture;
+            currentColor = style.color + style.alpha;
+            currentNative = !!style.native;
+        }
 
-        // TODO - this can be simplified
         for (var i$1 = this.shapeIndex; i$1 < this.graphicsData.length; i$1++)
         {
             this.shapeIndex++;
@@ -18754,37 +18718,42 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
 
             for (var j = 0; j < 2; j++)
             {
-                var style = (j === 0) ? fillStyle : lineStyle;
+                var style$1 = (j === 0) ? fillStyle : lineStyle;
 
-                if (!style.visible) { continue; }
+                if (!style$1.visible) { continue; }
 
-                var nextTexture = style.texture.baseTexture;
+                var nextTexture = style$1.texture.baseTexture;
 
-                if (currentTexture !== nextTexture || (style.color + style.alpha) !== currentColor)
+                var index$1 = this.indices.length;
+                var attribIndex = this.points.length / 2;
+
+                // close batch if style is different
+                if (batchPart
+                    && (currentTexture !== nextTexture
+                    || currentColor !== (style$1.color + style$1.alpha)
+                    || currentNative !== !!style$1.native))
                 {
-                    // TODO use a const
-                    nextTexture.wrapMode = 10497;
-                    currentTexture = nextTexture;
-                    currentColor = style.color + style.alpha;
-
-                    var index$1 = this.indices.length;
-                    var attribIndex = this.points.length / 2;
-
                     batchPart.size = index$1 - batchPart.start;
                     batchPart.attribSize = attribIndex - batchPart.attribStart;
 
                     if (batchPart.size > 0)
                     {
-                        batchPart = BATCH_POOL.pop() || new BatchPart();
-
-                        this.batches.push(batchPart);
+                        batchPart = null;
                     }
+                }
+                // spawn new batch if its first batch or previous was closed
+                if (!batchPart)
+                {
+                    batchPart = BATCH_POOL.pop() || new BatchPart();
+                    this.batches.push(batchPart);
+                    nextTexture.wrapMode = _pixi_constants__WEBPACK_IMPORTED_MODULE_4__["WRAP_MODES"].REPEAT;
+                    currentTexture = nextTexture;
+                    currentColor = style$1.color + style$1.alpha;
+                    currentNative = style$1.native;
 
-                    batchPart.style = style;
+                    batchPart.style = style$1;
                     batchPart.start = index$1;
                     batchPart.attribStart = attribIndex;
-
-                    // TODO add this to the render part..
                 }
 
                 var start = this.points.length / 2;
@@ -18814,12 +18783,21 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
 
                 var size = (this.points.length / 2) - start;
 
-                this.addUvs(this.points, uvs, style.texture, start, size, style.matrix);
+                this.addUvs(this.points, uvs, style$1.texture, start, size, style$1.matrix);
             }
         }
 
         var index = this.indices.length;
         var attrib = this.points.length / 2;
+
+        if (!batchPart)
+        {
+            // there are no visible styles in GraphicsData
+            // its possible that someone wants Graphics just for the bounds
+            this.batchable = true;
+
+            return;
+        }
 
         batchPart.size = index - batchPart.start;
         batchPart.attribSize = attrib - batchPart.attribStart;
@@ -18922,7 +18900,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
 
             var nextTexture = style.texture.baseTexture;
 
-            if (native !== style.native)
+            if (native !== !!style.native)
             {
                 native = style.native;
                 drawMode = native ? _pixi_constants__WEBPACK_IMPORTED_MODULE_4__["DRAW_MODES"].LINES : _pixi_constants__WEBPACK_IMPORTED_MODULE_4__["DRAW_MODES"].TRIANGLES;
@@ -19262,7 +19240,7 @@ var GraphicsGeometry = /*@__PURE__*/(function (BatchGeometry) {
     /**
      * Modify uvs array according to position of texture region
      * Does not work with rotated or trimmed textures
-     * @param {number} uvs array
+     * @param {number[]} uvs array
      * @param {PIXI.Texture} texture region
      * @param {number} start starting index for uvs
      * @param {number} size how many points to adjust
@@ -19820,6 +19798,14 @@ var Graphics = /*@__PURE__*/(function (Container) {
         this._transformID = -1;
         this.batchDirty = -1;
 
+        /**
+         * Renderer plugin for batching
+         *
+         * @member {string}
+         * @default 'batch'
+         */
+        this.pluginName = 'batch';
+
         // Set default
         this.tint = 0xFFFFFF;
         this.blendMode = _pixi_constants__WEBPACK_IMPORTED_MODULE_4__["BLEND_MODES"].NORMAL;
@@ -19907,7 +19893,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
      * @param {number} [width=0] - width of the line to draw, will update the objects stored style
      * @param {number} [color=0] - color of the line to draw, will update the objects stored style
      * @param {number} [alpha=1] - alpha of the line to draw, will update the objects stored style
-     * @param {number} [alignment=1] - alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)
+     * @param {number} [alignment=0.5] - alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)
      * @param {boolean} [native=false] - If true the lines will be draw using LINES instead of TRIANGLE_STRIP
      * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
      */
@@ -20218,6 +20204,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
 
         var startX = cx + (Math.cos(startAngle) * radius);
         var startY = cy + (Math.sin(startAngle) * radius);
+        var eps = this.geometry.closePointEps;
 
         // If the currentPath exists, take its points. Otherwise call `moveTo` to start a path.
         var points = this.currentPath ? this.currentPath.points : null;
@@ -20230,7 +20217,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
             var xDiff = Math.abs(points[points.length - 2] - startX);
             var yDiff = Math.abs(points[points.length - 1] - startY);
 
-            if (xDiff < 0.001 && yDiff < 0.001)
+            if (xDiff < eps && yDiff < eps)
             ;
             else
             {
@@ -20476,11 +20463,12 @@ var Graphics = /*@__PURE__*/(function (Container) {
     Graphics.prototype.clear = function clear ()
     {
         this.geometry.clear();
+        this._lineStyle.reset();
+        this._fillStyle.reset();
 
         this._matrix = null;
         this._holeMode = false;
         this.currentPath = null;
-        this._spriteRect = null;
 
         return this;
     };
@@ -20564,10 +20552,10 @@ var Graphics = /*@__PURE__*/(function (Container) {
                 }
             }
 
-            renderer.batch.setObjectRenderer(renderer.plugins.batch);
-
             if (this.batches.length)
             {
+                renderer.batch.setObjectRenderer(renderer.plugins[this.pluginName]);
+
                 this.calculateVertices();
                 this.calculateTints();
 
@@ -20577,7 +20565,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
 
                     batch$1.worldAlpha = this.worldAlpha * batch$1.alpha;
 
-                    renderer.plugins.batch.render(batch$1);
+                    renderer.plugins[this.pluginName].render(batch$1);
                 }
             }
         }
@@ -20606,7 +20594,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
                     };
 
                     // we can bbase default shader of the batch renderers program
-                    var program =  renderer.plugins.batch.shader.program;
+                    var program =  renderer.plugins.batch._shader.program;
 
                     defaultShader = new _pixi_core__WEBPACK_IMPORTED_MODULE_0__["Shader"](program, uniforms);
                 }
@@ -20639,7 +20627,7 @@ var Graphics = /*@__PURE__*/(function (Container) {
             renderer.geometry.bind(geometry, this.shader);
 
             // set state..
-            renderer.state.setState(this.state);
+            renderer.state.set(this.state);
 
             // then render the rest of them...
             for (var i$3 = 0; i$3 < geometry.drawCalls.length; i$3++)
@@ -20889,8 +20877,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /*!
- * @pixi/interaction - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/interaction - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/interaction is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -21292,6 +21280,30 @@ InteractionTrackingData.FLAGS = Object.freeze({
 });
 
 /**
+ * Interface for classes that represent a hit area.
+ *
+ * It is implemented by the following classes:
+ * - {@link PIXI.Circle}
+ * - {@link PIXI.Ellipse}
+ * - {@link PIXI.Polygon}
+ * - {@link PIXI.RoundedRectangle}
+ *
+ * @interface IHitArea
+ * @memberof PIXI
+ */
+
+/**
+ * Checks whether the x and y coordinates given are contained within this area
+ *
+ * @method
+ * @name contains
+ * @memberof PIXI.IHitArea#
+ * @param {number} x - The X coordinate of the point to test
+ * @param {number} y - The Y coordinate of the point to test
+ * @return {boolean} Whether the x/y coordinates are within this area
+ */
+
+/**
  * Default property values of interactive objects
  * Used by {@link PIXI.interaction.InteractionManager} to automatically give all DisplayObjects these properties
  *
@@ -21341,7 +21353,7 @@ var interactiveTarget = {
      * const sprite = new PIXI.Sprite(texture);
      * sprite.interactive = true;
      * sprite.hitArea = new PIXI.Rectangle(0, 0, 100, 100);
-     * @member {PIXI.Rectangle|PIXI.Circle|PIXI.Ellipse|PIXI.Polygon|PIXI.RoundedRectangle}
+     * @member {PIXI.IHitArea}
      * @memberof PIXI.DisplayObject#
      */
     hitArea: null,
@@ -22083,7 +22095,7 @@ var InteractionManager = /*@__PURE__*/(function (EventEmitter) {
      * other DOM elements on top of the renderers Canvas element. With this you'll be bale to delegate
      * another DOM element to receive those events.
      *
-     * @param {HTMLCanvasElement} element - the DOM element which will receive mouse and touch events.
+     * @param {HTMLElement} element - the DOM element which will receive mouse and touch events.
      * @param {number} [resolution=1] - The resolution / device pixel ratio of the new element (relative to the canvas).
      */
     InteractionManager.prototype.setTargetElement = function setTargetElement (element, resolution)
@@ -22278,8 +22290,6 @@ var InteractionManager = /*@__PURE__*/(function (EventEmitter) {
         }
 
         this.setCursorMode(this.cursor);
-
-        // TODO
     };
 
     /**
@@ -22870,14 +22880,8 @@ var InteractionManager = /*@__PURE__*/(function (EventEmitter) {
 
             interactionEvent.data.originalEvent = originalEvent;
 
-            var interactive = event.pointerType === 'touch' ? this.moveWhenInside : true;
+            this.processInteractive(interactionEvent, this.renderer._lastObjectRendered, this.processPointerMove, true);
 
-            this.processInteractive(
-                interactionEvent,
-                this.renderer._lastObjectRendered,
-                this.processPointerMove,
-                interactive
-            );
             this.emit('pointermove', interactionEvent);
             if (event.pointerType === 'touch') { this.emit('touchmove', interactionEvent); }
             if (event.pointerType === 'mouse' || event.pointerType === 'pen') { this.emit('mousemove', interactionEvent); }
@@ -23277,13 +23281,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loader", function() { return Loader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoaderResource", function() { return LoaderResource; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextureLoader", function() { return TextureLoader; });
-/* harmony import */ var resource_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! resource-loader */ "./node_modules/resource-loader/lib/index.js");
-/* harmony import */ var resource_loader__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(resource_loader__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var resource_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! resource-loader */ "./node_modules/resource-loader/dist/resource-loader.esm.js");
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/loaders - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/loaders - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/loaders is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -23291,1627 +23294,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function unwrapExports (x) {
-	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var parseUri = function parseURI (str, opts) {
-  opts = opts || {};
-
-  var o = {
-    key: ['source', 'protocol', 'authority', 'userInfo', 'user', 'password', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'anchor'],
-    q: {
-      name: 'queryKey',
-      parser: /(?:^|&)([^&=]*)=?([^&]*)/g
-    },
-    parser: {
-      strict: /^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,
-      loose: /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/
-    }
-  };
-
-  var m = o.parser[opts.strictMode ? 'strict' : 'loose'].exec(str);
-  var uri = {};
-  var i = 14;
-
-  while (i--) { uri[o.key[i]] = m[i] || ''; }
-
-  uri[o.q.name] = {};
-  uri[o.key[12]].replace(o.q.parser, function ($0, $1, $2) {
-    if ($1) { uri[o.q.name][$1] = $2; }
-  });
-
-  return uri
-};
-
-var miniSignals = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) { descriptor.writable = true; } Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) { defineProperties(Constructor.prototype, protoProps); } if (staticProps) { defineProperties(Constructor, staticProps); } return Constructor; }; })();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-var MiniSignalBinding = (function () {
-  function MiniSignalBinding(fn, once, thisArg) {
-    if (once === undefined) { once = false; }
-
-    _classCallCheck(this, MiniSignalBinding);
-
-    this._fn = fn;
-    this._once = once;
-    this._thisArg = thisArg;
-    this._next = this._prev = this._owner = null;
-  }
-
-  _createClass(MiniSignalBinding, [{
-    key: 'detach',
-    value: function detach() {
-      if (this._owner === null) { return false; }
-      this._owner.detach(this);
-      return true;
-    }
-  }]);
-
-  return MiniSignalBinding;
-})();
-
-function _addMiniSignalBinding(self, node) {
-  if (!self._head) {
-    self._head = node;
-    self._tail = node;
-  } else {
-    self._tail._next = node;
-    node._prev = self._tail;
-    self._tail = node;
-  }
-
-  node._owner = self;
-
-  return node;
-}
-
-var MiniSignal = (function () {
-  function MiniSignal() {
-    _classCallCheck(this, MiniSignal);
-
-    this._head = this._tail = undefined;
-  }
-
-  _createClass(MiniSignal, [{
-    key: 'handlers',
-    value: function handlers() {
-      var exists = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
-
-      var node = this._head;
-
-      if (exists) { return !!node; }
-
-      var ee = [];
-
-      while (node) {
-        ee.push(node);
-        node = node._next;
-      }
-
-      return ee;
-    }
-  }, {
-    key: 'has',
-    value: function has(node) {
-      if (!(node instanceof MiniSignalBinding)) {
-        throw new Error('MiniSignal#has(): First arg must be a MiniSignalBinding object.');
-      }
-
-      return node._owner === this;
-    }
-  }, {
-    key: 'dispatch',
-    value: function dispatch() {
-      var arguments$1 = arguments;
-
-      var node = this._head;
-
-      if (!node) { return false; }
-
-      while (node) {
-        if (node._once) { this.detach(node); }
-        node._fn.apply(node._thisArg, arguments$1);
-        node = node._next;
-      }
-
-      return true;
-    }
-  }, {
-    key: 'add',
-    value: function add(fn) {
-      var thisArg = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
-
-      if (typeof fn !== 'function') {
-        throw new Error('MiniSignal#add(): First arg must be a Function.');
-      }
-      return _addMiniSignalBinding(this, new MiniSignalBinding(fn, false, thisArg));
-    }
-  }, {
-    key: 'once',
-    value: function once(fn) {
-      var thisArg = arguments.length <= 1 || arguments[1] === undefined ? null : arguments[1];
-
-      if (typeof fn !== 'function') {
-        throw new Error('MiniSignal#once(): First arg must be a Function.');
-      }
-      return _addMiniSignalBinding(this, new MiniSignalBinding(fn, true, thisArg));
-    }
-  }, {
-    key: 'detach',
-    value: function detach(node) {
-      if (!(node instanceof MiniSignalBinding)) {
-        throw new Error('MiniSignal#detach(): First arg must be a MiniSignalBinding object.');
-      }
-      if (node._owner !== this) { return this; }
-
-      if (node._prev) { node._prev._next = node._next; }
-      if (node._next) { node._next._prev = node._prev; }
-
-      if (node === this._head) {
-        this._head = node._next;
-        if (node._next === null) {
-          this._tail = null;
-        }
-      } else if (node === this._tail) {
-        this._tail = node._prev;
-        this._tail._next = null;
-      }
-
-      node._owner = null;
-      return this;
-    }
-  }, {
-    key: 'detachAll',
-    value: function detachAll() {
-      var node = this._head;
-      if (!node) { return this; }
-
-      this._head = this._tail = null;
-
-      while (node) {
-        node._owner = null;
-        node = node._next;
-      }
-      return this;
-    }
-  }]);
-
-  return MiniSignal;
-})();
-
-MiniSignal.MiniSignalBinding = MiniSignalBinding;
-
-exports['default'] = MiniSignal;
-module.exports = exports['default'];
-});
-
-unwrapExports(miniSignals);
-
-var Resource_1 = createCommonjsModule(function (module, exports) {
-
-exports.__esModule = true;
-exports.Resource = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) { descriptor.writable = true; } Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) { defineProperties(Constructor.prototype, protoProps); } if (staticProps) { defineProperties(Constructor, staticProps); } return Constructor; }; }();
-
-
-
-var _parseUri2 = _interopRequireDefault(parseUri);
-
-
-
-var _miniSignals2 = _interopRequireDefault(miniSignals);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// tests if CORS is supported in XHR, if not we need to use XDR
-var useXdr = !!(window.XDomainRequest && !('withCredentials' in new XMLHttpRequest()));
-var tempAnchor = null;
-
-// some status constants
-var STATUS_NONE = 0;
-var STATUS_OK = 200;
-var STATUS_EMPTY = 204;
-var STATUS_IE_BUG_EMPTY = 1223;
-var STATUS_TYPE_OK = 2;
-
-// noop
-function _noop() {} /* empty */
-
-/**
- * Manages the state and loading of a resource and all child resources.
- *
- * @class
- */
-
-var Resource = exports.Resource = function () {
-    /**
-     * Sets the load type to be used for a specific extension.
-     *
-     * @static
-     * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
-     * @param {Resource.LOAD_TYPE} loadType - The load type to set it to.
-     */
-    Resource.setExtensionLoadType = function setExtensionLoadType(extname, loadType) {
-        setExtMap(Resource._loadTypeMap, extname, loadType);
-    };
-
-    /**
-     * Sets the load type to be used for a specific extension.
-     *
-     * @static
-     * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
-     * @param {Resource.XHR_RESPONSE_TYPE} xhrType - The xhr type to set it to.
-     */
-
-
-    Resource.setExtensionXhrType = function setExtensionXhrType(extname, xhrType) {
-        setExtMap(Resource._xhrTypeMap, extname, xhrType);
-    };
-
-    /**
-     * @param {string} name - The name of the resource to load.
-     * @param {string|string[]} url - The url for this resource, for audio/video loads you can pass
-     *      an array of sources.
-     * @param {object} [options] - The options for the load.
-     * @param {string|boolean} [options.crossOrigin] - Is this request cross-origin? Default is to
-     *      determine automatically.
-     * @param {number} [options.timeout=0] - A timeout in milliseconds for the load. If the load takes
-     *      longer than this time it is cancelled and the load is considered a failure. If this value is
-     *      set to `0` then there is no explicit timeout.
-     * @param {Resource.LOAD_TYPE} [options.loadType=Resource.LOAD_TYPE.XHR] - How should this resource
-     *      be loaded?
-     * @param {Resource.XHR_RESPONSE_TYPE} [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] - How
-     *      should the data being loaded be interpreted when using XHR?
-     * @param {Resource.IMetadata} [options.metadata] - Extra configuration for middleware and the Resource object.
-     */
-
-
-    function Resource(name, url, options) {
-        _classCallCheck(this, Resource);
-
-        if (typeof name !== 'string' || typeof url !== 'string') {
-            throw new Error('Both name and url are required for constructing a resource.');
-        }
-
-        options = options || {};
-
-        /**
-         * The state flags of this resource.
-         *
-         * @private
-         * @member {number}
-         */
-        this._flags = 0;
-
-        // set data url flag, needs to be set early for some _determineX checks to work.
-        this._setFlag(Resource.STATUS_FLAGS.DATA_URL, url.indexOf('data:') === 0);
-
-        /**
-         * The name of this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.name = name;
-
-        /**
-         * The url used to load this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.url = url;
-
-        /**
-         * The extension used to load this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.extension = this._getExtension();
-
-        /**
-         * The data that was loaded by the resource.
-         *
-         * @member {any}
-         */
-        this.data = null;
-
-        /**
-         * Is this request cross-origin? If unset, determined automatically.
-         *
-         * @member {string}
-         */
-        this.crossOrigin = options.crossOrigin === true ? 'anonymous' : options.crossOrigin;
-
-        /**
-         * A timeout in milliseconds for the load. If the load takes longer than this time
-         * it is cancelled and the load is considered a failure. If this value is set to `0`
-         * then there is no explicit timeout.
-         *
-         * @member {number}
-         */
-        this.timeout = options.timeout || 0;
-
-        /**
-         * The method of loading to use for this resource.
-         *
-         * @member {Resource.LOAD_TYPE}
-         */
-        this.loadType = options.loadType || this._determineLoadType();
-
-        /**
-         * The type used to load the resource via XHR. If unset, determined automatically.
-         *
-         * @member {string}
-         */
-        this.xhrType = options.xhrType;
-
-        /**
-         * Extra info for middleware, and controlling specifics about how the resource loads.
-         *
-         * Note that if you pass in a `loadElement`, the Resource class takes ownership of it.
-         * Meaning it will modify it as it sees fit.
-         *
-         * @member {Resource.IMetadata}
-         */
-        this.metadata = options.metadata || {};
-
-        /**
-         * The error that occurred while loading (if any).
-         *
-         * @readonly
-         * @member {Error}
-         */
-        this.error = null;
-
-        /**
-         * The XHR object that was used to load this resource. This is only set
-         * when `loadType` is `Resource.LOAD_TYPE.XHR`.
-         *
-         * @readonly
-         * @member {XMLHttpRequest}
-         */
-        this.xhr = null;
-
-        /**
-         * The child resources this resource owns.
-         *
-         * @readonly
-         * @member {Resource[]}
-         */
-        this.children = [];
-
-        /**
-         * The resource type.
-         *
-         * @readonly
-         * @member {Resource.TYPE}
-         */
-        this.type = Resource.TYPE.UNKNOWN;
-
-        /**
-         * The progress chunk owned by this resource.
-         *
-         * @readonly
-         * @member {number}
-         */
-        this.progressChunk = 0;
-
-        /**
-         * The `dequeue` method that will be used a storage place for the async queue dequeue method
-         * used privately by the loader.
-         *
-         * @private
-         * @member {function}
-         */
-        this._dequeue = _noop;
-
-        /**
-         * Used a storage place for the on load binding used privately by the loader.
-         *
-         * @private
-         * @member {function}
-         */
-        this._onLoadBinding = null;
-
-        /**
-         * The timer for element loads to check if they timeout.
-         *
-         * @private
-         * @member {number}
-         */
-        this._elementTimer = 0;
-
-        /**
-         * The `complete` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundComplete = this.complete.bind(this);
-
-        /**
-         * The `_onError` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnError = this._onError.bind(this);
-
-        /**
-         * The `_onProgress` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnProgress = this._onProgress.bind(this);
-
-        /**
-         * The `_onTimeout` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnTimeout = this._onTimeout.bind(this);
-
-        // xhr callbacks
-        this._boundXhrOnError = this._xhrOnError.bind(this);
-        this._boundXhrOnTimeout = this._xhrOnTimeout.bind(this);
-        this._boundXhrOnAbort = this._xhrOnAbort.bind(this);
-        this._boundXhrOnLoad = this._xhrOnLoad.bind(this);
-
-        /**
-         * Dispatched when the resource beings to load.
-         *
-         * The callback looks like {@link Resource.OnStartSignal}.
-         *
-         * @member {Signal<Resource.OnStartSignal>}
-         */
-        this.onStart = new _miniSignals2.default();
-
-        /**
-         * Dispatched each time progress of this resource load updates.
-         * Not all resources types and loader systems can support this event
-         * so sometimes it may not be available. If the resource
-         * is being loaded on a modern browser, using XHR, and the remote server
-         * properly sets Content-Length headers, then this will be available.
-         *
-         * The callback looks like {@link Resource.OnProgressSignal}.
-         *
-         * @member {Signal<Resource.OnProgressSignal>}
-         */
-        this.onProgress = new _miniSignals2.default();
-
-        /**
-         * Dispatched once this resource has loaded, if there was an error it will
-         * be in the `error` property.
-         *
-         * The callback looks like {@link Resource.OnCompleteSignal}.
-         *
-         * @member {Signal<Resource.OnCompleteSignal>}
-         */
-        this.onComplete = new _miniSignals2.default();
-
-        /**
-         * Dispatched after this resource has had all the *after* middleware run on it.
-         *
-         * The callback looks like {@link Resource.OnCompleteSignal}.
-         *
-         * @member {Signal<Resource.OnCompleteSignal>}
-         */
-        this.onAfterMiddleware = new _miniSignals2.default();
-    }
-
-    /**
-     * When the resource starts to load.
-     *
-     * @memberof Resource
-     * @callback OnStartSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     */
-
-    /**
-     * When the resource reports loading progress.
-     *
-     * @memberof Resource
-     * @callback OnProgressSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     * @param {number} percentage - The progress of the load in the range [0, 1].
-     */
-
-    /**
-     * When the resource finishes loading.
-     *
-     * @memberof Resource
-     * @callback OnCompleteSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     */
-
-    /**
-     * @memberof Resource
-     * @typedef {object} IMetadata
-     * @property {HTMLImageElement|HTMLAudioElement|HTMLVideoElement} [loadElement=null] - The
-     *      element to use for loading, instead of creating one.
-     * @property {boolean} [skipSource=false] - Skips adding source(s) to the load element. This
-     *      is useful if you want to pass in a `loadElement` that you already added load sources to.
-     * @property {string|string[]} [mimeType] - The mime type to use for the source element
-     *      of a video/audio elment. If the urls are an array, you can pass this as an array as well
-     *      where each index is the mime type to use for the corresponding url index.
-     */
-
-    /**
-     * Stores whether or not this url is a data url.
-     *
-     * @readonly
-     * @member {boolean}
-     */
-
-
-    /**
-     * Marks the resource as complete.
-     *
-     */
-    Resource.prototype.complete = function complete() {
-        this._clearEvents();
-        this._finish();
-    };
-
-    /**
-     * Aborts the loading of this resource, with an optional message.
-     *
-     * @param {string} message - The message to use for the error
-     */
-
-
-    Resource.prototype.abort = function abort(message) {
-        // abort can be called multiple times, ignore subsequent calls.
-        if (this.error) {
-            return;
-        }
-
-        // store error
-        this.error = new Error(message);
-
-        // clear events before calling aborts
-        this._clearEvents();
-
-        // abort the actual loading
-        if (this.xhr) {
-            this.xhr.abort();
-        } else if (this.xdr) {
-            this.xdr.abort();
-        } else if (this.data) {
-            // single source
-            if (this.data.src) {
-                this.data.src = Resource.EMPTY_GIF;
-            }
-            // multi-source
-            else {
-                    while (this.data.firstChild) {
-                        this.data.removeChild(this.data.firstChild);
-                    }
-                }
-        }
-
-        // done now.
-        this._finish();
-    };
-
-    /**
-     * Kicks off loading of this resource. This method is asynchronous.
-     *
-     * @param {Resource.OnCompleteSignal} [cb] - Optional callback to call once the resource is loaded.
-     */
-
-
-    Resource.prototype.load = function load(cb) {
-        var _this = this;
-
-        if (this.isLoading) {
-            return;
-        }
-
-        if (this.isComplete) {
-            if (cb) {
-                setTimeout(function () {
-                    return cb(_this);
-                }, 1);
-            }
-
-            return;
-        } else if (cb) {
-            this.onComplete.once(cb);
-        }
-
-        this._setFlag(Resource.STATUS_FLAGS.LOADING, true);
-
-        this.onStart.dispatch(this);
-
-        // if unset, determine the value
-        if (this.crossOrigin === false || typeof this.crossOrigin !== 'string') {
-            this.crossOrigin = this._determineCrossOrigin(this.url);
-        }
-
-        switch (this.loadType) {
-            case Resource.LOAD_TYPE.IMAGE:
-                this.type = Resource.TYPE.IMAGE;
-                this._loadElement('image');
-                break;
-
-            case Resource.LOAD_TYPE.AUDIO:
-                this.type = Resource.TYPE.AUDIO;
-                this._loadSourceElement('audio');
-                break;
-
-            case Resource.LOAD_TYPE.VIDEO:
-                this.type = Resource.TYPE.VIDEO;
-                this._loadSourceElement('video');
-                break;
-
-            case Resource.LOAD_TYPE.XHR:
-            /* falls through */
-            default:
-                if (useXdr && this.crossOrigin) {
-                    this._loadXdr();
-                } else {
-                    this._loadXhr();
-                }
-                break;
-        }
-    };
-
-    /**
-     * Checks if the flag is set.
-     *
-     * @private
-     * @param {number} flag - The flag to check.
-     * @return {boolean} True if the flag is set.
-     */
-
-
-    Resource.prototype._hasFlag = function _hasFlag(flag) {
-        return (this._flags & flag) !== 0;
-    };
-
-    /**
-     * (Un)Sets the flag.
-     *
-     * @private
-     * @param {number} flag - The flag to (un)set.
-     * @param {boolean} value - Whether to set or (un)set the flag.
-     */
-
-
-    Resource.prototype._setFlag = function _setFlag(flag, value) {
-        this._flags = value ? this._flags | flag : this._flags & ~flag;
-    };
-
-    /**
-     * Clears all the events from the underlying loading source.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._clearEvents = function _clearEvents() {
-        clearTimeout(this._elementTimer);
-
-        if (this.data && this.data.removeEventListener) {
-            this.data.removeEventListener('error', this._boundOnError, false);
-            this.data.removeEventListener('load', this._boundComplete, false);
-            this.data.removeEventListener('progress', this._boundOnProgress, false);
-            this.data.removeEventListener('canplaythrough', this._boundComplete, false);
-        }
-
-        if (this.xhr) {
-            if (this.xhr.removeEventListener) {
-                this.xhr.removeEventListener('error', this._boundXhrOnError, false);
-                this.xhr.removeEventListener('timeout', this._boundXhrOnTimeout, false);
-                this.xhr.removeEventListener('abort', this._boundXhrOnAbort, false);
-                this.xhr.removeEventListener('progress', this._boundOnProgress, false);
-                this.xhr.removeEventListener('load', this._boundXhrOnLoad, false);
-            } else {
-                this.xhr.onerror = null;
-                this.xhr.ontimeout = null;
-                this.xhr.onprogress = null;
-                this.xhr.onload = null;
-            }
-        }
-    };
-
-    /**
-     * Finalizes the load.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._finish = function _finish() {
-        if (this.isComplete) {
-            throw new Error('Complete called again for an already completed resource.');
-        }
-
-        this._setFlag(Resource.STATUS_FLAGS.COMPLETE, true);
-        this._setFlag(Resource.STATUS_FLAGS.LOADING, false);
-
-        this.onComplete.dispatch(this);
-    };
-
-    /**
-     * Loads this resources using an element that has a single source,
-     * like an HTMLImageElement.
-     *
-     * @private
-     * @param {string} type - The type of element to use.
-     */
-
-
-    Resource.prototype._loadElement = function _loadElement(type) {
-        if (this.metadata.loadElement) {
-            this.data = this.metadata.loadElement;
-        } else if (type === 'image' && typeof window.Image !== 'undefined') {
-            this.data = new Image();
-        } else {
-            this.data = document.createElement(type);
-        }
-
-        if (this.crossOrigin) {
-            this.data.crossOrigin = this.crossOrigin;
-        }
-
-        if (!this.metadata.skipSource) {
-            this.data.src = this.url;
-        }
-
-        this.data.addEventListener('error', this._boundOnError, false);
-        this.data.addEventListener('load', this._boundComplete, false);
-        this.data.addEventListener('progress', this._boundOnProgress, false);
-
-        if (this.timeout) {
-            this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
-        }
-    };
-
-    /**
-     * Loads this resources using an element that has multiple sources,
-     * like an HTMLAudioElement or HTMLVideoElement.
-     *
-     * @private
-     * @param {string} type - The type of element to use.
-     */
-
-
-    Resource.prototype._loadSourceElement = function _loadSourceElement(type) {
-        if (this.metadata.loadElement) {
-            this.data = this.metadata.loadElement;
-        } else if (type === 'audio' && typeof window.Audio !== 'undefined') {
-            this.data = new Audio();
-        } else {
-            this.data = document.createElement(type);
-        }
-
-        if (this.data === null) {
-            this.abort('Unsupported element: ' + type);
-
-            return;
-        }
-
-        if (this.crossOrigin) {
-            this.data.crossOrigin = this.crossOrigin;
-        }
-
-        if (!this.metadata.skipSource) {
-            // support for CocoonJS Canvas+ runtime, lacks document.createElement('source')
-            if (navigator.isCocoonJS) {
-                this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;
-            } else if (Array.isArray(this.url)) {
-                var mimeTypes = this.metadata.mimeType;
-
-                for (var i = 0; i < this.url.length; ++i) {
-                    this.data.appendChild(this._createSource(type, this.url[i], Array.isArray(mimeTypes) ? mimeTypes[i] : mimeTypes));
-                }
-            } else {
-                var _mimeTypes = this.metadata.mimeType;
-
-                this.data.appendChild(this._createSource(type, this.url, Array.isArray(_mimeTypes) ? _mimeTypes[0] : _mimeTypes));
-            }
-        }
-
-        this.data.addEventListener('error', this._boundOnError, false);
-        this.data.addEventListener('load', this._boundComplete, false);
-        this.data.addEventListener('progress', this._boundOnProgress, false);
-        this.data.addEventListener('canplaythrough', this._boundComplete, false);
-
-        this.data.load();
-
-        if (this.timeout) {
-            this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
-        }
-    };
-
-    /**
-     * Loads this resources using an XMLHttpRequest.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._loadXhr = function _loadXhr() {
-        // if unset, determine the value
-        if (typeof this.xhrType !== 'string') {
-            this.xhrType = this._determineXhrType();
-        }
-
-        var xhr = this.xhr = new XMLHttpRequest();
-
-        // set the request type and url
-        xhr.open('GET', this.url, true);
-
-        xhr.timeout = this.timeout;
-
-        // load json as text and parse it ourselves. We do this because some browsers
-        // *cough* safari *cough* can't deal with it.
-        if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON || this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-            xhr.responseType = Resource.XHR_RESPONSE_TYPE.TEXT;
-        } else {
-            xhr.responseType = this.xhrType;
-        }
-
-        xhr.addEventListener('error', this._boundXhrOnError, false);
-        xhr.addEventListener('timeout', this._boundXhrOnTimeout, false);
-        xhr.addEventListener('abort', this._boundXhrOnAbort, false);
-        xhr.addEventListener('progress', this._boundOnProgress, false);
-        xhr.addEventListener('load', this._boundXhrOnLoad, false);
-
-        xhr.send();
-    };
-
-    /**
-     * Loads this resources using an XDomainRequest. This is here because we need to support IE9 (gross).
-     *
-     * @private
-     */
-
-
-    Resource.prototype._loadXdr = function _loadXdr() {
-        // if unset, determine the value
-        if (typeof this.xhrType !== 'string') {
-            this.xhrType = this._determineXhrType();
-        }
-
-        var xdr = this.xhr = new XDomainRequest(); // eslint-disable-line no-undef
-
-        // XDomainRequest has a few quirks. Occasionally it will abort requests
-        // A way to avoid this is to make sure ALL callbacks are set even if not used
-        // More info here: http://stackoverflow.com/questions/15786966/xdomainrequest-aborts-post-on-ie-9
-        xdr.timeout = this.timeout || 5000; // XDR needs a timeout value or it breaks in IE9
-
-        xdr.onerror = this._boundXhrOnError;
-        xdr.ontimeout = this._boundXhrOnTimeout;
-        xdr.onprogress = this._boundOnProgress;
-        xdr.onload = this._boundXhrOnLoad;
-
-        xdr.open('GET', this.url, true);
-
-        // Note: The xdr.send() call is wrapped in a timeout to prevent an
-        // issue with the interface where some requests are lost if multiple
-        // XDomainRequests are being sent at the same time.
-        // Some info here: https://github.com/photonstorm/phaser/issues/1248
-        setTimeout(function () {
-            return xdr.send();
-        }, 1);
-    };
-
-    /**
-     * Creates a source used in loading via an element.
-     *
-     * @private
-     * @param {string} type - The element type (video or audio).
-     * @param {string} url - The source URL to load from.
-     * @param {string} [mime] - The mime type of the video
-     * @return {HTMLSourceElement} The source element.
-     */
-
-
-    Resource.prototype._createSource = function _createSource(type, url, mime) {
-        if (!mime) {
-            mime = type + '/' + this._getExtension(url);
-        }
-
-        var source = document.createElement('source');
-
-        source.src = url;
-        source.type = mime;
-
-        return source;
-    };
-
-    /**
-     * Called if a load errors out.
-     *
-     * @param {Event} event - The error event from the element that emits it.
-     * @private
-     */
-
-
-    Resource.prototype._onError = function _onError(event) {
-        this.abort('Failed to load element using: ' + event.target.nodeName);
-    };
-
-    /**
-     * Called if a load progress event fires for an element or xhr/xdr.
-     *
-     * @private
-     * @param {XMLHttpRequestProgressEvent|Event} event - Progress event.
-     */
-
-
-    Resource.prototype._onProgress = function _onProgress(event) {
-        if (event && event.lengthComputable) {
-            this.onProgress.dispatch(this, event.loaded / event.total);
-        }
-    };
-
-    /**
-     * Called if a timeout event fires for an element.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._onTimeout = function _onTimeout() {
-        this.abort('Load timed out.');
-    };
-
-    /**
-     * Called if an error event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnError = function _xhrOnError() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request failed. Status: ' + xhr.status + ', text: "' + xhr.statusText + '"');
-    };
-
-    /**
-     * Called if an error event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnTimeout = function _xhrOnTimeout() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request timed out.');
-    };
-
-    /**
-     * Called if an abort event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnAbort = function _xhrOnAbort() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request was aborted by the user.');
-    };
-
-    /**
-     * Called when data successfully loads from an xhr/xdr request.
-     *
-     * @private
-     * @param {XMLHttpRequestLoadEvent|Event} event - Load event
-     */
-
-
-    Resource.prototype._xhrOnLoad = function _xhrOnLoad() {
-        var xhr = this.xhr;
-        var text = '';
-        var status = typeof xhr.status === 'undefined' ? STATUS_OK : xhr.status; // XDR has no `.status`, assume 200.
-
-        // responseText is accessible only if responseType is '' or 'text' and on older browsers
-        if (xhr.responseType === '' || xhr.responseType === 'text' || typeof xhr.responseType === 'undefined') {
-            text = xhr.responseText;
-        }
-
-        // status can be 0 when using the `file://` protocol so we also check if a response is set.
-        // If it has a response, we assume 200; otherwise a 0 status code with no contents is an aborted request.
-        if (status === STATUS_NONE && (text.length > 0 || xhr.responseType === Resource.XHR_RESPONSE_TYPE.BUFFER)) {
-            status = STATUS_OK;
-        }
-        // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
-        else if (status === STATUS_IE_BUG_EMPTY) {
-                status = STATUS_EMPTY;
-            }
-
-        var statusType = status / 100 | 0;
-
-        if (statusType === STATUS_TYPE_OK) {
-            // if text, just return it
-            if (this.xhrType === Resource.XHR_RESPONSE_TYPE.TEXT) {
-                this.data = text;
-                this.type = Resource.TYPE.TEXT;
-            }
-            // if json, parse into json object
-            else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON) {
-                    try {
-                        this.data = JSON.parse(text);
-                        this.type = Resource.TYPE.JSON;
-                    } catch (e) {
-                        this.abort('Error trying to parse loaded json: ' + e);
-
-                        return;
-                    }
-                }
-                // if xml, parse into an xml document or div element
-                else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-                        try {
-                            if (window.DOMParser) {
-                                var domparser = new DOMParser();
-
-                                this.data = domparser.parseFromString(text, 'text/xml');
-                            } else {
-                                var div = document.createElement('div');
-
-                                div.innerHTML = text;
-
-                                this.data = div;
-                            }
-
-                            this.type = Resource.TYPE.XML;
-                        } catch (e) {
-                            this.abort('Error trying to parse loaded xml: ' + e);
-
-                            return;
-                        }
-                    }
-                    // other types just return the response
-                    else {
-                            this.data = xhr.response || text;
-                        }
-        } else {
-            this.abort('[' + xhr.status + '] ' + xhr.statusText + ': ' + xhr.responseURL);
-
-            return;
-        }
-
-        this.complete();
-    };
-
-    /**
-     * Sets the `crossOrigin` property for this resource based on if the url
-     * for this resource is cross-origin. If crossOrigin was manually set, this
-     * function does nothing.
-     *
-     * @private
-     * @param {string} url - The url to test.
-     * @param {object} [loc=window.location] - The location object to test against.
-     * @return {string} The crossOrigin value to use (or empty string for none).
-     */
-
-
-    Resource.prototype._determineCrossOrigin = function _determineCrossOrigin(url, loc) {
-        // data: and javascript: urls are considered same-origin
-        if (url.indexOf('data:') === 0) {
-            return '';
-        }
-
-        // A sandboxed iframe without the 'allow-same-origin' attribute will have a special
-        // origin designed not to match window.location.origin, and will always require
-        // crossOrigin requests regardless of whether the location matches.
-        if (window.origin !== window.location.origin) {
-            return 'anonymous';
-        }
-
-        // default is window.location
-        loc = loc || window.location;
-
-        if (!tempAnchor) {
-            tempAnchor = document.createElement('a');
-        }
-
-        // let the browser determine the full href for the url of this resource and then
-        // parse with the node url lib, we can't use the properties of the anchor element
-        // because they don't work in IE9 :(
-        tempAnchor.href = url;
-        url = (0, _parseUri2.default)(tempAnchor.href, { strictMode: true });
-
-        var samePort = !url.port && loc.port === '' || url.port === loc.port;
-        var protocol = url.protocol ? url.protocol + ':' : '';
-
-        // if cross origin
-        if (url.host !== loc.hostname || !samePort || protocol !== loc.protocol) {
-            return 'anonymous';
-        }
-
-        return '';
-    };
-
-    /**
-     * Determines the responseType of an XHR request based on the extension of the
-     * resource being loaded.
-     *
-     * @private
-     * @return {Resource.XHR_RESPONSE_TYPE} The responseType to use.
-     */
-
-
-    Resource.prototype._determineXhrType = function _determineXhrType() {
-        return Resource._xhrTypeMap[this.extension] || Resource.XHR_RESPONSE_TYPE.TEXT;
-    };
-
-    /**
-     * Determines the loadType of a resource based on the extension of the
-     * resource being loaded.
-     *
-     * @private
-     * @return {Resource.LOAD_TYPE} The loadType to use.
-     */
-
-
-    Resource.prototype._determineLoadType = function _determineLoadType() {
-        return Resource._loadTypeMap[this.extension] || Resource.LOAD_TYPE.XHR;
-    };
-
-    /**
-     * Extracts the extension (sans '.') of the file being loaded by the resource.
-     *
-     * @private
-     * @return {string} The extension.
-     */
-
-
-    Resource.prototype._getExtension = function _getExtension() {
-        var url = this.url;
-        var ext = '';
-
-        if (this.isDataUrl) {
-            var slashIndex = url.indexOf('/');
-
-            ext = url.substring(slashIndex + 1, url.indexOf(';', slashIndex));
-        } else {
-            var queryStart = url.indexOf('?');
-            var hashStart = url.indexOf('#');
-            var index = Math.min(queryStart > -1 ? queryStart : url.length, hashStart > -1 ? hashStart : url.length);
-
-            url = url.substring(0, index);
-            ext = url.substring(url.lastIndexOf('.') + 1);
-        }
-
-        return ext.toLowerCase();
-    };
-
-    /**
-     * Determines the mime type of an XHR request based on the responseType of
-     * resource being loaded.
-     *
-     * @private
-     * @param {Resource.XHR_RESPONSE_TYPE} type - The type to get a mime type for.
-     * @return {string} The mime type to use.
-     */
-
-
-    Resource.prototype._getMimeFromXhrType = function _getMimeFromXhrType(type) {
-        switch (type) {
-            case Resource.XHR_RESPONSE_TYPE.BUFFER:
-                return 'application/octet-binary';
-
-            case Resource.XHR_RESPONSE_TYPE.BLOB:
-                return 'application/blob';
-
-            case Resource.XHR_RESPONSE_TYPE.DOCUMENT:
-                return 'application/xml';
-
-            case Resource.XHR_RESPONSE_TYPE.JSON:
-                return 'application/json';
-
-            case Resource.XHR_RESPONSE_TYPE.DEFAULT:
-            case Resource.XHR_RESPONSE_TYPE.TEXT:
-            /* falls through */
-            default:
-                return 'text/plain';
-        }
-    };
-
-    _createClass(Resource, [{
-        key: 'isDataUrl',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.DATA_URL);
-        }
-
-        /**
-         * Describes if this resource has finished loading. Is true when the resource has completely
-         * loaded.
-         *
-         * @readonly
-         * @member {boolean}
-         */
-
-    }, {
-        key: 'isComplete',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.COMPLETE);
-        }
-
-        /**
-         * Describes if this resource is currently loading. Is true when the resource starts loading,
-         * and is false again when complete.
-         *
-         * @readonly
-         * @member {boolean}
-         */
-
-    }, {
-        key: 'isLoading',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.LOADING);
-        }
-    }]);
-
-    return Resource;
-}();
-
-/**
- * The types of resources a resource could represent.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-
-
-Resource.STATUS_FLAGS = {
-    NONE: 0,
-    DATA_URL: 1 << 0,
-    COMPLETE: 1 << 1,
-    LOADING: 1 << 2
-};
-
-/**
- * The types of resources a resource could represent.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-Resource.TYPE = {
-    UNKNOWN: 0,
-    JSON: 1,
-    XML: 2,
-    IMAGE: 3,
-    AUDIO: 4,
-    VIDEO: 5,
-    TEXT: 6
-};
-
-/**
- * The types of loading a resource can use.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-Resource.LOAD_TYPE = {
-    /** Uses XMLHttpRequest to load the resource. */
-    XHR: 1,
-    /** Uses an `Image` object to load the resource. */
-    IMAGE: 2,
-    /** Uses an `Audio` object to load the resource. */
-    AUDIO: 3,
-    /** Uses a `Video` object to load the resource. */
-    VIDEO: 4
-};
-
-/**
- * The XHR ready states, used internally.
- *
- * @static
- * @readonly
- * @enum {string}
- */
-Resource.XHR_RESPONSE_TYPE = {
-    /** string */
-    DEFAULT: 'text',
-    /** ArrayBuffer */
-    BUFFER: 'arraybuffer',
-    /** Blob */
-    BLOB: 'blob',
-    /** Document */
-    DOCUMENT: 'document',
-    /** Object */
-    JSON: 'json',
-    /** String */
-    TEXT: 'text'
-};
-
-Resource._loadTypeMap = {
-    // images
-    gif: Resource.LOAD_TYPE.IMAGE,
-    png: Resource.LOAD_TYPE.IMAGE,
-    bmp: Resource.LOAD_TYPE.IMAGE,
-    jpg: Resource.LOAD_TYPE.IMAGE,
-    jpeg: Resource.LOAD_TYPE.IMAGE,
-    tif: Resource.LOAD_TYPE.IMAGE,
-    tiff: Resource.LOAD_TYPE.IMAGE,
-    webp: Resource.LOAD_TYPE.IMAGE,
-    tga: Resource.LOAD_TYPE.IMAGE,
-    svg: Resource.LOAD_TYPE.IMAGE,
-    'svg+xml': Resource.LOAD_TYPE.IMAGE, // for SVG data urls
-
-    // audio
-    mp3: Resource.LOAD_TYPE.AUDIO,
-    ogg: Resource.LOAD_TYPE.AUDIO,
-    wav: Resource.LOAD_TYPE.AUDIO,
-
-    // videos
-    mp4: Resource.LOAD_TYPE.VIDEO,
-    webm: Resource.LOAD_TYPE.VIDEO
-};
-
-Resource._xhrTypeMap = {
-    // xml
-    xhtml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    html: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    htm: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    xml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    tmx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    svg: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-
-    // This was added to handle Tiled Tileset XML, but .tsx is also a TypeScript React Component.
-    // Since it is way less likely for people to be loading TypeScript files instead of Tiled files,
-    // this should probably be fine.
-    tsx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-
-    // images
-    gif: Resource.XHR_RESPONSE_TYPE.BLOB,
-    png: Resource.XHR_RESPONSE_TYPE.BLOB,
-    bmp: Resource.XHR_RESPONSE_TYPE.BLOB,
-    jpg: Resource.XHR_RESPONSE_TYPE.BLOB,
-    jpeg: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tif: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tiff: Resource.XHR_RESPONSE_TYPE.BLOB,
-    webp: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tga: Resource.XHR_RESPONSE_TYPE.BLOB,
-
-    // json
-    json: Resource.XHR_RESPONSE_TYPE.JSON,
-
-    // text
-    text: Resource.XHR_RESPONSE_TYPE.TEXT,
-    txt: Resource.XHR_RESPONSE_TYPE.TEXT,
-
-    // fonts
-    ttf: Resource.XHR_RESPONSE_TYPE.BUFFER,
-    otf: Resource.XHR_RESPONSE_TYPE.BUFFER
-};
-
-// We can't set the `src` attribute to empty string, so on abort we set it to this 1px transparent gif
-Resource.EMPTY_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
-
-/**
- * Quick helper to set a value on one of the extension maps. Ensures there is no
- * dot at the start of the extension.
- *
- * @ignore
- * @param {object} map - The map to set on.
- * @param {string} extname - The extension (or key) to set.
- * @param {number} val - The value to set.
- */
-function setExtMap(map, extname, val) {
-    if (extname && extname.indexOf('.') === 0) {
-        extname = extname.substring(1);
-    }
-
-    if (!extname) {
-        return;
-    }
-
-    map[extname] = val;
-}
-
-/**
- * Quick helper to get string xhr type.
- *
- * @ignore
- * @param {XMLHttpRequest|XDomainRequest} xhr - The request to check.
- * @return {string} The type.
- */
-function reqType(xhr) {
-    return xhr.toString().replace('object ', '');
-}
-
-// Backwards compat
-{
-    module.exports.default = Resource; // eslint-disable-line no-undef
-}
-
-});
-
-unwrapExports(Resource_1);
-var Resource_2 = Resource_1.Resource;
-
-var b64 = createCommonjsModule(function (module, exports) {
-
-exports.__esModule = true;
-exports.encodeBinary = encodeBinary;
-var _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-/**
- * Encodes binary into base64.
- *
- * @param {string} input The input data to encode.
- * @returns {string} The encoded base64 string
- */
-function encodeBinary(input) {
-    var output = '';
-    var inx = 0;
-
-    while (inx < input.length) {
-        // Fill byte buffer array
-        var bytebuffer = [0, 0, 0];
-        var encodedCharIndexes = [0, 0, 0, 0];
-
-        for (var jnx = 0; jnx < bytebuffer.length; ++jnx) {
-            if (inx < input.length) {
-                // throw away high-order byte, as documented at:
-                // https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data
-                bytebuffer[jnx] = input.charCodeAt(inx++) & 0xff;
-            } else {
-                bytebuffer[jnx] = 0;
-            }
-        }
-
-        // Get each encoded character, 6 bits at a time
-        // index 1: first 6 bits
-        encodedCharIndexes[0] = bytebuffer[0] >> 2;
-
-        // index 2: second 6 bits (2 least significant bits from input byte 1 + 4 most significant bits from byte 2)
-        encodedCharIndexes[1] = (bytebuffer[0] & 0x3) << 4 | bytebuffer[1] >> 4;
-
-        // index 3: third 6 bits (4 least significant bits from input byte 2 + 2 most significant bits from byte 3)
-        encodedCharIndexes[2] = (bytebuffer[1] & 0x0f) << 2 | bytebuffer[2] >> 6;
-
-        // index 3: forth 6 bits (6 least significant bits from input byte 3)
-        encodedCharIndexes[3] = bytebuffer[2] & 0x3f;
-
-        // Determine whether padding happened, and adjust accordingly
-        var paddingBytes = inx - (input.length - 1);
-
-        switch (paddingBytes) {
-            case 2:
-                // Set last 2 characters to padding char
-                encodedCharIndexes[3] = 64;
-                encodedCharIndexes[2] = 64;
-                break;
-
-            case 1:
-                // Set last character to padding char
-                encodedCharIndexes[3] = 64;
-                break;
-
-            default:
-                break; // No padding - proceed
-        }
-
-        // Now we will grab each appropriate character out of our keystring
-        // based on our index array and append it to the output string
-        for (var _jnx = 0; _jnx < encodedCharIndexes.length; ++_jnx) {
-            output += _keyStr.charAt(encodedCharIndexes[_jnx]);
-        }
-    }
-
-    return output;
-}
-
-// Backwards compat
-{
-    module.exports.default = encodeBinary; // eslint-disable-line no-undef
-}
-
-});
-
-unwrapExports(b64);
-var b64_1 = b64.encodeBinary;
-
-var blob = createCommonjsModule(function (module, exports) {
-
-exports.__esModule = true;
-exports.blobMiddlewareFactory = blobMiddlewareFactory;
-
-
-
-
-
-var Url = window.URL || window.webkitURL;
-
-// a middleware for transforming XHR loaded Blobs into more useful objects
-function blobMiddlewareFactory() {
-    return function blobMiddleware(resource, next) {
-        if (!resource.data) {
-            next();
-
-            return;
-        }
-
-        // if this was an XHR load of a blob
-        if (resource.xhr && resource.xhrType === Resource_1.Resource.XHR_RESPONSE_TYPE.BLOB) {
-            // if there is no blob support we probably got a binary string back
-            if (!window.Blob || typeof resource.data === 'string') {
-                var type = resource.xhr.getResponseHeader('content-type');
-
-                // this is an image, convert the binary string into a data url
-                if (type && type.indexOf('image') === 0) {
-                    resource.data = new Image();
-                    resource.data.src = 'data:' + type + ';base64,' + (0, b64.encodeBinary)(resource.xhr.responseText);
-
-                    resource.type = Resource_1.Resource.TYPE.IMAGE;
-
-                    // wait until the image loads and then callback
-                    resource.data.onload = function () {
-                        resource.data.onload = null;
-
-                        next();
-                    };
-
-                    // next will be called on load
-                    return;
-                }
-            }
-            // if content type says this is an image, then we should transform the blob into an Image object
-            else if (resource.data.type.indexOf('image') === 0) {
-                    var src = Url.createObjectURL(resource.data);
-
-                    resource.blob = resource.data;
-                    resource.data = new Image();
-                    resource.data.src = src;
-
-                    resource.type = Resource_1.Resource.TYPE.IMAGE;
-
-                    // cleanup the no longer used blob after the image loads
-                    // TODO: Is this correct? Will the image be invalid after revoking?
-                    resource.data.onload = function () {
-                        Url.revokeObjectURL(src);
-                        resource.data.onload = null;
-
-                        next();
-                    };
-
-                    // next will be called on load.
-                    return;
-                }
-        }
-
-        next();
-    };
-}
-
-});
-
-unwrapExports(blob);
-var blob_1 = blob.blobMiddlewareFactory;
 
 /**
  * Loader plugin for handling Texture resources.
@@ -25070,7 +23452,7 @@ var Loader = /*@__PURE__*/(function (ResourceLoader) {
     Object.defineProperties( Loader, staticAccessors );
 
     return Loader;
-}(resource_loader__WEBPACK_IMPORTED_MODULE_0___default.a));
+}(resource_loader__WEBPACK_IMPORTED_MODULE_0__["Loader"]));
 
 // Copy EE3 prototype (mixin)
 Object.assign(Loader.prototype, _pixi_utils__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"].prototype);
@@ -25108,7 +23490,7 @@ Loader.registerPlugin = function registerPlugin(plugin)
 };
 
 // parse any blob into more usable objects (e.g. Image)
-Loader.registerPlugin({ use: blob_1() });
+Loader.registerPlugin({ use: resource_loader__WEBPACK_IMPORTED_MODULE_0__["middleware"].parsing });
 
 // parse any Image objects into textures
 Loader.registerPlugin(TextureLoader);
@@ -25236,8 +23618,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SHAPES", function() { return SHAPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Transform", function() { return Transform; });
 /*!
- * @pixi/math - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/math - v5.1.0
+ * Compiled Fri, 19 Jul 2019 21:54:36 UTC
  *
  * @pixi/math is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -26025,48 +24407,66 @@ staticAccessors.TEMP_MATRIX.get = function ()
 
 Object.defineProperties( Matrix, staticAccessors );
 
-// Your friendly neighbour https://en.wikipedia.org/wiki/Dihedral_group of order 16
+// Your friendly neighbour https://en.wikipedia.org/wiki/Dihedral_group
+
+/*
+ * Transform matrix for operation n is:
+ * | ux | vx |
+ * | uy | vy |
+ */
 
 var ux = [1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1, 0, 1];
 var uy = [0, 1, 1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1];
 var vx = [0, -1, -1, -1, 0, 1, 1, 1, 0, 1, 1, 1, 0, -1, -1, -1];
 var vy = [1, 1, 0, -1, -1, -1, 0, 1, -1, -1, 0, 1, 1, 1, 0, -1];
-var tempMatrices = [];
 
-var mul = [];
+/**
+ * [Cayley Table]{@link https://en.wikipedia.org/wiki/Cayley_table}
+ * for the composition of each rotation in the dihederal group D8.
+ *
+ * @type number[][]
+ * @private
+ */
+var rotationCayley = [];
 
-function signum(x)
-{
-    if (x < 0)
-    {
-        return -1;
-    }
-    if (x > 0)
-    {
-        return 1;
-    }
+/**
+ * Matrices for each `GD8Symmetry` rotation.
+ *
+ * @type Matrix[]
+ * @private
+ */
+var rotationMatrices = [];
 
-    return 0;
-}
+/*
+ * Alias for {@code Math.sign}.
+ */
+var signum = Math.sign;
 
+/*
+ * Initializes `rotationCayley` and `rotationMatrices`. It is called
+ * only once below.
+ */
 function init()
 {
     for (var i = 0; i < 16; i++)
     {
         var row = [];
 
-        mul.push(row);
+        rotationCayley.push(row);
 
         for (var j = 0; j < 16; j++)
         {
+            /* Multiplies rotation matrices i and j. */
             var _ux = signum((ux[i] * ux[j]) + (vx[i] * uy[j]));
             var _uy = signum((uy[i] * ux[j]) + (vy[i] * uy[j]));
             var _vx = signum((ux[i] * vx[j]) + (vx[i] * vy[j]));
             var _vy = signum((uy[i] * vx[j]) + (vy[i] * vy[j]));
 
+            /* Finds rotation matrix matching the product and pushes it. */
             for (var k = 0; k < 16; k++)
             {
-                if (ux[k] === _ux && uy[k] === _uy && vx[k] === _vx && vy[k] === _vy)
+                if (ux[k] === _ux && uy[k] === _uy
+                      && vx[k] === _vx && vy[k] === _vy)
                 {
                     row.push(k);
                     break;
@@ -26080,77 +24480,261 @@ function init()
         var mat = new Matrix();
 
         mat.set(ux[i$1], uy[i$1], vx[i$1], vy[i$1], 0, 0);
-        tempMatrices.push(mat);
+        rotationMatrices.push(mat);
     }
 }
 
 init();
 
 /**
- * Implements Dihedral Group D_8, see [group D4]{@link http://mathworld.wolfram.com/DihedralGroupD4.html},
- * D8 is the same but with diagonals. Used for texture rotations.
+ * @memberof PIXI
+ * @typedef {number} GD8Symmetry
+ * @see PIXI.GroupD8
+ */
+
+/**
+ * Implements the dihedral group D8, which is similar to
+ * [group D4]{@link http://mathworld.wolfram.com/DihedralGroupD4.html};
+ * D8 is the same but with diagonals, and it is used for texture
+ * rotations.
  *
- * Vector xX(i), xY(i) is U-axis of sprite with rotation i
- * Vector yY(i), yY(i) is V-axis of sprite with rotation i
- * Rotations: 0 grad (0), 90 grad (2), 180 grad (4), 270 grad (6)
- * Mirrors: vertical (8), main diagonal (10), horizontal (12), reverse diagonal (14)
- * This is the small part of gameofbombs.com portal system. It works.
+ * The directions the U- and V- axes after rotation
+ * of an angle of `a: GD8Constant` are the vectors `(uX(a), uY(a))`
+ * and `(vX(a), vY(a))`. These aren't necessarily unit vectors.
  *
+ * **Origin:**<br>
+ *  This is the small part of gameofbombs.com portal system. It works.
+ *
+ * @see PIXI.GroupD8.E
+ * @see PIXI.GroupD8.SE
+ * @see PIXI.GroupD8.S
+ * @see PIXI.GroupD8.SW
+ * @see PIXI.GroupD8.W
+ * @see PIXI.GroupD8.NW
+ * @see PIXI.GroupD8.N
+ * @see PIXI.GroupD8.NE
  * @author Ivan @ivanpopelyshev
  * @class
  * @memberof PIXI
  */
 var GroupD8 = {
+    /**
+     * | Rotation | Direction |
+     * |----------|-----------|
+     * | 0°       | East      |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
     E: 0,
-    SE: 1,
-    S: 2,
-    SW: 3,
-    W: 4,
-    NW: 5,
-    N: 6,
-    NE: 7,
-    MIRROR_VERTICAL: 8,
-    MIRROR_HORIZONTAL: 12,
-    uX: function (ind) { return ux[ind]; },
-    uY: function (ind) { return uy[ind]; },
-    vX: function (ind) { return vx[ind]; },
-    vY: function (ind) { return vy[ind]; },
-    inv: function (rotation) {
-        if (rotation & 8)
-        {
-            return rotation & 15;
-        }
-
-        return (-rotation) & 7;
-    },
-    add: function (rotationSecond, rotationFirst) { return mul[rotationSecond][rotationFirst]; },
-    sub: function (rotationSecond, rotationFirst) { return mul[rotationSecond][GroupD8.inv(rotationFirst)]; },
 
     /**
-     * Adds 180 degrees to rotation. Commutative operation.
+     * | Rotation | Direction |
+     * |----------|-----------|
+     * | 45°↻     | Southeast |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    SE: 1,
+
+    /**
+     * | Rotation | Direction |
+     * |----------|-----------|
+     * | 90°↻     | South     |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    S: 2,
+
+    /**
+     * | Rotation | Direction |
+     * |----------|-----------|
+     * | 135°↻    | Southwest |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    SW: 3,
+
+    /**
+     * | Rotation | Direction |
+     * |----------|-----------|
+     * | 180°     | West      |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    W: 4,
+
+    /**
+     * | Rotation    | Direction    |
+     * |-------------|--------------|
+     * | -135°/225°↻ | Northwest    |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    NW: 5,
+
+    /**
+     * | Rotation    | Direction    |
+     * |-------------|--------------|
+     * | -90°/270°↻  | North        |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    N: 6,
+
+    /**
+     * | Rotation    | Direction    |
+     * |-------------|--------------|
+     * | -45°/315°↻  | Northeast    |
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    NE: 7,
+
+    /**
+     * Reflection about Y-axis.
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    MIRROR_VERTICAL: 8,
+
+    /**
+     * Reflection about the main diagonal.
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    MAIN_DIAGONAL: 10,
+
+    /**
+     * Reflection about X-axis.
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    MIRROR_HORIZONTAL: 12,
+
+    /**
+     * Reflection about reverse diagonal.
+     *
+     * @constant {PIXI.GD8Symmetry}
+     */
+    REVERSE_DIAGONAL: 14,
+
+    /**
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} ind - sprite rotation angle.
+     * @return {PIXI.GD8Symmetry} The X-component of the U-axis
+     *    after rotating the axes.
+     */
+    uX: function (ind) { return ux[ind]; },
+
+    /**
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} ind - sprite rotation angle.
+     * @return {PIXI.GD8Symmetry} The Y-component of the U-axis
+     *    after rotating the axes.
+     */
+    uY: function (ind) { return uy[ind]; },
+
+    /**
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} ind - sprite rotation angle.
+     * @return {PIXI.GD8Symmetry} The X-component of the V-axis
+     *    after rotating the axes.
+     */
+    vX: function (ind) { return vx[ind]; },
+
+    /**
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} ind - sprite rotation angle.
+     * @return {PIXI.GD8Symmetry} The Y-component of the V-axis
+     *    after rotating the axes.
+     */
+    vY: function (ind) { return vy[ind]; },
+
+    /**
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} rotation - symmetry whose opposite
+     *   is needed. Only rotations have opposite symmetries while
+     *   reflections don't.
+     * @return {PIXI.GD8Symmetry} The opposite symmetry of `rotation`
+     */
+    inv: function (rotation) {
+        if (rotation & 8)// true only if between 8 & 15 (reflections)
+        {
+            return rotation & 15;// or rotation % 16
+        }
+
+        return (-rotation) & 7;// or (8 - rotation) % 8
+    },
+
+    /**
+     * Composes the two D8 operations.
+     *
+     * Taking `^` as reflection:
+     *
+     * |       | E=0 | S=2 | W=4 | N=6 | E^=8 | S^=10 | W^=12 | N^=14 |
+     * |-------|-----|-----|-----|-----|------|-------|-------|-------|
+     * | E=0   | E   | S   | W   | N   | E^   | S^    | W^    | N^    |
+     * | S=2   | S   | W   | N   | E   | S^   | W^    | N^    | E^    |
+     * | W=4   | W   | N   | E   | S   | W^   | N^    | E^    | S^    |
+     * | N=6   | N   | E   | S   | W   | N^   | E^    | S^    | W^    |
+     * | E^=8  | E^  | N^  | W^  | S^  | E    | N     | W     | S     |
+     * | S^=10 | S^  | E^  | N^  | W^  | S    | E     | N     | W     |
+     * | W^=12 | W^  | S^  | E^  | N^  | W    | S     | E     | N     |
+     * | N^=14 | N^  | W^  | S^  | E^  | N    | W     | S     | E     |
+     *
+     * [This is a Cayley table]{@link https://en.wikipedia.org/wiki/Cayley_table}
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} rotationSecond - Second operation, which
+     *   is the row in the above cayley table.
+     * @param {PIXI.GD8Symmetry} rotationFirst - First operation, which
+     *   is the column in the above cayley table.
+     * @return {PIXI.GD8Symmetry} Composed operation
+     */
+    add: function (rotationSecond, rotationFirst) { return (
+        rotationCayley[rotationSecond][rotationFirst]
+    ); },
+
+    /**
+     * Reverse of `add`.
+     *
+     * @memberof PIXI.GroupD8
+     * @param {PIXI.GD8Symmetry} rotationSecond - Second operation
+     * @param {PIXI.GD8Symmetry} rotationFirst - First operation
+     * @return {PIXI.GD8Symmetry} Result
+     */
+    sub: function (rotationSecond, rotationFirst) { return (
+        rotationCayley[rotationSecond][GroupD8.inv(rotationFirst)]
+    ); },
+
+    /**
+     * Adds 180 degrees to rotation, which is a commutative
+     * operation.
      *
      * @memberof PIXI.GroupD8
      * @param {number} rotation - The number to rotate.
-     * @returns {number} rotated number
+     * @returns {number} Rotated number
      */
     rotate180: function (rotation) { return rotation ^ 4; },
 
     /**
-     * Direction of main vector can be horizontal, vertical or diagonal.
-     * Some objects work with vertical directions different.
+     * Checks if the rotation angle is vertical, i.e. south
+     * or north. It doesn't work for reflections.
      *
      * @memberof PIXI.GroupD8
-     * @param {number} rotation - The number to check.
+     * @param {PIXI.GD8Symmetry} rotation - The number to check.
      * @returns {boolean} Whether or not the direction is vertical
      */
-    isVertical: function (rotation) { return (rotation & 3) === 2; },
+    isVertical: function (rotation) { return (rotation & 3) === 2; }, // rotation % 4 === 2
 
     /**
-     * @memberof PIXI.GroupD8
-     * @param {number} dx - TODO
-     * @param {number} dy - TODO
+     * Approximates the vector `V(dx,dy)` into one of the
+     * eight directions provided by `GroupD8`.
      *
-     * @return {number} TODO
+     * @memberof PIXI.GroupD8
+     * @param {number} dx - X-component of the vector
+     * @param {number} dy - Y-component of the vector
+     * @return {PIXI.GD8Symmetry} Approximation of the vector into
+     *  one of the eight symmetries.
      */
     byDirection: function (dx, dy) {
         if (Math.abs(dx) * 2 <= Math.abs(dy))
@@ -26193,7 +24777,7 @@ var GroupD8 = {
      *
      * @memberof PIXI.GroupD8
      * @param {PIXI.Matrix} matrix - sprite world matrix
-     * @param {number} rotation - The rotation factor to use.
+     * @param {PIXI.GD8Symmetry} rotation - The rotation factor to use.
      * @param {number} tx - sprite anchoring
      * @param {number} ty - sprite anchoring
      */
@@ -26202,7 +24786,7 @@ var GroupD8 = {
         if ( ty === void 0 ) ty = 0;
 
         // Packer used "rotation", we use "inv(rotation)"
-        var mat = tempMatrices[GroupD8.inv(rotation)];
+        var mat = rotationMatrices[GroupD8.inv(rotation)];
 
         mat.tx = tx;
         mat.ty = ty;
@@ -26219,14 +24803,14 @@ var GroupD8 = {
 var Transform = function Transform()
 {
     /**
-     * The global matrix transform. It can be swapped temporarily by some functions like getLocalBounds()
+     * The world transformation matrix.
      *
      * @member {PIXI.Matrix}
      */
     this.worldTransform = new Matrix();
 
     /**
-     * The local matrix transform
+     * The local transformation matrix.
      *
      * @member {PIXI.Matrix}
      */
@@ -26260,17 +24844,82 @@ var Transform = function Transform()
      */
     this.skew = new ObservablePoint(this.updateSkew, this, 0, 0);
 
+    /**
+     * The rotation amount.
+     *
+     * @protected
+     * @member {number}
+     */
     this._rotation = 0;
 
-    this._cx = 1; // cos rotation + skewY;
-    this._sx = 0; // sin rotation + skewY;
-    this._cy = 0; // cos rotation + Math.PI/2 - skewX;
-    this._sy = 1; // sin rotation + Math.PI/2 - skewX;
+    /**
+     * The X-coordinate value of the normalized local X axis,
+     * the first column of the local transformation matrix without a scale.
+     *
+     * @protected
+     * @member {number}
+     */
+    this._cx = 1;
 
+    /**
+     * The Y-coordinate value of the normalized local X axis,
+     * the first column of the local transformation matrix without a scale.
+     *
+     * @protected
+     * @member {number}
+     */
+    this._sx = 0;
+
+    /**
+     * The X-coordinate value of the normalized local Y axis,
+     * the second column of the local transformation matrix without a scale.
+     *
+     * @protected
+     * @member {number}
+     */
+    this._cy = 0;
+
+    /**
+     * The Y-coordinate value of the normalized local Y axis,
+     * the second column of the local transformation matrix without a scale.
+     *
+     * @protected
+     * @member {number}
+     */
+    this._sy = 1;
+
+    /**
+     * The locally unique ID of the local transform.
+     *
+     * @protected
+     * @member {number}
+     */
     this._localID = 0;
+
+    /**
+     * The locally unique ID of the local transform
+     * used to calculate the current local transformation matrix.
+     *
+     * @protected
+     * @member {number}
+     */
     this._currentLocalID = 0;
 
+    /**
+     * The locally unique ID of the world transform.
+     *
+     * @protected
+     * @member {number}
+     */
     this._worldID = 0;
+
+    /**
+     * The locally unique ID of the parent's world transform
+     * used to calculate the current world transformation matrix.
+     *
+     * @protected
+     * @member {number}
+     */
     this._parentID = 0;
 };
 
@@ -26279,7 +24928,7 @@ var prototypeAccessors$1 = { rotation: { configurable: true } };
 /**
  * Called when a value changes.
  *
- * @private
+ * @protected
  */
 Transform.prototype.onChange = function onChange ()
 {
@@ -26287,9 +24936,9 @@ Transform.prototype.onChange = function onChange ()
 };
 
 /**
- * Called when skew or rotation changes
+ * Called when the skew or the rotation changes.
  *
- * @private
+ * @protected
  */
 Transform.prototype.updateSkew = function updateSkew ()
 {
@@ -26302,7 +24951,7 @@ Transform.prototype.updateSkew = function updateSkew ()
 };
 
 /**
- * Updates only local matrix
+ * Updates the local transformation matrix.
  */
 Transform.prototype.updateLocalTransform = function updateLocalTransform ()
 {
@@ -26326,9 +24975,9 @@ Transform.prototype.updateLocalTransform = function updateLocalTransform ()
 };
 
 /**
- * Updates the values of the object and applies the parent's transform.
+ * Updates the local and the world transformation matrices.
  *
- * @param {PIXI.Transform} parentTransform - The transform of the parent of this object
+ * @param {PIXI.Transform} parentTransform - The parent transform
  */
 Transform.prototype.updateTransform = function updateTransform (parentTransform)
 {
@@ -26402,7 +25051,23 @@ prototypeAccessors$1.rotation.set = function (value) // eslint-disable-line requ
 
 Object.defineProperties( Transform.prototype, prototypeAccessors$1 );
 
+/**
+ * A default (identity) transform
+ *
+ * @static
+ * @constant
+ * @member {PIXI.Transform}
+ */
 Transform.IDENTITY = new Transform();
+
+/**
+ * Size object, contains width and height
+ *
+ * @memberof PIXI
+ * @typedef {object} ISize
+ * @property {number} width - Width component
+ * @property {number} height - Height component
+ */
 
 /**
  * Rectangle object is an area defined by its position, as indicated by its top-left corner
@@ -27077,8 +25742,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_mesh__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/mesh */ "./node_modules/@pixi/mesh/lib/mesh.es.js");
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /*!
- * @pixi/mesh-extras - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/mesh-extras - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/mesh-extras is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -27859,8 +26524,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/settings */ "./node_modules/@pixi/settings/lib/settings.es.js");
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /*!
- * @pixi/mesh - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/mesh - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/mesh is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -28178,6 +26843,7 @@ var Mesh = /*@__PURE__*/(function (Container) {
     /**
      * Standard renderer draw.
      * @protected
+     * @param {PIXI.Renderer} renderer - Instance to renderer.
      */
     Mesh.prototype._render = function _render (renderer)
     {
@@ -28222,7 +26888,7 @@ var Mesh = /*@__PURE__*/(function (Container) {
         renderer.shader.bind(shader);
 
         // set state..
-        renderer.state.setState(this.state);
+        renderer.state.set(this.state);
 
         // bind the geometry...
         renderer.geometry.bind(this.geometry, shader);
@@ -28663,8 +27329,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/settings */ "./node_modules/@pixi/settings/lib/settings.es.js");
 /*!
- * @pixi/mixin-cache-as-bitmap - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/mixin-cache-as-bitmap - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/mixin-cache-as-bitmap is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -28852,7 +27518,10 @@ _pixi_display__WEBPACK_IMPORTED_MODULE_2__["DisplayObject"].prototype._initCache
 
     // for now we cache the current renderTarget that the WebGL renderer is currently using.
     // this could be more elegant..
-    var cachedRenderTarget = renderer._activeRenderTarget;
+    var cachedRenderTexture = renderer.renderTexture.current;
+    var cachedSourceFrame = renderer.renderTexture.sourceFrame;
+    var cachedProjectionTransform = renderer.projection.transform;
+
     // We also store the filter stack - I will definitely look to change how this works a little later down the line.
     // const stack = renderer.filterManager.filterStack;
 
@@ -28879,9 +27548,10 @@ _pixi_display__WEBPACK_IMPORTED_MODULE_2__["DisplayObject"].prototype._initCache
     this.render = this._cacheData.originalRender;
 
     renderer.render(this, renderTexture, true, m, true);
-    // now restore the state be setting the new properties
 
-    renderer.renderTexture.bind(cachedRenderTarget);
+    // now restore the state be setting the new properties
+    renderer.projection.transform = cachedProjectionTransform;
+    renderer.renderTexture.bind(cachedRenderTexture, cachedSourceFrame);
 
     // renderer.filterManager.filterStack = stack;
 
@@ -29104,8 +27774,8 @@ _pixi_display__WEBPACK_IMPORTED_MODULE_2__["DisplayObject"].prototype._cacheAsBi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /*!
- * @pixi/mixin-get-child-by-name - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/mixin-get-child-by-name - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/mixin-get-child-by-name is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -29157,8 +27827,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /*!
- * @pixi/mixin-get-global-position - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/mixin-get-global-position - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/mixin-get-global-position is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -29216,8 +27886,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /*!
- * @pixi/particles - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/particles - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/particles is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -29244,7 +27914,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * for (let i = 0; i < 100; ++i)
  * {
- *     let sprite = new PIXI.Sprite.from("myImage.png");
+ *     let sprite = PIXI.Sprite.from("myImage.png");
  *     container.addChild(sprite);
  * }
  * ```
@@ -29272,11 +27942,6 @@ var ParticleContainer = /*@__PURE__*/(function (Container) {
         if (batchSize > maxBatchSize)
         {
             batchSize = maxBatchSize;
-        }
-
-        if (batchSize > maxSize)
-        {
-            batchSize = maxSize;
         }
 
         /**
@@ -29867,7 +28532,7 @@ var ParticleRenderer = /*@__PURE__*/(function (ObjectRenderer) {
         {
             return;
         }
-        else if (totalChildren > maxSize)
+        else if (totalChildren > maxSize && !container.autoResize)
         {
             totalChildren = maxSize;
         }
@@ -29913,10 +28578,6 @@ var ParticleRenderer = /*@__PURE__*/(function (ObjectRenderer) {
 
             if (j >= buffers.length)
             {
-                if (!container.autoResize)
-                {
-                    break;
-                }
                 buffers.push(this._generateOneMoreBuffer(container));
             }
 
@@ -30217,8 +28878,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var object_assign__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
 /* harmony import */ var object_assign__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(object_assign__WEBPACK_IMPORTED_MODULE_1__);
 /*!
- * @pixi/polyfill - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/polyfill - v5.1.0
+ * Compiled Fri, 19 Jul 2019 21:54:36 UTC
  *
  * @pixi/polyfill is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -30402,8 +29063,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/text */ "./node_modules/@pixi/text/lib/text.es.js");
 /*!
- * @pixi/prepare - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/prepare - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/prepare is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -30475,7 +29136,7 @@ CountLimiter.prototype.allowedToUpload = function allowedToUpload ()
  *
  * @example
  * // Create a sprite
- * const sprite = new PIXI.Sprite.from('something.png');
+ * const sprite = PIXI.Sprite.from('something.png');
  *
  * // Load object into GPU
  * app.renderer.plugins.prepare.upload(sprite, () => {
@@ -30997,7 +29658,7 @@ function uploadBaseTextures(renderer, item)
         // reuploads the texture without need for preparing it again
         if (!item._glTextures[renderer.CONTEXT_UID])
         {
-            renderer.textureManager.updateTexture(item);
+            renderer.texture.bind(item);
         }
 
         return true;
@@ -31137,8 +29798,8 @@ TimeLimiter.prototype.allowedToUpload = function allowedToUpload ()
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Runner", function() { return Runner; });
 /*!
- * @pixi/runner - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/runner - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/runner is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -31188,6 +29849,7 @@ var Runner = function Runner(name)
 {
     this.items = [];
     this._name = name;
+    this._aliasCount = 0;
 };
 
 var prototypeAccessors = { empty: { configurable: true },name: { configurable: true } };
@@ -31207,12 +29869,28 @@ Runner.prototype.emit = function emit (a0, a1, a2, a3, a4, a5, a6, a7)
         var name = ref.name;
         var items = ref.items;
 
+    this._aliasCount++;
+
     for (var i = 0, len = items.length; i < len; i++)
     {
         items[i][name](a0, a1, a2, a3, a4, a5, a6, a7);
     }
 
+    if (items === this.items)
+    {
+        this._aliasCount--;
+    }
+
     return this;
+};
+
+Runner.prototype.ensureNonAliasedItems = function ensureNonAliasedItems ()
+{
+    if (this._aliasCount > 0 && this.items.length > 1)
+    {
+        this._aliasCount = 0;
+        this.items = this.items.slice(0);
+    }
 };
 
 /**
@@ -31236,6 +29914,7 @@ Runner.prototype.add = function add (item)
 {
     if (item[this._name])
     {
+        this.ensureNonAliasedItems();
         this.remove(item);
         this.items.push(item);
     }
@@ -31253,6 +29932,7 @@ Runner.prototype.remove = function remove (item)
 
     if (index !== -1)
     {
+        this.ensureNonAliasedItems();
         this.items.splice(index, 1);
     }
 
@@ -31273,6 +29953,7 @@ Runner.prototype.contains = function contains (item)
  */
 Runner.prototype.removeAll = function removeAll ()
 {
+    this.ensureNonAliasedItems();
     this.items.length = 0;
 
     return this;
@@ -31348,8 +30029,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ismobilejs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ismobilejs__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return ismobilejs__WEBPACK_IMPORTED_MODULE_0___default.a; });
 /*!
- * @pixi/settings - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/settings - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/settings is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -31451,6 +30132,18 @@ var settings = {
      * @default PIXI.MIPMAP_MODES.POW2
      */
     MIPMAP_TEXTURES: 1,
+
+    /**
+     * Default anisotropic filtering level of textures.
+     * Usually from 0 to 16
+     *
+     * @static
+     * @name ANISOTROPIC_LEVEL
+     * @memberof PIXI.settings
+     * @type {number}
+     * @default 0
+     */
+    ANISOTROPIC_LEVEL: 0,
 
     /**
      * Default resolution / device pixel ratio of the renderer.
@@ -31669,8 +30362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_sprite__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @pixi/sprite */ "./node_modules/@pixi/sprite/lib/sprite.es.js");
 /* harmony import */ var _pixi_ticker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/ticker */ "./node_modules/@pixi/ticker/lib/ticker.es.js");
 /*!
- * @pixi/sprite-animated - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/sprite-animated - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/sprite-animated is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -31973,7 +30666,7 @@ var AnimatedSprite = /*@__PURE__*/(function (Sprite) {
         this._texture = this._textures[this.currentFrame];
         this._textureID = -1;
         this._textureTrimmedID = -1;
-        this.cachedTint = 0xFFFFFF;
+        this._cachedTint = 0xFFFFFF;
         this.uvs = this._texture._uvs.uvsFloat32;
 
         if (this.updateAnchor)
@@ -32144,8 +30837,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_sprite__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/sprite */ "./node_modules/@pixi/sprite/lib/sprite.es.js");
 /* harmony import */ var _pixi_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/constants */ "./node_modules/@pixi/constants/lib/constants.es.js");
 /*!
- * @pixi/sprite-tiling - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/sprite-tiling - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/sprite-tiling is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -32293,7 +30986,7 @@ var TilingSprite = /*@__PURE__*/(function (Sprite) {
         {
             this.uvMatrix.texture = this._texture;
         }
-        this.cachedTint = 0xFFFFFF;
+        this._cachedTint = 0xFFFFFF;
     };
 
     /**
@@ -32667,8 +31360,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_display__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/display */ "./node_modules/@pixi/display/lib/display.es.js");
 /* harmony import */ var _pixi_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/settings */ "./node_modules/@pixi/settings/lib/settings.es.js");
 /*!
- * @pixi/sprite - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/sprite - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/sprite is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -32689,7 +31382,7 @@ var indices = new Uint16Array([0, 1, 2, 0, 2, 3]);
  * A sprite can be created directly from an image like this:
  *
  * ```js
- * let sprite = new PIXI.Sprite.from('assets/image.png');
+ * let sprite = PIXI.Sprite.from('assets/image.png');
  * ```
  *
  * The more efficient way to create sprites is using a {@link PIXI.Spritesheet},
@@ -32715,14 +31408,20 @@ var Sprite = /*@__PURE__*/(function (Container) {
         Container.call(this);
 
         /**
-         * The anchor sets the origin point of the texture.
-         * The default is 0,0 or taken from the {@link PIXI.Texture#defaultAnchor|Texture}
-         * passed to the constructor. A value of 0,0 means the texture's origin is the top left.
-         * Setting the anchor to 0.5,0.5 means the texture's origin is centered.
-         * Setting the anchor to 1,1 would mean the texture's origin point will be the bottom right corner.
-         * Note: Updating the {@link PIXI.Texture#defaultAnchor} after a Texture is
-         * created does _not_ update the Sprite's anchor values.
+         * The anchor point defines the normalized coordinates
+         * in the texture that map to the position of this
+         * sprite.
          *
+         * By default, this is `(0,0)` (or `texture.defaultAnchor`
+         * if you have modified that), which means the position
+         * `(x,y)` of this `Sprite` will be the top-left corner.
+         *
+         * Note: Updating `texture.defaultAnchor` after
+         * constructing a `Sprite` does _not_ update its anchor.
+         *
+         * {@link https://docs.cocos2d-x.org/cocos2d-x/en/sprites/manipulation.html}
+         *
+         * @default `texture.defaultAnchor`
          * @member {PIXI.ObservablePoint}
          * @private
          */
@@ -32785,13 +31484,14 @@ var Sprite = /*@__PURE__*/(function (Container) {
         this.shader = null;
 
         /**
-         * An internal cached value of the tint.
+         * Cached tint value so we can tell when the tint is changed.
+         * Value is used for 2d CanvasRenderer.
          *
-         * @private
+         * @protected
          * @member {number}
          * @default 0xFFFFFF
          */
-        this.cachedTint = 0xFFFFFF;
+        this._cachedTint = 0xFFFFFF;
 
         this.uvs = null;
 
@@ -32831,7 +31531,7 @@ var Sprite = /*@__PURE__*/(function (Container) {
          * Allows to customize the rendering process without overriding '_render' & '_renderCanvas' methods.
          *
          * @member {string}
-         * @default 'sprite'
+         * @default 'batch'
          */
         this.pluginName = 'batch';
 
@@ -32865,7 +31565,7 @@ var Sprite = /*@__PURE__*/(function (Container) {
     {
         this._textureID = -1;
         this._textureTrimmedID = -1;
-        this.cachedTint = 0xFFFFFF;
+        this._cachedTint = 0xFFFFFF;
 
         this.uvs = this._texture._uvs.uvsFloat32;
         // so if _width is 0 then width was not set..
@@ -33171,7 +31871,7 @@ var Sprite = /*@__PURE__*/(function (Container) {
     {
         var texture = (source instanceof _pixi_core__WEBPACK_IMPORTED_MODULE_2__["Texture"])
             ? source
-            : new _pixi_core__WEBPACK_IMPORTED_MODULE_2__["Texture"].from(source, options);
+            : _pixi_core__WEBPACK_IMPORTED_MODULE_2__["Texture"].from(source, options);
 
         return new Sprite(texture);
     };
@@ -33299,7 +31999,7 @@ var Sprite = /*@__PURE__*/(function (Container) {
         }
 
         this._texture = value || _pixi_core__WEBPACK_IMPORTED_MODULE_2__["Texture"].EMPTY;
-        this.cachedTint = 0xFFFFFF;
+        this._cachedTint = 0xFFFFFF;
 
         this._textureID = -1;
         this._textureTrimmedID = -1;
@@ -33345,8 +32045,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_loaders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/loaders */ "./node_modules/@pixi/loaders/lib/loaders.es.js");
 /*!
- * @pixi/spritesheet - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/spritesheet - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/spritesheet is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -33781,8 +32481,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /* harmony import */ var _pixi_loaders__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @pixi/loaders */ "./node_modules/@pixi/loaders/lib/loaders.es.js");
 /*!
- * @pixi/text-bitmap - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/text-bitmap - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/text-bitmap is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -34637,8 +33337,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pixi_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pixi/math */ "./node_modules/@pixi/math/lib/math.es.js");
 /* harmony import */ var _pixi_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/utils */ "./node_modules/@pixi/utils/lib/utils.es.js");
 /*!
- * @pixi/text - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/text - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/text is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -36124,7 +34824,19 @@ TextMetrics.clearMetrics = function clearMetrics (font)
  * @private
  */
 
-var canvas = document.createElement('canvas');
+var canvas = (function () {
+    try
+    {
+        // OffscreenCanvas2D measureText can be up to 40% faster.
+        var c = new OffscreenCanvas(0, 0);
+
+        return c.getContext('2d') ? c : document.createElement('canvas');
+    }
+    catch (ex)
+    {
+        return document.createElement('canvas');
+    }
+})();
 
 canvas.width = canvas.height = 10;
 
@@ -36388,7 +35100,6 @@ var Text = /*@__PURE__*/(function (Sprite) {
         context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         context.font = this._font;
-        context.strokeStyle = style.stroke;
         context.lineWidth = style.strokeThickness;
         context.textBaseline = style.textBaseline;
         context.lineJoin = style.lineJoin;
@@ -36397,59 +35108,87 @@ var Text = /*@__PURE__*/(function (Sprite) {
         var linePositionX;
         var linePositionY;
 
-        if (style.dropShadow)
+        // require 2 passes if a shadow; the first to draw the drop shadow, the second to draw the text
+        var passesCount = style.dropShadow ? 2 : 1;
+
+        // For v4, we drew text at the colours of the drop shadow underneath the normal text. This gave the correct zIndex,
+        // but features such as alpha and shadowblur did not look right at all, since we were using actual text as a shadow.
+        //
+        // For v5.0.0, we moved over to just use the canvas API for drop shadows, which made them look much nicer and more
+        // visually please, but now because the stroke is drawn and then the fill, drop shadows would appear on both the fill
+        // and the stroke; and fill drop shadows would appear over the top of the stroke.
+        //
+        // For v5.1.1, the new route is to revert to v4 style of drawing text first to get the drop shadows underneath normal
+        // text, but instead drawing text in the correct location, we'll draw it off screen (-paddingY), and then adjust the
+        // drop shadow so only that appears on screen (+paddingY). Now we'll have the correct draw order of the shadow
+        // beneath the text, whilst also having the proper text shadow styling.
+        for (var i = 0; i < passesCount; ++i)
         {
-            var dropShadowColor = style.dropShadowColor;
-            var rgb = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_4__["hex2rgb"])(typeof dropShadowColor === 'number' ? dropShadowColor : Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_4__["string2hex"])(dropShadowColor));
+            var isShadowPass = style.dropShadow && i === 0;
+            var dsOffsetText = isShadowPass ? height * 2 : 0; // we only want the drop shadow, so put text way off-screen
+            var dsOffsetShadow = dsOffsetText * this.resolution;
 
-            context.shadowColor = "rgba(" + (rgb[0] * 255) + "," + (rgb[1] * 255) + "," + (rgb[2] * 255) + "," + (style.dropShadowAlpha) + ")";
-            context.shadowBlur = style.dropShadowBlur;
-            context.shadowOffsetX = Math.cos(style.dropShadowAngle) * style.dropShadowDistance;
-            context.shadowOffsetY = Math.sin(style.dropShadowAngle) * style.dropShadowDistance;
-        }
-        else
-        {
-            context.shadowColor = 0;
-            context.shadowBlur = 0;
-            context.shadowOffsetX = 0;
-            context.shadowOffsetY = 0;
-        }
-
-        // set canvas text styles
-        context.fillStyle = this._generateFillStyle(style, lines);
-
-        // draw lines line by line
-        for (var i = 0; i < lines.length; i++)
-        {
-            linePositionX = style.strokeThickness / 2;
-            linePositionY = ((style.strokeThickness / 2) + (i * lineHeight)) + fontProperties.ascent;
-
-            if (style.align === 'right')
+            if (isShadowPass)
             {
-                linePositionX += maxLineWidth - lineWidths[i];
+                // On Safari, text with gradient and drop shadows together do not position correctly
+                // if the scale of the canvas is not 1: https://bugs.webkit.org/show_bug.cgi?id=197689
+                // Therefore we'll set the styles to be a plain black whilst generating this drop shadow
+                context.fillStyle = 'black';
+                context.strokeStyle = 'black';
+
+                var dropShadowColor = style.dropShadowColor;
+                var rgb = Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_4__["hex2rgb"])(typeof dropShadowColor === 'number' ? dropShadowColor : Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_4__["string2hex"])(dropShadowColor));
+
+                context.shadowColor = "rgba(" + (rgb[0] * 255) + "," + (rgb[1] * 255) + "," + (rgb[2] * 255) + "," + (style.dropShadowAlpha) + ")";
+                context.shadowBlur = style.dropShadowBlur;
+                context.shadowOffsetX = Math.cos(style.dropShadowAngle) * style.dropShadowDistance;
+                context.shadowOffsetY = (Math.sin(style.dropShadowAngle) * style.dropShadowDistance) + dsOffsetShadow;
             }
-            else if (style.align === 'center')
+            else
             {
-                linePositionX += (maxLineWidth - lineWidths[i]) / 2;
+                // set canvas text styles
+                context.fillStyle = this._generateFillStyle(style, lines);
+                context.strokeStyle = style.stroke;
+
+                context.shadowColor = 0;
+                context.shadowBlur = 0;
+                context.shadowOffsetX = 0;
+                context.shadowOffsetY = 0;
             }
 
-            if (style.stroke && style.strokeThickness)
+            // draw lines line by line
+            for (var i$1 = 0; i$1 < lines.length; i$1++)
             {
-                this.drawLetterSpacing(
-                    lines[i],
-                    linePositionX + style.padding,
-                    linePositionY + style.padding,
-                    true
-                );
-            }
+                linePositionX = style.strokeThickness / 2;
+                linePositionY = ((style.strokeThickness / 2) + (i$1 * lineHeight)) + fontProperties.ascent;
 
-            if (style.fill)
-            {
-                this.drawLetterSpacing(
-                    lines[i],
-                    linePositionX + style.padding,
-                    linePositionY + style.padding
-                );
+                if (style.align === 'right')
+                {
+                    linePositionX += maxLineWidth - lineWidths[i$1];
+                }
+                else if (style.align === 'center')
+                {
+                    linePositionX += (maxLineWidth - lineWidths[i$1]) / 2;
+                }
+
+                if (style.stroke && style.strokeThickness)
+                {
+                    this.drawLetterSpacing(
+                        lines[i$1],
+                        linePositionX + style.padding,
+                        linePositionY + style.padding - dsOffsetText,
+                        true
+                    );
+                }
+
+                if (style.fill)
+                {
+                    this.drawLetterSpacing(
+                        lines[i$1],
+                        linePositionX + style.padding,
+                        linePositionY + style.padding - dsOffsetText
+                    );
+                }
             }
         }
 
@@ -36540,8 +35279,8 @@ var Text = /*@__PURE__*/(function (Sprite) {
         var padding = style.trim ? 0 : style.padding;
         var baseTexture = texture.baseTexture;
 
-        texture.trim.width = texture._frame.width = canvas.width / this._resolution;
-        texture.trim.height = texture._frame.height = canvas.height / this._resolution;
+        texture.trim.width = texture._frame.width = Math.ceil(canvas.width / this._resolution);
+        texture.trim.height = texture._frame.height = Math.ceil(canvas.height / this._resolution);
         texture.trim.x = -padding;
         texture.trim.y = -padding;
 
@@ -36559,9 +35298,10 @@ var Text = /*@__PURE__*/(function (Sprite) {
     /**
      * Renders the object using the WebGL renderer
      *
+     * @private
      * @param {PIXI.Renderer} renderer - The renderer
      */
-    Text.prototype.render = function render (renderer)
+    Text.prototype._render = function _render (renderer)
     {
         if (this._autoResolution && this._resolution !== renderer.resolution)
         {
@@ -36571,26 +35311,7 @@ var Text = /*@__PURE__*/(function (Sprite) {
 
         this.updateText(true);
 
-        Sprite.prototype.render.call(this, renderer);
-    };
-
-    /**
-     * Renders the object using the Canvas renderer
-     *
-     * @private
-     * @param {PIXI.CanvasRenderer} renderer - The renderer
-     */
-    Text.prototype._renderCanvas = function _renderCanvas (renderer)
-    {
-        if (this._autoResolution && this._resolution !== renderer.resolution)
-        {
-            this._resolution = renderer.resolution;
-            this.dirty = true;
-        }
-
-        this.updateText(true);
-
-        Sprite.prototype._renderCanvas.call(this, renderer);
+        Sprite.prototype._render.call(this, renderer);
     };
 
     /**
@@ -36641,6 +35362,10 @@ var Text = /*@__PURE__*/(function (Sprite) {
         {
             return style.fill;
         }
+        else if (style.fill.length === 1)
+        {
+            return style.fill[0];
+        }
 
         // the gradient will be evenly spaced out according to how large the array is.
         // ['#FF0000', '#00FF00', '#0000FF'] would created stops at 0.25, 0.5 and 0.75
@@ -36649,8 +35374,8 @@ var Text = /*@__PURE__*/(function (Sprite) {
         var currentIteration;
         var stop;
 
-        var width = this.canvas.width / this._resolution;
-        var height = this.canvas.height / this._resolution;
+        var width = Math.ceil(this.canvas.width / this._resolution);
+        var height = Math.ceil(this.canvas.height / this._resolution);
 
         // make a copy of the style settings, so we can manipulate them later
         var fill = style.fill.slice();
@@ -36903,8 +35628,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_PRIORITY", function() { return UPDATE_PRIORITY; });
 /* harmony import */ var _pixi_settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @pixi/settings */ "./node_modules/@pixi/settings/lib/settings.es.js");
 /*!
- * @pixi/ticker - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/ticker - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/ticker is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -37248,6 +35973,15 @@ var Ticker = function Ticker()
     this._protected = false;
 
     /**
+     * The last time keyframe was executed.
+     * Maintains a relatively fixed interval with the previous value.
+     * @member {number}
+     * @default -1
+     * @private
+     */
+    this._lastFrame = -1;
+
+    /**
      * Internal tick method bound to ticker instance.
      * This is because in early 2015, Function.bind
      * is still 60% slower in high performance scenarios.
@@ -37290,6 +36024,7 @@ Ticker.prototype._requestIfNeeded = function _requestIfNeeded ()
     {
         // ensure callbacks get correct delta
         this.lastTime = performance.now();
+        this._lastFrame = this.lastTime;
         this._requestId = requestAnimationFrame(this._tick);
     }
 };
@@ -37537,13 +36272,19 @@ Ticker.prototype.update = function update (currentTime)
 
         elapsedMS *= this.speed;
 
-        // if not enough time has passed, exit the function.
-        // We give an extra ms to elapsedMS for this check, because the nature of
-        // request animation frame means that not all browsers will return precise values.
-        // However, because rAF works based on v-sync, it's won't change the effective FPS.
-        if (this._minElapsedMS && elapsedMS + 1 < this._minElapsedMS)
+        // If not enough time has passed, exit the function.
+        // Get ready for next frame by setting _lastFrame, but based on _minElapsedMS
+        // adjustment to ensure a relatively stable interval.
+        if (this._minElapsedMS)
         {
-            return;
+            var delta = currentTime - this._lastFrame | 0;
+
+            if (delta < this._minElapsedMS)
+            {
+                return;
+            }
+
+            this._lastFrame = currentTime - (delta % this._minElapsedMS);
         }
 
         this.deltaMS = elapsedMS;
@@ -37617,28 +36358,28 @@ prototypeAccessors.minFPS.set = function (fps) // eslint-disable-line require-js
 };
 
 /**
- * Manages the minimum amount of milliseconds allowed to
+ * Manages the minimum amount of milliseconds required to
  * elapse between invoking {@link PIXI.Ticker#update}.
  * This will effect the measured value of {@link PIXI.Ticker#FPS}.
- * When setting this property it is clamped to a value between
- * `1` and `TARGET_FPMS * 1000`.
+ * If it is set to `0`, then there is no limit; PixiJS will render as many frames as it can.
+ * Otherwise it will be at least `minFPS`
  *
  * @member {number}
- * @default 60
+ * @default 0
  */
 prototypeAccessors.maxFPS.get = function ()
 {
     if (this._minElapsedMS)
     {
-        return 1000 / this._minElapsedMS;
+        return Math.round(1000 / this._minElapsedMS);
     }
 
-    return _pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].TARGET_FPMS * 1000;
+    return 0;
 };
 
 prototypeAccessors.maxFPS.set = function (fps)
 {
-    if (fps / 1000 >= _pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].TARGET_FPMS)
+    if (fps === 0)
     {
         this._minElapsedMS = 0;
     }
@@ -37647,10 +36388,7 @@ prototypeAccessors.maxFPS.set = function (fps)
         // Max must be at least the minFPS
         var maxFPS = Math.max(this.minFPS, fps);
 
-        // Must be at least 1, but below 1 / settings.TARGET_FPMS
-        var maxFPMS = Math.min(Math.max(1, maxFPS) / 1000, _pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].TARGET_FPMS);
-
-        this._minElapsedMS = 1 / maxFPMS;
+        this._minElapsedMS = 1 / (maxFPS / 1000);
     }
 };
 
@@ -37859,8 +36597,8 @@ TickerPlugin.destroy = function destroy ()
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
 /*!
- * @pixi/unsafe-eval - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/unsafe-eval - v5.0.4
+ * Compiled Fri, 07 Jun 2019 17:17:49 UTC
  *
  * @pixi/unsafe-eval is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -38177,8 +36915,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "url", function() { return url__WEBPACK_IMPORTED_MODULE_3___default.a; });
 /* harmony import */ var _pixi_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @pixi/constants */ "./node_modules/@pixi/constants/lib/constants.es.js");
 /*!
- * @pixi/utils - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * @pixi/utils - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * @pixi/utils is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -38203,8 +36941,21 @@ __webpack_require__.r(__webpack_exports__);
  */
 _pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].RETINA_PREFIX = /@([0-9\.]+)x/;
 
+/**
+ * Should the `failIfMajorPerformanceCaveat` flag be enabled as a context option used in the `isWebGLSupported` function.
+ * For most scenarios this should be left as true, as otherwise the user may have a poor experience.
+ * However, it can be useful to disable under certain scenarios, such as headless unit tests.
+ *
+ * @static
+ * @name FAIL_IF_MAJOR_PERFORMANCE_CAVEAT
+ * @memberof PIXI.settings
+ * @type {boolean}
+ * @default true
+ */
+_pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].FAIL_IF_MAJOR_PERFORMANCE_CAVEAT = true;
+
 var saidHello = false;
-var VERSION = '5.0.3';
+var VERSION = '5.1.1';
 
 /**
  * Skips the hello message of renderers that are created after this is run.
@@ -38220,7 +36971,7 @@ function skipHello()
 /**
  * Logs out the version and renderer information for this running instance of PIXI.
  * If you don't want to see this message you can run `PIXI.utils.skipHello()` before
- * creating your renderer. Keep in mind that doing that will forever makes you a jerk face.
+ * creating your renderer. Keep in mind that doing that will forever make you a jerk face.
  *
  * @static
  * @function sayHello
@@ -38273,7 +37024,10 @@ function isWebGLSupported()
     {
         supported = (function supported()
         {
-            var contextOptions = { stencil: true, failIfMajorPerformanceCaveat: true };
+            var contextOptions = {
+                stencil: true,
+                failIfMajorPerformanceCaveat: _pixi_settings__WEBPACK_IMPORTED_MODULE_0__["settings"].FAIL_IF_MAJOR_PERFORMANCE_CAVEAT,
+            };
 
             try
             {
@@ -38537,32 +37291,38 @@ function premultiplyTintToRgba(tint, alpha, out, premultiply)
 /**
  * Generic Mask Stack data structure
  *
- * @memberof PIXI
+ * @memberof PIXI.utils
  * @function createIndicesForQuads
- * @private
  * @param {number} size - Number of quads
- * @return {Uint16Array} indices
+ * @param {Uint16Array|Uint32Array} [outBuffer] - Buffer for output, length has to be `6 * size`
+ * @return {Uint16Array|Uint32Array} - Resulting index buffer
  */
-function createIndicesForQuads(size)
+function createIndicesForQuads(size, outBuffer)
 {
-    // the total number of indices in our array, there are 6 points per quad.
+    if ( outBuffer === void 0 ) outBuffer = null;
 
+    // the total number of indices in our array, there are 6 points per quad.
     var totalIndices = size * 6;
 
-    var indices = new Uint16Array(totalIndices);
+    outBuffer = outBuffer || new Uint16Array(totalIndices);
+
+    if (outBuffer.length !== totalIndices)
+    {
+        throw new Error(("Out buffer length is incorrect, got " + (outBuffer.length) + " and expected " + totalIndices));
+    }
 
     // fill the indices with the quads to draw
     for (var i = 0, j = 0; i < totalIndices; i += 6, j += 4)
     {
-        indices[i + 0] = j + 0;
-        indices[i + 1] = j + 1;
-        indices[i + 2] = j + 2;
-        indices[i + 3] = j + 0;
-        indices[i + 4] = j + 2;
-        indices[i + 5] = j + 3;
+        outBuffer[i + 0] = j + 0;
+        outBuffer[i + 1] = j + 1;
+        outBuffer[i + 2] = j + 2;
+        outBuffer[i + 3] = j + 0;
+        outBuffer[i + 4] = j + 2;
+        outBuffer[i + 5] = j + 3;
     }
 
-    return indices;
+    return outBuffer;
 }
 
 /**
@@ -39171,201 +37931,6 @@ module.exports = path.Array.isArray;
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/es/array/virtual/for-each.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/array/virtual/for-each.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../../modules/es.array.for-each */ "./node_modules/core-js-pure/modules/es.array.for-each.js");
-var entryVirtual = __webpack_require__(/*! ../../../internals/entry-virtual */ "./node_modules/core-js-pure/internals/entry-virtual.js");
-
-module.exports = entryVirtual('Array').forEach;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/array/virtual/index-of.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/array/virtual/index-of.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../../modules/es.array.index-of */ "./node_modules/core-js-pure/modules/es.array.index-of.js");
-var entryVirtual = __webpack_require__(/*! ../../../internals/entry-virtual */ "./node_modules/core-js-pure/internals/entry-virtual.js");
-
-module.exports = entryVirtual('Array').indexOf;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/array/virtual/splice.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/array/virtual/splice.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../../modules/es.array.splice */ "./node_modules/core-js-pure/modules/es.array.splice.js");
-var entryVirtual = __webpack_require__(/*! ../../../internals/entry-virtual */ "./node_modules/core-js-pure/internals/entry-virtual.js");
-
-module.exports = entryVirtual('Array').splice;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/instance/index-of.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js-pure/es/instance/index-of.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var indexOf = __webpack_require__(/*! ../array/virtual/index-of */ "./node_modules/core-js-pure/es/array/virtual/index-of.js");
-
-var ArrayPrototype = Array.prototype;
-
-module.exports = function (it) {
-  var own = it.indexOf;
-  return it === ArrayPrototype || (it instanceof Array && own === ArrayPrototype.indexOf) ? indexOf : own;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/instance/splice.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js-pure/es/instance/splice.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var splice = __webpack_require__(/*! ../array/virtual/splice */ "./node_modules/core-js-pure/es/array/virtual/splice.js");
-
-var ArrayPrototype = Array.prototype;
-
-module.exports = function (it) {
-  var own = it.splice;
-  return it === ArrayPrototype || (it instanceof Array && own === ArrayPrototype.splice) ? splice : own;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/create.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/create.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.create */ "./node_modules/core-js-pure/modules/es.object.create.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-var Object = path.Object;
-
-module.exports = function create(P, D) {
-  return Object.create(P, D);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/define-properties.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/define-properties.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.define-properties */ "./node_modules/core-js-pure/modules/es.object.define-properties.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-var Object = path.Object;
-
-var defineProperties = module.exports = function defineProperties(T, D) {
-  return Object.defineProperties(T, D);
-};
-
-if (Object.defineProperties.sham) defineProperties.sham = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/define-property.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/define-property.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.define-property */ "./node_modules/core-js-pure/modules/es.object.define-property.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-var Object = path.Object;
-
-var defineProperty = module.exports = function defineProperty(it, key, desc) {
-  return Object.defineProperty(it, key, desc);
-};
-
-if (Object.defineProperty.sham) defineProperty.sham = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/get-own-property-descriptor.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/get-own-property-descriptor.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.get-own-property-descriptor */ "./node_modules/core-js-pure/modules/es.object.get-own-property-descriptor.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-var Object = path.Object;
-
-var getOwnPropertyDescriptor = module.exports = function getOwnPropertyDescriptor(it, key) {
-  return Object.getOwnPropertyDescriptor(it, key);
-};
-
-if (Object.getOwnPropertyDescriptor.sham) getOwnPropertyDescriptor.sham = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/get-prototype-of.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/get-prototype-of.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.get-prototype-of */ "./node_modules/core-js-pure/modules/es.object.get-prototype-of.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-module.exports = path.Object.getPrototypeOf;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/object/set-prototype-of.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/core-js-pure/es/object/set-prototype-of.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.object.set-prototype-of */ "./node_modules/core-js-pure/modules/es.object.set-prototype-of.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-module.exports = path.Object.setPrototypeOf;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/es/promise/index.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js-pure/es/promise/index.js ***!
@@ -39381,56 +37946,6 @@ __webpack_require__(/*! ../../modules/es.promise.finally */ "./node_modules/core
 var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
 
 module.exports = path.Promise;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/symbol/index.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js-pure/es/symbol/index.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.array.concat */ "./node_modules/core-js-pure/modules/es.array.concat.js");
-__webpack_require__(/*! ../../modules/es.object.to-string */ "./node_modules/core-js-pure/modules/es.object.to-string.js");
-__webpack_require__(/*! ../../modules/es.symbol */ "./node_modules/core-js-pure/modules/es.symbol.js");
-__webpack_require__(/*! ../../modules/es.symbol.async-iterator */ "./node_modules/core-js-pure/modules/es.symbol.async-iterator.js");
-__webpack_require__(/*! ../../modules/es.symbol.description */ "./node_modules/core-js-pure/modules/es.symbol.description.js");
-__webpack_require__(/*! ../../modules/es.symbol.has-instance */ "./node_modules/core-js-pure/modules/es.symbol.has-instance.js");
-__webpack_require__(/*! ../../modules/es.symbol.is-concat-spreadable */ "./node_modules/core-js-pure/modules/es.symbol.is-concat-spreadable.js");
-__webpack_require__(/*! ../../modules/es.symbol.iterator */ "./node_modules/core-js-pure/modules/es.symbol.iterator.js");
-__webpack_require__(/*! ../../modules/es.symbol.match */ "./node_modules/core-js-pure/modules/es.symbol.match.js");
-__webpack_require__(/*! ../../modules/es.symbol.match-all */ "./node_modules/core-js-pure/modules/es.symbol.match-all.js");
-__webpack_require__(/*! ../../modules/es.symbol.replace */ "./node_modules/core-js-pure/modules/es.symbol.replace.js");
-__webpack_require__(/*! ../../modules/es.symbol.search */ "./node_modules/core-js-pure/modules/es.symbol.search.js");
-__webpack_require__(/*! ../../modules/es.symbol.species */ "./node_modules/core-js-pure/modules/es.symbol.species.js");
-__webpack_require__(/*! ../../modules/es.symbol.split */ "./node_modules/core-js-pure/modules/es.symbol.split.js");
-__webpack_require__(/*! ../../modules/es.symbol.to-primitive */ "./node_modules/core-js-pure/modules/es.symbol.to-primitive.js");
-__webpack_require__(/*! ../../modules/es.symbol.to-string-tag */ "./node_modules/core-js-pure/modules/es.symbol.to-string-tag.js");
-__webpack_require__(/*! ../../modules/es.symbol.unscopables */ "./node_modules/core-js-pure/modules/es.symbol.unscopables.js");
-__webpack_require__(/*! ../../modules/es.math.to-string-tag */ "./node_modules/core-js-pure/modules/es.math.to-string-tag.js");
-__webpack_require__(/*! ../../modules/es.json.to-string-tag */ "./node_modules/core-js-pure/modules/es.json.to-string-tag.js");
-var path = __webpack_require__(/*! ../../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-module.exports = path.Symbol;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/es/symbol/iterator.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js-pure/es/symbol/iterator.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es.symbol.iterator */ "./node_modules/core-js-pure/modules/es.symbol.iterator.js");
-__webpack_require__(/*! ../../modules/es.string.iterator */ "./node_modules/core-js-pure/modules/es.string.iterator.js");
-__webpack_require__(/*! ../../modules/web.dom-collections.iterator */ "./node_modules/core-js-pure/modules/web.dom-collections.iterator.js");
-var WrappedWellKnownSymbolModule = __webpack_require__(/*! ../../internals/wrapped-well-known-symbol */ "./node_modules/core-js-pure/internals/wrapped-well-known-symbol.js");
-
-module.exports = WrappedWellKnownSymbolModule.f('iterator');
 
 
 /***/ }),
@@ -39475,6 +37990,24 @@ module.exports = __webpack_require__(/*! ../internals/is-iterable */ "./node_mod
 module.exports = function (it) {
   if (typeof it != 'function') {
     throw TypeError(String(it) + ' is not a function');
+  } return it;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js-pure/internals/a-possible-prototype.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/core-js-pure/internals/a-possible-prototype.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
+
+module.exports = function (it) {
+  if (!isObject(it) && it !== null) {
+    throw TypeError("Can't set " + String(it) + ' as a prototype');
   } return it;
 };
 
@@ -39527,30 +38060,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/internals/array-for-each.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/array-for-each.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var arrayMethods = __webpack_require__(/*! ../internals/array-methods */ "./node_modules/core-js-pure/internals/array-methods.js");
-var sloppyArrayMethod = __webpack_require__(/*! ../internals/sloppy-array-method */ "./node_modules/core-js-pure/internals/sloppy-array-method.js");
-
-var internalForEach = arrayMethods(0);
-var SLOPPY_METHOD = sloppyArrayMethod('forEach');
-
-// `Array.prototype.forEach` method implementation
-// https://tc39.github.io/ecma262/#sec-array.prototype.foreach
-module.exports = SLOPPY_METHOD ? function forEach(callbackfn /* , thisArg */) {
-  return internalForEach(this, callbackfn, arguments[1]);
-} : [].forEach;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/internals/array-from.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js-pure/internals/array-from.js ***!
@@ -39568,7 +38077,7 @@ var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules
 var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js-pure/internals/create-property.js");
 var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js-pure/internals/get-iterator-method.js");
 
-// `Array.from` method
+// `Array.from` method implementation
 // https://tc39.github.io/ecma262/#sec-array.from
 module.exports = function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
   var O = toObject(arrayLike);
@@ -39616,11 +38125,7 @@ var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules
 var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js-pure/internals/to-absolute-index.js");
 
 // `Array.prototype.{ indexOf, includes }` methods implementation
-// false -> Array#indexOf
-// https://tc39.github.io/ecma262/#sec-array.prototype.indexof
-// true  -> Array#includes
-// https://tc39.github.io/ecma262/#sec-array.prototype.includes
-module.exports = function (IS_INCLUDES) {
+var createMethod = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIndexedObject($this);
     var length = toLength(O.length);
@@ -39633,131 +38138,19 @@ module.exports = function (IS_INCLUDES) {
       // eslint-disable-next-line no-self-compare
       if (value != value) return true;
     // Array#indexOf ignores holes, Array#includes - not
-    } else for (;length > index; index++) if (IS_INCLUDES || index in O) {
-      if (O[index] === el) return IS_INCLUDES || index || 0;
+    } else for (;length > index; index++) {
+      if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
     } return !IS_INCLUDES && -1;
   };
 };
 
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/array-method-has-species-support.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/array-method-has-species-support.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js-pure/internals/well-known-symbol.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-module.exports = function (METHOD_NAME) {
-  return !fails(function () {
-    var array = [];
-    var constructor = array.constructor = {};
-    constructor[SPECIES] = function () {
-      return { foo: 1 };
-    };
-    return array[METHOD_NAME](Boolean).foo !== 1;
-  });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/array-methods.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/array-methods.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var bind = __webpack_require__(/*! ../internals/bind-context */ "./node_modules/core-js-pure/internals/bind-context.js");
-var IndexedObject = __webpack_require__(/*! ../internals/indexed-object */ "./node_modules/core-js-pure/internals/indexed-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js-pure/internals/to-object.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js-pure/internals/to-length.js");
-var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js-pure/internals/array-species-create.js");
-
-// `Array.prototype.{ forEach, map, filter, some, every, find, findIndex }` methods implementation
-// 0 -> Array#forEach
-// https://tc39.github.io/ecma262/#sec-array.prototype.foreach
-// 1 -> Array#map
-// https://tc39.github.io/ecma262/#sec-array.prototype.map
-// 2 -> Array#filter
-// https://tc39.github.io/ecma262/#sec-array.prototype.filter
-// 3 -> Array#some
-// https://tc39.github.io/ecma262/#sec-array.prototype.some
-// 4 -> Array#every
-// https://tc39.github.io/ecma262/#sec-array.prototype.every
-// 5 -> Array#find
-// https://tc39.github.io/ecma262/#sec-array.prototype.find
-// 6 -> Array#findIndex
-// https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
-module.exports = function (TYPE, specificCreate) {
-  var IS_MAP = TYPE == 1;
-  var IS_FILTER = TYPE == 2;
-  var IS_SOME = TYPE == 3;
-  var IS_EVERY = TYPE == 4;
-  var IS_FIND_INDEX = TYPE == 6;
-  var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
-  var create = specificCreate || arraySpeciesCreate;
-  return function ($this, callbackfn, that) {
-    var O = toObject($this);
-    var self = IndexedObject(O);
-    var boundFunction = bind(callbackfn, that, 3);
-    var length = toLength(self.length);
-    var index = 0;
-    var target = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
-    var value, result;
-    for (;length > index; index++) if (NO_HOLES || index in self) {
-      value = self[index];
-      result = boundFunction(value, index, O);
-      if (TYPE) {
-        if (IS_MAP) target[index] = result; // map
-        else if (result) switch (TYPE) {
-          case 3: return true;              // some
-          case 5: return value;             // find
-          case 6: return index;             // findIndex
-          case 2: target.push(value);       // filter
-        } else if (IS_EVERY) return false;  // every
-      }
-    }
-    return IS_FIND_INDEX ? -1 : IS_SOME || IS_EVERY ? IS_EVERY : target;
-  };
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/array-species-create.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/array-species-create.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js-pure/internals/is-array.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js-pure/internals/well-known-symbol.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-// `ArraySpeciesCreate` abstract operation
-// https://tc39.github.io/ecma262/#sec-arrayspeciescreate
-module.exports = function (originalArray, length) {
-  var C;
-  if (isArray(originalArray)) {
-    C = originalArray.constructor;
-    // cross-realm fallback
-    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
-    else if (isObject(C)) {
-      C = C[SPECIES];
-      if (C === null) C = undefined;
-    }
-  } return new (C === undefined ? Array : C)(length === 0 ? 0 : length);
+module.exports = {
+  // `Array.prototype.includes` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.includes
+  includes: createMethod(true),
+  // `Array.prototype.indexOf` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.indexof
+  indexOf: createMethod(false)
 };
 
 
@@ -40112,28 +38505,6 @@ module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, I
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/internals/define-well-known-symbol.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/define-well-known-symbol.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js-pure/internals/has.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/wrapped-well-known-symbol */ "./node_modules/core-js-pure/internals/wrapped-well-known-symbol.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js-pure/internals/object-define-property.js").f;
-
-module.exports = function (NAME) {
-  var Symbol = path.Symbol || (path.Symbol = {});
-  if (!has(Symbol, NAME)) defineProperty(Symbol, NAME, {
-    value: wrappedWellKnownSymbolModule.f(NAME)
-  });
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/internals/descriptors.js":
 /*!************************************************************!*\
   !*** ./node_modules/core-js-pure/internals/descriptors.js ***!
@@ -40163,10 +38534,10 @@ var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules
 
 var document = global.document;
 // typeof document.createElement is 'object' in old IE
-var exist = isObject(document) && isObject(document.createElement);
+var EXISTS = isObject(document) && isObject(document.createElement);
 
 module.exports = function (it) {
-  return exist ? document.createElement(it) : {};
+  return EXISTS ? document.createElement(it) : {};
 };
 
 
@@ -40218,22 +38589,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/internals/entry-virtual.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/entry-virtual.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js-pure/internals/path.js");
-
-module.exports = function (CONSTRUCTOR) {
-  return path[CONSTRUCTOR + 'Prototype'];
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/internals/enum-bug-keys.js":
 /*!**************************************************************!*\
   !*** ./node_modules/core-js-pure/internals/enum-bug-keys.js ***!
@@ -40251,33 +38606,6 @@ module.exports = [
   'toString',
   'valueOf'
 ];
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/enum-keys.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/enum-keys.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js-pure/internals/object-keys.js");
-var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js-pure/internals/object-get-own-property-symbols.js");
-var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js-pure/internals/object-property-is-enumerable.js");
-
-// all enumerable object keys, includes symbols
-module.exports = function (it) {
-  var result = objectKeys(it);
-  var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
-  if (getOwnPropertySymbols) {
-    var symbols = getOwnPropertySymbols(it);
-    var propertyIsEnumerable = propertyIsEnumerableModule.f;
-    var i = 0;
-    var key;
-    while (symbols.length > i) if (propertyIsEnumerable.call(it, key = symbols[i++])) result.push(key);
-  } return result;
-};
 
 
 /***/ }),
@@ -40585,11 +38913,9 @@ module.exports = function (a, b) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js-pure/internals/global.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js-pure/internals/get-built-in.js");
 
-var document = global.document;
-
-module.exports = document && document.documentElement;
+module.exports = getBuiltIn('document', 'documentElement');
 
 
 /***/ }),
@@ -40622,12 +38948,12 @@ module.exports = !DESCRIPTORS && !fails(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
 var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
 var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js-pure/internals/classof-raw.js");
 
 var split = ''.split;
 
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
 module.exports = fails(function () {
   // throws an error in rhino, see https://github.com/mozilla/rhino/issues/346
   // eslint-disable-next-line no-prototype-builtins
@@ -40846,13 +39172,16 @@ var bind = __webpack_require__(/*! ../internals/bind-context */ "./node_modules/
 var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js-pure/internals/get-iterator-method.js");
 var callWithSafeIterationClosing = __webpack_require__(/*! ../internals/call-with-safe-iteration-closing */ "./node_modules/core-js-pure/internals/call-with-safe-iteration-closing.js");
 
-var BREAK = {};
+var Result = function (stopped, result) {
+  this.stopped = stopped;
+  this.result = result;
+};
 
-var exports = module.exports = function (iterable, fn, that, ENTRIES, ITERATOR) {
-  var boundFunction = bind(fn, that, ENTRIES ? 2 : 1);
+var iterate = module.exports = function (iterable, fn, that, AS_ENTRIES, IS_ITERATOR) {
+  var boundFunction = bind(fn, that, AS_ENTRIES ? 2 : 1);
   var iterator, iterFn, index, length, result, step;
 
-  if (ITERATOR) {
+  if (IS_ITERATOR) {
     iterator = iterable;
   } else {
     iterFn = getIteratorMethod(iterable);
@@ -40860,19 +39189,24 @@ var exports = module.exports = function (iterable, fn, that, ENTRIES, ITERATOR) 
     // optimisation for array iterators
     if (isArrayIteratorMethod(iterFn)) {
       for (index = 0, length = toLength(iterable.length); length > index; index++) {
-        result = ENTRIES ? boundFunction(anObject(step = iterable[index])[0], step[1]) : boundFunction(iterable[index]);
-        if (result === BREAK) return BREAK;
-      } return;
+        result = AS_ENTRIES
+          ? boundFunction(anObject(step = iterable[index])[0], step[1])
+          : boundFunction(iterable[index]);
+        if (result && result instanceof Result) return result;
+      } return new Result(false);
     }
     iterator = iterFn.call(iterable);
   }
 
   while (!(step = iterator.next()).done) {
-    if (callWithSafeIterationClosing(iterator, boundFunction, step.value, ENTRIES) === BREAK) return BREAK;
-  }
+    result = callWithSafeIterationClosing(iterator, boundFunction, step.value, AS_ENTRIES);
+    if (result && result instanceof Result) return result;
+  } return new Result(false);
 };
 
-exports.BREAK = BREAK;
+iterate.stop = function (result) {
+  return new Result(true, result);
+};
 
 
 /***/ }),
@@ -41130,7 +39464,8 @@ var createDict = function () {
   return createDict();
 };
 
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+// `Object.create` method
+// https://tc39.github.io/ecma262/#sec-object.create
 module.exports = Object.create || function create(O, Properties) {
   var result;
   if (O !== null) {
@@ -41160,13 +39495,15 @@ var definePropertyModule = __webpack_require__(/*! ../internals/object-define-pr
 var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js-pure/internals/an-object.js");
 var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js-pure/internals/object-keys.js");
 
+// `Object.defineProperties` method
+// https://tc39.github.io/ecma262/#sec-object.defineproperties
 module.exports = DESCRIPTORS ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = objectKeys(Properties);
   var length = keys.length;
-  var i = 0;
+  var index = 0;
   var key;
-  while (length > i) definePropertyModule.f(O, key = keys[i++], Properties[key]);
+  while (length > index) definePropertyModule.f(O, key = keys[index++], Properties[key]);
   return O;
 };
 
@@ -41187,6 +39524,8 @@ var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_m
 
 var nativeDefineProperty = Object.defineProperty;
 
+// `Object.defineProperty` method
+// https://tc39.github.io/ecma262/#sec-object.defineproperty
 exports.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
@@ -41219,6 +39558,8 @@ var IE8_DOM_DEFINE = __webpack_require__(/*! ../internals/ie8-dom-define */ "./n
 
 var nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 
+// `Object.getOwnPropertyDescriptor` method
+// https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor
 exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
   O = toIndexedObject(O);
   P = toPrimitive(P, true);
@@ -41227,71 +39568,6 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
   } catch (error) { /* empty */ }
   if (has(O, P)) return createPropertyDescriptor(!propertyIsEnumerableModule.f.call(O, P), O[P]);
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/object-get-own-property-names-external.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/object-get-own-property-names-external.js ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js-pure/internals/to-indexed-object.js");
-var nativeGetOwnPropertyNames = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js-pure/internals/object-get-own-property-names.js").f;
-
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return nativeGetOwnPropertyNames(it);
-  } catch (error) {
-    return windowNames.slice();
-  }
-};
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]'
-    ? getWindowNames(it)
-    : nativeGetOwnPropertyNames(toIndexedObject(it));
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/object-get-own-property-names.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/object-get-own-property-names.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js-pure/internals/object-keys-internal.js");
-var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js-pure/internals/enum-bug-keys.js");
-
-var hiddenKeys = enumBugKeys.concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return internalObjectKeys(O, hiddenKeys);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/object-get-own-property-symbols.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/object-get-own-property-symbols.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
@@ -41311,7 +39587,8 @@ var CORRECT_PROTOTYPE_GETTER = __webpack_require__(/*! ../internals/correct-prot
 var IE_PROTO = sharedKey('IE_PROTO');
 var ObjectPrototype = Object.prototype;
 
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+// `Object.getPrototypeOf` method
+// https://tc39.github.io/ecma262/#sec-object.getprototypeof
 module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O) {
   O = toObject(O);
   if (has(O, IE_PROTO)) return O[IE_PROTO];
@@ -41332,10 +39609,8 @@ module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O)
 
 var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js-pure/internals/has.js");
 var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js-pure/internals/to-indexed-object.js");
-var arrayIncludes = __webpack_require__(/*! ../internals/array-includes */ "./node_modules/core-js-pure/internals/array-includes.js");
+var indexOf = __webpack_require__(/*! ../internals/array-includes */ "./node_modules/core-js-pure/internals/array-includes.js").indexOf;
 var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js-pure/internals/hidden-keys.js");
-
-var arrayIndexOf = arrayIncludes(false);
 
 module.exports = function (object, names) {
   var O = toIndexedObject(object);
@@ -41345,7 +39620,7 @@ module.exports = function (object, names) {
   for (key in O) !has(hiddenKeys, key) && has(O, key) && result.push(key);
   // Don't enum bug & hidden keys
   while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
+    ~indexOf(result, key) || result.push(key);
   }
   return result;
 };
@@ -41363,7 +39638,8 @@ module.exports = function (object, names) {
 var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js-pure/internals/object-keys-internal.js");
 var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js-pure/internals/enum-bug-keys.js");
 
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+// `Object.keys` method
+// https://tc39.github.io/ecma262/#sec-object.keys
 module.exports = Object.keys || function keys(O) {
   return internalObjectKeys(O, enumBugKeys);
 };
@@ -41386,6 +39662,8 @@ var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 // Nashorn ~ JDK8 bug
 var NASHORN_BUG = getOwnPropertyDescriptor && !nativePropertyIsEnumerable.call({ 1: 2 }, 1);
 
+// `Object.prototype.propertyIsEnumerable` method implementation
+// https://tc39.github.io/ecma262/#sec-object.prototype.propertyisenumerable
 exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
   var descriptor = getOwnPropertyDescriptor(this, V);
   return !!descriptor && descriptor.enumerable;
@@ -41401,22 +39679,26 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var validateSetPrototypeOfArguments = __webpack_require__(/*! ../internals/validate-set-prototype-of-arguments */ "./node_modules/core-js-pure/internals/validate-set-prototype-of-arguments.js");
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js-pure/internals/an-object.js");
+var aPossiblePrototype = __webpack_require__(/*! ../internals/a-possible-prototype */ "./node_modules/core-js-pure/internals/a-possible-prototype.js");
 
+// `Object.setPrototypeOf` method
+// https://tc39.github.io/ecma262/#sec-object.setprototypeof
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 module.exports = Object.setPrototypeOf || ('__proto__' in {} ? function () {
-  var correctSetter = false;
+  var CORRECT_SETTER = false;
   var test = {};
   var setter;
   try {
     setter = Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set;
     setter.call(test, []);
-    correctSetter = test instanceof Array;
+    CORRECT_SETTER = test instanceof Array;
   } catch (error) { /* empty */ }
   return function setPrototypeOf(O, proto) {
-    validateSetPrototypeOfArguments(O, proto);
-    if (correctSetter) setter.call(O, proto);
+    anObject(O);
+    aPossiblePrototype(proto);
+    if (CORRECT_SETTER) setter.call(O, proto);
     else O.__proto__ = proto;
     return O;
   };
@@ -41595,12 +39877,15 @@ var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_mo
 var SPECIES = wellKnownSymbol('species');
 
 module.exports = function (CONSTRUCTOR_NAME) {
-  var C = getBuiltIn(CONSTRUCTOR_NAME);
+  var Constructor = getBuiltIn(CONSTRUCTOR_NAME);
   var defineProperty = definePropertyModule.f;
-  if (DESCRIPTORS && C && !C[SPECIES]) defineProperty(C, SPECIES, {
-    configurable: true,
-    get: function () { return this; }
-  });
+
+  if (DESCRIPTORS && Constructor && !Constructor[SPECIES]) {
+    defineProperty(Constructor, SPECIES, {
+      configurable: true,
+      get: function () { return this; }
+    });
+  }
 };
 
 
@@ -41679,28 +39964,6 @@ var store = global[SHARED] || setGlobal(SHARED, {});
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/internals/sloppy-array-method.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/sloppy-array-method.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-
-module.exports = function (METHOD_NAME, argument) {
-  var method = [][METHOD_NAME];
-  return !method || !fails(function () {
-    // eslint-disable-next-line no-useless-call,no-throw-literal
-    method.call(null, argument || function () { throw 1; }, 1);
-  });
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/internals/species-constructor.js":
 /*!********************************************************************!*\
   !*** ./node_modules/core-js-pure/internals/species-constructor.js ***!
@@ -41725,29 +39988,39 @@ module.exports = function (O, defaultConstructor) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/internals/string-at.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/string-at.js ***!
-  \**********************************************************/
+/***/ "./node_modules/core-js-pure/internals/string-multibyte.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js-pure/internals/string-multibyte.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(/*! ../internals/to-integer */ "./node_modules/core-js-pure/internals/to-integer.js");
 var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js-pure/internals/require-object-coercible.js");
 
-// CONVERT_TO_STRING: true  -> String#at
-// CONVERT_TO_STRING: false -> String#codePointAt
-module.exports = function (that, pos, CONVERT_TO_STRING) {
-  var S = String(requireObjectCoercible(that));
-  var position = toInteger(pos);
-  var size = S.length;
-  var first, second;
-  if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
-  first = S.charCodeAt(position);
-  return first < 0xD800 || first > 0xDBFF || position + 1 === size
-    || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
-      ? CONVERT_TO_STRING ? S.charAt(position) : first
-      : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+// `String.prototype.{ codePointAt, at }` methods implementation
+var createMethod = function (CONVERT_TO_STRING) {
+  return function ($this, pos) {
+    var S = String(requireObjectCoercible($this));
+    var position = toInteger(pos);
+    var size = S.length;
+    var first, second;
+    if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
+    first = S.charCodeAt(position);
+    return first < 0xD800 || first > 0xDBFF || position + 1 === size
+      || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
+        ? CONVERT_TO_STRING ? S.charAt(position) : first
+        : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+  };
+};
+
+module.exports = {
+  // `String.prototype.codePointAt` method
+  // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
+  codeAt: createMethod(false),
+  // `String.prototype.at` method
+  // https://github.com/mathiasbynens/String.prototype.at
+  charAt: createMethod(true)
 };
 
 
@@ -41970,15 +40243,16 @@ module.exports = function (argument) {
 
 var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
 
-// 7.1.1 ToPrimitive(input [, PreferredType])
+// `ToPrimitive` abstract operation
+// https://tc39.github.io/ecma262/#sec-toprimitive
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
-module.exports = function (it, S) {
-  if (!isObject(it)) return it;
+module.exports = function (input, PREFERRED_STRING) {
+  if (!isObject(input)) return input;
   var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
+  if (typeof (fn = input.valueOf) == 'function' && !isObject(val = fn.call(input))) return val;
+  if (!PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
   throw TypeError("Can't convert object to primitive value");
 };
 
@@ -41996,7 +40270,7 @@ var id = 0;
 var postfix = Math.random();
 
 module.exports = function (key) {
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + postfix).toString(36));
+  return 'Symbol(' + String(key === undefined ? '' : key) + ')_' + (++id + postfix).toString(36);
 };
 
 
@@ -42009,31 +40283,9 @@ module.exports = function (key) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js-pure/internals/global.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js-pure/internals/get-built-in.js");
 
-var navigator = global.navigator;
-
-module.exports = navigator && navigator.userAgent || '';
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/validate-set-prototype-of-arguments.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/validate-set-prototype-of-arguments.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js-pure/internals/an-object.js");
-
-module.exports = function (O, proto) {
-  anObject(O);
-  if (!isObject(proto) && proto !== null) {
-    throw TypeError("Can't set " + String(proto) + ' as a prototype');
-  }
-};
+module.exports = getBuiltIn('navigator', 'userAgent') || '';
 
 
 /***/ }),
@@ -42057,107 +40309,6 @@ module.exports = function (name) {
   return store[name] || (store[name] = NATIVE_SYMBOL && Symbol[name]
     || (NATIVE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/internals/wrapped-well-known-symbol.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/core-js-pure/internals/wrapped-well-known-symbol.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.f = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js-pure/internals/well-known-symbol.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.array.concat.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.array.concat.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js-pure/internals/is-array.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js-pure/internals/to-object.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js-pure/internals/to-length.js");
-var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js-pure/internals/create-property.js");
-var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js-pure/internals/array-species-create.js");
-var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js-pure/internals/array-method-has-species-support.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js-pure/internals/well-known-symbol.js");
-
-var IS_CONCAT_SPREADABLE = wellKnownSymbol('isConcatSpreadable');
-var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
-var MAXIMUM_ALLOWED_INDEX_EXCEEDED = 'Maximum allowed index exceeded';
-
-var IS_CONCAT_SPREADABLE_SUPPORT = !fails(function () {
-  var array = [];
-  array[IS_CONCAT_SPREADABLE] = false;
-  return array.concat()[0] !== array;
-});
-
-var SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('concat');
-
-var isConcatSpreadable = function (O) {
-  if (!isObject(O)) return false;
-  var spreadable = O[IS_CONCAT_SPREADABLE];
-  return spreadable !== undefined ? !!spreadable : isArray(O);
-};
-
-var FORCED = !IS_CONCAT_SPREADABLE_SUPPORT || !SPECIES_SUPPORT;
-
-// `Array.prototype.concat` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.concat
-// with adding support of @@isConcatSpreadable and @@species
-$({ target: 'Array', proto: true, forced: FORCED }, {
-  concat: function concat(arg) { // eslint-disable-line no-unused-vars
-    var O = toObject(this);
-    var A = arraySpeciesCreate(O, 0);
-    var n = 0;
-    var i, k, length, len, E;
-    for (i = -1, length = arguments.length; i < length; i++) {
-      E = i === -1 ? O : arguments[i];
-      if (isConcatSpreadable(E)) {
-        len = toLength(E.length);
-        if (n + len > MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
-        for (k = 0; k < len; k++, n++) if (k in E) createProperty(A, n, E[k]);
-      } else {
-        if (n >= MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
-        createProperty(A, n++, E);
-      }
-    }
-    A.length = n;
-    return A;
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.array.for-each.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.array.for-each.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js-pure/internals/array-for-each.js");
-
-// `Array.prototype.forEach` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.foreach
-$({ target: 'Array', proto: true, forced: [].forEach != forEach }, {
-  forEach: forEach
-});
 
 
 /***/ }),
@@ -42186,39 +40337,6 @@ $({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/modules/es.array.index-of.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.array.index-of.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var sloppyArrayMethod = __webpack_require__(/*! ../internals/sloppy-array-method */ "./node_modules/core-js-pure/internals/sloppy-array-method.js");
-var arrayIncludes = __webpack_require__(/*! ../internals/array-includes */ "./node_modules/core-js-pure/internals/array-includes.js");
-
-var internalIndexOf = arrayIncludes(false);
-var nativeIndexOf = [].indexOf;
-
-var NEGATIVE_ZERO = !!nativeIndexOf && 1 / [1].indexOf(1, -0) < 0;
-var SLOPPY_METHOD = sloppyArrayMethod('indexOf');
-
-// `Array.prototype.indexOf` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.indexof
-$({ target: 'Array', proto: true, forced: NEGATIVE_ZERO || SLOPPY_METHOD }, {
-  indexOf: function indexOf(searchElement /* , fromIndex = 0 */) {
-    return NEGATIVE_ZERO
-      // convert -0 to +0
-      ? nativeIndexOf.apply(this, arguments) || 0
-      : internalIndexOf(this, searchElement, arguments[1]);
-  }
-});
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/modules/es.array.is-array.js":
 /*!****************************************************************!*\
   !*** ./node_modules/core-js-pure/modules/es.array.is-array.js ***!
@@ -42231,7 +40349,9 @@ var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/c
 
 // `Array.isArray` method
 // https://tc39.github.io/ecma262/#sec-array.isarray
-$({ target: 'Array', stat: true }, { isArray: isArray });
+$({ target: 'Array', stat: true }, {
+  isArray: isArray
+});
 
 
 /***/ }),
@@ -42297,251 +40417,6 @@ Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.array.splice.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.array.splice.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js-pure/internals/to-absolute-index.js");
-var toInteger = __webpack_require__(/*! ../internals/to-integer */ "./node_modules/core-js-pure/internals/to-integer.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js-pure/internals/to-length.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js-pure/internals/to-object.js");
-var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js-pure/internals/array-species-create.js");
-var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js-pure/internals/create-property.js");
-var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js-pure/internals/array-method-has-species-support.js");
-
-var max = Math.max;
-var min = Math.min;
-var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
-var MAXIMUM_ALLOWED_LENGTH_EXCEEDED = 'Maximum allowed length exceeded';
-
-var SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('splice');
-
-// `Array.prototype.splice` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.splice
-// with adding support of @@species
-$({ target: 'Array', proto: true, forced: !SPECIES_SUPPORT }, {
-  splice: function splice(start, deleteCount /* , ...items */) {
-    var O = toObject(this);
-    var len = toLength(O.length);
-    var actualStart = toAbsoluteIndex(start, len);
-    var argumentsLength = arguments.length;
-    var insertCount, actualDeleteCount, A, k, from, to;
-    if (argumentsLength === 0) {
-      insertCount = actualDeleteCount = 0;
-    } else if (argumentsLength === 1) {
-      insertCount = 0;
-      actualDeleteCount = len - actualStart;
-    } else {
-      insertCount = argumentsLength - 2;
-      actualDeleteCount = min(max(toInteger(deleteCount), 0), len - actualStart);
-    }
-    if (len + insertCount - actualDeleteCount > MAX_SAFE_INTEGER) {
-      throw TypeError(MAXIMUM_ALLOWED_LENGTH_EXCEEDED);
-    }
-    A = arraySpeciesCreate(O, actualDeleteCount);
-    for (k = 0; k < actualDeleteCount; k++) {
-      from = actualStart + k;
-      if (from in O) createProperty(A, k, O[from]);
-    }
-    A.length = actualDeleteCount;
-    if (insertCount < actualDeleteCount) {
-      for (k = actualStart; k < len - actualDeleteCount; k++) {
-        from = k + actualDeleteCount;
-        to = k + insertCount;
-        if (from in O) O[to] = O[from];
-        else delete O[to];
-      }
-      for (k = len; k > len - actualDeleteCount + insertCount; k--) delete O[k - 1];
-    } else if (insertCount > actualDeleteCount) {
-      for (k = len - actualDeleteCount; k > actualStart; k--) {
-        from = k + actualDeleteCount - 1;
-        to = k + insertCount - 1;
-        if (from in O) O[to] = O[from];
-        else delete O[to];
-      }
-    }
-    for (k = 0; k < insertCount; k++) {
-      O[k + actualStart] = arguments[k + 2];
-    }
-    O.length = len - actualDeleteCount + insertCount;
-    return A;
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.json.to-string-tag.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.json.to-string-tag.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js-pure/internals/global.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js-pure/internals/set-to-string-tag.js");
-
-// JSON[@@toStringTag] property
-// https://tc39.github.io/ecma262/#sec-json-@@tostringtag
-setToStringTag(global.JSON, 'JSON', true);
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.math.to-string-tag.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.math.to-string-tag.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js-pure/internals/set-to-string-tag.js");
-
-// Math[@@toStringTag] property
-// https://tc39.github.io/ecma262/#sec-math-@@tostringtag
-setToStringTag(Math, 'Math', true);
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.create.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.create.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js-pure/internals/descriptors.js");
-var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js-pure/internals/object-create.js");
-
-// `Object.create` method
-// https://tc39.github.io/ecma262/#sec-object.create
-$({ target: 'Object', stat: true, sham: !DESCRIPTORS }, {
-  create: create
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.define-properties.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.define-properties.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js-pure/internals/descriptors.js");
-var defineProperties = __webpack_require__(/*! ../internals/object-define-properties */ "./node_modules/core-js-pure/internals/object-define-properties.js");
-
-// `Object.defineProperties` method
-// https://tc39.github.io/ecma262/#sec-object.defineproperties
-$({ target: 'Object', stat: true, forced: !DESCRIPTORS, sham: !DESCRIPTORS }, {
-  defineProperties: defineProperties
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.define-property.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.define-property.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js-pure/internals/descriptors.js");
-var objectDefinePropertyModile = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js-pure/internals/object-define-property.js");
-
-// `Object.defineProperty` method
-// https://tc39.github.io/ecma262/#sec-object.defineproperty
-$({ target: 'Object', stat: true, forced: !DESCRIPTORS, sham: !DESCRIPTORS }, {
-  defineProperty: objectDefinePropertyModile.f
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.get-own-property-descriptor.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.get-own-property-descriptor.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js-pure/internals/to-indexed-object.js");
-var nativeGetOwnPropertyDescriptor = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js-pure/internals/object-get-own-property-descriptor.js").f;
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js-pure/internals/descriptors.js");
-
-var FAILS_ON_PRIMITIVES = fails(function () { nativeGetOwnPropertyDescriptor(1); });
-var FORCED = !DESCRIPTORS || FAILS_ON_PRIMITIVES;
-
-// `Object.getOwnPropertyDescriptor` method
-// https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor
-$({ target: 'Object', stat: true, forced: FORCED, sham: !DESCRIPTORS }, {
-  getOwnPropertyDescriptor: function getOwnPropertyDescriptor(it, key) {
-    return nativeGetOwnPropertyDescriptor(toIndexedObject(it), key);
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.get-prototype-of.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.get-prototype-of.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js-pure/internals/to-object.js");
-var nativeGetPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js-pure/internals/object-get-prototype-of.js");
-var CORRECT_PROTOTYPE_GETTER = __webpack_require__(/*! ../internals/correct-prototype-getter */ "./node_modules/core-js-pure/internals/correct-prototype-getter.js");
-var FAILS_ON_PRIMITIVES = fails(function () { nativeGetPrototypeOf(1); });
-
-// `Object.getPrototypeOf` method
-// https://tc39.github.io/ecma262/#sec-object.getprototypeof
-$({ target: 'Object', stat: true, forced: FAILS_ON_PRIMITIVES, sham: !CORRECT_PROTOTYPE_GETTER }, {
-  getPrototypeOf: function getPrototypeOf(it) {
-    return nativeGetPrototypeOf(toObject(it));
-  }
-});
-
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.object.set-prototype-of.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.object.set-prototype-of.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var setPrototypeOf = __webpack_require__(/*! ../internals/object-set-prototype-of */ "./node_modules/core-js-pure/internals/object-set-prototype-of.js");
-
-// `Object.setPrototypeOf` method
-// https://tc39.github.io/ecma262/#sec-object.setprototypeof
-$({ target: 'Object', stat: true }, {
-  setPrototypeOf: setPrototypeOf
-});
 
 
 /***/ }),
@@ -42686,8 +40561,10 @@ var notify = function (promise, state, isReject) {
   microtask(function () {
     var value = state.value;
     var ok = state.state == FULFILLED;
-    var i = 0;
-    var run = function (reaction) {
+    var index = 0;
+    // variable length - can't use forEach
+    while (chain.length > index) {
+      var reaction = chain[index++];
       var handler = ok ? reaction.ok : reaction.fail;
       var resolve = reaction.resolve;
       var reject = reaction.reject;
@@ -42702,7 +40579,7 @@ var notify = function (promise, state, isReject) {
           if (handler === true) result = value;
           else {
             if (domain) domain.enter();
-            result = handler(value); // may throw
+            result = handler(value); // can throw
             if (domain) {
               domain.exit();
               exited = true;
@@ -42718,8 +40595,7 @@ var notify = function (promise, state, isReject) {
         if (domain && !exited) domain.exit();
         reject(error);
       }
-    };
-    while (chain.length > i) run(chain[i++]); // variable length - can't use forEach
+    }
     state.reactions = [];
     state.notified = false;
     if (isReject && !state.rejection) onUnhandled(promise, state);
@@ -42969,7 +40845,7 @@ $({ target: PROMISE, stat: true, forced: INCORRECT_ITERATION }, {
 
 "use strict";
 
-var codePointAt = __webpack_require__(/*! ../internals/string-at */ "./node_modules/core-js-pure/internals/string-at.js");
+var charAt = __webpack_require__(/*! ../internals/string-multibyte */ "./node_modules/core-js-pure/internals/string-multibyte.js").charAt;
 var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js-pure/internals/internal-state.js");
 var defineIterator = __webpack_require__(/*! ../internals/define-iterator */ "./node_modules/core-js-pure/internals/define-iterator.js");
 
@@ -42993,532 +40869,10 @@ defineIterator(String, 'String', function (iterated) {
   var index = state.index;
   var point;
   if (index >= string.length) return { value: undefined, done: true };
-  point = codePointAt(string, index, true);
+  point = charAt(string, index);
   state.index += point.length;
   return { value: point, done: false };
 });
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.async-iterator.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.async-iterator.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.asyncIterator` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.asynciterator
-defineWellKnownSymbol('asyncIterator');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.description.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.description.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// empty
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.has-instance.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.has-instance.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.hasInstance` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.hasinstance
-defineWellKnownSymbol('hasInstance');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.is-concat-spreadable.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.is-concat-spreadable.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.isConcatSpreadable` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.isconcatspreadable
-defineWellKnownSymbol('isConcatSpreadable');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.iterator.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.iterator.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.iterator` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.iterator
-defineWellKnownSymbol('iterator');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js-pure/internals/export.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js-pure/internals/global.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js-pure/internals/has.js");
-var NATIVE_SYMBOL = __webpack_require__(/*! ../internals/native-symbol */ "./node_modules/core-js-pure/internals/native-symbol.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js-pure/internals/descriptors.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js-pure/internals/is-pure.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js-pure/internals/redefine.js");
-var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js-pure/internals/hidden-keys.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js-pure/internals/fails.js");
-var shared = __webpack_require__(/*! ../internals/shared */ "./node_modules/core-js-pure/internals/shared.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js-pure/internals/set-to-string-tag.js");
-var uid = __webpack_require__(/*! ../internals/uid */ "./node_modules/core-js-pure/internals/uid.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js-pure/internals/well-known-symbol.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/wrapped-well-known-symbol */ "./node_modules/core-js-pure/internals/wrapped-well-known-symbol.js");
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-var enumKeys = __webpack_require__(/*! ../internals/enum-keys */ "./node_modules/core-js-pure/internals/enum-keys.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js-pure/internals/is-array.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js-pure/internals/an-object.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js-pure/internals/is-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js-pure/internals/to-object.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js-pure/internals/to-indexed-object.js");
-var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_modules/core-js-pure/internals/to-primitive.js");
-var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js-pure/internals/create-property-descriptor.js");
-var nativeObjectCreate = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js-pure/internals/object-create.js");
-var getOwnPropertyNamesModule = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js-pure/internals/object-get-own-property-names.js");
-var getOwnPropertyNamesExternal = __webpack_require__(/*! ../internals/object-get-own-property-names-external */ "./node_modules/core-js-pure/internals/object-get-own-property-names-external.js");
-var getOwnPropertyDescriptorModule = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js-pure/internals/object-get-own-property-descriptor.js");
-var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js-pure/internals/object-define-property.js");
-var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js-pure/internals/object-property-is-enumerable.js");
-var hide = __webpack_require__(/*! ../internals/hide */ "./node_modules/core-js-pure/internals/hide.js");
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js-pure/internals/object-keys.js");
-var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js-pure/internals/object-get-own-property-symbols.js");
-var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js-pure/internals/shared-key.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js-pure/internals/internal-state.js");
-
-var HIDDEN = sharedKey('hidden');
-var SYMBOL = 'Symbol';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(SYMBOL);
-var nativeGetOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
-var nativeDefineProperty = definePropertyModule.f;
-var nativeGetOwnPropertyNames = getOwnPropertyNamesExternal.f;
-var $Symbol = global.Symbol;
-var JSON = global.JSON;
-var nativeJSONStringify = JSON && JSON.stringify;
-var PROTOTYPE = 'prototype';
-var TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
-var nativePropertyIsEnumerable = propertyIsEnumerableModule.f;
-var SymbolRegistry = shared('symbol-registry');
-var AllSymbols = shared('symbols');
-var ObjectPrototypeSymbols = shared('op-symbols');
-var WellKnownSymbolsStore = shared('wks');
-var ObjectPrototype = Object[PROTOTYPE];
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var USE_SETTER = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDescriptor = DESCRIPTORS && fails(function () {
-  return nativeObjectCreate(nativeDefineProperty({}, 'a', {
-    get: function () { return nativeDefineProperty(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (it, key, D) {
-  var ObjectPrototypeDescriptor = nativeGetOwnPropertyDescriptor(ObjectPrototype, key);
-  if (ObjectPrototypeDescriptor) delete ObjectPrototype[key];
-  nativeDefineProperty(it, key, D);
-  if (ObjectPrototypeDescriptor && it !== ObjectPrototype) {
-    nativeDefineProperty(ObjectPrototype, key, ObjectPrototypeDescriptor);
-  }
-} : nativeDefineProperty;
-
-var wrap = function (tag, description) {
-  var symbol = AllSymbols[tag] = nativeObjectCreate($Symbol[PROTOTYPE]);
-  setInternalState(symbol, {
-    type: SYMBOL,
-    tag: tag,
-    description: description
-  });
-  if (!DESCRIPTORS) symbol.description = description;
-  return symbol;
-};
-
-var isSymbol = NATIVE_SYMBOL && typeof $Symbol.iterator == 'symbol' ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return Object(it) instanceof $Symbol;
-};
-
-var $defineProperty = function defineProperty(it, key, D) {
-  if (it === ObjectPrototype) $defineProperty(ObjectPrototypeSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
-    if (!D.enumerable) {
-      if (!has(it, HIDDEN)) nativeDefineProperty(it, HIDDEN, createPropertyDescriptor(1, {}));
-      it[HIDDEN][key] = true;
-    } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = nativeObjectCreate(D, { enumerable: createPropertyDescriptor(0, false) });
-    } return setSymbolDescriptor(it, key, D);
-  } return nativeDefineProperty(it, key, D);
-};
-
-var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIndexedObject(P));
-  var i = 0;
-  var l = keys.length;
-  var key;
-  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
-  return it;
-};
-
-var $create = function create(it, P) {
-  return P === undefined ? nativeObjectCreate(it) : $defineProperties(nativeObjectCreate(it), P);
-};
-
-var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = nativePropertyIsEnumerable.call(this, key = toPrimitive(key, true));
-  if (this === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-};
-
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIndexedObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return;
-  var D = nativeGetOwnPropertyDescriptor(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
-  return D;
-};
-
-var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = nativeGetOwnPropertyNames(toIndexedObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && !has(hiddenKeys, key)) result.push(key);
-  } return result;
-};
-
-var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectPrototype;
-  var names = nativeGetOwnPropertyNames(IS_OP ? ObjectPrototypeSymbols : toIndexedObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectPrototype, key) : true)) result.push(AllSymbols[key]);
-  } return result;
-};
-
-// `Symbol` constructor
-// https://tc39.github.io/ecma262/#sec-symbol-constructor
-if (!NATIVE_SYMBOL) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor');
-    var description = arguments[0] === undefined ? undefined : String(arguments[0]);
-    var tag = uid(description);
-    var setter = function (value) {
-      if (this === ObjectPrototype) setter.call(ObjectPrototypeSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDescriptor(this, tag, createPropertyDescriptor(1, value));
-    };
-    if (DESCRIPTORS && USE_SETTER) setSymbolDescriptor(ObjectPrototype, tag, { configurable: true, set: setter });
-    return wrap(tag, description);
-  };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return getInternalState(this).tag;
-  });
-
-  propertyIsEnumerableModule.f = $propertyIsEnumerable;
-  definePropertyModule.f = $defineProperty;
-  getOwnPropertyDescriptorModule.f = $getOwnPropertyDescriptor;
-  getOwnPropertyNamesModule.f = getOwnPropertyNamesExternal.f = $getOwnPropertyNames;
-  getOwnPropertySymbolsModule.f = $getOwnPropertySymbols;
-
-  if (DESCRIPTORS) {
-    // https://github.com/tc39/proposal-Symbol-description
-    nativeDefineProperty($Symbol[PROTOTYPE], 'description', {
-      configurable: true,
-      get: function description() {
-        return getInternalState(this).description;
-      }
-    });
-    if (!IS_PURE) {
-      redefine(ObjectPrototype, 'propertyIsEnumerable', $propertyIsEnumerable, { unsafe: true });
-    }
-  }
-
-  wrappedWellKnownSymbolModule.f = function (name) {
-    return wrap(wellKnownSymbol(name), name);
-  };
-}
-
-$({ global: true, wrap: true, forced: !NATIVE_SYMBOL, sham: !NATIVE_SYMBOL }, {
-  Symbol: $Symbol
-});
-
-for (var wellKnownSymbols = objectKeys(WellKnownSymbolsStore), k = 0; wellKnownSymbols.length > k;) {
-  defineWellKnownSymbol(wellKnownSymbols[k++]);
-}
-
-$({ target: SYMBOL, stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Symbol.for` method
-  // https://tc39.github.io/ecma262/#sec-symbol.for
-  'for': function (key) {
-    return has(SymbolRegistry, key += '')
-      ? SymbolRegistry[key]
-      : SymbolRegistry[key] = $Symbol(key);
-  },
-  // `Symbol.keyFor` method
-  // https://tc39.github.io/ecma262/#sec-symbol.keyfor
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol');
-    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
-  },
-  useSetter: function () { USE_SETTER = true; },
-  useSimple: function () { USE_SETTER = false; }
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL, sham: !DESCRIPTORS }, {
-  // `Object.create` method
-  // https://tc39.github.io/ecma262/#sec-object.create
-  create: $create,
-  // `Object.defineProperty` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperty
-  defineProperty: $defineProperty,
-  // `Object.defineProperties` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperties
-  defineProperties: $defineProperties,
-  // `Object.getOwnPropertyDescriptor` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Object.getOwnPropertyNames` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertynames
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // `Object.getOwnPropertySymbols` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertysymbols
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
-// https://bugs.chromium.org/p/v8/issues/detail?id=3443
-$({ target: 'Object', stat: true, forced: fails(function () { getOwnPropertySymbolsModule.f(1); }) }, {
-  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
-    return getOwnPropertySymbolsModule.f(toObject(it));
-  }
-});
-
-// `JSON.stringify` method behavior with symbols
-// https://tc39.github.io/ecma262/#sec-json.stringify
-JSON && $({ target: 'JSON', stat: true, forced: !NATIVE_SYMBOL || fails(function () {
-  var symbol = $Symbol();
-  // MS Edge converts symbol values to JSON as {}
-  return nativeJSONStringify([symbol]) != '[null]'
-    // WebKit converts symbol values to JSON as null
-    || nativeJSONStringify({ a: symbol }) != '{}'
-    // V8 throws on boxed symbols
-    || nativeJSONStringify(Object(symbol)) != '{}';
-}) }, {
-  stringify: function stringify(it) {
-    var args = [it];
-    var i = 1;
-    var replacer, $replacer;
-    while (arguments.length > i) args.push(arguments[i++]);
-    $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
-      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
-      if (!isSymbol(value)) return value;
-    };
-    args[1] = replacer;
-    return nativeJSONStringify.apply(JSON, args);
-  }
-});
-
-// `Symbol.prototype[@@toPrimitive]` method
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@toprimitive
-if (!$Symbol[PROTOTYPE][TO_PRIMITIVE]) hide($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-// `Symbol.prototype[@@toStringTag]` property
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@tostringtag
-setToStringTag($Symbol, SYMBOL);
-
-hiddenKeys[HIDDEN] = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.match-all.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.match-all.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.matchAll` well-known symbol
-defineWellKnownSymbol('matchAll');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.match.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.match.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.match` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.match
-defineWellKnownSymbol('match');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.replace.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.replace.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.replace` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.replace
-defineWellKnownSymbol('replace');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.search.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.search.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.search` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.search
-defineWellKnownSymbol('search');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.species.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.species.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.species` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.species
-defineWellKnownSymbol('species');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.split.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.split.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.split` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.split
-defineWellKnownSymbol('split');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.to-primitive.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.to-primitive.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.toPrimitive` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.toprimitive
-defineWellKnownSymbol('toPrimitive');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.to-string-tag.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.to-string-tag.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.toStringTag` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.tostringtag
-defineWellKnownSymbol('toStringTag');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/modules/es.symbol.unscopables.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/modules/es.symbol.unscopables.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js-pure/internals/define-well-known-symbol.js");
-
-// `Symbol.unscopables` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.unscopables
-defineWellKnownSymbol('unscopables');
 
 
 /***/ }),
@@ -43575,141 +40929,6 @@ module.exports = __webpack_require__(/*! ../../es/array/is-array */ "./node_modu
 
 /***/ }),
 
-/***/ "./node_modules/core-js-pure/stable/array/virtual/for-each.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/array/virtual/for-each.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../../es/array/virtual/for-each */ "./node_modules/core-js-pure/es/array/virtual/for-each.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/instance/for-each.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/instance/for-each.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/web.dom-collections.iterator */ "./node_modules/core-js-pure/modules/web.dom-collections.iterator.js");
-var forEach = __webpack_require__(/*! ../array/virtual/for-each */ "./node_modules/core-js-pure/stable/array/virtual/for-each.js");
-var classof = __webpack_require__(/*! ../../internals/classof */ "./node_modules/core-js-pure/internals/classof.js");
-var ArrayPrototype = Array.prototype;
-
-var DOMIterables = {
-  DOMTokenList: true,
-  NodeList: true
-};
-
-module.exports = function (it) {
-  var own = it.forEach;
-  return it === ArrayPrototype || (it instanceof Array && own === ArrayPrototype.forEach)
-    // eslint-disable-next-line no-prototype-builtins
-    || DOMIterables.hasOwnProperty(classof(it)) ? forEach : own;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/instance/index-of.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/instance/index-of.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/instance/index-of */ "./node_modules/core-js-pure/es/instance/index-of.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/instance/splice.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/instance/splice.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/instance/splice */ "./node_modules/core-js-pure/es/instance/splice.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/create.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/create.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/create */ "./node_modules/core-js-pure/es/object/create.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/define-properties.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/define-properties.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/define-properties */ "./node_modules/core-js-pure/es/object/define-properties.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/define-property.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/define-property.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/define-property */ "./node_modules/core-js-pure/es/object/define-property.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/get-own-property-descriptor.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/get-own-property-descriptor.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/get-own-property-descriptor */ "./node_modules/core-js-pure/es/object/get-own-property-descriptor.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/get-prototype-of.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/get-prototype-of.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/get-prototype-of */ "./node_modules/core-js-pure/es/object/get-prototype-of.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/object/set-prototype-of.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/object/set-prototype-of.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/object/set-prototype-of */ "./node_modules/core-js-pure/es/object/set-prototype-of.js");
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js-pure/stable/promise/index.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js-pure/stable/promise/index.js ***!
@@ -43718,82 +40937,6 @@ module.exports = __webpack_require__(/*! ../../es/object/set-prototype-of */ "./
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ../../es/promise */ "./node_modules/core-js-pure/es/promise/index.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/symbol/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/symbol/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/symbol */ "./node_modules/core-js-pure/es/symbol/index.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js-pure/stable/symbol/iterator.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js-pure/stable/symbol/iterator.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! ../../es/symbol/iterator */ "./node_modules/core-js-pure/es/symbol/iterator.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/a-function.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/a-function.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  if (typeof it != 'function') {
-    throw TypeError(String(it) + ' is not a function');
-  } return it;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/advance-string-index.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/internals/advance-string-index.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var codePointAt = __webpack_require__(/*! ../internals/string-at */ "./node_modules/core-js/internals/string-at.js");
-
-// `AdvanceStringIndex` abstract operation
-// https://tc39.github.io/ecma262/#sec-advancestringindex
-module.exports = function (S, index, unicode) {
-  return index + (unicode ? codePointAt(S, index, true).length : 1);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/an-instance.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/internals/an-instance.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (it, Constructor, name) {
-  if (!(it instanceof Constructor)) {
-    throw TypeError('Incorrect ' + (name ? name + ' ' : '') + 'invocation');
-  } return it;
-};
 
 
 /***/ }),
@@ -43828,11 +40971,7 @@ var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules
 var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js/internals/to-absolute-index.js");
 
 // `Array.prototype.{ indexOf, includes }` methods implementation
-// false -> Array#indexOf
-// https://tc39.github.io/ecma262/#sec-array.prototype.indexof
-// true  -> Array#includes
-// https://tc39.github.io/ecma262/#sec-array.prototype.includes
-module.exports = function (IS_INCLUDES) {
+var createMethod = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIndexedObject($this);
     var length = toLength(O.length);
@@ -43845,118 +40984,19 @@ module.exports = function (IS_INCLUDES) {
       // eslint-disable-next-line no-self-compare
       if (value != value) return true;
     // Array#indexOf ignores holes, Array#includes - not
-    } else for (;length > index; index++) if (IS_INCLUDES || index in O) {
-      if (O[index] === el) return IS_INCLUDES || index || 0;
+    } else for (;length > index; index++) {
+      if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
     } return !IS_INCLUDES && -1;
   };
 };
 
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/bind-context.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/internals/bind-context.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
-
-// optional / simple context binding
-module.exports = function (fn, that, length) {
-  aFunction(fn);
-  if (that === undefined) return fn;
-  switch (length) {
-    case 0: return function () {
-      return fn.call(that);
-    };
-    case 1: return function (a) {
-      return fn.call(that, a);
-    };
-    case 2: return function (a, b) {
-      return fn.call(that, a, b);
-    };
-    case 3: return function (a, b, c) {
-      return fn.call(that, a, b, c);
-    };
-  }
-  return function (/* ...args */) {
-    return fn.apply(that, arguments);
-  };
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/call-with-safe-iteration-closing.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/core-js/internals/call-with-safe-iteration-closing.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-
-// call something on iterator step with safe closing on error
-module.exports = function (iterator, fn, value, ENTRIES) {
-  try {
-    return ENTRIES ? fn(anObject(value)[0], value[1]) : fn(value);
-  // 7.4.6 IteratorClose(iterator, completion)
-  } catch (error) {
-    var returnMethod = iterator['return'];
-    if (returnMethod !== undefined) anObject(returnMethod.call(iterator));
-    throw error;
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/check-correctness-of-iteration.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/core-js/internals/check-correctness-of-iteration.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-var SAFE_CLOSING = false;
-
-try {
-  var called = 0;
-  var iteratorWithReturn = {
-    next: function () {
-      return { done: !!called++ };
-    },
-    'return': function () {
-      SAFE_CLOSING = true;
-    }
-  };
-  iteratorWithReturn[ITERATOR] = function () {
-    return this;
-  };
-  // eslint-disable-next-line no-throw-literal
-  Array.from(iteratorWithReturn, function () { throw 2; });
-} catch (error) { /* empty */ }
-
-module.exports = function (exec, SKIP_CLOSING) {
-  if (!SKIP_CLOSING && !SAFE_CLOSING) return false;
-  var ITERATION_SUPPORT = false;
-  try {
-    var object = {};
-    object[ITERATOR] = function () {
-      return {
-        next: function () {
-          return { done: ITERATION_SUPPORT = true };
-        }
-      };
-    };
-    exec(object);
-  } catch (error) { /* empty */ }
-  return ITERATION_SUPPORT;
+module.exports = {
+  // `Array.prototype.includes` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.includes
+  includes: createMethod(true),
+  // `Array.prototype.indexOf` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.indexof
+  indexOf: createMethod(false)
 };
 
 
@@ -44081,28 +41121,6 @@ module.exports = function (bitmap, value) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/define-well-known-symbol.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/define-well-known-symbol.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js/internals/path.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/wrapped-well-known-symbol */ "./node_modules/core-js/internals/wrapped-well-known-symbol.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-
-module.exports = function (NAME) {
-  var Symbol = path.Symbol || (path.Symbol = {});
-  if (!has(Symbol, NAME)) defineProperty(Symbol, NAME, {
-    value: wrappedWellKnownSymbolModule.f(NAME)
-  });
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/descriptors.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/descriptors.js ***!
@@ -44132,10 +41150,10 @@ var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules
 
 var document = global.document;
 // typeof document.createElement is 'object' in old IE
-var exist = isObject(document) && isObject(document.createElement);
+var EXISTS = isObject(document) && isObject(document.createElement);
 
 module.exports = function (it) {
-  return exist ? document.createElement(it) : {};
+  return EXISTS ? document.createElement(it) : {};
 };
 
 
@@ -44158,33 +41176,6 @@ module.exports = [
   'toString',
   'valueOf'
 ];
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/enum-keys.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/internals/enum-keys.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
-var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
-var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js");
-
-// all enumerable object keys, includes symbols
-module.exports = function (it) {
-  var result = objectKeys(it);
-  var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
-  if (getOwnPropertySymbols) {
-    var symbols = getOwnPropertySymbols(it);
-    var propertyIsEnumerable = propertyIsEnumerableModule.f;
-    var i = 0;
-    var key;
-    while (symbols.length > i) if (propertyIsEnumerable.call(it, key = symbols[i++])) result.push(key);
-  } return result;
-};
 
 
 /***/ }),
@@ -44272,111 +41263,6 @@ module.exports = function (exec) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var hide = __webpack_require__(/*! ../internals/hide */ "./node_modules/core-js/internals/hide.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var regexpExec = __webpack_require__(/*! ../internals/regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-var REPLACE_SUPPORTS_NAMED_GROUPS = !fails(function () {
-  // #replace needs built-in support for named groups.
-  // #match works fine because it just return the exec results, even if it has
-  // a "grops" property.
-  var re = /./;
-  re.exec = function () {
-    var result = [];
-    result.groups = { a: '7' };
-    return result;
-  };
-  return ''.replace(re, '$<a>') !== '7';
-});
-
-// Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
-// Weex JS has frozen built-in prototypes, so use try / catch wrapper
-var SPLIT_WORKS_WITH_OVERWRITTEN_EXEC = !fails(function () {
-  var re = /(?:)/;
-  var originalExec = re.exec;
-  re.exec = function () { return originalExec.apply(this, arguments); };
-  var result = 'ab'.split(re);
-  return result.length !== 2 || result[0] !== 'a' || result[1] !== 'b';
-});
-
-module.exports = function (KEY, length, exec, sham) {
-  var SYMBOL = wellKnownSymbol(KEY);
-
-  var DELEGATES_TO_SYMBOL = !fails(function () {
-    // String methods call symbol-named RegEp methods
-    var O = {};
-    O[SYMBOL] = function () { return 7; };
-    return ''[KEY](O) != 7;
-  });
-
-  var DELEGATES_TO_EXEC = DELEGATES_TO_SYMBOL && !fails(function () {
-    // Symbol-named RegExp methods call .exec
-    var execCalled = false;
-    var re = /a/;
-    re.exec = function () { execCalled = true; return null; };
-
-    if (KEY === 'split') {
-      // RegExp[@@split] doesn't call the regex's exec method, but first creates
-      // a new one. We need to return the patched regex when creating the new one.
-      re.constructor = {};
-      re.constructor[SPECIES] = function () { return re; };
-    }
-
-    re[SYMBOL]('');
-    return !execCalled;
-  });
-
-  if (
-    !DELEGATES_TO_SYMBOL ||
-    !DELEGATES_TO_EXEC ||
-    (KEY === 'replace' && !REPLACE_SUPPORTS_NAMED_GROUPS) ||
-    (KEY === 'split' && !SPLIT_WORKS_WITH_OVERWRITTEN_EXEC)
-  ) {
-    var nativeRegExpMethod = /./[SYMBOL];
-    var methods = exec(SYMBOL, ''[KEY], function (nativeMethod, regexp, str, arg2, forceStringMethod) {
-      if (regexp.exec === regexpExec) {
-        if (DELEGATES_TO_SYMBOL && !forceStringMethod) {
-          // The native String method already delegates to @@method (this
-          // polyfilled function), leasing to infinite recursion.
-          // We avoid it by directly calling the native @@method method.
-          return { done: true, value: nativeRegExpMethod.call(regexp, str, arg2) };
-        }
-        return { done: true, value: nativeMethod.call(str, regexp, arg2) };
-      }
-      return { done: false };
-    });
-    var stringMethod = methods[0];
-    var regexMethod = methods[1];
-
-    redefine(String.prototype, KEY, stringMethod);
-    redefine(RegExp.prototype, SYMBOL, length == 2
-      // 21.2.5.8 RegExp.prototype[@@replace](string, replaceValue)
-      // 21.2.5.11 RegExp.prototype[@@split](string, limit)
-      ? function (string, arg) { return regexMethod.call(string, this, arg); }
-      // 21.2.5.6 RegExp.prototype[@@match](string)
-      // 21.2.5.9 RegExp.prototype[@@search](string)
-      : function (string) { return regexMethod.call(string, this); }
-    );
-    if (sham) hide(RegExp.prototype[SYMBOL], 'sham', true);
-  }
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/forced-string-html-method.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/core-js/internals/forced-string-html-method.js ***!
@@ -44429,28 +41315,6 @@ var aFunction = function (variable) {
 module.exports = function (namespace, method) {
   return arguments.length < 2 ? aFunction(path[namespace]) || aFunction(global[namespace])
     : path[namespace] && path[namespace][method] || global[namespace] && global[namespace][method];
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/get-iterator-method.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/internals/get-iterator-method.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ../internals/classof */ "./node_modules/core-js/internals/classof.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-
-module.exports = function (it) {
-  if (it != undefined) return it[ITERATOR]
-    || it['@@iterator']
-    || Iterators[classof(it)];
 };
 
 
@@ -44531,41 +41395,6 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/host-report-errors.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js/internals/host-report-errors.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-
-module.exports = function (a, b) {
-  var console = global.console;
-  if (console && console.error) {
-    arguments.length === 1 ? console.error(a) : console.error(a, b);
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/html.js":
-/*!************************************************!*\
-  !*** ./node_modules/core-js/internals/html.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-
-var document = global.document;
-
-module.exports = document && document.documentElement;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/ie8-dom-define.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/ie8-dom-define.js ***!
@@ -44594,12 +41423,12 @@ module.exports = !DESCRIPTORS && !fails(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
 var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
 var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
 
 var split = ''.split;
 
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
 module.exports = fails(function () {
   // throws an error in rhino, see https://github.com/mozilla/rhino/issues/346
   // eslint-disable-next-line no-prototype-builtins
@@ -44683,45 +41512,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/is-array-iterator-method.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/is-array-iterator-method.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-var ArrayPrototype = Array.prototype;
-
-// check on default Array iterator
-module.exports = function (it) {
-  return it !== undefined && (Iterators.Array === it || ArrayPrototype[ITERATOR] === it);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/is-array.js":
-/*!****************************************************!*\
-  !*** ./node_modules/core-js/internals/is-array.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-
-// `IsArray` abstract operation
-// https://tc39.github.io/ecma262/#sec-isarray
-module.exports = Array.isArray || function isArray(arg) {
-  return classof(arg) == 'Array';
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/is-forced.js":
 /*!*****************************************************!*\
   !*** ./node_modules/core-js/internals/is-forced.js ***!
@@ -44780,151 +41570,6 @@ module.exports = false;
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/iterate.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/internals/iterate.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var isArrayIteratorMethod = __webpack_require__(/*! ../internals/is-array-iterator-method */ "./node_modules/core-js/internals/is-array-iterator-method.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
-var bind = __webpack_require__(/*! ../internals/bind-context */ "./node_modules/core-js/internals/bind-context.js");
-var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js/internals/get-iterator-method.js");
-var callWithSafeIterationClosing = __webpack_require__(/*! ../internals/call-with-safe-iteration-closing */ "./node_modules/core-js/internals/call-with-safe-iteration-closing.js");
-
-var BREAK = {};
-
-var exports = module.exports = function (iterable, fn, that, ENTRIES, ITERATOR) {
-  var boundFunction = bind(fn, that, ENTRIES ? 2 : 1);
-  var iterator, iterFn, index, length, result, step;
-
-  if (ITERATOR) {
-    iterator = iterable;
-  } else {
-    iterFn = getIteratorMethod(iterable);
-    if (typeof iterFn != 'function') throw TypeError('Target is not iterable');
-    // optimisation for array iterators
-    if (isArrayIteratorMethod(iterFn)) {
-      for (index = 0, length = toLength(iterable.length); length > index; index++) {
-        result = ENTRIES ? boundFunction(anObject(step = iterable[index])[0], step[1]) : boundFunction(iterable[index]);
-        if (result === BREAK) return BREAK;
-      } return;
-    }
-    iterator = iterFn.call(iterable);
-  }
-
-  while (!(step = iterator.next()).done) {
-    if (callWithSafeIterationClosing(iterator, boundFunction, step.value, ENTRIES) === BREAK) return BREAK;
-  }
-};
-
-exports.BREAK = BREAK;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/iterators.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/internals/iterators.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = {};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/microtask.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/internals/microtask.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var getOwnPropertyDescriptor = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js/internals/object-get-own-property-descriptor.js").f;
-var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-var macrotask = __webpack_require__(/*! ../internals/task */ "./node_modules/core-js/internals/task.js").set;
-var userAgent = __webpack_require__(/*! ../internals/user-agent */ "./node_modules/core-js/internals/user-agent.js");
-
-var MutationObserver = global.MutationObserver || global.WebKitMutationObserver;
-var process = global.process;
-var Promise = global.Promise;
-var IS_NODE = classof(process) == 'process';
-// Node.js 11 shows ExperimentalWarning on getting `queueMicrotask`
-var queueMicrotaskDescriptor = getOwnPropertyDescriptor(global, 'queueMicrotask');
-var queueMicrotask = queueMicrotaskDescriptor && queueMicrotaskDescriptor.value;
-
-var flush, head, last, notify, toggle, node, promise;
-
-// modern engines have queueMicrotask method
-if (!queueMicrotask) {
-  flush = function () {
-    var parent, fn;
-    if (IS_NODE && (parent = process.domain)) parent.exit();
-    while (head) {
-      fn = head.fn;
-      head = head.next;
-      try {
-        fn();
-      } catch (error) {
-        if (head) notify();
-        else last = undefined;
-        throw error;
-      }
-    } last = undefined;
-    if (parent) parent.enter();
-  };
-
-  // Node.js
-  if (IS_NODE) {
-    notify = function () {
-      process.nextTick(flush);
-    };
-  // browsers with MutationObserver, except iOS - https://github.com/zloirock/core-js/issues/339
-  } else if (MutationObserver && !/(iphone|ipod|ipad).*applewebkit/i.test(userAgent)) {
-    toggle = true;
-    node = document.createTextNode('');
-    new MutationObserver(flush).observe(node, { characterData: true }); // eslint-disable-line no-new
-    notify = function () {
-      node.data = toggle = !toggle;
-    };
-  // environments with maybe non-completely correct, but existent Promise
-  } else if (Promise && Promise.resolve) {
-    // Promise.resolve without an argument throws an error in LG WebOS 2
-    promise = Promise.resolve(undefined);
-    notify = function () {
-      promise.then(flush);
-    };
-  // for other environments - macrotask based on:
-  // - setImmediate
-  // - MessageChannel
-  // - window.postMessag
-  // - onreadystatechange
-  // - setTimeout
-  } else {
-    notify = function () {
-      // strange IE + webpack dev server bug - use .call(global)
-      macrotask.call(global, flush);
-    };
-  }
-}
-
-module.exports = queueMicrotask || function (fn) {
-  var task = { fn: fn, next: undefined };
-  if (last) last.next = task;
-  if (!head) {
-    head = task;
-    notify();
-  } last = task;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/native-symbol.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/native-symbol.js ***!
@@ -44960,120 +41605,6 @@ module.exports = typeof WeakMap === 'function' && /native code/.test(nativeFunct
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/new-promise-capability.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/internals/new-promise-capability.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
-
-var PromiseCapability = function (C) {
-  var resolve, reject;
-  this.promise = new C(function ($$resolve, $$reject) {
-    if (resolve !== undefined || reject !== undefined) throw TypeError('Bad Promise constructor');
-    resolve = $$resolve;
-    reject = $$reject;
-  });
-  this.resolve = aFunction(resolve);
-  this.reject = aFunction(reject);
-};
-
-// 25.4.1.5 NewPromiseCapability(C)
-module.exports.f = function (C) {
-  return new PromiseCapability(C);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-create.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/internals/object-create.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var defineProperties = __webpack_require__(/*! ../internals/object-define-properties */ "./node_modules/core-js/internals/object-define-properties.js");
-var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
-var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
-var html = __webpack_require__(/*! ../internals/html */ "./node_modules/core-js/internals/html.js");
-var documentCreateElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
-var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
-var IE_PROTO = sharedKey('IE_PROTO');
-
-var PROTOTYPE = 'prototype';
-var Empty = function () { /* empty */ };
-
-// Create object with fake `null` prototype: use iframe Object with cleared prototype
-var createDict = function () {
-  // Thrash, waste and sodomy: IE GC bug
-  var iframe = documentCreateElement('iframe');
-  var length = enumBugKeys.length;
-  var lt = '<';
-  var script = 'script';
-  var gt = '>';
-  var js = 'java' + script + ':';
-  var iframeDocument;
-  iframe.style.display = 'none';
-  html.appendChild(iframe);
-  iframe.src = String(js);
-  iframeDocument = iframe.contentWindow.document;
-  iframeDocument.open();
-  iframeDocument.write(lt + script + gt + 'document.F=Object' + lt + '/' + script + gt);
-  iframeDocument.close();
-  createDict = iframeDocument.F;
-  while (length--) delete createDict[PROTOTYPE][enumBugKeys[length]];
-  return createDict();
-};
-
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-module.exports = Object.create || function create(O, Properties) {
-  var result;
-  if (O !== null) {
-    Empty[PROTOTYPE] = anObject(O);
-    result = new Empty();
-    Empty[PROTOTYPE] = null;
-    // add "__proto__" for Object.getPrototypeOf polyfill
-    result[IE_PROTO] = O;
-  } else result = createDict();
-  return Properties === undefined ? result : defineProperties(result, Properties);
-};
-
-hiddenKeys[IE_PROTO] = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-define-properties.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/object-define-properties.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
-
-module.exports = DESCRIPTORS ? Object.defineProperties : function defineProperties(O, Properties) {
-  anObject(O);
-  var keys = objectKeys(Properties);
-  var length = keys.length;
-  var i = 0;
-  var key;
-  while (length > i) definePropertyModule.f(O, key = keys[i++], Properties[key]);
-  return O;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/object-define-property.js":
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/object-define-property.js ***!
@@ -45088,6 +41619,8 @@ var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_m
 
 var nativeDefineProperty = Object.defineProperty;
 
+// `Object.defineProperty` method
+// https://tc39.github.io/ecma262/#sec-object.defineproperty
 exports.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
@@ -45120,6 +41653,8 @@ var IE8_DOM_DEFINE = __webpack_require__(/*! ../internals/ie8-dom-define */ "./n
 
 var nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 
+// `Object.getOwnPropertyDescriptor` method
+// https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor
 exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
   O = toIndexedObject(O);
   P = toPrimitive(P, true);
@@ -45132,39 +41667,6 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/object-get-own-property-names-external.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/core-js/internals/object-get-own-property-names-external.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var nativeGetOwnPropertyNames = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js").f;
-
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return nativeGetOwnPropertyNames(it);
-  } catch (error) {
-    return windowNames.slice();
-  }
-};
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]'
-    ? getWindowNames(it)
-    : nativeGetOwnPropertyNames(toIndexedObject(it));
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/object-get-own-property-names.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/core-js/internals/object-get-own-property-names.js ***!
@@ -45172,12 +41674,13 @@ module.exports.f = function getOwnPropertyNames(it) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
 var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
 
 var hiddenKeys = enumBugKeys.concat('length', 'prototype');
 
+// `Object.getOwnPropertyNames` method
+// https://tc39.github.io/ecma262/#sec-object.getownpropertynames
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return internalObjectKeys(O, hiddenKeys);
 };
@@ -45206,10 +41709,8 @@ exports.f = Object.getOwnPropertySymbols;
 
 var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
 var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var arrayIncludes = __webpack_require__(/*! ../internals/array-includes */ "./node_modules/core-js/internals/array-includes.js");
+var indexOf = __webpack_require__(/*! ../internals/array-includes */ "./node_modules/core-js/internals/array-includes.js").indexOf;
 var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
-
-var arrayIndexOf = arrayIncludes(false);
 
 module.exports = function (object, names) {
   var O = toIndexedObject(object);
@@ -45219,27 +41720,9 @@ module.exports = function (object, names) {
   for (key in O) !has(hiddenKeys, key) && has(O, key) && result.push(key);
   // Don't enum bug & hidden keys
   while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
+    ~indexOf(result, key) || result.push(key);
   }
   return result;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-keys.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/internals/object-keys.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
-var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
-
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-module.exports = Object.keys || function keys(O) {
-  return internalObjectKeys(O, enumBugKeys);
 };
 
 
@@ -45260,6 +41743,8 @@ var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 // Nashorn ~ JDK8 bug
 var NASHORN_BUG = getOwnPropertyDescriptor && !nativePropertyIsEnumerable.call({ 1: 2 }, 1);
 
+// `Object.prototype.propertyIsEnumerable` method implementation
+// https://tc39.github.io/ecma262/#sec-object.prototype.propertyisenumerable
 exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
   var descriptor = getOwnPropertyDescriptor(this, V);
   return !!descriptor && descriptor.enumerable;
@@ -45301,15 +41786,13 @@ module.exports = String(test) !== '[object z]' ? function toString() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
 var getOwnPropertyNamesModule = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js");
 var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
 var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
 
-var Reflect = global.Reflect;
-
 // all object keys, includes non-enumerable and symbols
-module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
+module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
   var keys = getOwnPropertyNamesModule.f(anObject(it));
   var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
   return getOwnPropertySymbols ? keys.concat(getOwnPropertySymbols(it)) : keys;
@@ -45326,64 +41809,6 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/perform.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/internals/perform.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return { error: false, value: exec() };
-  } catch (error) {
-    return { error: true, value: error };
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/promise-resolve.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/internals/promise-resolve.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var newPromiseCapability = __webpack_require__(/*! ../internals/new-promise-capability */ "./node_modules/core-js/internals/new-promise-capability.js");
-
-module.exports = function (C, x) {
-  anObject(C);
-  if (isObject(x) && x.constructor === C) return x;
-  var promiseCapability = newPromiseCapability.f(C);
-  var resolve = promiseCapability.resolve;
-  resolve(x);
-  return promiseCapability.promise;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/redefine-all.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/internals/redefine-all.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-
-module.exports = function (target, src, options) {
-  for (var key in src) redefine(target, key, src[key], options);
-  return target;
-};
 
 
 /***/ }),
@@ -45438,105 +41863,6 @@ shared('inspectSource', function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/regexp-exec-abstract.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/internals/regexp-exec-abstract.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ./classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-var regexpExec = __webpack_require__(/*! ./regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
-
-// `RegExpExec` abstract operation
-// https://tc39.github.io/ecma262/#sec-regexpexec
-module.exports = function (R, S) {
-  var exec = R.exec;
-  if (typeof exec === 'function') {
-    var result = exec.call(R, S);
-    if (typeof result !== 'object') {
-      throw TypeError('RegExp exec method returned something other than an Object or null');
-    }
-    return result;
-  }
-
-  if (classof(R) !== 'RegExp') {
-    throw TypeError('RegExp#exec called on incompatible receiver');
-  }
-
-  return regexpExec.call(R, S);
-};
-
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/regexp-exec.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/internals/regexp-exec.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var regexpFlags = __webpack_require__(/*! ./regexp-flags */ "./node_modules/core-js/internals/regexp-flags.js");
-
-var nativeExec = RegExp.prototype.exec;
-// This always refers to the native implementation, because the
-// String#replace polyfill uses ./fix-regexp-well-known-symbol-logic.js,
-// which loads this file before patching the method.
-var nativeReplace = String.prototype.replace;
-
-var patchedExec = nativeExec;
-
-var UPDATES_LAST_INDEX_WRONG = (function () {
-  var re1 = /a/;
-  var re2 = /b*/g;
-  nativeExec.call(re1, 'a');
-  nativeExec.call(re2, 'a');
-  return re1.lastIndex !== 0 || re2.lastIndex !== 0;
-})();
-
-// nonparticipating capturing group, copied from es5-shim's String#split patch.
-var NPCG_INCLUDED = /()??/.exec('')[1] !== undefined;
-
-var PATCH = UPDATES_LAST_INDEX_WRONG || NPCG_INCLUDED;
-
-if (PATCH) {
-  patchedExec = function exec(str) {
-    var re = this;
-    var lastIndex, reCopy, match, i;
-
-    if (NPCG_INCLUDED) {
-      reCopy = new RegExp('^' + re.source + '$(?!\\s)', regexpFlags.call(re));
-    }
-    if (UPDATES_LAST_INDEX_WRONG) lastIndex = re.lastIndex;
-
-    match = nativeExec.call(re, str);
-
-    if (UPDATES_LAST_INDEX_WRONG && match) {
-      re.lastIndex = re.global ? match.index + match[0].length : lastIndex;
-    }
-    if (NPCG_INCLUDED && match && match.length > 1) {
-      // Fix browsers whose `exec` methods don't consistently return `undefined`
-      // for NPCG, like IE8. NOTE: This doesn' work for /(.?)?/
-      nativeReplace.call(match[0], reCopy, function () {
-        for (i = 1; i < arguments.length - 2; i++) {
-          if (arguments[i] === undefined) match[i] = undefined;
-        }
-      });
-    }
-
-    return match;
-  };
-}
-
-module.exports = patchedExec;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/regexp-flags.js":
 /*!********************************************************!*\
   !*** ./node_modules/core-js/internals/regexp-flags.js ***!
@@ -45556,6 +41882,7 @@ module.exports = function () {
   if (that.global) result += 'g';
   if (that.ignoreCase) result += 'i';
   if (that.multiline) result += 'm';
+  if (that.dotAll) result += 's';
   if (that.unicode) result += 'u';
   if (that.sticky) result += 'y';
   return result;
@@ -45602,56 +41929,6 @@ module.exports = function (key, value) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/set-species.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/internals/set-species.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
-var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-module.exports = function (CONSTRUCTOR_NAME) {
-  var C = getBuiltIn(CONSTRUCTOR_NAME);
-  var defineProperty = definePropertyModule.f;
-  if (DESCRIPTORS && C && !C[SPECIES]) defineProperty(C, SPECIES, {
-    configurable: true,
-    get: function () { return this; }
-  });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/set-to-string-tag.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/set-to-string-tag.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-
-module.exports = function (it, TAG, STATIC) {
-  if (it && !has(it = STATIC ? it : it.prototype, TO_STRING_TAG)) {
-    defineProperty(it, TO_STRING_TAG, { configurable: true, value: TAG });
-  }
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/shared-key.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/shared-key.js ***!
@@ -45692,168 +41969,6 @@ var store = global[SHARED] || setGlobal(SHARED, {});
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/species-constructor.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/internals/species-constructor.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-// `SpeciesConstructor` abstract operation
-// https://tc39.github.io/ecma262/#sec-speciesconstructor
-module.exports = function (O, defaultConstructor) {
-  var C = anObject(O).constructor;
-  var S;
-  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? defaultConstructor : aFunction(S);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/string-at.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/internals/string-at.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var toInteger = __webpack_require__(/*! ../internals/to-integer */ "./node_modules/core-js/internals/to-integer.js");
-var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
-
-// CONVERT_TO_STRING: true  -> String#at
-// CONVERT_TO_STRING: false -> String#codePointAt
-module.exports = function (that, pos, CONVERT_TO_STRING) {
-  var S = String(requireObjectCoercible(that));
-  var position = toInteger(pos);
-  var size = S.length;
-  var first, second;
-  if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
-  first = S.charCodeAt(position);
-  return first < 0xD800 || first > 0xDBFF || position + 1 === size
-    || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
-      ? CONVERT_TO_STRING ? S.charAt(position) : first
-      : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/task.js":
-/*!************************************************!*\
-  !*** ./node_modules/core-js/internals/task.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-var bind = __webpack_require__(/*! ../internals/bind-context */ "./node_modules/core-js/internals/bind-context.js");
-var html = __webpack_require__(/*! ../internals/html */ "./node_modules/core-js/internals/html.js");
-var createElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
-
-var location = global.location;
-var set = global.setImmediate;
-var clear = global.clearImmediate;
-var process = global.process;
-var MessageChannel = global.MessageChannel;
-var Dispatch = global.Dispatch;
-var counter = 0;
-var queue = {};
-var ONREADYSTATECHANGE = 'onreadystatechange';
-var defer, channel, port;
-
-var run = function (id) {
-  // eslint-disable-next-line no-prototype-builtins
-  if (queue.hasOwnProperty(id)) {
-    var fn = queue[id];
-    delete queue[id];
-    fn();
-  }
-};
-
-var runner = function (id) {
-  return function () {
-    run(id);
-  };
-};
-
-var listener = function (event) {
-  run(event.data);
-};
-
-var post = function (id) {
-  // old engines have not location.origin
-  global.postMessage(id + '', location.protocol + '//' + location.host);
-};
-
-// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
-if (!set || !clear) {
-  set = function setImmediate(fn) {
-    var args = [];
-    var i = 1;
-    while (arguments.length > i) args.push(arguments[i++]);
-    queue[++counter] = function () {
-      // eslint-disable-next-line no-new-func
-      (typeof fn == 'function' ? fn : Function(fn)).apply(undefined, args);
-    };
-    defer(counter);
-    return counter;
-  };
-  clear = function clearImmediate(id) {
-    delete queue[id];
-  };
-  // Node.js 0.8-
-  if (classof(process) == 'process') {
-    defer = function (id) {
-      process.nextTick(runner(id));
-    };
-  // Sphere (JS game engine) Dispatch API
-  } else if (Dispatch && Dispatch.now) {
-    defer = function (id) {
-      Dispatch.now(runner(id));
-    };
-  // Browsers with MessageChannel, includes WebWorkers
-  } else if (MessageChannel) {
-    channel = new MessageChannel();
-    port = channel.port2;
-    channel.port1.onmessage = listener;
-    defer = bind(port.postMessage, port, 1);
-  // Browsers with postMessage, skip WebWorkers
-  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
-  } else if (global.addEventListener && typeof postMessage == 'function' && !global.importScripts && !fails(post)) {
-    defer = post;
-    global.addEventListener('message', listener, false);
-  // IE8-
-  } else if (ONREADYSTATECHANGE in createElement('script')) {
-    defer = function (id) {
-      html.appendChild(createElement('script'))[ONREADYSTATECHANGE] = function () {
-        html.removeChild(this);
-        run(id);
-      };
-    };
-  // Rest old browsers
-  } else {
-    defer = function (id) {
-      setTimeout(runner(id), 0);
-    };
-  }
-}
-
-module.exports = {
-  set: set,
-  clear: clear
-};
 
 
 /***/ }),
@@ -45938,24 +42053,6 @@ module.exports = function (argument) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/to-object.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/internals/to-object.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
-
-// `ToObject` abstract operation
-// https://tc39.github.io/ecma262/#sec-toobject
-module.exports = function (argument) {
-  return Object(requireObjectCoercible(argument));
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/to-primitive.js":
 /*!********************************************************!*\
   !*** ./node_modules/core-js/internals/to-primitive.js ***!
@@ -45965,15 +42062,16 @@ module.exports = function (argument) {
 
 var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
 
-// 7.1.1 ToPrimitive(input [, PreferredType])
+// `ToPrimitive` abstract operation
+// https://tc39.github.io/ecma262/#sec-toprimitive
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
-module.exports = function (it, S) {
-  if (!isObject(it)) return it;
+module.exports = function (input, PREFERRED_STRING) {
+  if (!isObject(input)) return input;
   var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
+  if (typeof (fn = input.valueOf) == 'function' && !isObject(val = fn.call(input))) return val;
+  if (!PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
   throw TypeError("Can't convert object to primitive value");
 };
 
@@ -45991,24 +42089,8 @@ var id = 0;
 var postfix = Math.random();
 
 module.exports = function (key) {
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + postfix).toString(36));
+  return 'Symbol(' + String(key === undefined ? '' : key) + ')_' + (++id + postfix).toString(36);
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/user-agent.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/user-agent.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-
-var navigator = global.navigator;
-
-module.exports = navigator && navigator.userAgent || '';
 
 
 /***/ }),
@@ -46032,18 +42114,6 @@ module.exports = function (name) {
   return store[name] || (store[name] = NATIVE_SYMBOL && Symbol[name]
     || (NATIVE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/wrapped-well-known-symbol.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js/internals/wrapped-well-known-symbol.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.f = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
 
 
 /***/ }),
@@ -46097,393 +42167,6 @@ if (toString !== ObjectPrototype.toString) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es.promise.js":
-/*!****************************************************!*\
-  !*** ./node_modules/core-js/modules/es.promise.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js/internals/path.js");
-var redefineAll = __webpack_require__(/*! ../internals/redefine-all */ "./node_modules/core-js/internals/redefine-all.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var setSpecies = __webpack_require__(/*! ../internals/set-species */ "./node_modules/core-js/internals/set-species.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
-var anInstance = __webpack_require__(/*! ../internals/an-instance */ "./node_modules/core-js/internals/an-instance.js");
-var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-var iterate = __webpack_require__(/*! ../internals/iterate */ "./node_modules/core-js/internals/iterate.js");
-var checkCorrectnessOfIteration = __webpack_require__(/*! ../internals/check-correctness-of-iteration */ "./node_modules/core-js/internals/check-correctness-of-iteration.js");
-var speciesConstructor = __webpack_require__(/*! ../internals/species-constructor */ "./node_modules/core-js/internals/species-constructor.js");
-var task = __webpack_require__(/*! ../internals/task */ "./node_modules/core-js/internals/task.js").set;
-var microtask = __webpack_require__(/*! ../internals/microtask */ "./node_modules/core-js/internals/microtask.js");
-var promiseResolve = __webpack_require__(/*! ../internals/promise-resolve */ "./node_modules/core-js/internals/promise-resolve.js");
-var hostReportErrors = __webpack_require__(/*! ../internals/host-report-errors */ "./node_modules/core-js/internals/host-report-errors.js");
-var newPromiseCapabilityModule = __webpack_require__(/*! ../internals/new-promise-capability */ "./node_modules/core-js/internals/new-promise-capability.js");
-var perform = __webpack_require__(/*! ../internals/perform */ "./node_modules/core-js/internals/perform.js");
-var userAgent = __webpack_require__(/*! ../internals/user-agent */ "./node_modules/core-js/internals/user-agent.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-var isForced = __webpack_require__(/*! ../internals/is-forced */ "./node_modules/core-js/internals/is-forced.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var SPECIES = wellKnownSymbol('species');
-var PROMISE = 'Promise';
-var getInternalState = InternalStateModule.get;
-var setInternalState = InternalStateModule.set;
-var getInternalPromiseState = InternalStateModule.getterFor(PROMISE);
-var PromiseConstructor = global[PROMISE];
-var TypeError = global.TypeError;
-var document = global.document;
-var process = global.process;
-var $fetch = global.fetch;
-var versions = process && process.versions;
-var v8 = versions && versions.v8 || '';
-var newPromiseCapability = newPromiseCapabilityModule.f;
-var newGenericPromiseCapability = newPromiseCapability;
-var IS_NODE = classof(process) == 'process';
-var DISPATCH_EVENT = !!(document && document.createEvent && global.dispatchEvent);
-var UNHANDLED_REJECTION = 'unhandledrejection';
-var REJECTION_HANDLED = 'rejectionhandled';
-var PENDING = 0;
-var FULFILLED = 1;
-var REJECTED = 2;
-var HANDLED = 1;
-var UNHANDLED = 2;
-var Internal, OwnPromiseCapability, PromiseWrapper;
-
-var FORCED = isForced(PROMISE, function () {
-  // correct subclassing with @@species support
-  var promise = PromiseConstructor.resolve(1);
-  var empty = function () { /* empty */ };
-  var FakePromise = (promise.constructor = {})[SPECIES] = function (exec) {
-    exec(empty, empty);
-  };
-  // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
-  return !((IS_NODE || typeof PromiseRejectionEvent == 'function')
-    && (!IS_PURE || promise['finally'])
-    && promise.then(empty) instanceof FakePromise
-    // v8 6.6 (Node 10 and Chrome 66) have a bug with resolving custom thenables
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=830565
-    // we can't detect it synchronously, so just check versions
-    && v8.indexOf('6.6') !== 0
-    && userAgent.indexOf('Chrome/66') === -1);
-});
-
-var INCORRECT_ITERATION = FORCED || !checkCorrectnessOfIteration(function (iterable) {
-  PromiseConstructor.all(iterable)['catch'](function () { /* empty */ });
-});
-
-// helpers
-var isThenable = function (it) {
-  var then;
-  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
-};
-
-var notify = function (promise, state, isReject) {
-  if (state.notified) return;
-  state.notified = true;
-  var chain = state.reactions;
-  microtask(function () {
-    var value = state.value;
-    var ok = state.state == FULFILLED;
-    var i = 0;
-    var run = function (reaction) {
-      var handler = ok ? reaction.ok : reaction.fail;
-      var resolve = reaction.resolve;
-      var reject = reaction.reject;
-      var domain = reaction.domain;
-      var result, then, exited;
-      try {
-        if (handler) {
-          if (!ok) {
-            if (state.rejection === UNHANDLED) onHandleUnhandled(promise, state);
-            state.rejection = HANDLED;
-          }
-          if (handler === true) result = value;
-          else {
-            if (domain) domain.enter();
-            result = handler(value); // may throw
-            if (domain) {
-              domain.exit();
-              exited = true;
-            }
-          }
-          if (result === reaction.promise) {
-            reject(TypeError('Promise-chain cycle'));
-          } else if (then = isThenable(result)) {
-            then.call(result, resolve, reject);
-          } else resolve(result);
-        } else reject(value);
-      } catch (error) {
-        if (domain && !exited) domain.exit();
-        reject(error);
-      }
-    };
-    while (chain.length > i) run(chain[i++]); // variable length - can't use forEach
-    state.reactions = [];
-    state.notified = false;
-    if (isReject && !state.rejection) onUnhandled(promise, state);
-  });
-};
-
-var dispatchEvent = function (name, promise, reason) {
-  var event, handler;
-  if (DISPATCH_EVENT) {
-    event = document.createEvent('Event');
-    event.promise = promise;
-    event.reason = reason;
-    event.initEvent(name, false, true);
-    global.dispatchEvent(event);
-  } else event = { promise: promise, reason: reason };
-  if (handler = global['on' + name]) handler(event);
-  else if (name === UNHANDLED_REJECTION) hostReportErrors('Unhandled promise rejection', reason);
-};
-
-var onUnhandled = function (promise, state) {
-  task.call(global, function () {
-    var value = state.value;
-    var IS_UNHANDLED = isUnhandled(state);
-    var result;
-    if (IS_UNHANDLED) {
-      result = perform(function () {
-        if (IS_NODE) {
-          process.emit('unhandledRejection', value, promise);
-        } else dispatchEvent(UNHANDLED_REJECTION, promise, value);
-      });
-      // Browsers should not trigger `rejectionHandled` event if it was handled here, NodeJS - should
-      state.rejection = IS_NODE || isUnhandled(state) ? UNHANDLED : HANDLED;
-      if (result.error) throw result.value;
-    }
-  });
-};
-
-var isUnhandled = function (state) {
-  return state.rejection !== HANDLED && !state.parent;
-};
-
-var onHandleUnhandled = function (promise, state) {
-  task.call(global, function () {
-    if (IS_NODE) {
-      process.emit('rejectionHandled', promise);
-    } else dispatchEvent(REJECTION_HANDLED, promise, state.value);
-  });
-};
-
-var bind = function (fn, promise, state, unwrap) {
-  return function (value) {
-    fn(promise, state, value, unwrap);
-  };
-};
-
-var internalReject = function (promise, state, value, unwrap) {
-  if (state.done) return;
-  state.done = true;
-  if (unwrap) state = unwrap;
-  state.value = value;
-  state.state = REJECTED;
-  notify(promise, state, true);
-};
-
-var internalResolve = function (promise, state, value, unwrap) {
-  if (state.done) return;
-  state.done = true;
-  if (unwrap) state = unwrap;
-  try {
-    if (promise === value) throw TypeError("Promise can't be resolved itself");
-    var then = isThenable(value);
-    if (then) {
-      microtask(function () {
-        var wrapper = { done: false };
-        try {
-          then.call(value,
-            bind(internalResolve, promise, wrapper, state),
-            bind(internalReject, promise, wrapper, state)
-          );
-        } catch (error) {
-          internalReject(promise, wrapper, error, state);
-        }
-      });
-    } else {
-      state.value = value;
-      state.state = FULFILLED;
-      notify(promise, state, false);
-    }
-  } catch (error) {
-    internalReject(promise, { done: false }, error, state);
-  }
-};
-
-// constructor polyfill
-if (FORCED) {
-  // 25.4.3.1 Promise(executor)
-  PromiseConstructor = function Promise(executor) {
-    anInstance(this, PromiseConstructor, PROMISE);
-    aFunction(executor);
-    Internal.call(this);
-    var state = getInternalState(this);
-    try {
-      executor(bind(internalResolve, this, state), bind(internalReject, this, state));
-    } catch (error) {
-      internalReject(this, state, error);
-    }
-  };
-  // eslint-disable-next-line no-unused-vars
-  Internal = function Promise(executor) {
-    setInternalState(this, {
-      type: PROMISE,
-      done: false,
-      notified: false,
-      parent: false,
-      reactions: [],
-      rejection: false,
-      state: PENDING,
-      value: undefined
-    });
-  };
-  Internal.prototype = redefineAll(PromiseConstructor.prototype, {
-    // `Promise.prototype.then` method
-    // https://tc39.github.io/ecma262/#sec-promise.prototype.then
-    then: function then(onFulfilled, onRejected) {
-      var state = getInternalPromiseState(this);
-      var reaction = newPromiseCapability(speciesConstructor(this, PromiseConstructor));
-      reaction.ok = typeof onFulfilled == 'function' ? onFulfilled : true;
-      reaction.fail = typeof onRejected == 'function' && onRejected;
-      reaction.domain = IS_NODE ? process.domain : undefined;
-      state.parent = true;
-      state.reactions.push(reaction);
-      if (state.state != PENDING) notify(this, state, false);
-      return reaction.promise;
-    },
-    // `Promise.prototype.catch` method
-    // https://tc39.github.io/ecma262/#sec-promise.prototype.catch
-    'catch': function (onRejected) {
-      return this.then(undefined, onRejected);
-    }
-  });
-  OwnPromiseCapability = function () {
-    var promise = new Internal();
-    var state = getInternalState(promise);
-    this.promise = promise;
-    this.resolve = bind(internalResolve, promise, state);
-    this.reject = bind(internalReject, promise, state);
-  };
-  newPromiseCapabilityModule.f = newPromiseCapability = function (C) {
-    return C === PromiseConstructor || C === PromiseWrapper
-      ? new OwnPromiseCapability(C)
-      : newGenericPromiseCapability(C);
-  };
-
-  // wrap fetch result
-  if (!IS_PURE && typeof $fetch == 'function') $({ global: true, enumerable: true, forced: true }, {
-    // eslint-disable-next-line no-unused-vars
-    fetch: function fetch(input) {
-      return promiseResolve(PromiseConstructor, $fetch.apply(global, arguments));
-    }
-  });
-}
-
-$({ global: true, wrap: true, forced: FORCED }, {
-  Promise: PromiseConstructor
-});
-
-setToStringTag(PromiseConstructor, PROMISE, false, true);
-setSpecies(PROMISE);
-
-PromiseWrapper = path[PROMISE];
-
-// statics
-$({ target: PROMISE, stat: true, forced: FORCED }, {
-  // `Promise.reject` method
-  // https://tc39.github.io/ecma262/#sec-promise.reject
-  reject: function reject(r) {
-    var capability = newPromiseCapability(this);
-    capability.reject.call(undefined, r);
-    return capability.promise;
-  }
-});
-
-$({ target: PROMISE, stat: true, forced: IS_PURE || FORCED }, {
-  // `Promise.resolve` method
-  // https://tc39.github.io/ecma262/#sec-promise.resolve
-  resolve: function resolve(x) {
-    return promiseResolve(IS_PURE && this === PromiseWrapper ? PromiseConstructor : this, x);
-  }
-});
-
-$({ target: PROMISE, stat: true, forced: INCORRECT_ITERATION }, {
-  // `Promise.all` method
-  // https://tc39.github.io/ecma262/#sec-promise.all
-  all: function all(iterable) {
-    var C = this;
-    var capability = newPromiseCapability(C);
-    var resolve = capability.resolve;
-    var reject = capability.reject;
-    var result = perform(function () {
-      var $promiseResolve = aFunction(C.resolve);
-      var values = [];
-      var counter = 0;
-      var remaining = 1;
-      iterate(iterable, function (promise) {
-        var index = counter++;
-        var alreadyCalled = false;
-        values.push(undefined);
-        remaining++;
-        $promiseResolve.call(C, promise).then(function (value) {
-          if (alreadyCalled) return;
-          alreadyCalled = true;
-          values[index] = value;
-          --remaining || resolve(values);
-        }, reject);
-      });
-      --remaining || resolve(values);
-    });
-    if (result.error) reject(result.value);
-    return capability.promise;
-  },
-  // `Promise.race` method
-  // https://tc39.github.io/ecma262/#sec-promise.race
-  race: function race(iterable) {
-    var C = this;
-    var capability = newPromiseCapability(C);
-    var reject = capability.reject;
-    var result = perform(function () {
-      var $promiseResolve = aFunction(C.resolve);
-      iterate(iterable, function (promise) {
-        $promiseResolve.call(C, promise).then(capability.resolve, reject);
-      });
-    });
-    if (result.error) reject(result.value);
-    return capability.promise;
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.regexp.exec.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.regexp.exec.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var exec = __webpack_require__(/*! ../internals/regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
-
-$({ target: 'RegExp', proto: true, forced: /./.exec !== exec }, {
-  exec: exec
-});
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/modules/es.regexp.to-string.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/modules/es.regexp.to-string.js ***!
@@ -46499,8 +42182,8 @@ var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-j
 var flags = __webpack_require__(/*! ../internals/regexp-flags */ "./node_modules/core-js/internals/regexp-flags.js");
 
 var TO_STRING = 'toString';
-var nativeToString = /./[TO_STRING];
 var RegExpPrototype = RegExp.prototype;
+var nativeToString = RegExpPrototype[TO_STRING];
 
 var NOT_GENERIC = fails(function () { return nativeToString.call({ source: 'a', flags: 'b' }) != '/a/b'; });
 // FF44- RegExp#toString has a wrong name
@@ -46541,427 +42224,6 @@ $({ target: 'String', proto: true, forced: forcedStringHTMLMethod('anchor') }, {
     return createHTML(this, 'a', 'name', name);
   }
 });
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.string.match.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.string.match.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var fixRegExpWellKnownSymbolLogic = __webpack_require__(/*! ../internals/fix-regexp-well-known-symbol-logic */ "./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
-var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
-var advanceStringIndex = __webpack_require__(/*! ../internals/advance-string-index */ "./node_modules/core-js/internals/advance-string-index.js");
-var regExpExec = __webpack_require__(/*! ../internals/regexp-exec-abstract */ "./node_modules/core-js/internals/regexp-exec-abstract.js");
-
-// @@match logic
-fixRegExpWellKnownSymbolLogic('match', 1, function (MATCH, nativeMatch, maybeCallNative) {
-  return [
-    // `String.prototype.match` method
-    // https://tc39.github.io/ecma262/#sec-string.prototype.match
-    function match(regexp) {
-      var O = requireObjectCoercible(this);
-      var matcher = regexp == undefined ? undefined : regexp[MATCH];
-      return matcher !== undefined ? matcher.call(regexp, O) : new RegExp(regexp)[MATCH](String(O));
-    },
-    // `RegExp.prototype[@@match]` method
-    // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@match
-    function (regexp) {
-      var res = maybeCallNative(nativeMatch, regexp, this);
-      if (res.done) return res.value;
-
-      var rx = anObject(regexp);
-      var S = String(this);
-
-      if (!rx.global) return regExpExec(rx, S);
-
-      var fullUnicode = rx.unicode;
-      rx.lastIndex = 0;
-      var A = [];
-      var n = 0;
-      var result;
-      while ((result = regExpExec(rx, S)) !== null) {
-        var matchStr = String(result[0]);
-        A[n] = matchStr;
-        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
-        n++;
-      }
-      return n === 0 ? null : A;
-    }
-  ];
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.symbol.description.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.description.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// `Symbol.prototype.description` getter
-// https://tc39.github.io/ecma262/#sec-symbol.prototype.description
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-var copyConstructorProperties = __webpack_require__(/*! ../internals/copy-constructor-properties */ "./node_modules/core-js/internals/copy-constructor-properties.js");
-
-var NativeSymbol = global.Symbol;
-
-if (DESCRIPTORS && typeof NativeSymbol == 'function' && (!('description' in NativeSymbol.prototype) ||
-  // Safari 12 bug
-  NativeSymbol().description !== undefined
-)) {
-  var EmptyStringDescriptionStore = {};
-  // wrap Symbol constructor for correct work with undefined description
-  var SymbolWrapper = function Symbol() {
-    var description = arguments.length < 1 || arguments[0] === undefined ? undefined : String(arguments[0]);
-    var result = this instanceof SymbolWrapper
-      ? new NativeSymbol(description)
-      // in Edge 13, String(Symbol(undefined)) === 'Symbol(undefined)'
-      : description === undefined ? NativeSymbol() : NativeSymbol(description);
-    if (description === '') EmptyStringDescriptionStore[result] = true;
-    return result;
-  };
-  copyConstructorProperties(SymbolWrapper, NativeSymbol);
-  var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
-  symbolPrototype.constructor = SymbolWrapper;
-
-  var symbolToString = symbolPrototype.toString;
-  var native = String(NativeSymbol('test')) == 'Symbol(test)';
-  var regexp = /^Symbol\((.*)\)[^)]+$/;
-  defineProperty(symbolPrototype, 'description', {
-    configurable: true,
-    get: function description() {
-      var symbol = isObject(this) ? this.valueOf() : this;
-      var string = symbolToString.call(symbol);
-      if (has(EmptyStringDescriptionStore, symbol)) return '';
-      var desc = native ? string.slice(7, -1) : string.replace(regexp, '$1');
-      return desc === '' ? undefined : desc;
-    }
-  });
-
-  $({ global: true, forced: true }, {
-    Symbol: SymbolWrapper
-  });
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.symbol.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var NATIVE_SYMBOL = __webpack_require__(/*! ../internals/native-symbol */ "./node_modules/core-js/internals/native-symbol.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var shared = __webpack_require__(/*! ../internals/shared */ "./node_modules/core-js/internals/shared.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var uid = __webpack_require__(/*! ../internals/uid */ "./node_modules/core-js/internals/uid.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/wrapped-well-known-symbol */ "./node_modules/core-js/internals/wrapped-well-known-symbol.js");
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js/internals/define-well-known-symbol.js");
-var enumKeys = __webpack_require__(/*! ../internals/enum-keys */ "./node_modules/core-js/internals/enum-keys.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_modules/core-js/internals/to-primitive.js");
-var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
-var nativeObjectCreate = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
-var getOwnPropertyNamesModule = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js");
-var getOwnPropertyNamesExternal = __webpack_require__(/*! ../internals/object-get-own-property-names-external */ "./node_modules/core-js/internals/object-get-own-property-names-external.js");
-var getOwnPropertyDescriptorModule = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js/internals/object-get-own-property-descriptor.js");
-var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
-var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js");
-var hide = __webpack_require__(/*! ../internals/hide */ "./node_modules/core-js/internals/hide.js");
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
-var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
-var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-
-var HIDDEN = sharedKey('hidden');
-var SYMBOL = 'Symbol';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(SYMBOL);
-var nativeGetOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
-var nativeDefineProperty = definePropertyModule.f;
-var nativeGetOwnPropertyNames = getOwnPropertyNamesExternal.f;
-var $Symbol = global.Symbol;
-var JSON = global.JSON;
-var nativeJSONStringify = JSON && JSON.stringify;
-var PROTOTYPE = 'prototype';
-var TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
-var nativePropertyIsEnumerable = propertyIsEnumerableModule.f;
-var SymbolRegistry = shared('symbol-registry');
-var AllSymbols = shared('symbols');
-var ObjectPrototypeSymbols = shared('op-symbols');
-var WellKnownSymbolsStore = shared('wks');
-var ObjectPrototype = Object[PROTOTYPE];
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var USE_SETTER = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDescriptor = DESCRIPTORS && fails(function () {
-  return nativeObjectCreate(nativeDefineProperty({}, 'a', {
-    get: function () { return nativeDefineProperty(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (it, key, D) {
-  var ObjectPrototypeDescriptor = nativeGetOwnPropertyDescriptor(ObjectPrototype, key);
-  if (ObjectPrototypeDescriptor) delete ObjectPrototype[key];
-  nativeDefineProperty(it, key, D);
-  if (ObjectPrototypeDescriptor && it !== ObjectPrototype) {
-    nativeDefineProperty(ObjectPrototype, key, ObjectPrototypeDescriptor);
-  }
-} : nativeDefineProperty;
-
-var wrap = function (tag, description) {
-  var symbol = AllSymbols[tag] = nativeObjectCreate($Symbol[PROTOTYPE]);
-  setInternalState(symbol, {
-    type: SYMBOL,
-    tag: tag,
-    description: description
-  });
-  if (!DESCRIPTORS) symbol.description = description;
-  return symbol;
-};
-
-var isSymbol = NATIVE_SYMBOL && typeof $Symbol.iterator == 'symbol' ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return Object(it) instanceof $Symbol;
-};
-
-var $defineProperty = function defineProperty(it, key, D) {
-  if (it === ObjectPrototype) $defineProperty(ObjectPrototypeSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
-    if (!D.enumerable) {
-      if (!has(it, HIDDEN)) nativeDefineProperty(it, HIDDEN, createPropertyDescriptor(1, {}));
-      it[HIDDEN][key] = true;
-    } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = nativeObjectCreate(D, { enumerable: createPropertyDescriptor(0, false) });
-    } return setSymbolDescriptor(it, key, D);
-  } return nativeDefineProperty(it, key, D);
-};
-
-var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIndexedObject(P));
-  var i = 0;
-  var l = keys.length;
-  var key;
-  while (l > i) $defineProperty(it, key = keys[i++], P[key]);
-  return it;
-};
-
-var $create = function create(it, P) {
-  return P === undefined ? nativeObjectCreate(it) : $defineProperties(nativeObjectCreate(it), P);
-};
-
-var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = nativePropertyIsEnumerable.call(this, key = toPrimitive(key, true));
-  if (this === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-};
-
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIndexedObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return;
-  var D = nativeGetOwnPropertyDescriptor(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
-  return D;
-};
-
-var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = nativeGetOwnPropertyNames(toIndexedObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && !has(hiddenKeys, key)) result.push(key);
-  } return result;
-};
-
-var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
-  var IS_OP = it === ObjectPrototype;
-  var names = nativeGetOwnPropertyNames(IS_OP ? ObjectPrototypeSymbols : toIndexedObject(it));
-  var result = [];
-  var i = 0;
-  var key;
-  while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectPrototype, key) : true)) result.push(AllSymbols[key]);
-  } return result;
-};
-
-// `Symbol` constructor
-// https://tc39.github.io/ecma262/#sec-symbol-constructor
-if (!NATIVE_SYMBOL) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor');
-    var description = arguments[0] === undefined ? undefined : String(arguments[0]);
-    var tag = uid(description);
-    var setter = function (value) {
-      if (this === ObjectPrototype) setter.call(ObjectPrototypeSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDescriptor(this, tag, createPropertyDescriptor(1, value));
-    };
-    if (DESCRIPTORS && USE_SETTER) setSymbolDescriptor(ObjectPrototype, tag, { configurable: true, set: setter });
-    return wrap(tag, description);
-  };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return getInternalState(this).tag;
-  });
-
-  propertyIsEnumerableModule.f = $propertyIsEnumerable;
-  definePropertyModule.f = $defineProperty;
-  getOwnPropertyDescriptorModule.f = $getOwnPropertyDescriptor;
-  getOwnPropertyNamesModule.f = getOwnPropertyNamesExternal.f = $getOwnPropertyNames;
-  getOwnPropertySymbolsModule.f = $getOwnPropertySymbols;
-
-  if (DESCRIPTORS) {
-    // https://github.com/tc39/proposal-Symbol-description
-    nativeDefineProperty($Symbol[PROTOTYPE], 'description', {
-      configurable: true,
-      get: function description() {
-        return getInternalState(this).description;
-      }
-    });
-    if (!IS_PURE) {
-      redefine(ObjectPrototype, 'propertyIsEnumerable', $propertyIsEnumerable, { unsafe: true });
-    }
-  }
-
-  wrappedWellKnownSymbolModule.f = function (name) {
-    return wrap(wellKnownSymbol(name), name);
-  };
-}
-
-$({ global: true, wrap: true, forced: !NATIVE_SYMBOL, sham: !NATIVE_SYMBOL }, {
-  Symbol: $Symbol
-});
-
-for (var wellKnownSymbols = objectKeys(WellKnownSymbolsStore), k = 0; wellKnownSymbols.length > k;) {
-  defineWellKnownSymbol(wellKnownSymbols[k++]);
-}
-
-$({ target: SYMBOL, stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Symbol.for` method
-  // https://tc39.github.io/ecma262/#sec-symbol.for
-  'for': function (key) {
-    return has(SymbolRegistry, key += '')
-      ? SymbolRegistry[key]
-      : SymbolRegistry[key] = $Symbol(key);
-  },
-  // `Symbol.keyFor` method
-  // https://tc39.github.io/ecma262/#sec-symbol.keyfor
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol');
-    for (var key in SymbolRegistry) if (SymbolRegistry[key] === sym) return key;
-  },
-  useSetter: function () { USE_SETTER = true; },
-  useSimple: function () { USE_SETTER = false; }
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL, sham: !DESCRIPTORS }, {
-  // `Object.create` method
-  // https://tc39.github.io/ecma262/#sec-object.create
-  create: $create,
-  // `Object.defineProperty` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperty
-  defineProperty: $defineProperty,
-  // `Object.defineProperties` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperties
-  defineProperties: $defineProperties,
-  // `Object.getOwnPropertyDescriptor` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Object.getOwnPropertyNames` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertynames
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // `Object.getOwnPropertySymbols` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertysymbols
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
-// https://bugs.chromium.org/p/v8/issues/detail?id=3443
-$({ target: 'Object', stat: true, forced: fails(function () { getOwnPropertySymbolsModule.f(1); }) }, {
-  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
-    return getOwnPropertySymbolsModule.f(toObject(it));
-  }
-});
-
-// `JSON.stringify` method behavior with symbols
-// https://tc39.github.io/ecma262/#sec-json.stringify
-JSON && $({ target: 'JSON', stat: true, forced: !NATIVE_SYMBOL || fails(function () {
-  var symbol = $Symbol();
-  // MS Edge converts symbol values to JSON as {}
-  return nativeJSONStringify([symbol]) != '[null]'
-    // WebKit converts symbol values to JSON as null
-    || nativeJSONStringify({ a: symbol }) != '{}'
-    // V8 throws on boxed symbols
-    || nativeJSONStringify(Object(symbol)) != '{}';
-}) }, {
-  stringify: function stringify(it) {
-    var args = [it];
-    var i = 1;
-    var replacer, $replacer;
-    while (arguments.length > i) args.push(arguments[i++]);
-    $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
-      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
-      if (!isSymbol(value)) return value;
-    };
-    args[1] = replacer;
-    return nativeJSONStringify.apply(JSON, args);
-  }
-});
-
-// `Symbol.prototype[@@toPrimitive]` method
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@toprimitive
-if (!$Symbol[PROTOTYPE][TO_PRIMITIVE]) hide($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-// `Symbol.prototype[@@toStringTag]` property
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@tostringtag
-setToStringTag($Symbol, SYMBOL);
-
-hiddenKeys[HIDDEN] = true;
 
 
 /***/ }),
@@ -48522,537 +43784,6 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ "./node_modules/node-libs-browser/node_modules/punycode/punycode.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/node-libs-browser/node_modules/punycode/punycode.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
-;(function(root) {
-
-	/** Detect free variables */
-	var freeExports =  true && exports &&
-		!exports.nodeType && exports;
-	var freeModule =  true && module &&
-		!module.nodeType && module;
-	var freeGlobal = typeof global == 'object' && global;
-	if (
-		freeGlobal.global === freeGlobal ||
-		freeGlobal.window === freeGlobal ||
-		freeGlobal.self === freeGlobal
-	) {
-		root = freeGlobal;
-	}
-
-	/**
-	 * The `punycode` object.
-	 * @name punycode
-	 * @type Object
-	 */
-	var punycode,
-
-	/** Highest positive signed 32-bit float value */
-	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
-
-	/** Bootstring parameters */
-	base = 36,
-	tMin = 1,
-	tMax = 26,
-	skew = 38,
-	damp = 700,
-	initialBias = 72,
-	initialN = 128, // 0x80
-	delimiter = '-', // '\x2D'
-
-	/** Regular expressions */
-	regexPunycode = /^xn--/,
-	regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
-	regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
-
-	/** Error messages */
-	errors = {
-		'overflow': 'Overflow: input needs wider integers to process',
-		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
-		'invalid-input': 'Invalid input'
-	},
-
-	/** Convenience shortcuts */
-	baseMinusTMin = base - tMin,
-	floor = Math.floor,
-	stringFromCharCode = String.fromCharCode,
-
-	/** Temporary variable */
-	key;
-
-	/*--------------------------------------------------------------------------*/
-
-	/**
-	 * A generic error utility function.
-	 * @private
-	 * @param {String} type The error type.
-	 * @returns {Error} Throws a `RangeError` with the applicable error message.
-	 */
-	function error(type) {
-		throw new RangeError(errors[type]);
-	}
-
-	/**
-	 * A generic `Array#map` utility function.
-	 * @private
-	 * @param {Array} array The array to iterate over.
-	 * @param {Function} callback The function that gets called for every array
-	 * item.
-	 * @returns {Array} A new array of values returned by the callback function.
-	 */
-	function map(array, fn) {
-		var length = array.length;
-		var result = [];
-		while (length--) {
-			result[length] = fn(array[length]);
-		}
-		return result;
-	}
-
-	/**
-	 * A simple `Array#map`-like wrapper to work with domain name strings or email
-	 * addresses.
-	 * @private
-	 * @param {String} domain The domain name or email address.
-	 * @param {Function} callback The function that gets called for every
-	 * character.
-	 * @returns {Array} A new string of characters returned by the callback
-	 * function.
-	 */
-	function mapDomain(string, fn) {
-		var parts = string.split('@');
-		var result = '';
-		if (parts.length > 1) {
-			// In email addresses, only the domain name should be punycoded. Leave
-			// the local part (i.e. everything up to `@`) intact.
-			result = parts[0] + '@';
-			string = parts[1];
-		}
-		// Avoid `split(regex)` for IE8 compatibility. See #17.
-		string = string.replace(regexSeparators, '\x2E');
-		var labels = string.split('.');
-		var encoded = map(labels, fn).join('.');
-		return result + encoded;
-	}
-
-	/**
-	 * Creates an array containing the numeric code points of each Unicode
-	 * character in the string. While JavaScript uses UCS-2 internally,
-	 * this function will convert a pair of surrogate halves (each of which
-	 * UCS-2 exposes as separate characters) into a single code point,
-	 * matching UTF-16.
-	 * @see `punycode.ucs2.encode`
-	 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-	 * @memberOf punycode.ucs2
-	 * @name decode
-	 * @param {String} string The Unicode input string (UCS-2).
-	 * @returns {Array} The new array of code points.
-	 */
-	function ucs2decode(string) {
-		var output = [],
-		    counter = 0,
-		    length = string.length,
-		    value,
-		    extra;
-		while (counter < length) {
-			value = string.charCodeAt(counter++);
-			if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
-				// high surrogate, and there is a next character
-				extra = string.charCodeAt(counter++);
-				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
-					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
-				} else {
-					// unmatched surrogate; only append this code unit, in case the next
-					// code unit is the high surrogate of a surrogate pair
-					output.push(value);
-					counter--;
-				}
-			} else {
-				output.push(value);
-			}
-		}
-		return output;
-	}
-
-	/**
-	 * Creates a string based on an array of numeric code points.
-	 * @see `punycode.ucs2.decode`
-	 * @memberOf punycode.ucs2
-	 * @name encode
-	 * @param {Array} codePoints The array of numeric code points.
-	 * @returns {String} The new Unicode string (UCS-2).
-	 */
-	function ucs2encode(array) {
-		return map(array, function(value) {
-			var output = '';
-			if (value > 0xFFFF) {
-				value -= 0x10000;
-				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
-				value = 0xDC00 | value & 0x3FF;
-			}
-			output += stringFromCharCode(value);
-			return output;
-		}).join('');
-	}
-
-	/**
-	 * Converts a basic code point into a digit/integer.
-	 * @see `digitToBasic()`
-	 * @private
-	 * @param {Number} codePoint The basic numeric code point value.
-	 * @returns {Number} The numeric value of a basic code point (for use in
-	 * representing integers) in the range `0` to `base - 1`, or `base` if
-	 * the code point does not represent a value.
-	 */
-	function basicToDigit(codePoint) {
-		if (codePoint - 48 < 10) {
-			return codePoint - 22;
-		}
-		if (codePoint - 65 < 26) {
-			return codePoint - 65;
-		}
-		if (codePoint - 97 < 26) {
-			return codePoint - 97;
-		}
-		return base;
-	}
-
-	/**
-	 * Converts a digit/integer into a basic code point.
-	 * @see `basicToDigit()`
-	 * @private
-	 * @param {Number} digit The numeric value of a basic code point.
-	 * @returns {Number} The basic code point whose value (when used for
-	 * representing integers) is `digit`, which needs to be in the range
-	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
-	 * used; else, the lowercase form is used. The behavior is undefined
-	 * if `flag` is non-zero and `digit` has no uppercase form.
-	 */
-	function digitToBasic(digit, flag) {
-		//  0..25 map to ASCII a..z or A..Z
-		// 26..35 map to ASCII 0..9
-		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
-	}
-
-	/**
-	 * Bias adaptation function as per section 3.4 of RFC 3492.
-	 * https://tools.ietf.org/html/rfc3492#section-3.4
-	 * @private
-	 */
-	function adapt(delta, numPoints, firstTime) {
-		var k = 0;
-		delta = firstTime ? floor(delta / damp) : delta >> 1;
-		delta += floor(delta / numPoints);
-		for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
-			delta = floor(delta / baseMinusTMin);
-		}
-		return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
-	}
-
-	/**
-	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
-	 * symbols.
-	 * @memberOf punycode
-	 * @param {String} input The Punycode string of ASCII-only symbols.
-	 * @returns {String} The resulting string of Unicode symbols.
-	 */
-	function decode(input) {
-		// Don't use UCS-2
-		var output = [],
-		    inputLength = input.length,
-		    out,
-		    i = 0,
-		    n = initialN,
-		    bias = initialBias,
-		    basic,
-		    j,
-		    index,
-		    oldi,
-		    w,
-		    k,
-		    digit,
-		    t,
-		    /** Cached calculation results */
-		    baseMinusT;
-
-		// Handle the basic code points: let `basic` be the number of input code
-		// points before the last delimiter, or `0` if there is none, then copy
-		// the first basic code points to the output.
-
-		basic = input.lastIndexOf(delimiter);
-		if (basic < 0) {
-			basic = 0;
-		}
-
-		for (j = 0; j < basic; ++j) {
-			// if it's not a basic code point
-			if (input.charCodeAt(j) >= 0x80) {
-				error('not-basic');
-			}
-			output.push(input.charCodeAt(j));
-		}
-
-		// Main decoding loop: start just after the last delimiter if any basic code
-		// points were copied; start at the beginning otherwise.
-
-		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
-
-			// `index` is the index of the next character to be consumed.
-			// Decode a generalized variable-length integer into `delta`,
-			// which gets added to `i`. The overflow checking is easier
-			// if we increase `i` as we go, then subtract off its starting
-			// value at the end to obtain `delta`.
-			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
-
-				if (index >= inputLength) {
-					error('invalid-input');
-				}
-
-				digit = basicToDigit(input.charCodeAt(index++));
-
-				if (digit >= base || digit > floor((maxInt - i) / w)) {
-					error('overflow');
-				}
-
-				i += digit * w;
-				t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-
-				if (digit < t) {
-					break;
-				}
-
-				baseMinusT = base - t;
-				if (w > floor(maxInt / baseMinusT)) {
-					error('overflow');
-				}
-
-				w *= baseMinusT;
-
-			}
-
-			out = output.length + 1;
-			bias = adapt(i - oldi, out, oldi == 0);
-
-			// `i` was supposed to wrap around from `out` to `0`,
-			// incrementing `n` each time, so we'll fix that now:
-			if (floor(i / out) > maxInt - n) {
-				error('overflow');
-			}
-
-			n += floor(i / out);
-			i %= out;
-
-			// Insert `n` at position `i` of the output
-			output.splice(i++, 0, n);
-
-		}
-
-		return ucs2encode(output);
-	}
-
-	/**
-	 * Converts a string of Unicode symbols (e.g. a domain name label) to a
-	 * Punycode string of ASCII-only symbols.
-	 * @memberOf punycode
-	 * @param {String} input The string of Unicode symbols.
-	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
-	 */
-	function encode(input) {
-		var n,
-		    delta,
-		    handledCPCount,
-		    basicLength,
-		    bias,
-		    j,
-		    m,
-		    q,
-		    k,
-		    t,
-		    currentValue,
-		    output = [],
-		    /** `inputLength` will hold the number of code points in `input`. */
-		    inputLength,
-		    /** Cached calculation results */
-		    handledCPCountPlusOne,
-		    baseMinusT,
-		    qMinusT;
-
-		// Convert the input in UCS-2 to Unicode
-		input = ucs2decode(input);
-
-		// Cache the length
-		inputLength = input.length;
-
-		// Initialize the state
-		n = initialN;
-		delta = 0;
-		bias = initialBias;
-
-		// Handle the basic code points
-		for (j = 0; j < inputLength; ++j) {
-			currentValue = input[j];
-			if (currentValue < 0x80) {
-				output.push(stringFromCharCode(currentValue));
-			}
-		}
-
-		handledCPCount = basicLength = output.length;
-
-		// `handledCPCount` is the number of code points that have been handled;
-		// `basicLength` is the number of basic code points.
-
-		// Finish the basic string - if it is not empty - with a delimiter
-		if (basicLength) {
-			output.push(delimiter);
-		}
-
-		// Main encoding loop:
-		while (handledCPCount < inputLength) {
-
-			// All non-basic code points < n have been handled already. Find the next
-			// larger one:
-			for (m = maxInt, j = 0; j < inputLength; ++j) {
-				currentValue = input[j];
-				if (currentValue >= n && currentValue < m) {
-					m = currentValue;
-				}
-			}
-
-			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
-			// but guard against overflow
-			handledCPCountPlusOne = handledCPCount + 1;
-			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
-				error('overflow');
-			}
-
-			delta += (m - n) * handledCPCountPlusOne;
-			n = m;
-
-			for (j = 0; j < inputLength; ++j) {
-				currentValue = input[j];
-
-				if (currentValue < n && ++delta > maxInt) {
-					error('overflow');
-				}
-
-				if (currentValue == n) {
-					// Represent delta as a generalized variable-length integer
-					for (q = delta, k = base; /* no condition */; k += base) {
-						t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-						if (q < t) {
-							break;
-						}
-						qMinusT = q - t;
-						baseMinusT = base - t;
-						output.push(
-							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
-						);
-						q = floor(qMinusT / baseMinusT);
-					}
-
-					output.push(stringFromCharCode(digitToBasic(q, 0)));
-					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
-					delta = 0;
-					++handledCPCount;
-				}
-			}
-
-			++delta;
-			++n;
-
-		}
-		return output.join('');
-	}
-
-	/**
-	 * Converts a Punycode string representing a domain name or an email address
-	 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
-	 * it doesn't matter if you call it on a string that has already been
-	 * converted to Unicode.
-	 * @memberOf punycode
-	 * @param {String} input The Punycoded domain name or email address to
-	 * convert to Unicode.
-	 * @returns {String} The Unicode representation of the given Punycode
-	 * string.
-	 */
-	function toUnicode(input) {
-		return mapDomain(input, function(string) {
-			return regexPunycode.test(string)
-				? decode(string.slice(4).toLowerCase())
-				: string;
-		});
-	}
-
-	/**
-	 * Converts a Unicode string representing a domain name or an email address to
-	 * Punycode. Only the non-ASCII parts of the domain name will be converted,
-	 * i.e. it doesn't matter if you call it with a domain that's already in
-	 * ASCII.
-	 * @memberOf punycode
-	 * @param {String} input The domain name or email address to convert, as a
-	 * Unicode string.
-	 * @returns {String} The Punycode representation of the given domain name or
-	 * email address.
-	 */
-	function toASCII(input) {
-		return mapDomain(input, function(string) {
-			return regexNonASCII.test(string)
-				? 'xn--' + encode(string)
-				: string;
-		});
-	}
-
-	/*--------------------------------------------------------------------------*/
-
-	/** Define the public API */
-	punycode = {
-		/**
-		 * A string representing the current Punycode.js version number.
-		 * @memberOf punycode
-		 * @type String
-		 */
-		'version': '1.4.1',
-		/**
-		 * An object of methods to convert from JavaScript's internal character
-		 * representation (UCS-2) to Unicode code points, and back.
-		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-		 * @memberOf punycode
-		 * @type Object
-		 */
-		'ucs2': {
-			'decode': ucs2decode,
-			'encode': ucs2encode
-		},
-		'decode': decode,
-		'encode': encode,
-		'toASCII': toASCII,
-		'toUnicode': toUnicode
-	};
-
-	/** Expose `punycode` */
-	// Some AMD build optimizers, like r.js, check for specific condition patterns
-	// like the following:
-	if (
-		true
-	) {
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-			return punycode;
-		}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-
-}(this));
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module), __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -49201,7 +43932,7 @@ module.exports = function parseURI (str, opts) {
 /*!*********************************************!*\
   !*** ./node_modules/pixi.js/lib/pixi.es.js ***!
   \*********************************************/
-/*! exports provided: accessibility, extract, interaction, prepare, utils, Application, AbstractRenderer, Attribute, BaseRenderTexture, BaseTexture, BatchDrawCall, BatchGeometry, BatchRenderer, Buffer, CubeTexture, Filter, Framebuffer, GLProgram, GLTexture, Geometry, ObjectRenderer, Program, Quad, QuadUv, RenderTexture, Renderer, Shader, SpriteMaskFilter, State, System, Texture, TextureMatrix, TextureUvs, UniformGroup, autoDetectRenderer, checkMaxIfStatementsInShader, defaultFilterVertex, defaultVertex, generateMultiTextureShader, resources, systems, AppLoaderPlugin, Loader, LoaderResource, TextureLoader, ParticleContainer, ParticleRenderer, Spritesheet, SpritesheetLoader, TilingSprite, TilingSpriteRenderer, BitmapFontLoader, BitmapText, Ticker, TickerPlugin, UPDATE_PRIORITY, BLEND_MODES, DRAW_MODES, ENV, FORMATS, GC_MODES, MIPMAP_MODES, PRECISION, RENDERER_TYPE, SCALE_MODES, TARGETS, TYPES, WRAP_MODES, Bounds, Container, DisplayObject, FillStyle, GRAPHICS_CURVES, Graphics, GraphicsData, GraphicsGeometry, LineStyle, Circle, DEG_TO_RAD, Ellipse, GroupD8, Matrix, ObservablePoint, PI_2, Point, Polygon, RAD_TO_DEG, Rectangle, RoundedRectangle, SHAPES, Transform, Mesh, MeshBatchUvs, MeshGeometry, MeshMaterial, NineSlicePlane, PlaneGeometry, RopeGeometry, SimpleMesh, SimplePlane, SimpleRope, Runner, Sprite, AnimatedSprite, TEXT_GRADIENT, Text, TextMetrics, TextStyle, isMobile, settings, VERSION, filters, useDeprecated */
+/*! exports provided: accessibility, extract, interaction, prepare, utils, VERSION, filters, useDeprecated, Application, AbstractBatchRenderer, AbstractRenderer, Attribute, BaseRenderTexture, BaseTexture, BatchDrawCall, BatchGeometry, BatchPluginFactory, BatchRenderer, BatchShaderGenerator, Buffer, CubeTexture, Filter, Framebuffer, GLProgram, GLTexture, Geometry, ObjectRenderer, Program, Quad, QuadUv, RenderTexture, RenderTexturePool, Renderer, Shader, SpriteMaskFilter, State, System, Texture, TextureMatrix, TextureUvs, UniformGroup, ViewableBuffer, autoDetectRenderer, checkMaxIfStatementsInShader, defaultFilterVertex, defaultVertex, resources, systems, AppLoaderPlugin, Loader, LoaderResource, TextureLoader, ParticleContainer, ParticleRenderer, Spritesheet, SpritesheetLoader, TilingSprite, TilingSpriteRenderer, BitmapFontLoader, BitmapText, Ticker, TickerPlugin, UPDATE_PRIORITY, BLEND_MODES, DRAW_MODES, ENV, FORMATS, GC_MODES, MIPMAP_MODES, PRECISION, RENDERER_TYPE, SCALE_MODES, TARGETS, TYPES, WRAP_MODES, Bounds, Container, DisplayObject, FillStyle, GRAPHICS_CURVES, Graphics, GraphicsData, GraphicsGeometry, LineStyle, Circle, DEG_TO_RAD, Ellipse, GroupD8, Matrix, ObservablePoint, PI_2, Point, Polygon, RAD_TO_DEG, Rectangle, RoundedRectangle, SHAPES, Transform, Mesh, MeshBatchUvs, MeshGeometry, MeshMaterial, NineSlicePlane, PlaneGeometry, RopeGeometry, SimpleMesh, SimplePlane, SimpleRope, Runner, Sprite, AnimatedSprite, TEXT_GRADIENT, Text, TextMetrics, TextStyle, isMobile, settings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49224,6 +43955,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Application", function() { return _pixi_app__WEBPACK_IMPORTED_MODULE_6__["Application"]; });
 
 /* harmony import */ var _pixi_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @pixi/core */ "./node_modules/@pixi/core/lib/core.es.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AbstractBatchRenderer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["AbstractBatchRenderer"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AbstractRenderer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["AbstractRenderer"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Attribute", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["Attribute"]; });
@@ -49236,7 +43969,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BatchGeometry", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["BatchGeometry"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BatchPluginFactory", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["BatchPluginFactory"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BatchRenderer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["BatchRenderer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BatchShaderGenerator", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["BatchShaderGenerator"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Buffer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["Buffer"]; });
 
@@ -49262,6 +43999,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderTexture", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["RenderTexture"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderTexturePool", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["RenderTexturePool"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Renderer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["Renderer"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Shader", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["Shader"]; });
@@ -49280,6 +44019,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UniformGroup", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["UniformGroup"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ViewableBuffer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["ViewableBuffer"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "autoDetectRenderer", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["autoDetectRenderer"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "checkMaxIfStatementsInShader", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["checkMaxIfStatementsInShader"]; });
@@ -49287,8 +44028,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultFilterVertex", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["defaultFilterVertex"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultVertex", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["defaultVertex"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "generateMultiTextureShader", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["generateMultiTextureShader"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "resources", function() { return _pixi_core__WEBPACK_IMPORTED_MODULE_7__["resources"]; });
 
@@ -49459,8 +44198,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return _pixi_settings__WEBPACK_IMPORTED_MODULE_33__["settings"]; });
 
 /*!
- * pixi.js - v5.0.3
- * Compiled Sun, 19 May 2019 19:03:31 UTC
+ * pixi.js - v5.1.1
+ * Compiled Fri, 02 Aug 2019 23:20:23 UTC
  *
  * pixi.js is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -50160,15 +44899,24 @@ function useDeprecated()
          * @name PIXI.BaseTexture#imageUrl
          * @type {string}
          * @deprecated since 5.0.0
-         * @readonly
          * @see PIXI.resource.ImageResource#url
          */
         imageUrl: {
             get: function get()
             {
-                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.imageUrl property has been removed, use resource.url');
+                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.imageUrl property has been removed, use PIXI.BaseTexture.resource.url');
 
                 return this.resource && this.resource.url;
+            },
+
+            set: function set(imageUrl)
+            {
+                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.imageUrl property has been removed, use PIXI.BaseTexture.resource.url');
+
+                if (this.resource)
+                {
+                    this.resource.url = imageUrl;
+                }
             },
         },
         /**
@@ -50181,13 +44929,13 @@ function useDeprecated()
         source: {
             get: function get()
             {
-                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.source property has been moved, use `resource.source`');
+                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.source property has been moved, use `PIXI.BaseTexture.resource.source`');
 
                 return this.resource && this.resource.source;
             },
             set: function set(source)
             {
-                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.source property has been moved, use `resource.source` '
+                Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.BaseTexture.source property has been moved, use `PIXI.BaseTexture.resource.source` '
                     + 'if you want to set HTMLCanvasElement. Otherwise, create new BaseTexture.');
 
                 if (this.resource)
@@ -50290,6 +45038,18 @@ function useDeprecated()
         Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.Matrix.copy method has been replaced with PIXI.Matrix.copyTo');
 
         return this.copyTo(p);
+    };
+
+    /**
+     * @method PIXI.systems.StateSystem#setState
+     * @deprecated since 5.1.0
+     * @see PIXI.systems.StateSystem#set
+     */
+    PIXI.systems.StateSystem.prototype.setState = function setState(s)
+    {
+        Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])('v5.1.0', 'StateSystem.setState has been renamed to StateSystem.set');
+
+        return this.set(s);
     };
 
     Object.assign(PIXI.systems.FilterSystem.prototype, {
@@ -50463,6 +45223,21 @@ function useDeprecated()
         };
     }
 
+    /**
+     * @deprecated since 5.0.0
+     * @member {PIXI.Graphics} PIXI.Graphics#graphicsData
+     * @see PIXI.Graphics#geometry
+     * @readonly
+     */
+    Object.defineProperty(PIXI.Graphics.prototype, 'graphicsData', {
+        get: function get()
+        {
+            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.Graphics.graphicsData property is deprecated, use PIXI.Graphics.geometry.graphicsData');
+
+            return this.geometry.graphicsData;
+        },
+    });
+
     // Use these to deprecate all the Sprite from* methods
     function spriteFrom(name, source, crossorigin, scaleMode)
     {
@@ -50577,15 +45352,31 @@ function useDeprecated()
     Object.defineProperty(PIXI.AbstractRenderer.prototype, 'autoResize', {
         get: function get()
         {
-            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.AbstractRenderer.autoResize property is deprecated, use autoDensity');
+            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.AbstractRenderer.autoResize property is deprecated, '
+                + 'use PIXI.AbstractRenderer.autoDensity');
 
             return this.autoDensity;
         },
         set: function set(value)
         {
-            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.AbstractRenderer.autoResize property is deprecated, use autoDensity');
+            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.AbstractRenderer.autoResize property is deprecated, '
+                + 'use PIXI.AbstractRenderer.autoDensity');
 
             this.autoDensity = value;
+        },
+    });
+
+    /**
+     * @deprecated since 5.0.0
+     * @member {PIXI.systems.TextureSystem} PIXI.Renderer#textureManager
+     * @see PIXI.Renderer#texture
+     */
+    Object.defineProperty(PIXI.Renderer.prototype, 'textureManager', {
+        get: function get()
+        {
+            Object(_pixi_utils__WEBPACK_IMPORTED_MODULE_5__["deprecation"])(v5, 'PIXI.Renderer.textureManager property is deprecated, use PIXI.Renderer.texture');
+
+            return this.texture;
         },
     });
 
@@ -50648,7 +45439,7 @@ _pixi_app__WEBPACK_IMPORTED_MODULE_6__["Application"].registerPlugin(_pixi_loade
  * @name VERSION
  * @type {string}
  */
-var VERSION = '5.0.3';
+var VERSION = '5.1.1';
 
 /**
  * @namespace PIXI
@@ -50892,6 +45683,537 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/punycode/punycode.js":
+/*!*******************************************!*\
+  !*** ./node_modules/punycode/punycode.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.3.2 by @mathias */
+;(function(root) {
+
+	/** Detect free variables */
+	var freeExports =  true && exports &&
+		!exports.nodeType && exports;
+	var freeModule =  true && module &&
+		!module.nodeType && module;
+	var freeGlobal = typeof global == 'object' && global;
+	if (
+		freeGlobal.global === freeGlobal ||
+		freeGlobal.window === freeGlobal ||
+		freeGlobal.self === freeGlobal
+	) {
+		root = freeGlobal;
+	}
+
+	/**
+	 * The `punycode` object.
+	 * @name punycode
+	 * @type Object
+	 */
+	var punycode,
+
+	/** Highest positive signed 32-bit float value */
+	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
+
+	/** Bootstring parameters */
+	base = 36,
+	tMin = 1,
+	tMax = 26,
+	skew = 38,
+	damp = 700,
+	initialBias = 72,
+	initialN = 128, // 0x80
+	delimiter = '-', // '\x2D'
+
+	/** Regular expressions */
+	regexPunycode = /^xn--/,
+	regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
+	regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
+
+	/** Error messages */
+	errors = {
+		'overflow': 'Overflow: input needs wider integers to process',
+		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+		'invalid-input': 'Invalid input'
+	},
+
+	/** Convenience shortcuts */
+	baseMinusTMin = base - tMin,
+	floor = Math.floor,
+	stringFromCharCode = String.fromCharCode,
+
+	/** Temporary variable */
+	key;
+
+	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * A generic error utility function.
+	 * @private
+	 * @param {String} type The error type.
+	 * @returns {Error} Throws a `RangeError` with the applicable error message.
+	 */
+	function error(type) {
+		throw RangeError(errors[type]);
+	}
+
+	/**
+	 * A generic `Array#map` utility function.
+	 * @private
+	 * @param {Array} array The array to iterate over.
+	 * @param {Function} callback The function that gets called for every array
+	 * item.
+	 * @returns {Array} A new array of values returned by the callback function.
+	 */
+	function map(array, fn) {
+		var length = array.length;
+		var result = [];
+		while (length--) {
+			result[length] = fn(array[length]);
+		}
+		return result;
+	}
+
+	/**
+	 * A simple `Array#map`-like wrapper to work with domain name strings or email
+	 * addresses.
+	 * @private
+	 * @param {String} domain The domain name or email address.
+	 * @param {Function} callback The function that gets called for every
+	 * character.
+	 * @returns {Array} A new string of characters returned by the callback
+	 * function.
+	 */
+	function mapDomain(string, fn) {
+		var parts = string.split('@');
+		var result = '';
+		if (parts.length > 1) {
+			// In email addresses, only the domain name should be punycoded. Leave
+			// the local part (i.e. everything up to `@`) intact.
+			result = parts[0] + '@';
+			string = parts[1];
+		}
+		// Avoid `split(regex)` for IE8 compatibility. See #17.
+		string = string.replace(regexSeparators, '\x2E');
+		var labels = string.split('.');
+		var encoded = map(labels, fn).join('.');
+		return result + encoded;
+	}
+
+	/**
+	 * Creates an array containing the numeric code points of each Unicode
+	 * character in the string. While JavaScript uses UCS-2 internally,
+	 * this function will convert a pair of surrogate halves (each of which
+	 * UCS-2 exposes as separate characters) into a single code point,
+	 * matching UTF-16.
+	 * @see `punycode.ucs2.encode`
+	 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+	 * @memberOf punycode.ucs2
+	 * @name decode
+	 * @param {String} string The Unicode input string (UCS-2).
+	 * @returns {Array} The new array of code points.
+	 */
+	function ucs2decode(string) {
+		var output = [],
+		    counter = 0,
+		    length = string.length,
+		    value,
+		    extra;
+		while (counter < length) {
+			value = string.charCodeAt(counter++);
+			if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+				// high surrogate, and there is a next character
+				extra = string.charCodeAt(counter++);
+				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+				} else {
+					// unmatched surrogate; only append this code unit, in case the next
+					// code unit is the high surrogate of a surrogate pair
+					output.push(value);
+					counter--;
+				}
+			} else {
+				output.push(value);
+			}
+		}
+		return output;
+	}
+
+	/**
+	 * Creates a string based on an array of numeric code points.
+	 * @see `punycode.ucs2.decode`
+	 * @memberOf punycode.ucs2
+	 * @name encode
+	 * @param {Array} codePoints The array of numeric code points.
+	 * @returns {String} The new Unicode string (UCS-2).
+	 */
+	function ucs2encode(array) {
+		return map(array, function(value) {
+			var output = '';
+			if (value > 0xFFFF) {
+				value -= 0x10000;
+				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+				value = 0xDC00 | value & 0x3FF;
+			}
+			output += stringFromCharCode(value);
+			return output;
+		}).join('');
+	}
+
+	/**
+	 * Converts a basic code point into a digit/integer.
+	 * @see `digitToBasic()`
+	 * @private
+	 * @param {Number} codePoint The basic numeric code point value.
+	 * @returns {Number} The numeric value of a basic code point (for use in
+	 * representing integers) in the range `0` to `base - 1`, or `base` if
+	 * the code point does not represent a value.
+	 */
+	function basicToDigit(codePoint) {
+		if (codePoint - 48 < 10) {
+			return codePoint - 22;
+		}
+		if (codePoint - 65 < 26) {
+			return codePoint - 65;
+		}
+		if (codePoint - 97 < 26) {
+			return codePoint - 97;
+		}
+		return base;
+	}
+
+	/**
+	 * Converts a digit/integer into a basic code point.
+	 * @see `basicToDigit()`
+	 * @private
+	 * @param {Number} digit The numeric value of a basic code point.
+	 * @returns {Number} The basic code point whose value (when used for
+	 * representing integers) is `digit`, which needs to be in the range
+	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
+	 * used; else, the lowercase form is used. The behavior is undefined
+	 * if `flag` is non-zero and `digit` has no uppercase form.
+	 */
+	function digitToBasic(digit, flag) {
+		//  0..25 map to ASCII a..z or A..Z
+		// 26..35 map to ASCII 0..9
+		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+	}
+
+	/**
+	 * Bias adaptation function as per section 3.4 of RFC 3492.
+	 * http://tools.ietf.org/html/rfc3492#section-3.4
+	 * @private
+	 */
+	function adapt(delta, numPoints, firstTime) {
+		var k = 0;
+		delta = firstTime ? floor(delta / damp) : delta >> 1;
+		delta += floor(delta / numPoints);
+		for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
+			delta = floor(delta / baseMinusTMin);
+		}
+		return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
+	}
+
+	/**
+	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+	 * symbols.
+	 * @memberOf punycode
+	 * @param {String} input The Punycode string of ASCII-only symbols.
+	 * @returns {String} The resulting string of Unicode symbols.
+	 */
+	function decode(input) {
+		// Don't use UCS-2
+		var output = [],
+		    inputLength = input.length,
+		    out,
+		    i = 0,
+		    n = initialN,
+		    bias = initialBias,
+		    basic,
+		    j,
+		    index,
+		    oldi,
+		    w,
+		    k,
+		    digit,
+		    t,
+		    /** Cached calculation results */
+		    baseMinusT;
+
+		// Handle the basic code points: let `basic` be the number of input code
+		// points before the last delimiter, or `0` if there is none, then copy
+		// the first basic code points to the output.
+
+		basic = input.lastIndexOf(delimiter);
+		if (basic < 0) {
+			basic = 0;
+		}
+
+		for (j = 0; j < basic; ++j) {
+			// if it's not a basic code point
+			if (input.charCodeAt(j) >= 0x80) {
+				error('not-basic');
+			}
+			output.push(input.charCodeAt(j));
+		}
+
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
+
+		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
+
+			// `index` is the index of the next character to be consumed.
+			// Decode a generalized variable-length integer into `delta`,
+			// which gets added to `i`. The overflow checking is easier
+			// if we increase `i` as we go, then subtract off its starting
+			// value at the end to obtain `delta`.
+			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+				if (index >= inputLength) {
+					error('invalid-input');
+				}
+
+				digit = basicToDigit(input.charCodeAt(index++));
+
+				if (digit >= base || digit > floor((maxInt - i) / w)) {
+					error('overflow');
+				}
+
+				i += digit * w;
+				t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+				if (digit < t) {
+					break;
+				}
+
+				baseMinusT = base - t;
+				if (w > floor(maxInt / baseMinusT)) {
+					error('overflow');
+				}
+
+				w *= baseMinusT;
+
+			}
+
+			out = output.length + 1;
+			bias = adapt(i - oldi, out, oldi == 0);
+
+			// `i` was supposed to wrap around from `out` to `0`,
+			// incrementing `n` each time, so we'll fix that now:
+			if (floor(i / out) > maxInt - n) {
+				error('overflow');
+			}
+
+			n += floor(i / out);
+			i %= out;
+
+			// Insert `n` at position `i` of the output
+			output.splice(i++, 0, n);
+
+		}
+
+		return ucs2encode(output);
+	}
+
+	/**
+	 * Converts a string of Unicode symbols (e.g. a domain name label) to a
+	 * Punycode string of ASCII-only symbols.
+	 * @memberOf punycode
+	 * @param {String} input The string of Unicode symbols.
+	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
+	 */
+	function encode(input) {
+		var n,
+		    delta,
+		    handledCPCount,
+		    basicLength,
+		    bias,
+		    j,
+		    m,
+		    q,
+		    k,
+		    t,
+		    currentValue,
+		    output = [],
+		    /** `inputLength` will hold the number of code points in `input`. */
+		    inputLength,
+		    /** Cached calculation results */
+		    handledCPCountPlusOne,
+		    baseMinusT,
+		    qMinusT;
+
+		// Convert the input in UCS-2 to Unicode
+		input = ucs2decode(input);
+
+		// Cache the length
+		inputLength = input.length;
+
+		// Initialize the state
+		n = initialN;
+		delta = 0;
+		bias = initialBias;
+
+		// Handle the basic code points
+		for (j = 0; j < inputLength; ++j) {
+			currentValue = input[j];
+			if (currentValue < 0x80) {
+				output.push(stringFromCharCode(currentValue));
+			}
+		}
+
+		handledCPCount = basicLength = output.length;
+
+		// `handledCPCount` is the number of code points that have been handled;
+		// `basicLength` is the number of basic code points.
+
+		// Finish the basic string - if it is not empty - with a delimiter
+		if (basicLength) {
+			output.push(delimiter);
+		}
+
+		// Main encoding loop:
+		while (handledCPCount < inputLength) {
+
+			// All non-basic code points < n have been handled already. Find the next
+			// larger one:
+			for (m = maxInt, j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue >= n && currentValue < m) {
+					m = currentValue;
+				}
+			}
+
+			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
+			// but guard against overflow
+			handledCPCountPlusOne = handledCPCount + 1;
+			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
+				error('overflow');
+			}
+
+			delta += (m - n) * handledCPCountPlusOne;
+			n = m;
+
+			for (j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+
+				if (currentValue < n && ++delta > maxInt) {
+					error('overflow');
+				}
+
+				if (currentValue == n) {
+					// Represent delta as a generalized variable-length integer
+					for (q = delta, k = base; /* no condition */; k += base) {
+						t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+						if (q < t) {
+							break;
+						}
+						qMinusT = q - t;
+						baseMinusT = base - t;
+						output.push(
+							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+						);
+						q = floor(qMinusT / baseMinusT);
+					}
+
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
+					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+					delta = 0;
+					++handledCPCount;
+				}
+			}
+
+			++delta;
+			++n;
+
+		}
+		return output.join('');
+	}
+
+	/**
+	 * Converts a Punycode string representing a domain name or an email address
+	 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
+	 * it doesn't matter if you call it on a string that has already been
+	 * converted to Unicode.
+	 * @memberOf punycode
+	 * @param {String} input The Punycoded domain name or email address to
+	 * convert to Unicode.
+	 * @returns {String} The Unicode representation of the given Punycode
+	 * string.
+	 */
+	function toUnicode(input) {
+		return mapDomain(input, function(string) {
+			return regexPunycode.test(string)
+				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}
+
+	/**
+	 * Converts a Unicode string representing a domain name or an email address to
+	 * Punycode. Only the non-ASCII parts of the domain name will be converted,
+	 * i.e. it doesn't matter if you call it with a domain that's already in
+	 * ASCII.
+	 * @memberOf punycode
+	 * @param {String} input The domain name or email address to convert, as a
+	 * Unicode string.
+	 * @returns {String} The Punycode representation of the given domain name or
+	 * email address.
+	 */
+	function toASCII(input) {
+		return mapDomain(input, function(string) {
+			return regexNonASCII.test(string)
+				? 'xn--' + encode(string)
+				: string;
+		});
+	}
+
+	/*--------------------------------------------------------------------------*/
+
+	/** Define the public API */
+	punycode = {
+		/**
+		 * A string representing the current Punycode.js version number.
+		 * @memberOf punycode
+		 * @type String
+		 */
+		'version': '1.3.2',
+		/**
+		 * An object of methods to convert from JavaScript's internal character
+		 * representation (UCS-2) to Unicode code points, and back.
+		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+		 * @memberOf punycode
+		 * @type Object
+		 */
+		'ucs2': {
+			'decode': ucs2decode,
+			'encode': ucs2encode
+		},
+		'decode': decode,
+		'encode': encode,
+		'toASCII': toASCII,
+		'toUnicode': toUnicode
+	};
+
+	/** Expose `punycode` */
+	// Some AMD build optimizers, like r.js, check for specific condition patterns
+	// like the following:
+	if (
+		true
+	) {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+			return punycode;
+		}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+}(this));
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module), __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/querystring-es3/decode.js":
 /*!************************************************!*\
   !*** ./node_modules/querystring-es3/decode.js ***!
@@ -51101,2786 +46423,35 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
-/***/ "./node_modules/regenerator-runtime/runtime.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var runtime = (function (exports) {
-  "use strict";
-
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined; // More compressible than void 0.
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []);
-
-    // The ._invoke method unifies the implementations of the .next,
-    // .throw, and .return methods.
-    generator._invoke = makeInvokeMethod(innerFn, self, context);
-
-    return generator;
-  }
-  exports.wrap = wrap;
-
-  // Try/catch helper to minimize deoptimizations. Returns a completion
-  // record like context.tryEntries[i].completion. This interface could
-  // have been (and was previously) designed to take a closure to be
-  // invoked without arguments, but in all the cases we care about we
-  // already have an existing method we want to call, so there's no need
-  // to create a new function object. We can even get away with assuming
-  // the method takes exactly one argument, since that happens to be true
-  // in every case, so we don't have to touch the arguments object. The
-  // only additional allocation required is the completion record, which
-  // has a stable shape and so hopefully should be cheap to allocate.
-  function tryCatch(fn, obj, arg) {
-    try {
-      return { type: "normal", arg: fn.call(obj, arg) };
-    } catch (err) {
-      return { type: "throw", arg: err };
-    }
-  }
-
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed";
-
-  // Returning this object from the innerFn has the same effect as
-  // breaking out of the dispatch switch statement.
-  var ContinueSentinel = {};
-
-  // Dummy constructor functions that we use as the .constructor and
-  // .constructor.prototype properties for functions that return Generator
-  // objects. For full spec compliance, you may wish to configure your
-  // minifier not to mangle the names of these two functions.
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-
-  // This is a polyfill for %IteratorPrototype% for environments that
-  // don't natively support it.
-  var IteratorPrototype = {};
-  IteratorPrototype[iteratorSymbol] = function () {
-    return this;
-  };
-
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  if (NativeIteratorPrototype &&
-      NativeIteratorPrototype !== Op &&
-      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
-    // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-  }
-
-  var Gp = GeneratorFunctionPrototype.prototype =
-    Generator.prototype = Object.create(IteratorPrototype);
-  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
-  GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] =
-    GeneratorFunction.displayName = "GeneratorFunction";
-
-  // Helper for defining the .next, .throw, and .return methods of the
-  // Iterator interface in terms of a single ._invoke method.
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function(method) {
-      prototype[method] = function(arg) {
-        return this._invoke(method, arg);
-      };
-    });
-  }
-
-  exports.isGeneratorFunction = function(genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
-    return ctor
-      ? ctor === GeneratorFunction ||
-        // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction"
-      : false;
-  };
-
-  exports.mark = function(genFun) {
-    if (Object.setPrototypeOf) {
-      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-    } else {
-      genFun.__proto__ = GeneratorFunctionPrototype;
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
-    }
-    genFun.prototype = Object.create(Gp);
-    return genFun;
-  };
-
-  // Within the body of any async function, `await x` is transformed to
-  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-  // `hasOwn.call(value, "__await")` to determine if the yielded value is
-  // meant to be awaited.
-  exports.awrap = function(arg) {
-    return { __await: arg };
-  };
-
-  function AsyncIterator(generator) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-        if (value &&
-            typeof value === "object" &&
-            hasOwn.call(value, "__await")) {
-          return Promise.resolve(value.__await).then(function(value) {
-            invoke("next", value, resolve, reject);
-          }, function(err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return Promise.resolve(value).then(function(unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration.
-          result.value = unwrapped;
-          resolve(result);
-        }, function(error) {
-          // If a rejected Promise was yielded, throw the rejection back
-          // into the async generator function so it can be handled there.
-          return invoke("throw", error, resolve, reject);
-        });
-      }
-    }
-
-    var previousPromise;
-
-    function enqueue(method, arg) {
-      function callInvokeWithMethodAndArg() {
-        return new Promise(function(resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
-      }
-
-      return previousPromise =
-        // If enqueue has been called before, then we want to wait until
-        // all previous Promises have been resolved before calling invoke,
-        // so that results are always delivered in the correct order. If
-        // enqueue has not been called before, then it is important to
-        // call invoke immediately, without waiting on a callback to fire,
-        // so that the async generator function has the opportunity to do
-        // any necessary setup in a predictable way. This predictability
-        // is why the Promise constructor synchronously invokes its
-        // executor callback, and why async functions synchronously
-        // execute code before the first await. Since we implement simple
-        // async functions in terms of async generators, it is especially
-        // important to get this right, even though it requires care.
-        previousPromise ? previousPromise.then(
-          callInvokeWithMethodAndArg,
-          // Avoid propagating failures to Promises returned by later
-          // invocations of the iterator.
-          callInvokeWithMethodAndArg
-        ) : callInvokeWithMethodAndArg();
-    }
-
-    // Define the unified helper method that is used to implement .next,
-    // .throw, and .return (see defineIteratorMethods).
-    this._invoke = enqueue;
-  }
-
-  defineIteratorMethods(AsyncIterator.prototype);
-  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
-    return this;
-  };
-  exports.AsyncIterator = AsyncIterator;
-
-  // Note that simple async functions are implemented on top of
-  // AsyncIterator objects; they just return a Promise for the value of
-  // the final result produced by the iterator.
-  exports.async = function(innerFn, outerFn, self, tryLocsList) {
-    var iter = new AsyncIterator(
-      wrap(innerFn, outerFn, self, tryLocsList)
-    );
-
-    return exports.isGeneratorFunction(outerFn)
-      ? iter // If outerFn is a generator, return the full iterator.
-      : iter.next().then(function(result) {
-          return result.done ? result.value : iter.next();
-        });
-  };
-
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
-
-    return function invoke(method, arg) {
-      if (state === GenStateExecuting) {
-        throw new Error("Generator is already running");
-      }
-
-      if (state === GenStateCompleted) {
-        if (method === "throw") {
-          throw arg;
-        }
-
-        // Be forgiving, per 25.3.3.3.3 of the spec:
-        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-        return doneResult();
-      }
-
-      context.method = method;
-      context.arg = arg;
-
-      while (true) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
-          }
-        }
-
-        if (context.method === "next") {
-          // Setting context._sent for legacy support of Babel's
-          // function.sent implementation.
-          context.sent = context._sent = context.arg;
-
-        } else if (context.method === "throw") {
-          if (state === GenStateSuspendedStart) {
-            state = GenStateCompleted;
-            throw context.arg;
-          }
-
-          context.dispatchException(context.arg);
-
-        } else if (context.method === "return") {
-          context.abrupt("return", context.arg);
-        }
-
-        state = GenStateExecuting;
-
-        var record = tryCatch(innerFn, self, context);
-        if (record.type === "normal") {
-          // If an exception is thrown from innerFn, we leave state ===
-          // GenStateExecuting and loop back for another invocation.
-          state = context.done
-            ? GenStateCompleted
-            : GenStateSuspendedYield;
-
-          if (record.arg === ContinueSentinel) {
-            continue;
-          }
-
-          return {
-            value: record.arg,
-            done: context.done
-          };
-
-        } else if (record.type === "throw") {
-          state = GenStateCompleted;
-          // Dispatch the exception by looping back around to the
-          // context.dispatchException(context.arg) call above.
-          context.method = "throw";
-          context.arg = record.arg;
-        }
-      }
-    };
-  }
-
-  // Call delegate.iterator[context.method](context.arg) and handle the
-  // result, either by returning a { value, done } result from the
-  // delegate iterator, or by modifying context.method and context.arg,
-  // setting context.delegate to null, and returning the ContinueSentinel.
-  function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-    if (method === undefined) {
-      // A .throw or .return when the delegate iterator has no .throw
-      // method always terminates the yield* loop.
-      context.delegate = null;
-
-      if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
-          // If the delegate iterator has a return method, give it a
-          // chance to clean up.
-          context.method = "return";
-          context.arg = undefined;
-          maybeInvokeDelegate(delegate, context);
-
-          if (context.method === "throw") {
-            // If maybeInvokeDelegate(context) changed context.method from
-            // "return" to "throw", let that override the TypeError below.
-            return ContinueSentinel;
-          }
-        }
-
-        context.method = "throw";
-        context.arg = new TypeError(
-          "The iterator does not provide a 'throw' method");
-      }
-
-      return ContinueSentinel;
-    }
-
-    var record = tryCatch(method, delegate.iterator, context.arg);
-
-    if (record.type === "throw") {
-      context.method = "throw";
-      context.arg = record.arg;
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    var info = record.arg;
-
-    if (! info) {
-      context.method = "throw";
-      context.arg = new TypeError("iterator result is not an object");
-      context.delegate = null;
-      return ContinueSentinel;
-    }
-
-    if (info.done) {
-      // Assign the result of the finished delegate to the temporary
-      // variable specified by delegate.resultName (see delegateYield).
-      context[delegate.resultName] = info.value;
-
-      // Resume execution at the desired location (see delegateYield).
-      context.next = delegate.nextLoc;
-
-      // If context.method was "throw" but the delegate handled the
-      // exception, let the outer generator proceed normally. If
-      // context.method was "next", forget context.arg since it has been
-      // "consumed" by the delegate iterator. If context.method was
-      // "return", allow the original .return call to continue in the
-      // outer generator.
-      if (context.method !== "return") {
-        context.method = "next";
-        context.arg = undefined;
-      }
-
-    } else {
-      // Re-yield the result returned by the delegate method.
-      return info;
-    }
-
-    // The delegate iterator is finished, so forget it and continue with
-    // the outer generator.
-    context.delegate = null;
-    return ContinueSentinel;
-  }
-
-  // Define Generator.prototype.{next,throw,return} in terms of the
-  // unified ._invoke helper method.
-  defineIteratorMethods(Gp);
-
-  Gp[toStringTagSymbol] = "Generator";
-
-  // A Generator should always return itself as the iterator object when the
-  // @@iterator function is called on it. Some browsers' implementations of the
-  // iterator prototype chain incorrectly implement this, causing the Generator
-  // object to not be returned from this call. This ensures that doesn't happen.
-  // See https://github.com/facebook/regenerator/issues/274 for more details.
-  Gp[iteratorSymbol] = function() {
-    return this;
-  };
-
-  Gp.toString = function() {
-    return "[object Generator]";
-  };
-
-  function pushTryEntry(locs) {
-    var entry = { tryLoc: locs[0] };
-
-    if (1 in locs) {
-      entry.catchLoc = locs[1];
-    }
-
-    if (2 in locs) {
-      entry.finallyLoc = locs[2];
-      entry.afterLoc = locs[3];
-    }
-
-    this.tryEntries.push(entry);
-  }
-
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal";
-    delete record.arg;
-    entry.completion = record;
-  }
-
-  function Context(tryLocsList) {
-    // The root entry object (effectively a try statement without a catch
-    // or a finally block) gives us a place to store values thrown from
-    // locations where there is no enclosing try statement.
-    this.tryEntries = [{ tryLoc: "root" }];
-    tryLocsList.forEach(pushTryEntry, this);
-    this.reset(true);
-  }
-
-  exports.keys = function(object) {
-    var keys = [];
-    for (var key in object) {
-      keys.push(key);
-    }
-    keys.reverse();
-
-    // Rather than returning an object with a next method, we keep
-    // things simple and return the next function itself.
-    return function next() {
-      while (keys.length) {
-        var key = keys.pop();
-        if (key in object) {
-          next.value = key;
-          next.done = false;
-          return next;
-        }
-      }
-
-      // To avoid creating an additional object, we just hang the .value
-      // and .done properties off the next function object itself. This
-      // also ensures that the minifier will not anonymize the function.
-      next.done = true;
-      return next;
-    };
-  };
-
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) {
-        return iteratorMethod.call(iterable);
-      }
-
-      if (typeof iterable.next === "function") {
-        return iterable;
-      }
-
-      if (!isNaN(iterable.length)) {
-        var i = -1, next = function next() {
-          while (++i < iterable.length) {
-            if (hasOwn.call(iterable, i)) {
-              next.value = iterable[i];
-              next.done = false;
-              return next;
-            }
-          }
-
-          next.value = undefined;
-          next.done = true;
-
-          return next;
-        };
-
-        return next.next = next;
-      }
-    }
-
-    // Return an iterator with no values.
-    return { next: doneResult };
-  }
-  exports.values = values;
-
-  function doneResult() {
-    return { value: undefined, done: true };
-  }
-
-  Context.prototype = {
-    constructor: Context,
-
-    reset: function(skipTempReset) {
-      this.prev = 0;
-      this.next = 0;
-      // Resetting context._sent for legacy support of Babel's
-      // function.sent implementation.
-      this.sent = this._sent = undefined;
-      this.done = false;
-      this.delegate = null;
-
-      this.method = "next";
-      this.arg = undefined;
-
-      this.tryEntries.forEach(resetTryEntry);
-
-      if (!skipTempReset) {
-        for (var name in this) {
-          // Not sure about the optimal order of these conditions:
-          if (name.charAt(0) === "t" &&
-              hasOwn.call(this, name) &&
-              !isNaN(+name.slice(1))) {
-            this[name] = undefined;
-          }
-        }
-      }
-    },
-
-    stop: function() {
-      this.done = true;
-
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
-      if (rootRecord.type === "throw") {
-        throw rootRecord.arg;
-      }
-
-      return this.rval;
-    },
-
-    dispatchException: function(exception) {
-      if (this.done) {
-        throw exception;
-      }
-
-      var context = this;
-      function handle(loc, caught) {
-        record.type = "throw";
-        record.arg = exception;
-        context.next = loc;
-
-        if (caught) {
-          // If the dispatched exception was caught by a catch block,
-          // then let that catch block handle the exception normally.
-          context.method = "next";
-          context.arg = undefined;
-        }
-
-        return !! caught;
-      }
-
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        var record = entry.completion;
-
-        if (entry.tryLoc === "root") {
-          // Exception thrown outside of any try block that could handle
-          // it, so set the completion value of the entire function to
-          // throw the exception.
-          return handle("end");
-        }
-
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
-
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            } else if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) {
-              return handle(entry.catchLoc, true);
-            }
-
-          } else if (hasFinally) {
-            if (this.prev < entry.finallyLoc) {
-              return handle(entry.finallyLoc);
-            }
-
-          } else {
-            throw new Error("try statement without catch or finally");
-          }
-        }
-      }
-    },
-
-    abrupt: function(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev &&
-            hasOwn.call(entry, "finallyLoc") &&
-            this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
-          break;
-        }
-      }
-
-      if (finallyEntry &&
-          (type === "break" ||
-           type === "continue") &&
-          finallyEntry.tryLoc <= arg &&
-          arg <= finallyEntry.finallyLoc) {
-        // Ignore the finally entry if control is not jumping to a
-        // location outside the try/catch block.
-        finallyEntry = null;
-      }
-
-      var record = finallyEntry ? finallyEntry.completion : {};
-      record.type = type;
-      record.arg = arg;
-
-      if (finallyEntry) {
-        this.method = "next";
-        this.next = finallyEntry.finallyLoc;
-        return ContinueSentinel;
-      }
-
-      return this.complete(record);
-    },
-
-    complete: function(record, afterLoc) {
-      if (record.type === "throw") {
-        throw record.arg;
-      }
-
-      if (record.type === "break" ||
-          record.type === "continue") {
-        this.next = record.arg;
-      } else if (record.type === "return") {
-        this.rval = this.arg = record.arg;
-        this.method = "return";
-        this.next = "end";
-      } else if (record.type === "normal" && afterLoc) {
-        this.next = afterLoc;
-      }
-
-      return ContinueSentinel;
-    },
-
-    finish: function(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) {
-          this.complete(entry.completion, entry.afterLoc);
-          resetTryEntry(entry);
-          return ContinueSentinel;
-        }
-      }
-    },
-
-    "catch": function(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if (record.type === "throw") {
-            var thrown = record.arg;
-            resetTryEntry(entry);
-          }
-          return thrown;
-        }
-      }
-
-      // The context.catch method must only be called with a location
-      // argument that corresponds to a known catch block.
-      throw new Error("illegal catch attempt");
-    },
-
-    delegateYield: function(iterable, resultName, nextLoc) {
-      this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      };
-
-      if (this.method === "next") {
-        // Deliberately forget the last sent value so that we don't
-        // accidentally pass it on to the delegate.
-        this.arg = undefined;
-      }
-
-      return ContinueSentinel;
-    }
-  };
-
-  // Regardless of whether this script is executing as a CommonJS module
-  // or not, return the runtime object so that we can declare the variable
-  // regeneratorRuntime in the outer scope, which allows this module to be
-  // injected easily by `bin/regenerator --include-runtime script.js`.
-  return exports;
-
-}(
-  // If this script is executing as a CommonJS module, use module.exports
-  // as the regeneratorRuntime namespace. Otherwise create a new empty
-  // object. Either way, the resulting object will be used to initialize
-  // the regeneratorRuntime variable at the top of this file.
-   true ? module.exports : undefined
-));
-
-try {
-  regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-  // This module should not be running in strict mode, so the above
-  // assignment should always work unless something is misconfigured. Just
-  // in case runtime.js accidentally runs in strict mode, we can escape
-  // strict mode using a global Function call. This could conceivably fail
-  // if a Content Security Policy forbids using Function, but in that case
-  // the proper solution is to fix the accidental strict mode problem. If
-  // you've misconfigured your bundler to force strict mode and applied a
-  // CSP to forbid Function, and you're not willing to fix either of those
-  // problems, please detail your unique predicament in a GitHub issue.
-  Function("r", "regeneratorRuntime = r")(runtime);
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/resource-loader/lib/Loader.js":
-/*!****************************************************!*\
-  !*** ./node_modules/resource-loader/lib/Loader.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/resource-loader/dist/resource-loader.esm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/resource-loader/dist/resource-loader.esm.js ***!
+  \******************************************************************/
+/*! exports provided: Loader, Resource, async, encodeBinary, middleware */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-exports.__esModule = true;
-exports.Loader = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _miniSignals = __webpack_require__(/*! mini-signals */ "./node_modules/mini-signals/lib/mini-signals.js");
-
-var _miniSignals2 = _interopRequireDefault(_miniSignals);
-
-var _parseUri = __webpack_require__(/*! parse-uri */ "./node_modules/parse-uri/index.js");
-
-var _parseUri2 = _interopRequireDefault(_parseUri);
-
-var _async = __webpack_require__(/*! ./async */ "./node_modules/resource-loader/lib/async.js");
-
-var async = _interopRequireWildcard(_async);
-
-var _Resource = __webpack_require__(/*! ./Resource */ "./node_modules/resource-loader/lib/Resource.js");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// some constants
-var MAX_PROGRESS = 100;
-var rgxExtractUrlHash = /(#[\w-]+)?$/;
-
-/**
- * Manages the state and loading of multiple resources to load.
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loader", function() { return Loader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Resource", function() { return Resource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "async", function() { return async; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "encodeBinary", function() { return encodeBinary; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "middleware", function() { return index; });
+/* harmony import */ var parse_uri__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! parse-uri */ "./node_modules/parse-uri/index.js");
+/* harmony import */ var parse_uri__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(parse_uri__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mini_signals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mini-signals */ "./node_modules/mini-signals/lib/mini-signals.js");
+/* harmony import */ var mini_signals__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mini_signals__WEBPACK_IMPORTED_MODULE_1__);
+/*!
+ * resource-loader - v3.0.1
+ * https://github.com/pixijs/pixi-sound
+ * Compiled Tue, 02 Jul 2019 14:06:18 UTC
  *
- * @class
- */
-
-var Loader = exports.Loader = function () {
-    /**
-     * @param {string} [baseUrl=''] - The base url for all resources loaded by this loader.
-     * @param {number} [concurrency=10] - The number of resources to load concurrently.
-     */
-    function Loader() {
-        var _this = this;
-
-        var baseUrl = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-        var concurrency = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-
-        _classCallCheck(this, Loader);
-
-        /**
-         * The base url for all resources loaded by this loader.
-         *
-         * @member {string}
-         */
-        this.baseUrl = baseUrl;
-
-        /**
-         * The progress percent of the loader going through the queue.
-         *
-         * @member {number}
-         */
-        this.progress = 0;
-
-        /**
-         * Loading state of the loader, true if it is currently loading resources.
-         *
-         * @member {boolean}
-         */
-        this.loading = false;
-
-        /**
-         * A querystring to append to every URL added to the loader.
-         *
-         * This should be a valid query string *without* the question-mark (`?`). The loader will
-         * also *not* escape values for you. Make sure to escape your parameters with
-         * [`encodeURIComponent`](https://mdn.io/encodeURIComponent) before assigning this property.
-         *
-         * @example
-         * const loader = new Loader();
-         *
-         * loader.defaultQueryString = 'user=me&password=secret';
-         *
-         * // This will request 'image.png?user=me&password=secret'
-         * loader.add('image.png').load();
-         *
-         * loader.reset();
-         *
-         * // This will request 'image.png?v=1&user=me&password=secret'
-         * loader.add('iamge.png?v=1').load();
-         *
-         * @member {string}
-         */
-        this.defaultQueryString = '';
-
-        /**
-         * The middleware to run before loading each resource.
-         *
-         * @private
-         * @member {function[]}
-         */
-        this._beforeMiddleware = [];
-
-        /**
-         * The middleware to run after loading each resource.
-         *
-         * @private
-         * @member {function[]}
-         */
-        this._afterMiddleware = [];
-
-        /**
-         * The tracks the resources we are currently completing parsing for.
-         *
-         * @private
-         * @member {Resource[]}
-         */
-        this._resourcesParsing = [];
-
-        /**
-         * The `_loadResource` function bound with this object context.
-         *
-         * @private
-         * @member {function}
-         * @param {Resource} r - The resource to load
-         * @param {Function} d - The dequeue function
-         * @return {undefined}
-         */
-        this._boundLoadResource = function (r, d) {
-            return _this._loadResource(r, d);
-        };
-
-        /**
-         * The resources waiting to be loaded.
-         *
-         * @private
-         * @member {Resource[]}
-         */
-        this._queue = async.queue(this._boundLoadResource, concurrency);
-
-        this._queue.pause();
-
-        /**
-         * All the resources for this loader keyed by name.
-         *
-         * @member {object<string, Resource>}
-         */
-        this.resources = {};
-
-        /**
-         * Dispatched once per loaded or errored resource.
-         *
-         * The callback looks like {@link Loader.OnProgressSignal}.
-         *
-         * @member {Signal<Loader.OnProgressSignal>}
-         */
-        this.onProgress = new _miniSignals2.default();
-
-        /**
-         * Dispatched once per errored resource.
-         *
-         * The callback looks like {@link Loader.OnErrorSignal}.
-         *
-         * @member {Signal<Loader.OnErrorSignal>}
-         */
-        this.onError = new _miniSignals2.default();
-
-        /**
-         * Dispatched once per loaded resource.
-         *
-         * The callback looks like {@link Loader.OnLoadSignal}.
-         *
-         * @member {Signal<Loader.OnLoadSignal>}
-         */
-        this.onLoad = new _miniSignals2.default();
-
-        /**
-         * Dispatched when the loader begins to process the queue.
-         *
-         * The callback looks like {@link Loader.OnStartSignal}.
-         *
-         * @member {Signal<Loader.OnStartSignal>}
-         */
-        this.onStart = new _miniSignals2.default();
-
-        /**
-         * Dispatched when the queued resources all load.
-         *
-         * The callback looks like {@link Loader.OnCompleteSignal}.
-         *
-         * @member {Signal<Loader.OnCompleteSignal>}
-         */
-        this.onComplete = new _miniSignals2.default();
-
-        // Add default before middleware
-        for (var i = 0; i < Loader._defaultBeforeMiddleware.length; ++i) {
-            this.pre(Loader._defaultBeforeMiddleware[i]);
-        }
-
-        // Add default after middleware
-        for (var _i = 0; _i < Loader._defaultAfterMiddleware.length; ++_i) {
-            this.use(Loader._defaultAfterMiddleware[_i]);
-        }
-    }
-
-    /**
-     * When the progress changes the loader and resource are disaptched.
-     *
-     * @memberof Loader
-     * @callback OnProgressSignal
-     * @param {Loader} loader - The loader the progress is advancing on.
-     * @param {Resource} resource - The resource that has completed or failed to cause the progress to advance.
-     */
-
-    /**
-     * When an error occurrs the loader and resource are disaptched.
-     *
-     * @memberof Loader
-     * @callback OnErrorSignal
-     * @param {Loader} loader - The loader the error happened in.
-     * @param {Resource} resource - The resource that caused the error.
-     */
-
-    /**
-     * When a load completes the loader and resource are disaptched.
-     *
-     * @memberof Loader
-     * @callback OnLoadSignal
-     * @param {Loader} loader - The loader that laoded the resource.
-     * @param {Resource} resource - The resource that has completed loading.
-     */
-
-    /**
-     * When the loader starts loading resources it dispatches this callback.
-     *
-     * @memberof Loader
-     * @callback OnStartSignal
-     * @param {Loader} loader - The loader that has started loading resources.
-     */
-
-    /**
-     * When the loader completes loading resources it dispatches this callback.
-     *
-     * @memberof Loader
-     * @callback OnCompleteSignal
-     * @param {Loader} loader - The loader that has finished loading resources.
-     */
-
-    /**
-     * Options for a call to `.add()`.
-     *
-     * @see Loader#add
-     *
-     * @typedef {object} IAddOptions
-     * @property {string} [name] - The name of the resource to load, if not passed the url is used.
-     * @property {string} [key] - Alias for `name`.
-     * @property {string} [url] - The url for this resource, relative to the baseUrl of this loader.
-     * @property {string|boolean} [crossOrigin] - Is this request cross-origin? Default is to
-     *      determine automatically.
-     * @property {number} [timeout=0] - A timeout in milliseconds for the load. If the load takes
-     *      longer than this time it is cancelled and the load is considered a failure. If this value is
-     *      set to `0` then there is no explicit timeout.
-     * @property {Resource.LOAD_TYPE} [loadType=Resource.LOAD_TYPE.XHR] - How should this resource
-     *      be loaded?
-     * @property {Resource.XHR_RESPONSE_TYPE} [xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] - How
-     *      should the data being loaded be interpreted when using XHR?
-     * @property {Resource.OnCompleteSignal} [onComplete] - Callback to add an an onComplete signal istener.
-     * @property {Resource.OnCompleteSignal} [callback] - Alias for `onComplete`.
-     * @property {Resource.IMetadata} [metadata] - Extra configuration for middleware and the Resource object.
-     */
-
-    /* eslint-disable require-jsdoc,valid-jsdoc */
-    /**
-     * Adds a resource (or multiple resources) to the loader queue.
-     *
-     * This function can take a wide variety of different parameters. The only thing that is always
-     * required the url to load. All the following will work:
-     *
-     * ```js
-     * loader
-     *     // normal param syntax
-     *     .add('key', 'http://...', function () {})
-     *     .add('http://...', function () {})
-     *     .add('http://...')
-     *
-     *     // object syntax
-     *     .add({
-     *         name: 'key2',
-     *         url: 'http://...'
-     *     }, function () {})
-     *     .add({
-     *         url: 'http://...'
-     *     }, function () {})
-     *     .add({
-     *         name: 'key3',
-     *         url: 'http://...'
-     *         onComplete: function () {}
-     *     })
-     *     .add({
-     *         url: 'https://...',
-     *         onComplete: function () {},
-     *         crossOrigin: true
-     *     })
-     *
-     *     // you can also pass an array of objects or urls or both
-     *     .add([
-     *         { name: 'key4', url: 'http://...', onComplete: function () {} },
-     *         { url: 'http://...', onComplete: function () {} },
-     *         'http://...'
-     *     ])
-     *
-     *     // and you can use both params and options
-     *     .add('key', 'http://...', { crossOrigin: true }, function () {})
-     *     .add('http://...', { crossOrigin: true }, function () {});
-     * ```
-     *
-     * @function
-     * @variation 1
-     * @param {string} name - The name of the resource to load.
-     * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
-     * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-     * @return {this} Returns itself.
-     */ /**
-        * @function
-        * @variation 2
-        * @param {string} name - The name of the resource to load.
-        * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
-        * @param {IAddOptions} [options] - The options for the load.
-        * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-        * @return {this} Returns itself.
-        */ /**
-           * @function
-           * @variation 3
-           * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
-           * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-           * @return {this} Returns itself.
-           */ /**
-              * @function
-              * @variation 4
-              * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
-              * @param {IAddOptions} [options] - The options for the load.
-              * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-              * @return {this} Returns itself.
-              */ /**
-                 * @function
-                 * @variation 5
-                 * @param {IAddOptions} options - The options for the load. This object must contain a `url` property.
-                 * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-                 * @return {this} Returns itself.
-                 */ /**
-                    * @function
-                    * @variation 6
-                    * @param {Array<IAddOptions|string>} resources - An array of resources to load, where each is
-                    *      either an object with the options or a string url. If you pass an object, it must contain a `url` property.
-                    * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
-                    * @return {this} Returns itself.
-                    */
-
-
-    Loader.prototype.add = function add(name, url, options, cb) {
-        // special case of an array of objects or urls
-        if (Array.isArray(name)) {
-            for (var i = 0; i < name.length; ++i) {
-                this.add(name[i]);
-            }
-
-            return this;
-        }
-
-        // if an object is passed instead of params
-        if ((typeof name === 'undefined' ? 'undefined' : _typeof(name)) === 'object') {
-            cb = url || name.callback || name.onComplete;
-            options = name;
-            url = name.url;
-            name = name.name || name.key || name.url;
-        }
-
-        // case where no name is passed shift all args over by one.
-        if (typeof url !== 'string') {
-            cb = options;
-            options = url;
-            url = name;
-        }
-
-        // now that we shifted make sure we have a proper url.
-        if (typeof url !== 'string') {
-            throw new Error('No url passed to add resource to loader.');
-        }
-
-        // options are optional so people might pass a function and no options
-        if (typeof options === 'function') {
-            cb = options;
-            options = null;
-        }
-
-        // if loading already you can only add resources that have a parent.
-        if (this.loading && (!options || !options.parentResource)) {
-            throw new Error('Cannot add resources while the loader is running.');
-        }
-
-        // check if resource already exists.
-        if (this.resources[name]) {
-            throw new Error('Resource named "' + name + '" already exists.');
-        }
-
-        // add base url if this isn't an absolute url
-        url = this._prepareUrl(url);
-
-        // create the store the resource
-        this.resources[name] = new _Resource.Resource(name, url, options);
-
-        if (typeof cb === 'function') {
-            this.resources[name].onAfterMiddleware.once(cb);
-        }
-
-        // if actively loading, make sure to adjust progress chunks for that parent and its children
-        if (this.loading) {
-            var parent = options.parentResource;
-            var incompleteChildren = [];
-
-            for (var _i2 = 0; _i2 < parent.children.length; ++_i2) {
-                if (!parent.children[_i2].isComplete) {
-                    incompleteChildren.push(parent.children[_i2]);
-                }
-            }
-
-            var fullChunk = parent.progressChunk * (incompleteChildren.length + 1); // +1 for parent
-            var eachChunk = fullChunk / (incompleteChildren.length + 2); // +2 for parent & new child
-
-            parent.children.push(this.resources[name]);
-            parent.progressChunk = eachChunk;
-
-            for (var _i3 = 0; _i3 < incompleteChildren.length; ++_i3) {
-                incompleteChildren[_i3].progressChunk = eachChunk;
-            }
-
-            this.resources[name].progressChunk = eachChunk;
-        }
-
-        // add the resource to the queue
-        this._queue.push(this.resources[name]);
-
-        return this;
-    };
-    /* eslint-enable require-jsdoc,valid-jsdoc */
-
-    /**
-     * Sets up a middleware function that will run *before* the
-     * resource is loaded.
-     *
-     * @param {function} fn - The middleware function to register.
-     * @return {this} Returns itself.
-     */
-
-
-    Loader.prototype.pre = function pre(fn) {
-        this._beforeMiddleware.push(fn);
-
-        return this;
-    };
-
-    /**
-     * Sets up a middleware function that will run *after* the
-     * resource is loaded.
-     *
-     * @param {function} fn - The middleware function to register.
-     * @return {this} Returns itself.
-     */
-
-
-    Loader.prototype.use = function use(fn) {
-        this._afterMiddleware.push(fn);
-
-        return this;
-    };
-
-    /**
-     * Resets the queue of the loader to prepare for a new load.
-     *
-     * @return {this} Returns itself.
-     */
-
-
-    Loader.prototype.reset = function reset() {
-        this.progress = 0;
-        this.loading = false;
-
-        this._queue.kill();
-        this._queue.pause();
-
-        // abort all resource loads
-        for (var k in this.resources) {
-            var res = this.resources[k];
-
-            if (res._onLoadBinding) {
-                res._onLoadBinding.detach();
-            }
-
-            if (res.isLoading) {
-                res.abort();
-            }
-        }
-
-        this.resources = {};
-
-        return this;
-    };
-
-    /**
-     * Starts loading the queued resources.
-     *
-     * @param {function} [cb] - Optional callback that will be bound to the `complete` event.
-     * @return {this} Returns itself.
-     */
-
-
-    Loader.prototype.load = function load(cb) {
-        // register complete callback if they pass one
-        if (typeof cb === 'function') {
-            this.onComplete.once(cb);
-        }
-
-        // if the queue has already started we are done here
-        if (this.loading) {
-            return this;
-        }
-
-        if (this._queue.idle()) {
-            this._onStart();
-            this._onComplete();
-        } else {
-            // distribute progress chunks
-            var numTasks = this._queue._tasks.length;
-            var chunk = MAX_PROGRESS / numTasks;
-
-            for (var i = 0; i < this._queue._tasks.length; ++i) {
-                this._queue._tasks[i].data.progressChunk = chunk;
-            }
-
-            // notify we are starting
-            this._onStart();
-
-            // start loading
-            this._queue.resume();
-        }
-
-        return this;
-    };
-
-    /**
-     * The number of resources to load concurrently.
-     *
-     * @member {number}
-     * @default 10
-     */
-
-
-    /**
-     * Prepares a url for usage based on the configuration of this object
-     *
-     * @private
-     * @param {string} url - The url to prepare.
-     * @return {string} The prepared url.
-     */
-    Loader.prototype._prepareUrl = function _prepareUrl(url) {
-        var parsedUrl = (0, _parseUri2.default)(url, { strictMode: true });
-        var result = void 0;
-
-        // absolute url, just use it as is.
-        if (parsedUrl.protocol || !parsedUrl.path || url.indexOf('//') === 0) {
-            result = url;
-        }
-        // if baseUrl doesn't end in slash and url doesn't start with slash, then add a slash inbetween
-        else if (this.baseUrl.length && this.baseUrl.lastIndexOf('/') !== this.baseUrl.length - 1 && url.charAt(0) !== '/') {
-                result = this.baseUrl + '/' + url;
-            } else {
-                result = this.baseUrl + url;
-            }
-
-        // if we need to add a default querystring, there is a bit more work
-        if (this.defaultQueryString) {
-            var hash = rgxExtractUrlHash.exec(result)[0];
-
-            result = result.substr(0, result.length - hash.length);
-
-            if (result.indexOf('?') !== -1) {
-                result += '&' + this.defaultQueryString;
-            } else {
-                result += '?' + this.defaultQueryString;
-            }
-
-            result += hash;
-        }
-
-        return result;
-    };
-
-    /**
-     * Loads a single resource.
-     *
-     * @private
-     * @param {Resource} resource - The resource to load.
-     * @param {function} dequeue - The function to call when we need to dequeue this item.
-     */
-
-
-    Loader.prototype._loadResource = function _loadResource(resource, dequeue) {
-        var _this2 = this;
-
-        resource._dequeue = dequeue;
-
-        // run before middleware
-        async.eachSeries(this._beforeMiddleware, function (fn, next) {
-            fn.call(_this2, resource, function () {
-                // if the before middleware marks the resource as complete,
-                // break and don't process any more before middleware
-                next(resource.isComplete ? {} : null);
-            });
-        }, function () {
-            if (resource.isComplete) {
-                _this2._onLoad(resource);
-            } else {
-                resource._onLoadBinding = resource.onComplete.once(_this2._onLoad, _this2);
-                resource.load();
-            }
-        }, true);
-    };
-
-    /**
-     * Called once loading has started.
-     *
-     * @private
-     */
-
-
-    Loader.prototype._onStart = function _onStart() {
-        this.progress = 0;
-        this.loading = true;
-        this.onStart.dispatch(this);
-    };
-
-    /**
-     * Called once each resource has loaded.
-     *
-     * @private
-     */
-
-
-    Loader.prototype._onComplete = function _onComplete() {
-        this.progress = MAX_PROGRESS;
-        this.loading = false;
-        this.onComplete.dispatch(this, this.resources);
-    };
-
-    /**
-     * Called each time a resources is loaded.
-     *
-     * @private
-     * @param {Resource} resource - The resource that was loaded
-     */
-
-
-    Loader.prototype._onLoad = function _onLoad(resource) {
-        var _this3 = this;
-
-        resource._onLoadBinding = null;
-
-        // remove this resource from the async queue, and add it to our list of resources that are being parsed
-        this._resourcesParsing.push(resource);
-        resource._dequeue();
-
-        // run all the after middleware for this resource
-        async.eachSeries(this._afterMiddleware, function (fn, next) {
-            fn.call(_this3, resource, next);
-        }, function () {
-            resource.onAfterMiddleware.dispatch(resource);
-
-            _this3.progress = Math.min(MAX_PROGRESS, _this3.progress + resource.progressChunk);
-            _this3.onProgress.dispatch(_this3, resource);
-
-            if (resource.error) {
-                _this3.onError.dispatch(resource.error, _this3, resource);
-            } else {
-                _this3.onLoad.dispatch(_this3, resource);
-            }
-
-            _this3._resourcesParsing.splice(_this3._resourcesParsing.indexOf(resource), 1);
-
-            // do completion check
-            if (_this3._queue.idle() && _this3._resourcesParsing.length === 0) {
-                _this3._onComplete();
-            }
-        }, true);
-    };
-
-    _createClass(Loader, [{
-        key: 'concurrency',
-        get: function get() {
-            return this._queue.concurrency;
-        }
-        // eslint-disable-next-line require-jsdoc
-        ,
-        set: function set(concurrency) {
-            this._queue.concurrency = concurrency;
-        }
-    }]);
-
-    return Loader;
-}();
-
-/**
- * A default array of middleware to run before loading each resource.
- * Each of these middlewares are added to any new Loader instances when they are created.
- *
- * @private
- * @member {function[]}
+ * resource-loader is licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license
  */
 
 
-Loader._defaultBeforeMiddleware = [];
 
-/**
- * A default array of middleware to run after loading each resource.
- * Each of these middlewares are added to any new Loader instances when they are created.
- *
- * @private
- * @member {function[]}
- */
-Loader._defaultAfterMiddleware = [];
-
-/**
- * Sets up a middleware function that will run *before* the
- * resource is loaded.
- *
- * @static
- * @param {function} fn - The middleware function to register.
- * @return {Loader} Returns itself.
- */
-Loader.pre = function LoaderPreStatic(fn) {
-    Loader._defaultBeforeMiddleware.push(fn);
-
-    return Loader;
-};
-
-/**
- * Sets up a middleware function that will run *after* the
- * resource is loaded.
- *
- * @static
- * @param {function} fn - The middleware function to register.
- * @return {Loader} Returns itself.
- */
-Loader.use = function LoaderUseStatic(fn) {
-    Loader._defaultAfterMiddleware.push(fn);
-
-    return Loader;
-};
-//# sourceMappingURL=Loader.js.map
-
-/***/ }),
-
-/***/ "./node_modules/resource-loader/lib/Resource.js":
-/*!******************************************************!*\
-  !*** ./node_modules/resource-loader/lib/Resource.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.Resource = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _parseUri = __webpack_require__(/*! parse-uri */ "./node_modules/parse-uri/index.js");
-
-var _parseUri2 = _interopRequireDefault(_parseUri);
-
-var _miniSignals = __webpack_require__(/*! mini-signals */ "./node_modules/mini-signals/lib/mini-signals.js");
-
-var _miniSignals2 = _interopRequireDefault(_miniSignals);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// tests if CORS is supported in XHR, if not we need to use XDR
-var useXdr = !!(window.XDomainRequest && !('withCredentials' in new XMLHttpRequest()));
-var tempAnchor = null;
-
-// some status constants
-var STATUS_NONE = 0;
-var STATUS_OK = 200;
-var STATUS_EMPTY = 204;
-var STATUS_IE_BUG_EMPTY = 1223;
-var STATUS_TYPE_OK = 2;
-
-// noop
-function _noop() {} /* empty */
-
-/**
- * Manages the state and loading of a resource and all child resources.
- *
- * @class
- */
-
-var Resource = exports.Resource = function () {
-    /**
-     * Sets the load type to be used for a specific extension.
-     *
-     * @static
-     * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
-     * @param {Resource.LOAD_TYPE} loadType - The load type to set it to.
-     */
-    Resource.setExtensionLoadType = function setExtensionLoadType(extname, loadType) {
-        setExtMap(Resource._loadTypeMap, extname, loadType);
-    };
-
-    /**
-     * Sets the load type to be used for a specific extension.
-     *
-     * @static
-     * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
-     * @param {Resource.XHR_RESPONSE_TYPE} xhrType - The xhr type to set it to.
-     */
-
-
-    Resource.setExtensionXhrType = function setExtensionXhrType(extname, xhrType) {
-        setExtMap(Resource._xhrTypeMap, extname, xhrType);
-    };
-
-    /**
-     * @param {string} name - The name of the resource to load.
-     * @param {string|string[]} url - The url for this resource, for audio/video loads you can pass
-     *      an array of sources.
-     * @param {object} [options] - The options for the load.
-     * @param {string|boolean} [options.crossOrigin] - Is this request cross-origin? Default is to
-     *      determine automatically.
-     * @param {number} [options.timeout=0] - A timeout in milliseconds for the load. If the load takes
-     *      longer than this time it is cancelled and the load is considered a failure. If this value is
-     *      set to `0` then there is no explicit timeout.
-     * @param {Resource.LOAD_TYPE} [options.loadType=Resource.LOAD_TYPE.XHR] - How should this resource
-     *      be loaded?
-     * @param {Resource.XHR_RESPONSE_TYPE} [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] - How
-     *      should the data being loaded be interpreted when using XHR?
-     * @param {Resource.IMetadata} [options.metadata] - Extra configuration for middleware and the Resource object.
-     */
-
-
-    function Resource(name, url, options) {
-        _classCallCheck(this, Resource);
-
-        if (typeof name !== 'string' || typeof url !== 'string') {
-            throw new Error('Both name and url are required for constructing a resource.');
-        }
-
-        options = options || {};
-
-        /**
-         * The state flags of this resource.
-         *
-         * @private
-         * @member {number}
-         */
-        this._flags = 0;
-
-        // set data url flag, needs to be set early for some _determineX checks to work.
-        this._setFlag(Resource.STATUS_FLAGS.DATA_URL, url.indexOf('data:') === 0);
-
-        /**
-         * The name of this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.name = name;
-
-        /**
-         * The url used to load this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.url = url;
-
-        /**
-         * The extension used to load this resource.
-         *
-         * @readonly
-         * @member {string}
-         */
-        this.extension = this._getExtension();
-
-        /**
-         * The data that was loaded by the resource.
-         *
-         * @member {any}
-         */
-        this.data = null;
-
-        /**
-         * Is this request cross-origin? If unset, determined automatically.
-         *
-         * @member {string}
-         */
-        this.crossOrigin = options.crossOrigin === true ? 'anonymous' : options.crossOrigin;
-
-        /**
-         * A timeout in milliseconds for the load. If the load takes longer than this time
-         * it is cancelled and the load is considered a failure. If this value is set to `0`
-         * then there is no explicit timeout.
-         *
-         * @member {number}
-         */
-        this.timeout = options.timeout || 0;
-
-        /**
-         * The method of loading to use for this resource.
-         *
-         * @member {Resource.LOAD_TYPE}
-         */
-        this.loadType = options.loadType || this._determineLoadType();
-
-        /**
-         * The type used to load the resource via XHR. If unset, determined automatically.
-         *
-         * @member {string}
-         */
-        this.xhrType = options.xhrType;
-
-        /**
-         * Extra info for middleware, and controlling specifics about how the resource loads.
-         *
-         * Note that if you pass in a `loadElement`, the Resource class takes ownership of it.
-         * Meaning it will modify it as it sees fit.
-         *
-         * @member {Resource.IMetadata}
-         */
-        this.metadata = options.metadata || {};
-
-        /**
-         * The error that occurred while loading (if any).
-         *
-         * @readonly
-         * @member {Error}
-         */
-        this.error = null;
-
-        /**
-         * The XHR object that was used to load this resource. This is only set
-         * when `loadType` is `Resource.LOAD_TYPE.XHR`.
-         *
-         * @readonly
-         * @member {XMLHttpRequest}
-         */
-        this.xhr = null;
-
-        /**
-         * The child resources this resource owns.
-         *
-         * @readonly
-         * @member {Resource[]}
-         */
-        this.children = [];
-
-        /**
-         * The resource type.
-         *
-         * @readonly
-         * @member {Resource.TYPE}
-         */
-        this.type = Resource.TYPE.UNKNOWN;
-
-        /**
-         * The progress chunk owned by this resource.
-         *
-         * @readonly
-         * @member {number}
-         */
-        this.progressChunk = 0;
-
-        /**
-         * The `dequeue` method that will be used a storage place for the async queue dequeue method
-         * used privately by the loader.
-         *
-         * @private
-         * @member {function}
-         */
-        this._dequeue = _noop;
-
-        /**
-         * Used a storage place for the on load binding used privately by the loader.
-         *
-         * @private
-         * @member {function}
-         */
-        this._onLoadBinding = null;
-
-        /**
-         * The timer for element loads to check if they timeout.
-         *
-         * @private
-         * @member {number}
-         */
-        this._elementTimer = 0;
-
-        /**
-         * The `complete` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundComplete = this.complete.bind(this);
-
-        /**
-         * The `_onError` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnError = this._onError.bind(this);
-
-        /**
-         * The `_onProgress` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnProgress = this._onProgress.bind(this);
-
-        /**
-         * The `_onTimeout` function bound to this resource's context.
-         *
-         * @private
-         * @member {function}
-         */
-        this._boundOnTimeout = this._onTimeout.bind(this);
-
-        // xhr callbacks
-        this._boundXhrOnError = this._xhrOnError.bind(this);
-        this._boundXhrOnTimeout = this._xhrOnTimeout.bind(this);
-        this._boundXhrOnAbort = this._xhrOnAbort.bind(this);
-        this._boundXhrOnLoad = this._xhrOnLoad.bind(this);
-
-        /**
-         * Dispatched when the resource beings to load.
-         *
-         * The callback looks like {@link Resource.OnStartSignal}.
-         *
-         * @member {Signal<Resource.OnStartSignal>}
-         */
-        this.onStart = new _miniSignals2.default();
-
-        /**
-         * Dispatched each time progress of this resource load updates.
-         * Not all resources types and loader systems can support this event
-         * so sometimes it may not be available. If the resource
-         * is being loaded on a modern browser, using XHR, and the remote server
-         * properly sets Content-Length headers, then this will be available.
-         *
-         * The callback looks like {@link Resource.OnProgressSignal}.
-         *
-         * @member {Signal<Resource.OnProgressSignal>}
-         */
-        this.onProgress = new _miniSignals2.default();
-
-        /**
-         * Dispatched once this resource has loaded, if there was an error it will
-         * be in the `error` property.
-         *
-         * The callback looks like {@link Resource.OnCompleteSignal}.
-         *
-         * @member {Signal<Resource.OnCompleteSignal>}
-         */
-        this.onComplete = new _miniSignals2.default();
-
-        /**
-         * Dispatched after this resource has had all the *after* middleware run on it.
-         *
-         * The callback looks like {@link Resource.OnCompleteSignal}.
-         *
-         * @member {Signal<Resource.OnCompleteSignal>}
-         */
-        this.onAfterMiddleware = new _miniSignals2.default();
-    }
-
-    /**
-     * When the resource starts to load.
-     *
-     * @memberof Resource
-     * @callback OnStartSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     */
-
-    /**
-     * When the resource reports loading progress.
-     *
-     * @memberof Resource
-     * @callback OnProgressSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     * @param {number} percentage - The progress of the load in the range [0, 1].
-     */
-
-    /**
-     * When the resource finishes loading.
-     *
-     * @memberof Resource
-     * @callback OnCompleteSignal
-     * @param {Resource} resource - The resource that the event happened on.
-     */
-
-    /**
-     * @memberof Resource
-     * @typedef {object} IMetadata
-     * @property {HTMLImageElement|HTMLAudioElement|HTMLVideoElement} [loadElement=null] - The
-     *      element to use for loading, instead of creating one.
-     * @property {boolean} [skipSource=false] - Skips adding source(s) to the load element. This
-     *      is useful if you want to pass in a `loadElement` that you already added load sources to.
-     * @property {string|string[]} [mimeType] - The mime type to use for the source element
-     *      of a video/audio elment. If the urls are an array, you can pass this as an array as well
-     *      where each index is the mime type to use for the corresponding url index.
-     */
-
-    /**
-     * Stores whether or not this url is a data url.
-     *
-     * @readonly
-     * @member {boolean}
-     */
-
-
-    /**
-     * Marks the resource as complete.
-     *
-     */
-    Resource.prototype.complete = function complete() {
-        this._clearEvents();
-        this._finish();
-    };
-
-    /**
-     * Aborts the loading of this resource, with an optional message.
-     *
-     * @param {string} message - The message to use for the error
-     */
-
-
-    Resource.prototype.abort = function abort(message) {
-        // abort can be called multiple times, ignore subsequent calls.
-        if (this.error) {
-            return;
-        }
-
-        // store error
-        this.error = new Error(message);
-
-        // clear events before calling aborts
-        this._clearEvents();
-
-        // abort the actual loading
-        if (this.xhr) {
-            this.xhr.abort();
-        } else if (this.xdr) {
-            this.xdr.abort();
-        } else if (this.data) {
-            // single source
-            if (this.data.src) {
-                this.data.src = Resource.EMPTY_GIF;
-            }
-            // multi-source
-            else {
-                    while (this.data.firstChild) {
-                        this.data.removeChild(this.data.firstChild);
-                    }
-                }
-        }
-
-        // done now.
-        this._finish();
-    };
-
-    /**
-     * Kicks off loading of this resource. This method is asynchronous.
-     *
-     * @param {Resource.OnCompleteSignal} [cb] - Optional callback to call once the resource is loaded.
-     */
-
-
-    Resource.prototype.load = function load(cb) {
-        var _this = this;
-
-        if (this.isLoading) {
-            return;
-        }
-
-        if (this.isComplete) {
-            if (cb) {
-                setTimeout(function () {
-                    return cb(_this);
-                }, 1);
-            }
-
-            return;
-        } else if (cb) {
-            this.onComplete.once(cb);
-        }
-
-        this._setFlag(Resource.STATUS_FLAGS.LOADING, true);
-
-        this.onStart.dispatch(this);
-
-        // if unset, determine the value
-        if (this.crossOrigin === false || typeof this.crossOrigin !== 'string') {
-            this.crossOrigin = this._determineCrossOrigin(this.url);
-        }
-
-        switch (this.loadType) {
-            case Resource.LOAD_TYPE.IMAGE:
-                this.type = Resource.TYPE.IMAGE;
-                this._loadElement('image');
-                break;
-
-            case Resource.LOAD_TYPE.AUDIO:
-                this.type = Resource.TYPE.AUDIO;
-                this._loadSourceElement('audio');
-                break;
-
-            case Resource.LOAD_TYPE.VIDEO:
-                this.type = Resource.TYPE.VIDEO;
-                this._loadSourceElement('video');
-                break;
-
-            case Resource.LOAD_TYPE.XHR:
-            /* falls through */
-            default:
-                if (useXdr && this.crossOrigin) {
-                    this._loadXdr();
-                } else {
-                    this._loadXhr();
-                }
-                break;
-        }
-    };
-
-    /**
-     * Checks if the flag is set.
-     *
-     * @private
-     * @param {number} flag - The flag to check.
-     * @return {boolean} True if the flag is set.
-     */
-
-
-    Resource.prototype._hasFlag = function _hasFlag(flag) {
-        return (this._flags & flag) !== 0;
-    };
-
-    /**
-     * (Un)Sets the flag.
-     *
-     * @private
-     * @param {number} flag - The flag to (un)set.
-     * @param {boolean} value - Whether to set or (un)set the flag.
-     */
-
-
-    Resource.prototype._setFlag = function _setFlag(flag, value) {
-        this._flags = value ? this._flags | flag : this._flags & ~flag;
-    };
-
-    /**
-     * Clears all the events from the underlying loading source.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._clearEvents = function _clearEvents() {
-        clearTimeout(this._elementTimer);
-
-        if (this.data && this.data.removeEventListener) {
-            this.data.removeEventListener('error', this._boundOnError, false);
-            this.data.removeEventListener('load', this._boundComplete, false);
-            this.data.removeEventListener('progress', this._boundOnProgress, false);
-            this.data.removeEventListener('canplaythrough', this._boundComplete, false);
-        }
-
-        if (this.xhr) {
-            if (this.xhr.removeEventListener) {
-                this.xhr.removeEventListener('error', this._boundXhrOnError, false);
-                this.xhr.removeEventListener('timeout', this._boundXhrOnTimeout, false);
-                this.xhr.removeEventListener('abort', this._boundXhrOnAbort, false);
-                this.xhr.removeEventListener('progress', this._boundOnProgress, false);
-                this.xhr.removeEventListener('load', this._boundXhrOnLoad, false);
-            } else {
-                this.xhr.onerror = null;
-                this.xhr.ontimeout = null;
-                this.xhr.onprogress = null;
-                this.xhr.onload = null;
-            }
-        }
-    };
-
-    /**
-     * Finalizes the load.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._finish = function _finish() {
-        if (this.isComplete) {
-            throw new Error('Complete called again for an already completed resource.');
-        }
-
-        this._setFlag(Resource.STATUS_FLAGS.COMPLETE, true);
-        this._setFlag(Resource.STATUS_FLAGS.LOADING, false);
-
-        this.onComplete.dispatch(this);
-    };
-
-    /**
-     * Loads this resources using an element that has a single source,
-     * like an HTMLImageElement.
-     *
-     * @private
-     * @param {string} type - The type of element to use.
-     */
-
-
-    Resource.prototype._loadElement = function _loadElement(type) {
-        if (this.metadata.loadElement) {
-            this.data = this.metadata.loadElement;
-        } else if (type === 'image' && typeof window.Image !== 'undefined') {
-            this.data = new Image();
-        } else {
-            this.data = document.createElement(type);
-        }
-
-        if (this.crossOrigin) {
-            this.data.crossOrigin = this.crossOrigin;
-        }
-
-        if (!this.metadata.skipSource) {
-            this.data.src = this.url;
-        }
-
-        this.data.addEventListener('error', this._boundOnError, false);
-        this.data.addEventListener('load', this._boundComplete, false);
-        this.data.addEventListener('progress', this._boundOnProgress, false);
-
-        if (this.timeout) {
-            this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
-        }
-    };
-
-    /**
-     * Loads this resources using an element that has multiple sources,
-     * like an HTMLAudioElement or HTMLVideoElement.
-     *
-     * @private
-     * @param {string} type - The type of element to use.
-     */
-
-
-    Resource.prototype._loadSourceElement = function _loadSourceElement(type) {
-        if (this.metadata.loadElement) {
-            this.data = this.metadata.loadElement;
-        } else if (type === 'audio' && typeof window.Audio !== 'undefined') {
-            this.data = new Audio();
-        } else {
-            this.data = document.createElement(type);
-        }
-
-        if (this.data === null) {
-            this.abort('Unsupported element: ' + type);
-
-            return;
-        }
-
-        if (this.crossOrigin) {
-            this.data.crossOrigin = this.crossOrigin;
-        }
-
-        if (!this.metadata.skipSource) {
-            // support for CocoonJS Canvas+ runtime, lacks document.createElement('source')
-            if (navigator.isCocoonJS) {
-                this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;
-            } else if (Array.isArray(this.url)) {
-                var mimeTypes = this.metadata.mimeType;
-
-                for (var i = 0; i < this.url.length; ++i) {
-                    this.data.appendChild(this._createSource(type, this.url[i], Array.isArray(mimeTypes) ? mimeTypes[i] : mimeTypes));
-                }
-            } else {
-                var _mimeTypes = this.metadata.mimeType;
-
-                this.data.appendChild(this._createSource(type, this.url, Array.isArray(_mimeTypes) ? _mimeTypes[0] : _mimeTypes));
-            }
-        }
-
-        this.data.addEventListener('error', this._boundOnError, false);
-        this.data.addEventListener('load', this._boundComplete, false);
-        this.data.addEventListener('progress', this._boundOnProgress, false);
-        this.data.addEventListener('canplaythrough', this._boundComplete, false);
-
-        this.data.load();
-
-        if (this.timeout) {
-            this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
-        }
-    };
-
-    /**
-     * Loads this resources using an XMLHttpRequest.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._loadXhr = function _loadXhr() {
-        // if unset, determine the value
-        if (typeof this.xhrType !== 'string') {
-            this.xhrType = this._determineXhrType();
-        }
-
-        var xhr = this.xhr = new XMLHttpRequest();
-
-        // set the request type and url
-        xhr.open('GET', this.url, true);
-
-        xhr.timeout = this.timeout;
-
-        // load json as text and parse it ourselves. We do this because some browsers
-        // *cough* safari *cough* can't deal with it.
-        if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON || this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-            xhr.responseType = Resource.XHR_RESPONSE_TYPE.TEXT;
-        } else {
-            xhr.responseType = this.xhrType;
-        }
-
-        xhr.addEventListener('error', this._boundXhrOnError, false);
-        xhr.addEventListener('timeout', this._boundXhrOnTimeout, false);
-        xhr.addEventListener('abort', this._boundXhrOnAbort, false);
-        xhr.addEventListener('progress', this._boundOnProgress, false);
-        xhr.addEventListener('load', this._boundXhrOnLoad, false);
-
-        xhr.send();
-    };
-
-    /**
-     * Loads this resources using an XDomainRequest. This is here because we need to support IE9 (gross).
-     *
-     * @private
-     */
-
-
-    Resource.prototype._loadXdr = function _loadXdr() {
-        // if unset, determine the value
-        if (typeof this.xhrType !== 'string') {
-            this.xhrType = this._determineXhrType();
-        }
-
-        var xdr = this.xhr = new XDomainRequest(); // eslint-disable-line no-undef
-
-        // XDomainRequest has a few quirks. Occasionally it will abort requests
-        // A way to avoid this is to make sure ALL callbacks are set even if not used
-        // More info here: http://stackoverflow.com/questions/15786966/xdomainrequest-aborts-post-on-ie-9
-        xdr.timeout = this.timeout || 5000; // XDR needs a timeout value or it breaks in IE9
-
-        xdr.onerror = this._boundXhrOnError;
-        xdr.ontimeout = this._boundXhrOnTimeout;
-        xdr.onprogress = this._boundOnProgress;
-        xdr.onload = this._boundXhrOnLoad;
-
-        xdr.open('GET', this.url, true);
-
-        // Note: The xdr.send() call is wrapped in a timeout to prevent an
-        // issue with the interface where some requests are lost if multiple
-        // XDomainRequests are being sent at the same time.
-        // Some info here: https://github.com/photonstorm/phaser/issues/1248
-        setTimeout(function () {
-            return xdr.send();
-        }, 1);
-    };
-
-    /**
-     * Creates a source used in loading via an element.
-     *
-     * @private
-     * @param {string} type - The element type (video or audio).
-     * @param {string} url - The source URL to load from.
-     * @param {string} [mime] - The mime type of the video
-     * @return {HTMLSourceElement} The source element.
-     */
-
-
-    Resource.prototype._createSource = function _createSource(type, url, mime) {
-        if (!mime) {
-            mime = type + '/' + this._getExtension(url);
-        }
-
-        var source = document.createElement('source');
-
-        source.src = url;
-        source.type = mime;
-
-        return source;
-    };
-
-    /**
-     * Called if a load errors out.
-     *
-     * @param {Event} event - The error event from the element that emits it.
-     * @private
-     */
-
-
-    Resource.prototype._onError = function _onError(event) {
-        this.abort('Failed to load element using: ' + event.target.nodeName);
-    };
-
-    /**
-     * Called if a load progress event fires for an element or xhr/xdr.
-     *
-     * @private
-     * @param {XMLHttpRequestProgressEvent|Event} event - Progress event.
-     */
-
-
-    Resource.prototype._onProgress = function _onProgress(event) {
-        if (event && event.lengthComputable) {
-            this.onProgress.dispatch(this, event.loaded / event.total);
-        }
-    };
-
-    /**
-     * Called if a timeout event fires for an element.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._onTimeout = function _onTimeout() {
-        this.abort('Load timed out.');
-    };
-
-    /**
-     * Called if an error event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnError = function _xhrOnError() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request failed. Status: ' + xhr.status + ', text: "' + xhr.statusText + '"');
-    };
-
-    /**
-     * Called if an error event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnTimeout = function _xhrOnTimeout() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request timed out.');
-    };
-
-    /**
-     * Called if an abort event fires for xhr/xdr.
-     *
-     * @private
-     */
-
-
-    Resource.prototype._xhrOnAbort = function _xhrOnAbort() {
-        var xhr = this.xhr;
-
-        this.abort(reqType(xhr) + ' Request was aborted by the user.');
-    };
-
-    /**
-     * Called when data successfully loads from an xhr/xdr request.
-     *
-     * @private
-     * @param {XMLHttpRequestLoadEvent|Event} event - Load event
-     */
-
-
-    Resource.prototype._xhrOnLoad = function _xhrOnLoad() {
-        var xhr = this.xhr;
-        var text = '';
-        var status = typeof xhr.status === 'undefined' ? STATUS_OK : xhr.status; // XDR has no `.status`, assume 200.
-
-        // responseText is accessible only if responseType is '' or 'text' and on older browsers
-        if (xhr.responseType === '' || xhr.responseType === 'text' || typeof xhr.responseType === 'undefined') {
-            text = xhr.responseText;
-        }
-
-        // status can be 0 when using the `file://` protocol so we also check if a response is set.
-        // If it has a response, we assume 200; otherwise a 0 status code with no contents is an aborted request.
-        if (status === STATUS_NONE && (text.length > 0 || xhr.responseType === Resource.XHR_RESPONSE_TYPE.BUFFER)) {
-            status = STATUS_OK;
-        }
-        // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
-        else if (status === STATUS_IE_BUG_EMPTY) {
-                status = STATUS_EMPTY;
-            }
-
-        var statusType = status / 100 | 0;
-
-        if (statusType === STATUS_TYPE_OK) {
-            // if text, just return it
-            if (this.xhrType === Resource.XHR_RESPONSE_TYPE.TEXT) {
-                this.data = text;
-                this.type = Resource.TYPE.TEXT;
-            }
-            // if json, parse into json object
-            else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON) {
-                    try {
-                        this.data = JSON.parse(text);
-                        this.type = Resource.TYPE.JSON;
-                    } catch (e) {
-                        this.abort('Error trying to parse loaded json: ' + e);
-
-                        return;
-                    }
-                }
-                // if xml, parse into an xml document or div element
-                else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
-                        try {
-                            if (window.DOMParser) {
-                                var domparser = new DOMParser();
-
-                                this.data = domparser.parseFromString(text, 'text/xml');
-                            } else {
-                                var div = document.createElement('div');
-
-                                div.innerHTML = text;
-
-                                this.data = div;
-                            }
-
-                            this.type = Resource.TYPE.XML;
-                        } catch (e) {
-                            this.abort('Error trying to parse loaded xml: ' + e);
-
-                            return;
-                        }
-                    }
-                    // other types just return the response
-                    else {
-                            this.data = xhr.response || text;
-                        }
-        } else {
-            this.abort('[' + xhr.status + '] ' + xhr.statusText + ': ' + xhr.responseURL);
-
-            return;
-        }
-
-        this.complete();
-    };
-
-    /**
-     * Sets the `crossOrigin` property for this resource based on if the url
-     * for this resource is cross-origin. If crossOrigin was manually set, this
-     * function does nothing.
-     *
-     * @private
-     * @param {string} url - The url to test.
-     * @param {object} [loc=window.location] - The location object to test against.
-     * @return {string} The crossOrigin value to use (or empty string for none).
-     */
-
-
-    Resource.prototype._determineCrossOrigin = function _determineCrossOrigin(url, loc) {
-        // data: and javascript: urls are considered same-origin
-        if (url.indexOf('data:') === 0) {
-            return '';
-        }
-
-        // A sandboxed iframe without the 'allow-same-origin' attribute will have a special
-        // origin designed not to match window.location.origin, and will always require
-        // crossOrigin requests regardless of whether the location matches.
-        if (window.origin !== window.location.origin) {
-            return 'anonymous';
-        }
-
-        // default is window.location
-        loc = loc || window.location;
-
-        if (!tempAnchor) {
-            tempAnchor = document.createElement('a');
-        }
-
-        // let the browser determine the full href for the url of this resource and then
-        // parse with the node url lib, we can't use the properties of the anchor element
-        // because they don't work in IE9 :(
-        tempAnchor.href = url;
-        url = (0, _parseUri2.default)(tempAnchor.href, { strictMode: true });
-
-        var samePort = !url.port && loc.port === '' || url.port === loc.port;
-        var protocol = url.protocol ? url.protocol + ':' : '';
-
-        // if cross origin
-        if (url.host !== loc.hostname || !samePort || protocol !== loc.protocol) {
-            return 'anonymous';
-        }
-
-        return '';
-    };
-
-    /**
-     * Determines the responseType of an XHR request based on the extension of the
-     * resource being loaded.
-     *
-     * @private
-     * @return {Resource.XHR_RESPONSE_TYPE} The responseType to use.
-     */
-
-
-    Resource.prototype._determineXhrType = function _determineXhrType() {
-        return Resource._xhrTypeMap[this.extension] || Resource.XHR_RESPONSE_TYPE.TEXT;
-    };
-
-    /**
-     * Determines the loadType of a resource based on the extension of the
-     * resource being loaded.
-     *
-     * @private
-     * @return {Resource.LOAD_TYPE} The loadType to use.
-     */
-
-
-    Resource.prototype._determineLoadType = function _determineLoadType() {
-        return Resource._loadTypeMap[this.extension] || Resource.LOAD_TYPE.XHR;
-    };
-
-    /**
-     * Extracts the extension (sans '.') of the file being loaded by the resource.
-     *
-     * @private
-     * @return {string} The extension.
-     */
-
-
-    Resource.prototype._getExtension = function _getExtension() {
-        var url = this.url;
-        var ext = '';
-
-        if (this.isDataUrl) {
-            var slashIndex = url.indexOf('/');
-
-            ext = url.substring(slashIndex + 1, url.indexOf(';', slashIndex));
-        } else {
-            var queryStart = url.indexOf('?');
-            var hashStart = url.indexOf('#');
-            var index = Math.min(queryStart > -1 ? queryStart : url.length, hashStart > -1 ? hashStart : url.length);
-
-            url = url.substring(0, index);
-            ext = url.substring(url.lastIndexOf('.') + 1);
-        }
-
-        return ext.toLowerCase();
-    };
-
-    /**
-     * Determines the mime type of an XHR request based on the responseType of
-     * resource being loaded.
-     *
-     * @private
-     * @param {Resource.XHR_RESPONSE_TYPE} type - The type to get a mime type for.
-     * @return {string} The mime type to use.
-     */
-
-
-    Resource.prototype._getMimeFromXhrType = function _getMimeFromXhrType(type) {
-        switch (type) {
-            case Resource.XHR_RESPONSE_TYPE.BUFFER:
-                return 'application/octet-binary';
-
-            case Resource.XHR_RESPONSE_TYPE.BLOB:
-                return 'application/blob';
-
-            case Resource.XHR_RESPONSE_TYPE.DOCUMENT:
-                return 'application/xml';
-
-            case Resource.XHR_RESPONSE_TYPE.JSON:
-                return 'application/json';
-
-            case Resource.XHR_RESPONSE_TYPE.DEFAULT:
-            case Resource.XHR_RESPONSE_TYPE.TEXT:
-            /* falls through */
-            default:
-                return 'text/plain';
-        }
-    };
-
-    _createClass(Resource, [{
-        key: 'isDataUrl',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.DATA_URL);
-        }
-
-        /**
-         * Describes if this resource has finished loading. Is true when the resource has completely
-         * loaded.
-         *
-         * @readonly
-         * @member {boolean}
-         */
-
-    }, {
-        key: 'isComplete',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.COMPLETE);
-        }
-
-        /**
-         * Describes if this resource is currently loading. Is true when the resource starts loading,
-         * and is false again when complete.
-         *
-         * @readonly
-         * @member {boolean}
-         */
-
-    }, {
-        key: 'isLoading',
-        get: function get() {
-            return this._hasFlag(Resource.STATUS_FLAGS.LOADING);
-        }
-    }]);
-
-    return Resource;
-}();
-
-/**
- * The types of resources a resource could represent.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-
-
-Resource.STATUS_FLAGS = {
-    NONE: 0,
-    DATA_URL: 1 << 0,
-    COMPLETE: 1 << 1,
-    LOADING: 1 << 2
-};
-
-/**
- * The types of resources a resource could represent.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-Resource.TYPE = {
-    UNKNOWN: 0,
-    JSON: 1,
-    XML: 2,
-    IMAGE: 3,
-    AUDIO: 4,
-    VIDEO: 5,
-    TEXT: 6
-};
-
-/**
- * The types of loading a resource can use.
- *
- * @static
- * @readonly
- * @enum {number}
- */
-Resource.LOAD_TYPE = {
-    /** Uses XMLHttpRequest to load the resource. */
-    XHR: 1,
-    /** Uses an `Image` object to load the resource. */
-    IMAGE: 2,
-    /** Uses an `Audio` object to load the resource. */
-    AUDIO: 3,
-    /** Uses a `Video` object to load the resource. */
-    VIDEO: 4
-};
-
-/**
- * The XHR ready states, used internally.
- *
- * @static
- * @readonly
- * @enum {string}
- */
-Resource.XHR_RESPONSE_TYPE = {
-    /** string */
-    DEFAULT: 'text',
-    /** ArrayBuffer */
-    BUFFER: 'arraybuffer',
-    /** Blob */
-    BLOB: 'blob',
-    /** Document */
-    DOCUMENT: 'document',
-    /** Object */
-    JSON: 'json',
-    /** String */
-    TEXT: 'text'
-};
-
-Resource._loadTypeMap = {
-    // images
-    gif: Resource.LOAD_TYPE.IMAGE,
-    png: Resource.LOAD_TYPE.IMAGE,
-    bmp: Resource.LOAD_TYPE.IMAGE,
-    jpg: Resource.LOAD_TYPE.IMAGE,
-    jpeg: Resource.LOAD_TYPE.IMAGE,
-    tif: Resource.LOAD_TYPE.IMAGE,
-    tiff: Resource.LOAD_TYPE.IMAGE,
-    webp: Resource.LOAD_TYPE.IMAGE,
-    tga: Resource.LOAD_TYPE.IMAGE,
-    svg: Resource.LOAD_TYPE.IMAGE,
-    'svg+xml': Resource.LOAD_TYPE.IMAGE, // for SVG data urls
-
-    // audio
-    mp3: Resource.LOAD_TYPE.AUDIO,
-    ogg: Resource.LOAD_TYPE.AUDIO,
-    wav: Resource.LOAD_TYPE.AUDIO,
-
-    // videos
-    mp4: Resource.LOAD_TYPE.VIDEO,
-    webm: Resource.LOAD_TYPE.VIDEO
-};
-
-Resource._xhrTypeMap = {
-    // xml
-    xhtml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    html: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    htm: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    xml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    tmx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-    svg: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-
-    // This was added to handle Tiled Tileset XML, but .tsx is also a TypeScript React Component.
-    // Since it is way less likely for people to be loading TypeScript files instead of Tiled files,
-    // this should probably be fine.
-    tsx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
-
-    // images
-    gif: Resource.XHR_RESPONSE_TYPE.BLOB,
-    png: Resource.XHR_RESPONSE_TYPE.BLOB,
-    bmp: Resource.XHR_RESPONSE_TYPE.BLOB,
-    jpg: Resource.XHR_RESPONSE_TYPE.BLOB,
-    jpeg: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tif: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tiff: Resource.XHR_RESPONSE_TYPE.BLOB,
-    webp: Resource.XHR_RESPONSE_TYPE.BLOB,
-    tga: Resource.XHR_RESPONSE_TYPE.BLOB,
-
-    // json
-    json: Resource.XHR_RESPONSE_TYPE.JSON,
-
-    // text
-    text: Resource.XHR_RESPONSE_TYPE.TEXT,
-    txt: Resource.XHR_RESPONSE_TYPE.TEXT,
-
-    // fonts
-    ttf: Resource.XHR_RESPONSE_TYPE.BUFFER,
-    otf: Resource.XHR_RESPONSE_TYPE.BUFFER
-};
-
-// We can't set the `src` attribute to empty string, so on abort we set it to this 1px transparent gif
-Resource.EMPTY_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
-
-/**
- * Quick helper to set a value on one of the extension maps. Ensures there is no
- * dot at the start of the extension.
- *
- * @ignore
- * @param {object} map - The map to set on.
- * @param {string} extname - The extension (or key) to set.
- * @param {number} val - The value to set.
- */
-function setExtMap(map, extname, val) {
-    if (extname && extname.indexOf('.') === 0) {
-        extname = extname.substring(1);
-    }
-
-    if (!extname) {
-        return;
-    }
-
-    map[extname] = val;
-}
-
-/**
- * Quick helper to get string xhr type.
- *
- * @ignore
- * @param {XMLHttpRequest|XDomainRequest} xhr - The request to check.
- * @return {string} The type.
- */
-function reqType(xhr) {
-    return xhr.toString().replace('object ', '');
-}
-
-// Backwards compat
-if (true) {
-    module.exports.default = Resource; // eslint-disable-line no-undef
-}
-//# sourceMappingURL=Resource.js.map
-
-/***/ }),
-
-/***/ "./node_modules/resource-loader/lib/async.js":
-/*!***************************************************!*\
-  !*** ./node_modules/resource-loader/lib/async.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.eachSeries = eachSeries;
-exports.queue = queue;
 /**
  * Smaller version of the async library constructs.
  *
@@ -53894,40 +46465,43 @@ exports.queue = queue;
  * @function
  * @memberof async
  */
-function _noop() {} /* empty */
+function _noop() {}
+/* empty */
 
 /**
  * Iterates an array in series.
  *
  * @memberof async
+ * @function eachSeries
  * @param {Array.<*>} array - Array to iterate.
  * @param {function} iterator - Function to call for each element.
  * @param {function} callback - Function to call when done, or on error.
  * @param {boolean} [deferNext=false] - Break synchronous each loop by calling next with a setTimeout of 1.
  */
+
+
 function eachSeries(array, iterator, callback, deferNext) {
-    var i = 0;
-    var len = array.length;
+  var i = 0;
+  var len = array.length;
 
-    (function next(err) {
-        if (err || i === len) {
-            if (callback) {
-                callback(err);
-            }
+  (function next(err) {
+    if (err || i === len) {
+      if (callback) {
+        callback(err);
+      }
 
-            return;
-        }
+      return;
+    }
 
-        if (deferNext) {
-            setTimeout(function () {
-                iterator(array[i++], next);
-            }, 1);
-        } else {
-            iterator(array[i++], next);
-        }
-    })();
+    if (deferNext) {
+      setTimeout(function () {
+        iterator(array[i++], next);
+      }, 1);
+    } else {
+      iterator(array[i++], next);
+    }
+  })();
 }
-
 /**
  * Ensures a function is only called once.
  *
@@ -53936,323 +46510,2277 @@ function eachSeries(array, iterator, callback, deferNext) {
  * @param {function} fn - The function to wrap.
  * @return {function} The wrapping function.
  */
+
 function onlyOnce(fn) {
-    return function onceWrapper() {
-        if (fn === null) {
-            throw new Error('Callback was already called.');
-        }
+  return function onceWrapper() {
+    if (fn === null) {
+      throw new Error('Callback was already called.');
+    }
 
-        var callFn = fn;
-
-        fn = null;
-        callFn.apply(this, arguments);
-    };
+    var callFn = fn;
+    fn = null;
+    callFn.apply(this, arguments);
+  };
 }
-
 /**
  * Async queue implementation,
  *
  * @memberof async
+ * @function queue
  * @param {function} worker - The worker function to call for each task.
  * @param {number} concurrency - How many workers to run in parrallel.
  * @return {*} The async queue object.
  */
+
+
 function queue(worker, concurrency) {
-    if (concurrency == null) {
-        // eslint-disable-line no-eq-null,eqeqeq
-        concurrency = 1;
-    } else if (concurrency === 0) {
-        throw new Error('Concurrency must not be zero');
+  if (concurrency == null) {
+    // eslint-disable-line no-eq-null,eqeqeq
+    concurrency = 1;
+  } else if (concurrency === 0) {
+    throw new Error('Concurrency must not be zero');
+  }
+
+  var workers = 0;
+  var q = {
+    _tasks: [],
+    concurrency: concurrency,
+    saturated: _noop,
+    unsaturated: _noop,
+    buffer: concurrency / 4,
+    empty: _noop,
+    drain: _noop,
+    error: _noop,
+    started: false,
+    paused: false,
+    push: function push(data, callback) {
+      _insert(data, false, callback);
+    },
+    kill: function kill() {
+      workers = 0;
+      q.drain = _noop;
+      q.started = false;
+      q._tasks = [];
+    },
+    unshift: function unshift(data, callback) {
+      _insert(data, true, callback);
+    },
+    process: function process() {
+      while (!q.paused && workers < q.concurrency && q._tasks.length) {
+        var task = q._tasks.shift();
+
+        if (q._tasks.length === 0) {
+          q.empty();
+        }
+
+        workers += 1;
+
+        if (workers === q.concurrency) {
+          q.saturated();
+        }
+
+        worker(task.data, onlyOnce(_next(task)));
+      }
+    },
+    length: function length() {
+      return q._tasks.length;
+    },
+    running: function running() {
+      return workers;
+    },
+    idle: function idle() {
+      return q._tasks.length + workers === 0;
+    },
+    pause: function pause() {
+      if (q.paused === true) {
+        return;
+      }
+
+      q.paused = true;
+    },
+    resume: function resume() {
+      if (q.paused === false) {
+        return;
+      }
+
+      q.paused = false; // Need to call q.process once per concurrent
+      // worker to preserve full concurrency after pause
+
+      for (var w = 1; w <= q.concurrency; w++) {
+        q.process();
+      }
+    }
+  };
+
+  function _insert(data, insertAtFront, callback) {
+    if (callback != null && typeof callback !== 'function') {
+      // eslint-disable-line no-eq-null,eqeqeq
+      throw new Error('task callback must be a function');
     }
 
-    var workers = 0;
-    var q = {
-        _tasks: [],
-        concurrency: concurrency,
-        saturated: _noop,
-        unsaturated: _noop,
-        buffer: concurrency / 4,
-        empty: _noop,
-        drain: _noop,
-        error: _noop,
-        started: false,
-        paused: false,
-        push: function push(data, callback) {
-            _insert(data, false, callback);
-        },
-        kill: function kill() {
-            workers = 0;
-            q.drain = _noop;
-            q.started = false;
-            q._tasks = [];
-        },
-        unshift: function unshift(data, callback) {
-            _insert(data, true, callback);
-        },
-        process: function process() {
-            while (!q.paused && workers < q.concurrency && q._tasks.length) {
-                var task = q._tasks.shift();
+    q.started = true;
 
-                if (q._tasks.length === 0) {
-                    q.empty();
-                }
+    if (data == null && q.idle()) {
+      // eslint-disable-line no-eq-null,eqeqeq
+      // call drain immediately if there are no tasks
+      setTimeout(function () {
+        return q.drain();
+      }, 1);
+      return;
+    }
 
-                workers += 1;
-
-                if (workers === q.concurrency) {
-                    q.saturated();
-                }
-
-                worker(task.data, onlyOnce(_next(task)));
-            }
-        },
-        length: function length() {
-            return q._tasks.length;
-        },
-        running: function running() {
-            return workers;
-        },
-        idle: function idle() {
-            return q._tasks.length + workers === 0;
-        },
-        pause: function pause() {
-            if (q.paused === true) {
-                return;
-            }
-
-            q.paused = true;
-        },
-        resume: function resume() {
-            if (q.paused === false) {
-                return;
-            }
-
-            q.paused = false;
-
-            // Need to call q.process once per concurrent
-            // worker to preserve full concurrency after pause
-            for (var w = 1; w <= q.concurrency; w++) {
-                q.process();
-            }
-        }
+    var item = {
+      data: data,
+      callback: typeof callback === 'function' ? callback : _noop
     };
 
-    function _insert(data, insertAtFront, callback) {
-        if (callback != null && typeof callback !== 'function') {
-            // eslint-disable-line no-eq-null,eqeqeq
-            throw new Error('task callback must be a function');
-        }
-
-        q.started = true;
-
-        if (data == null && q.idle()) {
-            // eslint-disable-line no-eq-null,eqeqeq
-            // call drain immediately if there are no tasks
-            setTimeout(function () {
-                return q.drain();
-            }, 1);
-
-            return;
-        }
-
-        var item = {
-            data: data,
-            callback: typeof callback === 'function' ? callback : _noop
-        };
-
-        if (insertAtFront) {
-            q._tasks.unshift(item);
-        } else {
-            q._tasks.push(item);
-        }
-
-        setTimeout(function () {
-            return q.process();
-        }, 1);
+    if (insertAtFront) {
+      q._tasks.unshift(item);
+    } else {
+      q._tasks.push(item);
     }
 
-    function _next(task) {
-        return function next() {
-            workers -= 1;
+    setTimeout(function () {
+      return q.process();
+    }, 1);
+  }
 
-            task.callback.apply(task, arguments);
+  function _next(task) {
+    return function next() {
+      workers -= 1;
+      task.callback.apply(task, arguments);
 
-            if (arguments[0] != null) {
-                // eslint-disable-line no-eq-null,eqeqeq
-                q.error(arguments[0], task.data);
-            }
+      if (arguments[0] != null) {
+        // eslint-disable-line no-eq-null,eqeqeq
+        q.error(arguments[0], task.data);
+      }
 
-            if (workers <= q.concurrency - q.buffer) {
-                q.unsaturated();
-            }
+      if (workers <= q.concurrency - q.buffer) {
+        q.unsaturated();
+      }
 
-            if (q.idle()) {
-                q.drain();
-            }
+      if (q.idle()) {
+        q.drain();
+      }
 
-            q.process();
-        };
-    }
+      q.process();
+    };
+  }
 
-    return q;
+  return q;
 }
-//# sourceMappingURL=async.js.map
 
-/***/ }),
+var async = ({
+    eachSeries: eachSeries,
+    queue: queue
+});
 
-/***/ "./node_modules/resource-loader/lib/b64.js":
-/*!*************************************************!*\
-  !*** ./node_modules/resource-loader/lib/b64.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+// a simple in-memory cache for resources
+var cache = {};
+/**
+ * A simple in-memory cache for resource.
+ *
+ * @memberof middleware
+ * @function caching
+ * @example
+ * import { Loader, middleware } from 'resource-loader';
+ * const loader = new Loader();
+ * loader.use(middleware.caching);
+ * @param {Resource} resource - Current Resource
+ * @param {function} next - Callback when complete
+ */
 
-"use strict";
+function caching(resource, next) {
+  var _this = this;
+
+  // if cached, then set data and complete the resource
+  if (cache[resource.url]) {
+    resource.data = cache[resource.url];
+    resource.complete(); // marks resource load complete and stops processing before middlewares
+  } // if not cached, wait for complete and store it in the cache.
+  else {
+      resource.onComplete.once(function () {
+        return cache[_this.url] = _this.data;
+      });
+    }
+
+  next();
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+var useXdr = !!(window.XDomainRequest && !('withCredentials' in new XMLHttpRequest()));
+var tempAnchor = null; // some status constants
+
+var STATUS_NONE = 0;
+var STATUS_OK = 200;
+var STATUS_EMPTY = 204;
+var STATUS_IE_BUG_EMPTY = 1223;
+var STATUS_TYPE_OK = 2; // noop
+
+function _noop$1() {}
+/* empty */
+
+/**
+ * Manages the state and loading of a resource and all child resources.
+ *
+ * @class
+ */
 
 
-exports.__esModule = true;
-exports.encodeBinary = encodeBinary;
+var Resource =
+/*#__PURE__*/
+function () {
+  /**
+   * Sets the load type to be used for a specific extension.
+   *
+   * @static
+   * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
+   * @param {Resource.LOAD_TYPE} loadType - The load type to set it to.
+   */
+  Resource.setExtensionLoadType = function setExtensionLoadType(extname, loadType) {
+    setExtMap(Resource._loadTypeMap, extname, loadType);
+  }
+  /**
+   * Sets the load type to be used for a specific extension.
+   *
+   * @static
+   * @param {string} extname - The extension to set the type for, e.g. "png" or "fnt"
+   * @param {Resource.XHR_RESPONSE_TYPE} xhrType - The xhr type to set it to.
+   */
+  ;
+
+  Resource.setExtensionXhrType = function setExtensionXhrType(extname, xhrType) {
+    setExtMap(Resource._xhrTypeMap, extname, xhrType);
+  }
+  /**
+   * @param {string} name - The name of the resource to load.
+   * @param {string|string[]} url - The url for this resource, for audio/video loads you can pass
+   *      an array of sources.
+   * @param {object} [options] - The options for the load.
+   * @param {string|boolean} [options.crossOrigin] - Is this request cross-origin? Default is to
+   *      determine automatically.
+   * @param {number} [options.timeout=0] - A timeout in milliseconds for the load. If the load takes
+   *      longer than this time it is cancelled and the load is considered a failure. If this value is
+   *      set to `0` then there is no explicit timeout.
+   * @param {Resource.LOAD_TYPE} [options.loadType=Resource.LOAD_TYPE.XHR] - How should this resource
+   *      be loaded?
+   * @param {Resource.XHR_RESPONSE_TYPE} [options.xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] - How
+   *      should the data being loaded be interpreted when using XHR?
+   * @param {Resource.IMetadata} [options.metadata] - Extra configuration for middleware and the Resource object.
+   */
+  ;
+
+  function Resource(name, url, options) {
+    if (typeof name !== 'string' || typeof url !== 'string') {
+      throw new Error('Both name and url are required for constructing a resource.');
+    }
+
+    options = options || {};
+    /**
+     * The state flags of this resource.
+     *
+     * @private
+     * @member {number}
+     */
+
+    this._flags = 0; // set data url flag, needs to be set early for some _determineX checks to work.
+
+    this._setFlag(Resource.STATUS_FLAGS.DATA_URL, url.indexOf('data:') === 0);
+    /**
+     * The name of this resource.
+     *
+     * @readonly
+     * @member {string}
+     */
+
+
+    this.name = name;
+    /**
+     * The url used to load this resource.
+     *
+     * @readonly
+     * @member {string}
+     */
+
+    this.url = url;
+    /**
+     * The extension used to load this resource.
+     *
+     * @readonly
+     * @member {string}
+     */
+
+    this.extension = this._getExtension();
+    /**
+     * The data that was loaded by the resource.
+     *
+     * @member {any}
+     */
+
+    this.data = null;
+    /**
+     * Is this request cross-origin? If unset, determined automatically.
+     *
+     * @member {string}
+     */
+
+    this.crossOrigin = options.crossOrigin === true ? 'anonymous' : options.crossOrigin;
+    /**
+     * A timeout in milliseconds for the load. If the load takes longer than this time
+     * it is cancelled and the load is considered a failure. If this value is set to `0`
+     * then there is no explicit timeout.
+     *
+     * @member {number}
+     */
+
+    this.timeout = options.timeout || 0;
+    /**
+     * The method of loading to use for this resource.
+     *
+     * @member {Resource.LOAD_TYPE}
+     */
+
+    this.loadType = options.loadType || this._determineLoadType();
+    /**
+     * The type used to load the resource via XHR. If unset, determined automatically.
+     *
+     * @member {string}
+     */
+
+    this.xhrType = options.xhrType;
+    /**
+     * Extra info for middleware, and controlling specifics about how the resource loads.
+     *
+     * Note that if you pass in a `loadElement`, the Resource class takes ownership of it.
+     * Meaning it will modify it as it sees fit.
+     *
+     * @member {Resource.IMetadata}
+     */
+
+    this.metadata = options.metadata || {};
+    /**
+     * The error that occurred while loading (if any).
+     *
+     * @readonly
+     * @member {Error}
+     */
+
+    this.error = null;
+    /**
+     * The XHR object that was used to load this resource. This is only set
+     * when `loadType` is `Resource.LOAD_TYPE.XHR`.
+     *
+     * @readonly
+     * @member {XMLHttpRequest}
+     */
+
+    this.xhr = null;
+    /**
+     * The child resources this resource owns.
+     *
+     * @readonly
+     * @member {Resource[]}
+     */
+
+    this.children = [];
+    /**
+     * The resource type.
+     *
+     * @readonly
+     * @member {Resource.TYPE}
+     */
+
+    this.type = Resource.TYPE.UNKNOWN;
+    /**
+     * The progress chunk owned by this resource.
+     *
+     * @readonly
+     * @member {number}
+     */
+
+    this.progressChunk = 0;
+    /**
+     * The `dequeue` method that will be used a storage place for the async queue dequeue method
+     * used privately by the loader.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._dequeue = _noop$1;
+    /**
+     * Used a storage place for the on load binding used privately by the loader.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._onLoadBinding = null;
+    /**
+     * The timer for element loads to check if they timeout.
+     *
+     * @private
+     * @member {number}
+     */
+
+    this._elementTimer = 0;
+    /**
+     * The `complete` function bound to this resource's context.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._boundComplete = this.complete.bind(this);
+    /**
+     * The `_onError` function bound to this resource's context.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._boundOnError = this._onError.bind(this);
+    /**
+     * The `_onProgress` function bound to this resource's context.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._boundOnProgress = this._onProgress.bind(this);
+    /**
+     * The `_onTimeout` function bound to this resource's context.
+     *
+     * @private
+     * @member {function}
+     */
+
+    this._boundOnTimeout = this._onTimeout.bind(this); // xhr callbacks
+
+    this._boundXhrOnError = this._xhrOnError.bind(this);
+    this._boundXhrOnTimeout = this._xhrOnTimeout.bind(this);
+    this._boundXhrOnAbort = this._xhrOnAbort.bind(this);
+    this._boundXhrOnLoad = this._xhrOnLoad.bind(this);
+    /**
+     * Dispatched when the resource beings to load.
+     *
+     * The callback looks like {@link Resource.OnStartSignal}.
+     *
+     * @member {Signal<Resource.OnStartSignal>}
+     */
+
+    this.onStart = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched each time progress of this resource load updates.
+     * Not all resources types and loader systems can support this event
+     * so sometimes it may not be available. If the resource
+     * is being loaded on a modern browser, using XHR, and the remote server
+     * properly sets Content-Length headers, then this will be available.
+     *
+     * The callback looks like {@link Resource.OnProgressSignal}.
+     *
+     * @member {Signal<Resource.OnProgressSignal>}
+     */
+
+    this.onProgress = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched once this resource has loaded, if there was an error it will
+     * be in the `error` property.
+     *
+     * The callback looks like {@link Resource.OnCompleteSignal}.
+     *
+     * @member {Signal<Resource.OnCompleteSignal>}
+     */
+
+    this.onComplete = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched after this resource has had all the *after* middleware run on it.
+     *
+     * The callback looks like {@link Resource.OnCompleteSignal}.
+     *
+     * @member {Signal<Resource.OnCompleteSignal>}
+     */
+
+    this.onAfterMiddleware = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+  }
+  /**
+   * When the resource starts to load.
+   *
+   * @memberof Resource
+   * @callback OnStartSignal
+   * @param {Resource} resource - The resource that the event happened on.
+   */
+
+  /**
+   * When the resource reports loading progress.
+   *
+   * @memberof Resource
+   * @callback OnProgressSignal
+   * @param {Resource} resource - The resource that the event happened on.
+   * @param {number} percentage - The progress of the load in the range [0, 1].
+   */
+
+  /**
+   * When the resource finishes loading.
+   *
+   * @memberof Resource
+   * @callback OnCompleteSignal
+   * @param {Resource} resource - The resource that the event happened on.
+   */
+
+  /**
+   * @memberof Resource
+   * @typedef {object} IMetadata
+   * @property {HTMLImageElement|HTMLAudioElement|HTMLVideoElement} [loadElement=null] - The
+   *      element to use for loading, instead of creating one.
+   * @property {boolean} [skipSource=false] - Skips adding source(s) to the load element. This
+   *      is useful if you want to pass in a `loadElement` that you already added load sources to.
+   * @property {string|string[]} [mimeType] - The mime type to use for the source element
+   *      of a video/audio elment. If the urls are an array, you can pass this as an array as well
+   *      where each index is the mime type to use for the corresponding url index.
+   */
+
+  /**
+   * Stores whether or not this url is a data url.
+   *
+   * @readonly
+   * @member {boolean}
+   */
+
+
+  var _proto = Resource.prototype;
+
+  /**
+   * Marks the resource as complete.
+   *
+   */
+  _proto.complete = function complete() {
+    this._clearEvents();
+
+    this._finish();
+  }
+  /**
+   * Aborts the loading of this resource, with an optional message.
+   *
+   * @param {string} message - The message to use for the error
+   */
+  ;
+
+  _proto.abort = function abort(message) {
+    // abort can be called multiple times, ignore subsequent calls.
+    if (this.error) {
+      return;
+    } // store error
+
+
+    this.error = new Error(message); // clear events before calling aborts
+
+    this._clearEvents(); // abort the actual loading
+
+
+    if (this.xhr) {
+      this.xhr.abort();
+    } else if (this.xdr) {
+      this.xdr.abort();
+    } else if (this.data) {
+      // single source
+      if (this.data.src) {
+        this.data.src = Resource.EMPTY_GIF;
+      } // multi-source
+      else {
+          while (this.data.firstChild) {
+            this.data.removeChild(this.data.firstChild);
+          }
+        }
+    } // done now.
+
+
+    this._finish();
+  }
+  /**
+   * Kicks off loading of this resource. This method is asynchronous.
+   *
+   * @param {Resource.OnCompleteSignal} [cb] - Optional callback to call once the resource is loaded.
+   */
+  ;
+
+  _proto.load = function load(cb) {
+    var _this = this;
+
+    if (this.isLoading) {
+      return;
+    }
+
+    if (this.isComplete) {
+      if (cb) {
+        setTimeout(function () {
+          return cb(_this);
+        }, 1);
+      }
+
+      return;
+    } else if (cb) {
+      this.onComplete.once(cb);
+    }
+
+    this._setFlag(Resource.STATUS_FLAGS.LOADING, true);
+
+    this.onStart.dispatch(this); // if unset, determine the value
+
+    if (this.crossOrigin === false || typeof this.crossOrigin !== 'string') {
+      this.crossOrigin = this._determineCrossOrigin(this.url);
+    }
+
+    switch (this.loadType) {
+      case Resource.LOAD_TYPE.IMAGE:
+        this.type = Resource.TYPE.IMAGE;
+
+        this._loadElement('image');
+
+        break;
+
+      case Resource.LOAD_TYPE.AUDIO:
+        this.type = Resource.TYPE.AUDIO;
+
+        this._loadSourceElement('audio');
+
+        break;
+
+      case Resource.LOAD_TYPE.VIDEO:
+        this.type = Resource.TYPE.VIDEO;
+
+        this._loadSourceElement('video');
+
+        break;
+
+      case Resource.LOAD_TYPE.XHR:
+      /* falls through */
+
+      default:
+        if (useXdr && this.crossOrigin) {
+          this._loadXdr();
+        } else {
+          this._loadXhr();
+        }
+
+        break;
+    }
+  }
+  /**
+   * Checks if the flag is set.
+   *
+   * @private
+   * @param {number} flag - The flag to check.
+   * @return {boolean} True if the flag is set.
+   */
+  ;
+
+  _proto._hasFlag = function _hasFlag(flag) {
+    return (this._flags & flag) !== 0;
+  }
+  /**
+   * (Un)Sets the flag.
+   *
+   * @private
+   * @param {number} flag - The flag to (un)set.
+   * @param {boolean} value - Whether to set or (un)set the flag.
+   */
+  ;
+
+  _proto._setFlag = function _setFlag(flag, value) {
+    this._flags = value ? this._flags | flag : this._flags & ~flag;
+  }
+  /**
+   * Clears all the events from the underlying loading source.
+   *
+   * @private
+   */
+  ;
+
+  _proto._clearEvents = function _clearEvents() {
+    clearTimeout(this._elementTimer);
+
+    if (this.data && this.data.removeEventListener) {
+      this.data.removeEventListener('error', this._boundOnError, false);
+      this.data.removeEventListener('load', this._boundComplete, false);
+      this.data.removeEventListener('progress', this._boundOnProgress, false);
+      this.data.removeEventListener('canplaythrough', this._boundComplete, false);
+    }
+
+    if (this.xhr) {
+      if (this.xhr.removeEventListener) {
+        this.xhr.removeEventListener('error', this._boundXhrOnError, false);
+        this.xhr.removeEventListener('timeout', this._boundXhrOnTimeout, false);
+        this.xhr.removeEventListener('abort', this._boundXhrOnAbort, false);
+        this.xhr.removeEventListener('progress', this._boundOnProgress, false);
+        this.xhr.removeEventListener('load', this._boundXhrOnLoad, false);
+      } else {
+        this.xhr.onerror = null;
+        this.xhr.ontimeout = null;
+        this.xhr.onprogress = null;
+        this.xhr.onload = null;
+      }
+    }
+  }
+  /**
+   * Finalizes the load.
+   *
+   * @private
+   */
+  ;
+
+  _proto._finish = function _finish() {
+    if (this.isComplete) {
+      throw new Error('Complete called again for an already completed resource.');
+    }
+
+    this._setFlag(Resource.STATUS_FLAGS.COMPLETE, true);
+
+    this._setFlag(Resource.STATUS_FLAGS.LOADING, false);
+
+    this.onComplete.dispatch(this);
+  }
+  /**
+   * Loads this resources using an element that has a single source,
+   * like an HTMLImageElement.
+   *
+   * @private
+   * @param {string} type - The type of element to use.
+   */
+  ;
+
+  _proto._loadElement = function _loadElement(type) {
+    if (this.metadata.loadElement) {
+      this.data = this.metadata.loadElement;
+    } else if (type === 'image' && typeof window.Image !== 'undefined') {
+      this.data = new Image();
+    } else {
+      this.data = document.createElement(type);
+    }
+
+    if (this.crossOrigin) {
+      this.data.crossOrigin = this.crossOrigin;
+    }
+
+    if (!this.metadata.skipSource) {
+      this.data.src = this.url;
+    }
+
+    this.data.addEventListener('error', this._boundOnError, false);
+    this.data.addEventListener('load', this._boundComplete, false);
+    this.data.addEventListener('progress', this._boundOnProgress, false);
+
+    if (this.timeout) {
+      this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
+    }
+  }
+  /**
+   * Loads this resources using an element that has multiple sources,
+   * like an HTMLAudioElement or HTMLVideoElement.
+   *
+   * @private
+   * @param {string} type - The type of element to use.
+   */
+  ;
+
+  _proto._loadSourceElement = function _loadSourceElement(type) {
+    if (this.metadata.loadElement) {
+      this.data = this.metadata.loadElement;
+    } else if (type === 'audio' && typeof window.Audio !== 'undefined') {
+      this.data = new Audio();
+    } else {
+      this.data = document.createElement(type);
+    }
+
+    if (this.data === null) {
+      this.abort("Unsupported element: " + type);
+      return;
+    }
+
+    if (this.crossOrigin) {
+      this.data.crossOrigin = this.crossOrigin;
+    }
+
+    if (!this.metadata.skipSource) {
+      // support for CocoonJS Canvas+ runtime, lacks document.createElement('source')
+      if (navigator.isCocoonJS) {
+        this.data.src = Array.isArray(this.url) ? this.url[0] : this.url;
+      } else if (Array.isArray(this.url)) {
+        var mimeTypes = this.metadata.mimeType;
+
+        for (var i = 0; i < this.url.length; ++i) {
+          this.data.appendChild(this._createSource(type, this.url[i], Array.isArray(mimeTypes) ? mimeTypes[i] : mimeTypes));
+        }
+      } else {
+        var _mimeTypes = this.metadata.mimeType;
+        this.data.appendChild(this._createSource(type, this.url, Array.isArray(_mimeTypes) ? _mimeTypes[0] : _mimeTypes));
+      }
+    }
+
+    this.data.addEventListener('error', this._boundOnError, false);
+    this.data.addEventListener('load', this._boundComplete, false);
+    this.data.addEventListener('progress', this._boundOnProgress, false);
+    this.data.addEventListener('canplaythrough', this._boundComplete, false);
+    this.data.load();
+
+    if (this.timeout) {
+      this._elementTimer = setTimeout(this._boundOnTimeout, this.timeout);
+    }
+  }
+  /**
+   * Loads this resources using an XMLHttpRequest.
+   *
+   * @private
+   */
+  ;
+
+  _proto._loadXhr = function _loadXhr() {
+    // if unset, determine the value
+    if (typeof this.xhrType !== 'string') {
+      this.xhrType = this._determineXhrType();
+    }
+
+    var xhr = this.xhr = new XMLHttpRequest(); // set the request type and url
+
+    xhr.open('GET', this.url, true);
+    xhr.timeout = this.timeout; // load json as text and parse it ourselves. We do this because some browsers
+    // *cough* safari *cough* can't deal with it.
+
+    if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON || this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
+      xhr.responseType = Resource.XHR_RESPONSE_TYPE.TEXT;
+    } else {
+      xhr.responseType = this.xhrType;
+    }
+
+    xhr.addEventListener('error', this._boundXhrOnError, false);
+    xhr.addEventListener('timeout', this._boundXhrOnTimeout, false);
+    xhr.addEventListener('abort', this._boundXhrOnAbort, false);
+    xhr.addEventListener('progress', this._boundOnProgress, false);
+    xhr.addEventListener('load', this._boundXhrOnLoad, false);
+    xhr.send();
+  }
+  /**
+   * Loads this resources using an XDomainRequest. This is here because we need to support IE9 (gross).
+   *
+   * @private
+   */
+  ;
+
+  _proto._loadXdr = function _loadXdr() {
+    // if unset, determine the value
+    if (typeof this.xhrType !== 'string') {
+      this.xhrType = this._determineXhrType();
+    }
+
+    var xdr = this.xhr = new XDomainRequest(); // eslint-disable-line no-undef
+    // XDomainRequest has a few quirks. Occasionally it will abort requests
+    // A way to avoid this is to make sure ALL callbacks are set even if not used
+    // More info here: http://stackoverflow.com/questions/15786966/xdomainrequest-aborts-post-on-ie-9
+
+    xdr.timeout = this.timeout || 5000; // XDR needs a timeout value or it breaks in IE9
+
+    xdr.onerror = this._boundXhrOnError;
+    xdr.ontimeout = this._boundXhrOnTimeout;
+    xdr.onprogress = this._boundOnProgress;
+    xdr.onload = this._boundXhrOnLoad;
+    xdr.open('GET', this.url, true); // Note: The xdr.send() call is wrapped in a timeout to prevent an
+    // issue with the interface where some requests are lost if multiple
+    // XDomainRequests are being sent at the same time.
+    // Some info here: https://github.com/photonstorm/phaser/issues/1248
+
+    setTimeout(function () {
+      return xdr.send();
+    }, 1);
+  }
+  /**
+   * Creates a source used in loading via an element.
+   *
+   * @private
+   * @param {string} type - The element type (video or audio).
+   * @param {string} url - The source URL to load from.
+   * @param {string} [mime] - The mime type of the video
+   * @return {HTMLSourceElement} The source element.
+   */
+  ;
+
+  _proto._createSource = function _createSource(type, url, mime) {
+    if (!mime) {
+      mime = type + "/" + this._getExtension(url);
+    }
+
+    var source = document.createElement('source');
+    source.src = url;
+    source.type = mime;
+    return source;
+  }
+  /**
+   * Called if a load errors out.
+   *
+   * @param {Event} event - The error event from the element that emits it.
+   * @private
+   */
+  ;
+
+  _proto._onError = function _onError(event) {
+    this.abort("Failed to load element using: " + event.target.nodeName);
+  }
+  /**
+   * Called if a load progress event fires for an element or xhr/xdr.
+   *
+   * @private
+   * @param {XMLHttpRequestProgressEvent|Event} event - Progress event.
+   */
+  ;
+
+  _proto._onProgress = function _onProgress(event) {
+    if (event && event.lengthComputable) {
+      this.onProgress.dispatch(this, event.loaded / event.total);
+    }
+  }
+  /**
+   * Called if a timeout event fires for an element.
+   *
+   * @private
+   */
+  ;
+
+  _proto._onTimeout = function _onTimeout() {
+    this.abort("Load timed out.");
+  }
+  /**
+   * Called if an error event fires for xhr/xdr.
+   *
+   * @private
+   */
+  ;
+
+  _proto._xhrOnError = function _xhrOnError() {
+    var xhr = this.xhr;
+    this.abort(reqType(xhr) + " Request failed. Status: " + xhr.status + ", text: \"" + xhr.statusText + "\"");
+  }
+  /**
+   * Called if an error event fires for xhr/xdr.
+   *
+   * @private
+   */
+  ;
+
+  _proto._xhrOnTimeout = function _xhrOnTimeout() {
+    var xhr = this.xhr;
+    this.abort(reqType(xhr) + " Request timed out.");
+  }
+  /**
+   * Called if an abort event fires for xhr/xdr.
+   *
+   * @private
+   */
+  ;
+
+  _proto._xhrOnAbort = function _xhrOnAbort() {
+    var xhr = this.xhr;
+    this.abort(reqType(xhr) + " Request was aborted by the user.");
+  }
+  /**
+   * Called when data successfully loads from an xhr/xdr request.
+   *
+   * @private
+   * @param {XMLHttpRequestLoadEvent|Event} event - Load event
+   */
+  ;
+
+  _proto._xhrOnLoad = function _xhrOnLoad() {
+    var xhr = this.xhr;
+    var text = '';
+    var status = typeof xhr.status === 'undefined' ? STATUS_OK : xhr.status; // XDR has no `.status`, assume 200.
+    // responseText is accessible only if responseType is '' or 'text' and on older browsers
+
+    if (xhr.responseType === '' || xhr.responseType === 'text' || typeof xhr.responseType === 'undefined') {
+      text = xhr.responseText;
+    } // status can be 0 when using the `file://` protocol so we also check if a response is set.
+    // If it has a response, we assume 200; otherwise a 0 status code with no contents is an aborted request.
+
+
+    if (status === STATUS_NONE && (text.length > 0 || xhr.responseType === Resource.XHR_RESPONSE_TYPE.BUFFER)) {
+      status = STATUS_OK;
+    } // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+    else if (status === STATUS_IE_BUG_EMPTY) {
+        status = STATUS_EMPTY;
+      }
+
+    var statusType = status / 100 | 0;
+
+    if (statusType === STATUS_TYPE_OK) {
+      // if text, just return it
+      if (this.xhrType === Resource.XHR_RESPONSE_TYPE.TEXT) {
+        this.data = text;
+        this.type = Resource.TYPE.TEXT;
+      } // if json, parse into json object
+      else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.JSON) {
+          try {
+            this.data = JSON.parse(text);
+            this.type = Resource.TYPE.JSON;
+          } catch (e) {
+            this.abort("Error trying to parse loaded json: " + e);
+            return;
+          }
+        } // if xml, parse into an xml document or div element
+        else if (this.xhrType === Resource.XHR_RESPONSE_TYPE.DOCUMENT) {
+            try {
+              if (window.DOMParser) {
+                var domparser = new DOMParser();
+                this.data = domparser.parseFromString(text, 'text/xml');
+              } else {
+                var div = document.createElement('div');
+                div.innerHTML = text;
+                this.data = div;
+              }
+
+              this.type = Resource.TYPE.XML;
+            } catch (e) {
+              this.abort("Error trying to parse loaded xml: " + e);
+              return;
+            }
+          } // other types just return the response
+          else {
+              this.data = xhr.response || text;
+            }
+    } else {
+      this.abort("[" + xhr.status + "] " + xhr.statusText + ": " + xhr.responseURL);
+      return;
+    }
+
+    this.complete();
+  }
+  /**
+   * Sets the `crossOrigin` property for this resource based on if the url
+   * for this resource is cross-origin. If crossOrigin was manually set, this
+   * function does nothing.
+   *
+   * @private
+   * @param {string} url - The url to test.
+   * @param {object} [loc=window.location] - The location object to test against.
+   * @return {string} The crossOrigin value to use (or empty string for none).
+   */
+  ;
+
+  _proto._determineCrossOrigin = function _determineCrossOrigin(url, loc) {
+    // data: and javascript: urls are considered same-origin
+    if (url.indexOf('data:') === 0) {
+      return '';
+    } // A sandboxed iframe without the 'allow-same-origin' attribute will have a special
+    // origin designed not to match window.location.origin, and will always require
+    // crossOrigin requests regardless of whether the location matches.
+
+
+    if (window.origin !== window.location.origin) {
+      return 'anonymous';
+    } // default is window.location
+
+
+    loc = loc || window.location;
+
+    if (!tempAnchor) {
+      tempAnchor = document.createElement('a');
+    } // let the browser determine the full href for the url of this resource and then
+    // parse with the node url lib, we can't use the properties of the anchor element
+    // because they don't work in IE9 :(
+
+
+    tempAnchor.href = url;
+    url = parse_uri__WEBPACK_IMPORTED_MODULE_0___default()(tempAnchor.href, {
+      strictMode: true
+    });
+    var samePort = !url.port && loc.port === '' || url.port === loc.port;
+    var protocol = url.protocol ? url.protocol + ":" : ''; // if cross origin
+
+    if (url.host !== loc.hostname || !samePort || protocol !== loc.protocol) {
+      return 'anonymous';
+    }
+
+    return '';
+  }
+  /**
+   * Determines the responseType of an XHR request based on the extension of the
+   * resource being loaded.
+   *
+   * @private
+   * @return {Resource.XHR_RESPONSE_TYPE} The responseType to use.
+   */
+  ;
+
+  _proto._determineXhrType = function _determineXhrType() {
+    return Resource._xhrTypeMap[this.extension] || Resource.XHR_RESPONSE_TYPE.TEXT;
+  }
+  /**
+   * Determines the loadType of a resource based on the extension of the
+   * resource being loaded.
+   *
+   * @private
+   * @return {Resource.LOAD_TYPE} The loadType to use.
+   */
+  ;
+
+  _proto._determineLoadType = function _determineLoadType() {
+    return Resource._loadTypeMap[this.extension] || Resource.LOAD_TYPE.XHR;
+  }
+  /**
+   * Extracts the extension (sans '.') of the file being loaded by the resource.
+   *
+   * @private
+   * @return {string} The extension.
+   */
+  ;
+
+  _proto._getExtension = function _getExtension() {
+    var url = this.url;
+    var ext = '';
+
+    if (this.isDataUrl) {
+      var slashIndex = url.indexOf('/');
+      ext = url.substring(slashIndex + 1, url.indexOf(';', slashIndex));
+    } else {
+      var queryStart = url.indexOf('?');
+      var hashStart = url.indexOf('#');
+      var index = Math.min(queryStart > -1 ? queryStart : url.length, hashStart > -1 ? hashStart : url.length);
+      url = url.substring(0, index);
+      ext = url.substring(url.lastIndexOf('.') + 1);
+    }
+
+    return ext.toLowerCase();
+  }
+  /**
+   * Determines the mime type of an XHR request based on the responseType of
+   * resource being loaded.
+   *
+   * @private
+   * @param {Resource.XHR_RESPONSE_TYPE} type - The type to get a mime type for.
+   * @return {string} The mime type to use.
+   */
+  ;
+
+  _proto._getMimeFromXhrType = function _getMimeFromXhrType(type) {
+    switch (type) {
+      case Resource.XHR_RESPONSE_TYPE.BUFFER:
+        return 'application/octet-binary';
+
+      case Resource.XHR_RESPONSE_TYPE.BLOB:
+        return 'application/blob';
+
+      case Resource.XHR_RESPONSE_TYPE.DOCUMENT:
+        return 'application/xml';
+
+      case Resource.XHR_RESPONSE_TYPE.JSON:
+        return 'application/json';
+
+      case Resource.XHR_RESPONSE_TYPE.DEFAULT:
+      case Resource.XHR_RESPONSE_TYPE.TEXT:
+      /* falls through */
+
+      default:
+        return 'text/plain';
+    }
+  };
+
+  _createClass(Resource, [{
+    key: "isDataUrl",
+    get: function get() {
+      return this._hasFlag(Resource.STATUS_FLAGS.DATA_URL);
+    }
+    /**
+     * Describes if this resource has finished loading. Is true when the resource has completely
+     * loaded.
+     *
+     * @readonly
+     * @member {boolean}
+     */
+
+  }, {
+    key: "isComplete",
+    get: function get() {
+      return this._hasFlag(Resource.STATUS_FLAGS.COMPLETE);
+    }
+    /**
+     * Describes if this resource is currently loading. Is true when the resource starts loading,
+     * and is false again when complete.
+     *
+     * @readonly
+     * @member {boolean}
+     */
+
+  }, {
+    key: "isLoading",
+    get: function get() {
+      return this._hasFlag(Resource.STATUS_FLAGS.LOADING);
+    }
+  }]);
+
+  return Resource;
+}();
+/**
+ * The types of resources a resource could represent.
+ *
+ * @static
+ * @readonly
+ * @enum {number}
+ */
+
+
+Resource.STATUS_FLAGS = {
+  NONE: 0,
+  DATA_URL: 1 << 0,
+  COMPLETE: 1 << 1,
+  LOADING: 1 << 2
+};
+/**
+ * The types of resources a resource could represent.
+ *
+ * @static
+ * @readonly
+ * @enum {number}
+ */
+
+Resource.TYPE = {
+  UNKNOWN: 0,
+  JSON: 1,
+  XML: 2,
+  IMAGE: 3,
+  AUDIO: 4,
+  VIDEO: 5,
+  TEXT: 6
+};
+/**
+ * The types of loading a resource can use.
+ *
+ * @static
+ * @readonly
+ * @enum {number}
+ */
+
+Resource.LOAD_TYPE = {
+  /** Uses XMLHttpRequest to load the resource. */
+  XHR: 1,
+
+  /** Uses an `Image` object to load the resource. */
+  IMAGE: 2,
+
+  /** Uses an `Audio` object to load the resource. */
+  AUDIO: 3,
+
+  /** Uses a `Video` object to load the resource. */
+  VIDEO: 4
+};
+/**
+ * The XHR ready states, used internally.
+ *
+ * @static
+ * @readonly
+ * @enum {string}
+ */
+
+Resource.XHR_RESPONSE_TYPE = {
+  /** string */
+  DEFAULT: 'text',
+
+  /** ArrayBuffer */
+  BUFFER: 'arraybuffer',
+
+  /** Blob */
+  BLOB: 'blob',
+
+  /** Document */
+  DOCUMENT: 'document',
+
+  /** Object */
+  JSON: 'json',
+
+  /** String */
+  TEXT: 'text'
+};
+Resource._loadTypeMap = {
+  // images
+  gif: Resource.LOAD_TYPE.IMAGE,
+  png: Resource.LOAD_TYPE.IMAGE,
+  bmp: Resource.LOAD_TYPE.IMAGE,
+  jpg: Resource.LOAD_TYPE.IMAGE,
+  jpeg: Resource.LOAD_TYPE.IMAGE,
+  tif: Resource.LOAD_TYPE.IMAGE,
+  tiff: Resource.LOAD_TYPE.IMAGE,
+  webp: Resource.LOAD_TYPE.IMAGE,
+  tga: Resource.LOAD_TYPE.IMAGE,
+  svg: Resource.LOAD_TYPE.IMAGE,
+  'svg+xml': Resource.LOAD_TYPE.IMAGE,
+  // for SVG data urls
+  // audio
+  mp3: Resource.LOAD_TYPE.AUDIO,
+  ogg: Resource.LOAD_TYPE.AUDIO,
+  wav: Resource.LOAD_TYPE.AUDIO,
+  // videos
+  mp4: Resource.LOAD_TYPE.VIDEO,
+  webm: Resource.LOAD_TYPE.VIDEO
+};
+Resource._xhrTypeMap = {
+  // xml
+  xhtml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  html: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  htm: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  xml: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  tmx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  svg: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  // This was added to handle Tiled Tileset XML, but .tsx is also a TypeScript React Component.
+  // Since it is way less likely for people to be loading TypeScript files instead of Tiled files,
+  // this should probably be fine.
+  tsx: Resource.XHR_RESPONSE_TYPE.DOCUMENT,
+  // images
+  gif: Resource.XHR_RESPONSE_TYPE.BLOB,
+  png: Resource.XHR_RESPONSE_TYPE.BLOB,
+  bmp: Resource.XHR_RESPONSE_TYPE.BLOB,
+  jpg: Resource.XHR_RESPONSE_TYPE.BLOB,
+  jpeg: Resource.XHR_RESPONSE_TYPE.BLOB,
+  tif: Resource.XHR_RESPONSE_TYPE.BLOB,
+  tiff: Resource.XHR_RESPONSE_TYPE.BLOB,
+  webp: Resource.XHR_RESPONSE_TYPE.BLOB,
+  tga: Resource.XHR_RESPONSE_TYPE.BLOB,
+  // json
+  json: Resource.XHR_RESPONSE_TYPE.JSON,
+  // text
+  text: Resource.XHR_RESPONSE_TYPE.TEXT,
+  txt: Resource.XHR_RESPONSE_TYPE.TEXT,
+  // fonts
+  ttf: Resource.XHR_RESPONSE_TYPE.BUFFER,
+  otf: Resource.XHR_RESPONSE_TYPE.BUFFER
+}; // We can't set the `src` attribute to empty string, so on abort we set it to this 1px transparent gif
+
+Resource.EMPTY_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+/**
+ * Quick helper to set a value on one of the extension maps. Ensures there is no
+ * dot at the start of the extension.
+ *
+ * @ignore
+ * @param {object} map - The map to set on.
+ * @param {string} extname - The extension (or key) to set.
+ * @param {number} val - The value to set.
+ */
+
+function setExtMap(map, extname, val) {
+  if (extname && extname.indexOf('.') === 0) {
+    extname = extname.substring(1);
+  }
+
+  if (!extname) {
+    return;
+  }
+
+  map[extname] = val;
+}
+/**
+ * Quick helper to get string xhr type.
+ *
+ * @ignore
+ * @param {XMLHttpRequest|XDomainRequest} xhr - The request to check.
+ * @return {string} The type.
+ */
+
+
+function reqType(xhr) {
+  return xhr.toString().replace('object ', '');
+}
+
 var _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
 /**
  * Encodes binary into base64.
  *
+ * @function encodeBinary
  * @param {string} input The input data to encode.
  * @returns {string} The encoded base64 string
  */
+
 function encodeBinary(input) {
-    var output = '';
-    var inx = 0;
+  var output = '';
+  var inx = 0;
 
-    while (inx < input.length) {
-        // Fill byte buffer array
-        var bytebuffer = [0, 0, 0];
-        var encodedCharIndexes = [0, 0, 0, 0];
+  while (inx < input.length) {
+    // Fill byte buffer array
+    var bytebuffer = [0, 0, 0];
+    var encodedCharIndexes = [0, 0, 0, 0];
 
-        for (var jnx = 0; jnx < bytebuffer.length; ++jnx) {
-            if (inx < input.length) {
-                // throw away high-order byte, as documented at:
-                // https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data
-                bytebuffer[jnx] = input.charCodeAt(inx++) & 0xff;
-            } else {
-                bytebuffer[jnx] = 0;
-            }
-        }
+    for (var jnx = 0; jnx < bytebuffer.length; ++jnx) {
+      if (inx < input.length) {
+        // throw away high-order byte, as documented at:
+        // https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data
+        bytebuffer[jnx] = input.charCodeAt(inx++) & 0xff;
+      } else {
+        bytebuffer[jnx] = 0;
+      }
+    } // Get each encoded character, 6 bits at a time
+    // index 1: first 6 bits
 
-        // Get each encoded character, 6 bits at a time
-        // index 1: first 6 bits
-        encodedCharIndexes[0] = bytebuffer[0] >> 2;
 
-        // index 2: second 6 bits (2 least significant bits from input byte 1 + 4 most significant bits from byte 2)
-        encodedCharIndexes[1] = (bytebuffer[0] & 0x3) << 4 | bytebuffer[1] >> 4;
+    encodedCharIndexes[0] = bytebuffer[0] >> 2; // index 2: second 6 bits (2 least significant bits from input byte 1 + 4 most significant bits from byte 2)
 
-        // index 3: third 6 bits (4 least significant bits from input byte 2 + 2 most significant bits from byte 3)
-        encodedCharIndexes[2] = (bytebuffer[1] & 0x0f) << 2 | bytebuffer[2] >> 6;
+    encodedCharIndexes[1] = (bytebuffer[0] & 0x3) << 4 | bytebuffer[1] >> 4; // index 3: third 6 bits (4 least significant bits from input byte 2 + 2 most significant bits from byte 3)
 
-        // index 3: forth 6 bits (6 least significant bits from input byte 3)
-        encodedCharIndexes[3] = bytebuffer[2] & 0x3f;
+    encodedCharIndexes[2] = (bytebuffer[1] & 0x0f) << 2 | bytebuffer[2] >> 6; // index 3: forth 6 bits (6 least significant bits from input byte 3)
 
-        // Determine whether padding happened, and adjust accordingly
-        var paddingBytes = inx - (input.length - 1);
+    encodedCharIndexes[3] = bytebuffer[2] & 0x3f; // Determine whether padding happened, and adjust accordingly
 
-        switch (paddingBytes) {
-            case 2:
-                // Set last 2 characters to padding char
-                encodedCharIndexes[3] = 64;
-                encodedCharIndexes[2] = 64;
-                break;
+    var paddingBytes = inx - (input.length - 1);
 
-            case 1:
-                // Set last character to padding char
-                encodedCharIndexes[3] = 64;
-                break;
+    switch (paddingBytes) {
+      case 2:
+        // Set last 2 characters to padding char
+        encodedCharIndexes[3] = 64;
+        encodedCharIndexes[2] = 64;
+        break;
 
-            default:
-                break; // No padding - proceed
-        }
+      case 1:
+        // Set last character to padding char
+        encodedCharIndexes[3] = 64;
+        break;
 
-        // Now we will grab each appropriate character out of our keystring
-        // based on our index array and append it to the output string
-        for (var _jnx = 0; _jnx < encodedCharIndexes.length; ++_jnx) {
-            output += _keyStr.charAt(encodedCharIndexes[_jnx]);
-        }
+      default:
+        break;
+      // No padding - proceed
+    } // Now we will grab each appropriate character out of our keystring
+    // based on our index array and append it to the output string
+
+
+    for (var _jnx = 0; _jnx < encodedCharIndexes.length; ++_jnx) {
+      output += _keyStr.charAt(encodedCharIndexes[_jnx]);
+    }
+  }
+
+  return output;
+}
+
+var Url = window.URL || window.webkitURL;
+/**
+ * A middleware for transforming XHR loaded Blobs into more useful objects
+ *
+ * @memberof middleware
+ * @function parsing
+ * @example
+ * import { Loader, middleware } from 'resource-loader';
+ * const loader = new Loader();
+ * loader.use(middleware.parsing);
+ * @param {Resource} resource - Current Resource
+ * @param {function} next - Callback when complete
+ */
+
+function parsing(resource, next) {
+  if (!resource.data) {
+    next();
+    return;
+  } // if this was an XHR load of a blob
+
+
+  if (resource.xhr && resource.xhrType === Resource.XHR_RESPONSE_TYPE.BLOB) {
+    // if there is no blob support we probably got a binary string back
+    if (!window.Blob || typeof resource.data === 'string') {
+      var type = resource.xhr.getResponseHeader('content-type'); // this is an image, convert the binary string into a data url
+
+      if (type && type.indexOf('image') === 0) {
+        resource.data = new Image();
+        resource.data.src = "data:" + type + ";base64," + encodeBinary(resource.xhr.responseText);
+        resource.type = Resource.TYPE.IMAGE; // wait until the image loads and then callback
+
+        resource.data.onload = function () {
+          resource.data.onload = null;
+          next();
+        }; // next will be called on load
+
+
+        return;
+      }
+    } // if content type says this is an image, then we should transform the blob into an Image object
+    else if (resource.data.type.indexOf('image') === 0) {
+        var src = Url.createObjectURL(resource.data);
+        resource.blob = resource.data;
+        resource.data = new Image();
+        resource.data.src = src;
+        resource.type = Resource.TYPE.IMAGE; // cleanup the no longer used blob after the image loads
+        // TODO: Is this correct? Will the image be invalid after revoking?
+
+        resource.data.onload = function () {
+          Url.revokeObjectURL(src);
+          resource.data.onload = null;
+          next();
+        }; // next will be called on load.
+
+
+        return;
+      }
+  }
+
+  next();
+}
+
+/**
+ * @namespace middleware
+ */
+
+var index = ({
+    caching: caching,
+    parsing: parsing
+});
+
+var MAX_PROGRESS = 100;
+var rgxExtractUrlHash = /(#[\w-]+)?$/;
+/**
+ * Manages the state and loading of multiple resources to load.
+ *
+ * @class
+ */
+
+var Loader =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {string} [baseUrl=''] - The base url for all resources loaded by this loader.
+   * @param {number} [concurrency=10] - The number of resources to load concurrently.
+   */
+  function Loader(baseUrl, concurrency) {
+    var _this = this;
+
+    if (baseUrl === void 0) {
+      baseUrl = '';
     }
 
-    return output;
-}
+    if (concurrency === void 0) {
+      concurrency = 10;
+    }
 
-// Backwards compat
-if (true) {
-    module.exports.default = encodeBinary; // eslint-disable-line no-undef
-}
-//# sourceMappingURL=b64.js.map
+    /**
+     * The base url for all resources loaded by this loader.
+     *
+     * @member {string}
+     */
+    this.baseUrl = baseUrl;
+    /**
+     * The progress percent of the loader going through the queue.
+     *
+     * @member {number}
+     * @default 0
+     */
 
-/***/ }),
+    this.progress = 0;
+    /**
+     * Loading state of the loader, true if it is currently loading resources.
+     *
+     * @member {boolean}
+     * @default false
+     */
 
-/***/ "./node_modules/resource-loader/lib/index.js":
-/*!***************************************************!*\
-  !*** ./node_modules/resource-loader/lib/index.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+    this.loading = false;
+    /**
+     * A querystring to append to every URL added to the loader.
+     *
+     * This should be a valid query string *without* the question-mark (`?`). The loader will
+     * also *not* escape values for you. Make sure to escape your parameters with
+     * [`encodeURIComponent`](https://mdn.io/encodeURIComponent) before assigning this property.
+     *
+     * @example
+     * const loader = new Loader();
+     *
+     * loader.defaultQueryString = 'user=me&password=secret';
+     *
+     * // This will request 'image.png?user=me&password=secret'
+     * loader.add('image.png').load();
+     *
+     * loader.reset();
+     *
+     * // This will request 'image.png?v=1&user=me&password=secret'
+     * loader.add('iamge.png?v=1').load();
+     *
+     * @member {string}
+     * @default ''
+     */
 
-"use strict";
+    this.defaultQueryString = '';
+    /**
+     * The middleware to run before loading each resource.
+     *
+     * @private
+     * @member {function[]}
+     */
+
+    this._beforeMiddleware = [];
+    /**
+     * The middleware to run after loading each resource.
+     *
+     * @private
+     * @member {function[]}
+     */
+
+    this._afterMiddleware = [];
+    /**
+     * The tracks the resources we are currently completing parsing for.
+     *
+     * @private
+     * @member {Resource[]}
+     */
+
+    this._resourcesParsing = [];
+    /**
+     * The `_loadResource` function bound with this object context.
+     *
+     * @private
+     * @member {function}
+     * @param {Resource} r - The resource to load
+     * @param {Function} d - The dequeue function
+     * @return {undefined}
+     */
+
+    this._boundLoadResource = function (r, d) {
+      return _this._loadResource(r, d);
+    };
+    /**
+     * The resources waiting to be loaded.
+     *
+     * @private
+     * @member {Resource[]}
+     */
 
 
-// import Loader from './Loader';
-// import Resource from './Resource';
-// import * as async from './async';
-// import * as b64 from './b64';
+    this._queue = queue(this._boundLoadResource, concurrency);
 
-/* eslint-disable no-undef */
+    this._queue.pause();
+    /**
+     * All the resources for this loader keyed by name.
+     *
+     * @member {object<string, Resource>}
+     */
 
-var Loader = __webpack_require__(/*! ./Loader */ "./node_modules/resource-loader/lib/Loader.js").Loader;
-var Resource = __webpack_require__(/*! ./Resource */ "./node_modules/resource-loader/lib/Resource.js").Resource;
-var async = __webpack_require__(/*! ./async */ "./node_modules/resource-loader/lib/async.js");
-var b64 = __webpack_require__(/*! ./b64 */ "./node_modules/resource-loader/lib/b64.js");
 
+    this.resources = {};
+    /**
+     * Dispatched once per loaded or errored resource.
+     *
+     * The callback looks like {@link Loader.OnProgressSignal}.
+     *
+     * @member {Signal<Loader.OnProgressSignal>}
+     */
+
+    this.onProgress = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched once per errored resource.
+     *
+     * The callback looks like {@link Loader.OnErrorSignal}.
+     *
+     * @member {Signal<Loader.OnErrorSignal>}
+     */
+
+    this.onError = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched once per loaded resource.
+     *
+     * The callback looks like {@link Loader.OnLoadSignal}.
+     *
+     * @member {Signal<Loader.OnLoadSignal>}
+     */
+
+    this.onLoad = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched when the loader begins to process the queue.
+     *
+     * The callback looks like {@link Loader.OnStartSignal}.
+     *
+     * @member {Signal<Loader.OnStartSignal>}
+     */
+
+    this.onStart = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a();
+    /**
+     * Dispatched when the queued resources all load.
+     *
+     * The callback looks like {@link Loader.OnCompleteSignal}.
+     *
+     * @member {Signal<Loader.OnCompleteSignal>}
+     */
+
+    this.onComplete = new mini_signals__WEBPACK_IMPORTED_MODULE_1___default.a(); // Add default before middleware
+
+    for (var i = 0; i < Loader._defaultBeforeMiddleware.length; ++i) {
+      this.pre(Loader._defaultBeforeMiddleware[i]);
+    } // Add default after middleware
+
+
+    for (var _i = 0; _i < Loader._defaultAfterMiddleware.length; ++_i) {
+      this.use(Loader._defaultAfterMiddleware[_i]);
+    }
+  }
+  /**
+   * When the progress changes the loader and resource are disaptched.
+   *
+   * @memberof Loader
+   * @callback OnProgressSignal
+   * @param {Loader} loader - The loader the progress is advancing on.
+   * @param {Resource} resource - The resource that has completed or failed to cause the progress to advance.
+   */
+
+  /**
+   * When an error occurrs the loader and resource are disaptched.
+   *
+   * @memberof Loader
+   * @callback OnErrorSignal
+   * @param {Loader} loader - The loader the error happened in.
+   * @param {Resource} resource - The resource that caused the error.
+   */
+
+  /**
+   * When a load completes the loader and resource are disaptched.
+   *
+   * @memberof Loader
+   * @callback OnLoadSignal
+   * @param {Loader} loader - The loader that laoded the resource.
+   * @param {Resource} resource - The resource that has completed loading.
+   */
+
+  /**
+   * When the loader starts loading resources it dispatches this callback.
+   *
+   * @memberof Loader
+   * @callback OnStartSignal
+   * @param {Loader} loader - The loader that has started loading resources.
+   */
+
+  /**
+   * When the loader completes loading resources it dispatches this callback.
+   *
+   * @memberof Loader
+   * @callback OnCompleteSignal
+   * @param {Loader} loader - The loader that has finished loading resources.
+   */
+
+  /**
+   * Options for a call to `.add()`.
+   *
+   * @see Loader#add
+   *
+   * @typedef {object} IAddOptions
+   * @property {string} [name] - The name of the resource to load, if not passed the url is used.
+   * @property {string} [key] - Alias for `name`.
+   * @property {string} [url] - The url for this resource, relative to the baseUrl of this loader.
+   * @property {string|boolean} [crossOrigin] - Is this request cross-origin? Default is to
+   *      determine automatically.
+   * @property {number} [timeout=0] - A timeout in milliseconds for the load. If the load takes
+   *      longer than this time it is cancelled and the load is considered a failure. If this value is
+   *      set to `0` then there is no explicit timeout.
+   * @property {Resource.LOAD_TYPE} [loadType=Resource.LOAD_TYPE.XHR] - How should this resource
+   *      be loaded?
+   * @property {Resource.XHR_RESPONSE_TYPE} [xhrType=Resource.XHR_RESPONSE_TYPE.DEFAULT] - How
+   *      should the data being loaded be interpreted when using XHR?
+   * @property {Resource.OnCompleteSignal} [onComplete] - Callback to add an an onComplete signal istener.
+   * @property {Resource.OnCompleteSignal} [callback] - Alias for `onComplete`.
+   * @property {Resource.IMetadata} [metadata] - Extra configuration for middleware and the Resource object.
+   */
+
+  /* eslint-disable require-jsdoc,valid-jsdoc */
+
+  /**
+   * Adds a resource (or multiple resources) to the loader queue.
+   *
+   * This function can take a wide variety of different parameters. The only thing that is always
+   * required the url to load. All the following will work:
+   *
+   * ```js
+   * loader
+   *     // normal param syntax
+   *     .add('key', 'http://...', function () {})
+   *     .add('http://...', function () {})
+   *     .add('http://...')
+   *
+   *     // object syntax
+   *     .add({
+   *         name: 'key2',
+   *         url: 'http://...'
+   *     }, function () {})
+   *     .add({
+   *         url: 'http://...'
+   *     }, function () {})
+   *     .add({
+   *         name: 'key3',
+   *         url: 'http://...'
+   *         onComplete: function () {}
+   *     })
+   *     .add({
+   *         url: 'https://...',
+   *         onComplete: function () {},
+   *         crossOrigin: true
+   *     })
+   *
+   *     // you can also pass an array of objects or urls or both
+   *     .add([
+   *         { name: 'key4', url: 'http://...', onComplete: function () {} },
+   *         { url: 'http://...', onComplete: function () {} },
+   *         'http://...'
+   *     ])
+   *
+   *     // and you can use both params and options
+   *     .add('key', 'http://...', { crossOrigin: true }, function () {})
+   *     .add('http://...', { crossOrigin: true }, function () {});
+   * ```
+   *
+   * @function
+   * @variation 1
+   * @param {string} name - The name of the resource to load.
+   * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
+   * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+   * @return {this} Returns itself.
+   */
+
+  /**
+  * @function
+  * @variation 2
+  * @param {string} name - The name of the resource to load.
+  * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
+  * @param {IAddOptions} [options] - The options for the load.
+  * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+  * @return {this} Returns itself.
+  */
+
+  /**
+  * @function
+  * @variation 3
+  * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
+  * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+  * @return {this} Returns itself.
+  */
+
+  /**
+  * @function
+  * @variation 4
+  * @param {string} url - The url for this resource, relative to the baseUrl of this loader.
+  * @param {IAddOptions} [options] - The options for the load.
+  * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+  * @return {this} Returns itself.
+  */
+
+  /**
+  * @function
+  * @variation 5
+  * @param {IAddOptions} options - The options for the load. This object must contain a `url` property.
+  * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+  * @return {this} Returns itself.
+  */
+
+  /**
+  * @function
+  * @variation 6
+  * @param {Array<IAddOptions|string>} resources - An array of resources to load, where each is
+  *      either an object with the options or a string url. If you pass an object, it must contain a `url` property.
+  * @param {Resource.OnCompleteSignal} [callback] - Function to call when this specific resource completes loading.
+  * @return {this} Returns itself.
+  */
+
+
+  var _proto = Loader.prototype;
+
+  _proto.add = function add(name, url, options, cb) {
+    // special case of an array of objects or urls
+    if (Array.isArray(name)) {
+      for (var i = 0; i < name.length; ++i) {
+        this.add(name[i]);
+      }
+
+      return this;
+    } // if an object is passed instead of params
+
+
+    if (typeof name === 'object') {
+      cb = url || name.callback || name.onComplete;
+      options = name;
+      url = name.url;
+      name = name.name || name.key || name.url;
+    } // case where no name is passed shift all args over by one.
+
+
+    if (typeof url !== 'string') {
+      cb = options;
+      options = url;
+      url = name;
+    } // now that we shifted make sure we have a proper url.
+
+
+    if (typeof url !== 'string') {
+      throw new Error('No url passed to add resource to loader.');
+    } // options are optional so people might pass a function and no options
+
+
+    if (typeof options === 'function') {
+      cb = options;
+      options = null;
+    } // if loading already you can only add resources that have a parent.
+
+
+    if (this.loading && (!options || !options.parentResource)) {
+      throw new Error('Cannot add resources while the loader is running.');
+    } // check if resource already exists.
+
+
+    if (this.resources[name]) {
+      throw new Error("Resource named \"" + name + "\" already exists.");
+    } // add base url if this isn't an absolute url
+
+
+    url = this._prepareUrl(url); // create the store the resource
+
+    this.resources[name] = new Resource(name, url, options);
+
+    if (typeof cb === 'function') {
+      this.resources[name].onAfterMiddleware.once(cb);
+    } // if actively loading, make sure to adjust progress chunks for that parent and its children
+
+
+    if (this.loading) {
+      var parent = options.parentResource;
+      var incompleteChildren = [];
+
+      for (var _i2 = 0; _i2 < parent.children.length; ++_i2) {
+        if (!parent.children[_i2].isComplete) {
+          incompleteChildren.push(parent.children[_i2]);
+        }
+      }
+
+      var fullChunk = parent.progressChunk * (incompleteChildren.length + 1); // +1 for parent
+
+      var eachChunk = fullChunk / (incompleteChildren.length + 2); // +2 for parent & new child
+
+      parent.children.push(this.resources[name]);
+      parent.progressChunk = eachChunk;
+
+      for (var _i3 = 0; _i3 < incompleteChildren.length; ++_i3) {
+        incompleteChildren[_i3].progressChunk = eachChunk;
+      }
+
+      this.resources[name].progressChunk = eachChunk;
+    } // add the resource to the queue
+
+
+    this._queue.push(this.resources[name]);
+
+    return this;
+  }
+  /* eslint-enable require-jsdoc,valid-jsdoc */
+
+  /**
+   * Sets up a middleware function that will run *before* the
+   * resource is loaded.
+   *
+   * @param {function} fn - The middleware function to register.
+   * @return {this} Returns itself.
+   */
+  ;
+
+  _proto.pre = function pre(fn) {
+    this._beforeMiddleware.push(fn);
+
+    return this;
+  }
+  /**
+   * Sets up a middleware function that will run *after* the
+   * resource is loaded.
+   *
+   * @param {function} fn - The middleware function to register.
+   * @return {this} Returns itself.
+   */
+  ;
+
+  _proto.use = function use(fn) {
+    this._afterMiddleware.push(fn);
+
+    return this;
+  }
+  /**
+   * Resets the queue of the loader to prepare for a new load.
+   *
+   * @return {this} Returns itself.
+   */
+  ;
+
+  _proto.reset = function reset() {
+    this.progress = 0;
+    this.loading = false;
+
+    this._queue.kill();
+
+    this._queue.pause(); // abort all resource loads
+
+
+    for (var k in this.resources) {
+      var res = this.resources[k];
+
+      if (res._onLoadBinding) {
+        res._onLoadBinding.detach();
+      }
+
+      if (res.isLoading) {
+        res.abort();
+      }
+    }
+
+    this.resources = {};
+    return this;
+  }
+  /**
+   * Starts loading the queued resources.
+   *
+   * @param {function} [cb] - Optional callback that will be bound to the `complete` event.
+   * @return {this} Returns itself.
+   */
+  ;
+
+  _proto.load = function load(cb) {
+    // register complete callback if they pass one
+    if (typeof cb === 'function') {
+      this.onComplete.once(cb);
+    } // if the queue has already started we are done here
+
+
+    if (this.loading) {
+      return this;
+    }
+
+    if (this._queue.idle()) {
+      this._onStart();
+
+      this._onComplete();
+    } else {
+      // distribute progress chunks
+      var numTasks = this._queue._tasks.length;
+      var chunk = MAX_PROGRESS / numTasks;
+
+      for (var i = 0; i < this._queue._tasks.length; ++i) {
+        this._queue._tasks[i].data.progressChunk = chunk;
+      } // notify we are starting
+
+
+      this._onStart(); // start loading
+
+
+      this._queue.resume();
+    }
+
+    return this;
+  }
+  /**
+   * The number of resources to load concurrently.
+   *
+   * @member {number}
+   * @default 10
+   */
+  ;
+
+  /**
+   * Prepares a url for usage based on the configuration of this object
+   *
+   * @private
+   * @param {string} url - The url to prepare.
+   * @return {string} The prepared url.
+   */
+  _proto._prepareUrl = function _prepareUrl(url) {
+    var parsedUrl = parse_uri__WEBPACK_IMPORTED_MODULE_0___default()(url, {
+      strictMode: true
+    });
+    var result; // absolute url, just use it as is.
+
+    if (parsedUrl.protocol || !parsedUrl.path || url.indexOf('//') === 0) {
+      result = url;
+    } // if baseUrl doesn't end in slash and url doesn't start with slash, then add a slash inbetween
+    else if (this.baseUrl.length && this.baseUrl.lastIndexOf('/') !== this.baseUrl.length - 1 && url.charAt(0) !== '/') {
+        result = this.baseUrl + "/" + url;
+      } else {
+        result = this.baseUrl + url;
+      } // if we need to add a default querystring, there is a bit more work
+
+
+    if (this.defaultQueryString) {
+      var hash = rgxExtractUrlHash.exec(result)[0];
+      result = result.substr(0, result.length - hash.length);
+
+      if (result.indexOf('?') !== -1) {
+        result += "&" + this.defaultQueryString;
+      } else {
+        result += "?" + this.defaultQueryString;
+      }
+
+      result += hash;
+    }
+
+    return result;
+  }
+  /**
+   * Loads a single resource.
+   *
+   * @private
+   * @param {Resource} resource - The resource to load.
+   * @param {function} dequeue - The function to call when we need to dequeue this item.
+   */
+  ;
+
+  _proto._loadResource = function _loadResource(resource, dequeue) {
+    var _this2 = this;
+
+    resource._dequeue = dequeue; // run before middleware
+
+    eachSeries(this._beforeMiddleware, function (fn, next) {
+      fn.call(_this2, resource, function () {
+        // if the before middleware marks the resource as complete,
+        // break and don't process any more before middleware
+        next(resource.isComplete ? {} : null);
+      });
+    }, function () {
+      if (resource.isComplete) {
+        _this2._onLoad(resource);
+      } else {
+        resource._onLoadBinding = resource.onComplete.once(_this2._onLoad, _this2);
+        resource.load();
+      }
+    }, true);
+  }
+  /**
+   * Called once loading has started.
+   *
+   * @private
+   */
+  ;
+
+  _proto._onStart = function _onStart() {
+    this.progress = 0;
+    this.loading = true;
+    this.onStart.dispatch(this);
+  }
+  /**
+   * Called once each resource has loaded.
+   *
+   * @private
+   */
+  ;
+
+  _proto._onComplete = function _onComplete() {
+    this.progress = MAX_PROGRESS;
+    this.loading = false;
+    this.onComplete.dispatch(this, this.resources);
+  }
+  /**
+   * Called each time a resources is loaded.
+   *
+   * @private
+   * @param {Resource} resource - The resource that was loaded
+   */
+  ;
+
+  _proto._onLoad = function _onLoad(resource) {
+    var _this3 = this;
+
+    resource._onLoadBinding = null; // remove this resource from the async queue, and add it to our list of resources that are being parsed
+
+    this._resourcesParsing.push(resource);
+
+    resource._dequeue(); // run all the after middleware for this resource
+
+
+    eachSeries(this._afterMiddleware, function (fn, next) {
+      fn.call(_this3, resource, next);
+    }, function () {
+      resource.onAfterMiddleware.dispatch(resource);
+      _this3.progress = Math.min(MAX_PROGRESS, _this3.progress + resource.progressChunk);
+
+      _this3.onProgress.dispatch(_this3, resource);
+
+      if (resource.error) {
+        _this3.onError.dispatch(resource.error, _this3, resource);
+      } else {
+        _this3.onLoad.dispatch(_this3, resource);
+      }
+
+      _this3._resourcesParsing.splice(_this3._resourcesParsing.indexOf(resource), 1); // do completion check
+
+
+      if (_this3._queue.idle() && _this3._resourcesParsing.length === 0) {
+        _this3._onComplete();
+      }
+    }, true);
+  };
+
+  _createClass(Loader, [{
+    key: "concurrency",
+    get: function get() {
+      return this._queue.concurrency;
+    } // eslint-disable-next-line require-jsdoc
+    ,
+    set: function set(concurrency) {
+      this._queue.concurrency = concurrency;
+    }
+  }]);
+
+  return Loader;
+}();
 /**
+ * A default array of middleware to run before loading each resource.
+ * Each of these middlewares are added to any new Loader instances when they are created.
+ *
+ * @private
+ * @member {function[]}
+ */
+
+
+Loader._defaultBeforeMiddleware = [];
+/**
+ * A default array of middleware to run after loading each resource.
+ * Each of these middlewares are added to any new Loader instances when they are created.
+ *
+ * @private
+ * @member {function[]}
+ */
+
+Loader._defaultAfterMiddleware = [];
+/**
+ * Sets up a middleware function that will run *before* the
+ * resource is loaded.
  *
  * @static
- * @memberof Loader
- * @member {Class<Resource>}
+ * @param {function} fn - The middleware function to register.
+ * @return {Loader} Returns itself.
  */
-Loader.Resource = Resource;
 
+Loader.pre = function LoaderPreStatic(fn) {
+  Loader._defaultBeforeMiddleware.push(fn);
+
+  return Loader;
+};
 /**
+ * Sets up a middleware function that will run *after* the
+ * resource is loaded.
  *
  * @static
- * @memberof Loader
- * @member {Class<async>}
+ * @param {function} fn - The middleware function to register.
+ * @return {Loader} Returns itself.
  */
-Loader.async = async;
 
-/**
- *
- * @static
- * @memberof Loader
- * @member {Class<encodeBinary>}
- */
-Loader.encodeBinary = b64;
 
-/**
- *
- * @deprecated
- * @see Loader.encodeBinary
- *
- * @static
- * @memberof Loader
- * @member {Class<encodeBinary>}
- */
-Loader.base64 = b64;
+Loader.use = function LoaderUseStatic(fn) {
+  Loader._defaultAfterMiddleware.push(fn);
 
-// export manually, and also as default
-module.exports = Loader;
+  return Loader;
+};
 
-// default & named export
-module.exports.Loader = Loader;
-module.exports.default = Loader;
-//# sourceMappingURL=index.js.map
+
+//# sourceMappingURL=resource-loader.esm.js.map
+
 
 /***/ }),
 
@@ -54560,7 +49088,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 
 
-var punycode = __webpack_require__(/*! punycode */ "./node_modules/node-libs-browser/node_modules/punycode/punycode.js");
+var punycode = __webpack_require__(/*! punycode */ "./node_modules/punycode/punycode.js");
 var util = __webpack_require__(/*! ./util */ "./node_modules/url/util.js");
 
 exports.parse = urlParse;
@@ -55680,13 +50208,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**************************************************!*\
-  !*** multi ./libs/adapter/index.js ./src/app.js ***!
-  \**************************************************/
+/*!**********************************************!*\
+  !*** multi @iro/wechat-adapter ./src/app.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./libs/adapter/index.js */"./libs/adapter/index.js");
+__webpack_require__(/*! @iro/wechat-adapter */"./node_modules/@iro/wechat-adapter/dist/wechat-adapter.es.js");
 module.exports = __webpack_require__(/*! ./src/app.js */"./src/app.js");
 
 

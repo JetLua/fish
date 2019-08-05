@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "@babel/runtime-corejs3": "^7.4.5",
+    "@iro/wechat-adapter": "^0.1.4",
     "@pixi/unsafe-eval": "^5.0.3",
     "babel-loader": "^8.0.6",
     "core-js": "^3.1.3",

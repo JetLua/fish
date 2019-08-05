@@ -1,3 +1,0 @@
-[submodule "libs/adapter"]
-	path = libs/adapter
-	url = git@github.com:JetLua/wechat-adapter.git

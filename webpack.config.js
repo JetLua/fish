@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: [
-    './libs/adapter/index.js',
+    '@iro/wechat-adapter',
     './src/app.js'
   ],
 

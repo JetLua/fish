@@ -1,28 +1,20 @@
-# fisher
+# fish
 
-> 将[pixi-filters](https://github.com/pixijs/pixi-filters)搬运到微信小游戏。
-> 仅作`pixi.js`开发微信小游戏展示之用。
+将[pixi-filters](https://github.com/pixijs/pixi-filters)搬运到微信小游戏。
+仅作`pixi.js`开发微信小游戏展示之用。
 
-[示例](https://static.lufei.so/c06638f149ce76f6ab8631d954f4a838.mp4)
+[视频预览](https://static.lufei.so/c06638f149ce76f6ab8631d954f4a838.mp4)
 
 ## 开发
 ```bash
 # clone 项目
-git clone git@github.com:labbee/fish.git
-
-# clone 子项目
-git submodule init
-git submodule update
+git clone git@github.com:JetLua/fish.git
 
 # 安装依赖
 npm i
 
 # 运行
 npm run dev
+
+# 微信开发者工具选择 dist 目录
 ```
-
-微信开发工具选择`dist`目录。
-
-用 pixi.js 开发的个人微信小游戏。
-
-![colloc](https://upload-images.jianshu.io/upload_images/56079-8b9bcbf80284f116.jpg)
