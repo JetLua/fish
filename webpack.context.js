@@ -1,8 +1,7 @@
-const
-  path = require('path'),
-  webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
 
-const isProd = process.env.NODE_ENV === 'production'
+const prod = process.argv.includes('-p')
 
 module.exports = {
   entry: [
@@ -14,7 +13,7 @@ module.exports = {
     filename: 'index.js'
   },
 
-  devtool: isProd ? false : 'source-map',
+  devtool: prod ? false : 'source-map',
   stats: 'errors-only',
 
   module: {
@@ -31,5 +30,5 @@ module.exports = {
     ]
   },
 
-  mode: isProd ? 'production' : 'development'
+  mode: prod ? 'production' : 'development'
 }

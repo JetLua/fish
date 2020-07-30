@@ -4,11 +4,11 @@
   "description": "",
   "main": "game.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "webpack -p",
     "start": "npm run dev & npm run dev:context",
     "dev": "webpack -w",
     "dev:context": "webpack -w --config webpack.context.js",
-    "build:context": "cross-env NODE_ENV=production webpack --config webpack.context.js",
+    "build:context": "webpack -p --config webpack.context.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/plugin-proposal-private-methods": "^7.6.0",

@@ -1,2 +1,2 @@
-export game from './game'
-export prepare from './prepare'
+export {default as game} from './game'
+export {default as prepare} from './prepare'

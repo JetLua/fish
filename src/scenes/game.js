@@ -1,8 +1,7 @@
 import {ticker, stage, screen} from '../core'
 
-const
-  {max, random, PI, sin, cos} = Math,
-  PI2 = PI * 2
+const {max, random, PI, sin, cos} = Math
+const PI2 = PI * 2
 
 export default {
   fishes: [],

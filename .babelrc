@@ -7,11 +7,10 @@
     "@babel/proposal-private-methods",
     "@babel/proposal-class-properties",
     "@babel/proposal-optional-chaining",
-    "@babel/proposal-export-default-from",
     "@babel/proposal-export-namespace-from",
     ["@babel/transform-runtime", {
       "corejs": 3,
-      "helpers": false,
+      "helpers": true,
       "regenerator": true,
       "useESModules": true
     }]
