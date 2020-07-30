@@ -14,7 +14,7 @@ git clone git@github.com:JetLua/fish.git
 npm i
 
 # 运行
-npm run dev
+npm start
 
 # 微信开发者工具选择 dist 目录
 ```

@@ -5,6 +5,7 @@
   "main": "game.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
+    "start": "npm run dev & npm run dev:context",
     "dev": "webpack -w",
     "dev:context": "webpack -w --config webpack.context.js",
     "build:context": "cross-env NODE_ENV=production webpack --config webpack.context.js",
@@ -28,13 +29,13 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/runtime": "^7.6.3",
     "@babel/runtime-corejs3": "^7.6.3",
-    "@iro/wechat-adapter": "^0.1.7",
+    "@iro/wechat-adapter": "^1.0.1",
     "@pixi/unsafe-eval": "^5.0.3",
     "babel-loader": "^8.0.6",
     "core-js": "^3.3.3",
     "pixi.js": "^5.1.5",
     "popmotion": "^8.6.10",
-    "raw-loader": "^3.0.0",
+    "raw-loader": "^4.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },

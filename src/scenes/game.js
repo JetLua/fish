@@ -16,7 +16,7 @@ export default {
     this.bed.scale.set(max(screen.width / this.bed.width, screen.height / this.bed.height))
 
     /* 水面 */
-    this.overlay = PIXI.TilingSprite.from('overlay.png', screen.width, screen.height)
+    this.overlay = PIXI.TilingSprite.from('overlay.png', {width: screen.width, height: screen.height})
     this.overlay.zIndex = 1
 
     /* 潭中鱼可百许头 */
