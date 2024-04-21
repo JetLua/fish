@@ -21,3 +21,4 @@ pnpm dev
 
 ## 提示
 1. `dist/project.config.json`里的`appid`按需设置
+2. 上传时请开启微信开发者工具的“**将JS编译成ES5**”
