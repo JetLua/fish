@@ -2,7 +2,9 @@
 将[pixi-filters](https://github.com/pixijs/pixi-filters)搬运到微信小游戏。
 仅作`pixi.js`开发微信小游戏展示之用。
 
-<video src="demo.mp4" autoplay="autoplay"/>
+
+https://github.com/JetLua/fish/assets/6738986/c74ea472-e69d-433f-8d30-453990185eca
+
 
 ## 开发
 ```bash
