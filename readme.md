@@ -16,6 +16,9 @@ pnpm i
 # 运行
 pnpm dev
 
+# 发布
+pnpm build
+
 # 微信开发者工具选择 dist 目录
 ```
 
