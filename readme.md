@@ -3,8 +3,7 @@
 仅作`pixi.js`开发微信小游戏展示之用。
 
 
-https://github.com/JetLua/fish/assets/6738986/c74ea472-e69d-433f-8d30-453990185eca
-
+https://github.com/JetLua/fish/assets/6738986/c54c2890-a25b-493b-8a76-f6256cb9cb02
 
 ## 开发
 ```bash
