@@ -1,5 +1,6 @@
 {
-    "deviceOrientation": "landscape",
-    "showStatusBar": false,
-	"openDataContext": "context"
+  "deviceOrientation": "landscape",
+  "showStatusBar": false,
+	"openDataContext": "context",
+  "cloud": false
 }
