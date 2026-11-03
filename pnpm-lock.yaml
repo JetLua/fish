@@ -41,7 +41,7 @@ importers:
         version: 20.12.7
       vite:
         specifier: ^6.4.2
-        version: 6.4.3(@types/node@20.12.7)
+        version: 6.4.5(@types/node@20.12.7)
 
 packages:
 
@@ -893,8 +893,8 @@ packages:
   url@0.11.3:
     resolution: {integrity: sha512-6hxOLGfZASQK/cijlZnZJTq8OXAkt/3YGfQX45vvMYXpZoo8NdWZcY73K108Jf759lS1Bv/8wXnHDTSz17dSRw==}
 
-  vite@6.4.3:
-    resolution: {integrity: sha512-NTKlcQjlAK7MlQoyb6LgaqHc8sso/pVyUJYWMws3jg21uTJw/LddqIFPcPqP6PzpgbIcZyKI85sFE4HBrQDA8A==}
+  vite@6.4.5:
+    resolution: {integrity: sha512-4enwjFfi4IwtEh0w+jPzpLVOFQiPHmmzPxcHXQOyEur47o6u0jE573DmGpjA+7irXoMLYRZD5ZaFUEneS3abPg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -1691,7 +1691,7 @@ snapshots:
       punycode: 1.4.1
       qs: 6.12.1
 
-  vite@6.4.3(@types/node@20.12.7):
+  vite@6.4.5(@types/node@20.12.7):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.4)
